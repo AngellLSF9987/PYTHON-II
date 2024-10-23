@@ -15,7 +15,7 @@ def main():
         if opcion in maquina.bebidas:
             bebida = maquina.bebidas[opcion]
             maquina.calculos_pago(bebida)
-
+            break
         else:
             print("Opcion no válida...")
             
