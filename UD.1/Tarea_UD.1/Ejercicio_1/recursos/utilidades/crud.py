@@ -28,7 +28,7 @@ def buscar_cliente(dni):
     for cliente in clientes:
         if cliente.get_dni() == dni:
             return cliente
-    return None
+        return None
 
 def modificar_cliente():
     """Modifica los datos de un cliente."""
