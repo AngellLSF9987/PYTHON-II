@@ -1,0 +1,1 @@
+"""Es el mismo ejercicio que el 6"""
