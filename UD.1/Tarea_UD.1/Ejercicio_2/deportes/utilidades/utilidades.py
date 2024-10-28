@@ -12,7 +12,7 @@ def obtener_datos_comunes():
 
 def crear_deportista(tipo):
     
-    nombre,edad, nacionalidad = obtener_datos_comunes()
+    nombre, edad, nacionalidad = obtener_datos_comunes()
     
     if tipo == "futbolista":
         equipo = input("Introduce el equipo:\n")
