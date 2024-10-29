@@ -1,3 +1,4 @@
+# CLASE PADRE
 class Deportista:
     
     def __init__(self, nombre, edad, nacionalidad):
@@ -8,5 +9,5 @@ class Deportista:
     def mostrar_datos(self):
         """Método que actúa como __str__"""
         
-        return f"Nombre: {self._nombre}\nEdad: {self._edad}\nNAcionalidad: {self._nacionalidad}"
+        return f"Nombre: {self._nombre}\nEdad: {self._edad}\nNacionalidad: {self._nacionalidad}"
         

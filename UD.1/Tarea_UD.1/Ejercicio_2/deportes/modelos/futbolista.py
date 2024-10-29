@@ -1,3 +1,5 @@
+# CLASE HIJA
+
 from .deportista import Deportista
 
 class Futbolista(Deportista):
@@ -10,6 +12,6 @@ class Futbolista(Deportista):
 
 
     def mostrar_datos(self):
-        return f"{super().mostrar_datos()()}\nEquipo: {self._equipo}\nGoles: {self._goles}"
+        return f"{super().mostrar_datos()}\nEquipo: {self._equipo}\nGoles: {self._goles}"
     
     
