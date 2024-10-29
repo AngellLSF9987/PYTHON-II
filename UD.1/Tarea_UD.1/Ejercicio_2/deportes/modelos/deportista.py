@@ -1,13 +1,31 @@
+# deportes/modelos/deportista.py
+
 # CLASE PADRE
 class Deportista:
     
     def __init__(self, nombre, edad, nacionalidad):
-        self._nombre = nombre
-        self._edad = edad
-        self._nacionalidad = nacionalidad
+        self.__nombre = nombre
+        self.__edad = edad
+        self.__nacionalidad = nacionalidad
+
+    def get_nombre(self):
+        return self.__nombre
+
+    def set_nombre(self, value):
+        self.__nombre = value
+
+    def get_edad(self):
+        return self.__edad
+
+    def set_edad(self, value):
+        self.__edad = value
+
+    def get_nacionalidad(self):
+        return self.__nacionalidad
+
+    def set_nacionalidad(self, value):
+        self.__nacionalidad = value
         
     def mostrar_datos(self):
-        """Método que actúa como __str__"""
-        
-        return f"Nombre: {self._nombre}\nEdad: {self._edad}\nNacionalidad: {self._nacionalidad}"
-        
+        """Método que actúa como __str__"""        
+        return f"Nombre: {self.get_nombre()}\nEdad: {self.get_edad()}\nNacionalidad: {self.get_nacionalidad()}"

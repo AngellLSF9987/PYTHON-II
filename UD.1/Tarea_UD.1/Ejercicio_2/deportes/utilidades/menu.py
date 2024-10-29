@@ -1,18 +1,7 @@
 # deportes/utilidades/menu.py
 
-from .utilidades import crear_deportista
-from ..modelos.futbolista import Futbolista
-from ..modelos.tenista import Tenista
-from ..modelos.runner import Runner
+from .utilidades import *
 
-
-def inicializar_deportistas(deportistas):
-    # Agregar un futbolista predeterminado
-    deportistas['futbolista'].append(Futbolista("Lionel Messi", 36, "Argentina", "Inter Miami", 800))
-    # Agregar un tenista predeterminado
-    deportistas['tenista'].append(Tenista("Rafael Nadal", 37, "España", 2, 22))
-    # Agregar un runner predeterminado
-    deportistas['runner'].append(Runner("Usain Bolt", 37, "Jamaica", "100m", "9.58"))
 
 def menu():
     deportistas = {
@@ -31,6 +20,7 @@ def menu():
         print("5. Mostrar todos los Tenistas.")
         print("6. Mostrar todos los Runners.")
         print("7. Mostrar todos los Deportistas.")
+        print("8. Modificar datos de un Deportista.")
         print("0. Salir.")
 
         opcion = input("Selecciona una opción:\n")
@@ -53,23 +43,19 @@ def menu():
                 deportistas['runner'].append(deportista)
         elif opcion == "4":
             # Mostrar Futbolistas
-            for futbolista in deportistas['futbolista']:
-                print(futbolista.mostrar_datos())
+            mostrar_futbolistas(deportistas)
         elif opcion == "5":
             # Mostrar Tenistas
-            for tenista in deportistas['tenista']:
-                print(tenista.mostrar_datos())
+            mostrar_tenistas(deportistas)
         elif opcion == "6":
             # Mostrar Runners
-            for runner in deportistas['runner']:
-                print(runner.mostrar_datos())
-        elif opcion =='7':
+            mostrar_runners(deportistas)
+        elif opcion == "7":
             # Mostrar Todos
-            for tipo, lista_deportistas in deportistas.items():
-                print(f"\n{tipo.capitalize()}s:")
-                for deportista in  lista_deportistas:
-                    print(deportista.mostrar_datos())
-                    print()
+            mostrar_deportistas(deportistas)
+        elif opcion == "8":
+            # Modifcar datos de un Deportista
+            modificar_datos(deportistas)
         elif opcion == "0":
             print("Hasta luego!")
             break
