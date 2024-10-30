@@ -5,11 +5,17 @@ from .deportista import Deportista
 
 class Tenista(Deportista):
     
-    def __init__(self, nombre, edad, nacionalidad, ranking, trofeos_ganados):
-        super().__init__(nombre,edad, nacionalidad)
-        
+    def __init__(self, nombre, apellido, edad, nacionalidad, ranking, trofeos_ganados):
+        super().__init__(nombre, apellido, edad, nacionalidad)
+
+        self.__id = Tenista.__id_counter # Asigna el ID actual, es decir, el ID = 1        
+        Tenista.__id_counter += 1 # Contador autoincremental
+                
         self.__ranking = ranking
         self.__trofeos_ganados = trofeos_ganados
+
+    def get_id(self):
+        return self.__id
 
     def get_ranking(self):
         return self.__ranking
@@ -25,6 +31,6 @@ class Tenista(Deportista):
 
     def mostrar_datos(self):
         """Actúa como método __str__"""
-        return f"{super().mostrar_datos()}\nRanking: {self.get_ranking()}\nTrofeos Ganados: {self.get_trofeos_ganados()}"
+        return f"{super().mostrar_datos()}\nId: {self.get_id}\nRanking: {self.get_ranking()}\nTrofeos Ganados: {self.get_trofeos_ganados()}"
     
     
