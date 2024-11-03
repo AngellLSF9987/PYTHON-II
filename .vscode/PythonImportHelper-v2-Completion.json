@@ -1780,7 +1780,7 @@
         "kind": 6,
         "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.clientes.cliente",
         "description": "UD.1.Tarea_UD.1.Ejercicio_1.clientes.cliente",
-        "peekOfCode": "class Cliente:\n    def __init__(self, dni, nombre, edad, sexo, peso, altura):\n        self.__dni = dni\n        self.__nombre = nombre\n        self.__edad = edad\n        self.__sexo = self.comprobar_sexo(sexo)\n        self.__peso = peso\n        self.__altura = altura\n    def comprobar_sexo(self, sexo):\n        \"\"\"Comprueba que el sexo sea correcto, si no, será 'NULL' por defecto.\"\"\"",
+        "peekOfCode": "class Cliente:\n    __id_counter = 1\n    def __init__(self, dni, nombre, edad, sexo, peso, altura):\n        self.__id = Cliente.__id_counter # Asigna el ID actual, es decir, el ID = 1        \n        Cliente.__id_counter += 1 # Contador autoincremental\n        self.__dni = dni\n        self.__nombre = nombre\n        self.__edad = edad\n        self.__sexo = self.comprobar_sexo(sexo)\n        self.__peso = peso",
         "detail": "UD.1.Tarea_UD.1.Ejercicio_1.clientes.cliente",
         "documentation": {}
     },

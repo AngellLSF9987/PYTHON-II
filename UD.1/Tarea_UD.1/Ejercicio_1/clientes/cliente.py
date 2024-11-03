@@ -1,6 +1,11 @@
 class Cliente:
 
+    __id_counter = 1
+
     def __init__(self, dni, nombre, edad, sexo, peso, altura):
+
+        self.__id = Cliente.__id_counter # Asigna el ID actual, es decir, el ID = 1        
+        Cliente.__id_counter += 1 # Contador autoincremental
 
         self.__dni = dni
         self.__nombre = nombre
@@ -14,10 +19,6 @@ class Cliente:
         if sexo.upper() not in ['H', 'M']:
             return 'NULL'
         return sexo.upper()
-    
-    def mostrar_datos(self):
-        """Muestra todos los datos del cliente. Actúa como método __str__"""
-        return f"Nombre: {self.__nombre}.\nNIF.: {self.__dni}.\nEdad: {self.__edad} años.\nSexo: {self.__sexo}.\nSu peso es: {self.__peso}Kg.\nSu estatura: {self.__altura} m." 
     
     def set_nombre(self, nombre):
         self.__nombre = nombre
@@ -37,6 +38,8 @@ class Cliente:
     def set_dni(self, dni):
         self.__dni = dni
 
+    def get_id(self):
+        return self.__id
     
     def get_nombre(self):
         return self.__nombre
@@ -55,3 +58,8 @@ class Cliente:
 
     def get_dni(self):
         return self.__dni
+    
+
+    def mostrar_datos(self):
+        """Muestra todos los datos del cliente. Actúa como método __str__"""
+        return f"Id:Id: {self.get_id()}\nNombre: {self.get_nombre()}.\nNIF.: {self.get_dni()}.\nEdad: {self.get_edad()} años.\nSexo: {self.get_sexo}.\nSu peso es: {self.get_peso}Kg.\nSu estatura: {self.get_altura} m." 
