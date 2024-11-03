@@ -62,4 +62,4 @@ class Cliente:
 
     def mostrar_datos(self):
         """Muestra todos los datos del cliente. Actúa como método __str__"""
-        return f"Id:Id: {self.get_id()}\nNombre: {self.get_nombre()}.\nNIF.: {self.get_dni()}.\nEdad: {self.get_edad()} años.\nSexo: {self.get_sexo}.\nSu peso es: {self.get_peso}Kg.\nSu estatura: {self.get_altura} m." 
+        return f"Id:Id: {self.get_id()}\nNombre: {self.get_nombre()}.\nNIF.: {self.get_dni()}.\nEdad: {self.get_edad()} años.\nSexo: {self.get_sexo()}.\nSu peso es: {self.get_peso()}Kg.\nSu estatura: {self.get_altura()} m." 
