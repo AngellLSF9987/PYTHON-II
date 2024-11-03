@@ -33,6 +33,6 @@ class Futbolista(Deportista):
 
     def mostrar_datos(self):
         """Actúa como método __str__"""
-        return f"{super().mostrar_datos()}\nId: {self.get_id}\nEquipo: {self.get_equipo()}\nGoles: {self.get_goles()}"
+        return f"{super().mostrar_datos()}\nId: {self.get_id()}\nEquipo: {self.get_equipo()}\nGoles: {self.get_goles()}"
     
     

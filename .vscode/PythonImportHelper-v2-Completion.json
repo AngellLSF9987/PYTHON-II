@@ -1,0 +1,2057 @@
+[
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Bebida",
+        "importPath": "modelos.bebida",
+        "description": "modelos.bebida",
+        "isExtraImport": true,
+        "detail": "modelos.bebida",
+        "documentation": {}
+    },
+    {
+        "label": "Maquina",
+        "importPath": "modelos.maquina",
+        "description": "modelos.maquina",
+        "isExtraImport": true,
+        "detail": "modelos.maquina",
+        "documentation": {}
+    },
+    {
+        "label": "Persona",
+        "importPath": "modelos.persona",
+        "description": "modelos.persona",
+        "isExtraImport": true,
+        "detail": "modelos.persona",
+        "documentation": {}
+    },
+    {
+        "label": "Gestor",
+        "importPath": "modelos.gestor",
+        "description": "modelos.gestor",
+        "isExtraImport": true,
+        "detail": "modelos.gestor",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "Pieza",
+        "importPath": "modelos.pieza",
+        "description": "modelos.pieza",
+        "isExtraImport": true,
+        "detail": "modelos.pieza",
+        "documentation": {}
+    },
+    {
+        "label": "Construccion",
+        "importPath": "modelos.construccion",
+        "description": "modelos.construccion",
+        "isExtraImport": true,
+        "detail": "modelos.construccion",
+        "documentation": {}
+    },
+    {
+        "label": "Jugador",
+        "importPath": "modelos.jugador",
+        "description": "modelos.jugador",
+        "isExtraImport": true,
+        "detail": "modelos.jugador",
+        "documentation": {}
+    },
+    {
+        "label": "Jugador",
+        "importPath": "modelos.jugador",
+        "description": "modelos.jugador",
+        "isExtraImport": true,
+        "detail": "modelos.jugador",
+        "documentation": {}
+    },
+    {
+        "label": "Partido",
+        "importPath": "modelos.partido",
+        "description": "modelos.partido",
+        "isExtraImport": true,
+        "detail": "modelos.partido",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "Cliente",
+        "importPath": "clientes.cliente",
+        "description": "clientes.cliente",
+        "isExtraImport": true,
+        "detail": "clientes.cliente",
+        "documentation": {}
+    },
+    {
+        "label": "comprobar_dni",
+        "importPath": "seguridad.validaciones",
+        "description": "seguridad.validaciones",
+        "isExtraImport": true,
+        "detail": "seguridad.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "añadir_cliente",
+        "importPath": "utilidades.crud",
+        "description": "utilidades.crud",
+        "isExtraImport": true,
+        "detail": "utilidades.crud",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_cliente",
+        "importPath": "utilidades.crud",
+        "description": "utilidades.crud",
+        "isExtraImport": true,
+        "detail": "utilidades.crud",
+        "documentation": {}
+    },
+    {
+        "label": "modificar_cliente",
+        "importPath": "utilidades.crud",
+        "description": "utilidades.crud",
+        "isExtraImport": true,
+        "detail": "utilidades.crud",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_cliente",
+        "importPath": "utilidades.crud",
+        "description": "utilidades.crud",
+        "isExtraImport": true,
+        "detail": "utilidades.crud",
+        "documentation": {}
+    },
+    {
+        "label": "comprobar_edad",
+        "importPath": "utilidades.herramientas",
+        "description": "utilidades.herramientas",
+        "isExtraImport": true,
+        "detail": "utilidades.herramientas",
+        "documentation": {}
+    },
+    {
+        "label": "comprobar_imc",
+        "importPath": "utilidades.herramientas",
+        "description": "utilidades.herramientas",
+        "isExtraImport": true,
+        "detail": "utilidades.herramientas",
+        "documentation": {}
+    },
+    {
+        "label": "menu",
+        "importPath": "utilidades.menu",
+        "description": "utilidades.menu",
+        "isExtraImport": true,
+        "detail": "utilidades.menu",
+        "documentation": {}
+    },
+    {
+        "label": "menu",
+        "importPath": "utilidades.menu",
+        "description": "utilidades.menu",
+        "isExtraImport": true,
+        "detail": "utilidades.menu",
+        "documentation": {}
+    },
+    {
+        "label": "menu",
+        "importPath": "deportes.menus.menu",
+        "description": "deportes.menus.menu",
+        "isExtraImport": true,
+        "detail": "deportes.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "nombre",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "nombre = \"Loreto\"\nprint(nombre)\n\"\"\"Cometario de\n    varias lineas \"\"\"\n#Comentario de una linea\n\"\"\"Conversion de un punto flotante o float en un entero o int.\n Se pierde información ya que solo coge la parte entera.\"\"\"\nnumero = int(8.945) \nprint(numero)\n#Conversion de un entero en float",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "numero",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "numero = int(8.945) \nprint(numero)\n#Conversion de un entero en float\nnumero1 = float(8)\nprint(numero1)\n#Conversion de un numero en una cadena\ncadena = str(9876)\nprint(cadena)\n\"\"\"Evaluación de la expresion con variables,\nvalores y operadores\"\"\"",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "numero1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "numero1 = float(8)\nprint(numero1)\n#Conversion de un numero en una cadena\ncadena = str(9876)\nprint(cadena)\n\"\"\"Evaluación de la expresion con variables,\nvalores y operadores\"\"\"\nvalor = 98\n(valor + 56)*63\nx=0",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "cadena",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "cadena = str(9876)\nprint(cadena)\n\"\"\"Evaluación de la expresion con variables,\nvalores y operadores\"\"\"\nvalor = 98\n(valor + 56)*63\nx=0\ny=0\nx == x #x es igual a x\nx != y #x es distinto de y",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "valor",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "valor = 98\n(valor + 56)*63\nx=0\ny=0\nx == x #x es igual a x\nx != y #x es distinto de y\nx > y  #x es mayor que y\nx < y  #x es menor que y\nx >= y #x es mayor o igual que y\nx <= y #x es menor o igual que y",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "numero",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "numero = -6 #Se le asigna un valor negativo a numero\n\"\"\" Se va a comprobar que el numero sea positivo, negativo o 0,\nen este caso el numero es negativo\"\"\"\nif numero > 0:\n    print(\"El número es positivo.\")\nelif numero < 0:\n    print(\"El número es negativo.\")\nelse:\n    print(\"El número es cero.\")\nnota = 8.9",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "nota",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "nota = 8.9\nif(nota == 10):\n    print (\"Matricula de honor\")\nelse:\n    if( nota <5):\n        print(\"Estas Suspenso\")\n    elif(nota <= 6.9 and  nota >= 5):\n        print(\"Estas aprobado\")\n    elif(nota <= 7.9 and nota >= 6):\n        print(\"Tienes un bien\")",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "numero",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "numero = 9\nwhile(numero > 0):\n        print(numero)\n        numero = numero -1\nvalor = 5\n\"\"\"En este caso cuando la variable valor sea igual \na 5 se saldrá del bucle y se pasará a la siguente \ninstruccion del programa si la hubiera\"\"\"\nwhile (valor >0):\n    if(valor== 5):",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "valor",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "valor = 5\n\"\"\"En este caso cuando la variable valor sea igual \na 5 se saldrá del bucle y se pasará a la siguente \ninstruccion del programa si la hubiera\"\"\"\nwhile (valor >0):\n    if(valor== 5):\n        break\n    print(valor)\n    valor = valor - 1\nvalor = 5",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "valor",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.1.Introduccion",
+        "description": "UD.0.Ejemplos.1.Introduccion",
+        "peekOfCode": "valor = 5\n\"\"\"Cuando el valor sea igual a 3 se saltará este paso\nSe devuelvo el control al inicio del bucle\nSe seguirá ejecutando el bucle\"\"\"\nfor valor in range(7):\n    if(valor==3):\n        continue\n    print(valor)",
+        "detail": "UD.0.Ejemplos.1.Introduccion",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "texto = \"El perro marrón salta sobre la valla\"\nindice = texto.find(\"marrón\")\nprint(indice)  # Output: 9 (el índice donde comienza la palabra \"marrón\")\n#Ejemplo 2 - Buscando una subcadena que no existe\ntexto = \"Hola mundo\"\nindice = texto.find(\"Python\")\nprint(indice)  # Output: -1 (la subcadena no se encontró)\n#Ejemplo 3 - Especificando un rango de búsqueda\ntexto = \"El perro marrón salta sobre la valla\"\nindice = texto.find(\"la\", 10)  # Buscar \"la\" a partir del índice 10",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "indice",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "indice = texto.find(\"marrón\")\nprint(indice)  # Output: 9 (el índice donde comienza la palabra \"marrón\")\n#Ejemplo 2 - Buscando una subcadena que no existe\ntexto = \"Hola mundo\"\nindice = texto.find(\"Python\")\nprint(indice)  # Output: -1 (la subcadena no se encontró)\n#Ejemplo 3 - Especificando un rango de búsqueda\ntexto = \"El perro marrón salta sobre la valla\"\nindice = texto.find(\"la\", 10)  # Buscar \"la\" a partir del índice 10\nprint(indice)  # Output: 28 (encuentra la segunda \"la\")",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "texto = \"Hola mundo\"\nindice = texto.find(\"Python\")\nprint(indice)  # Output: -1 (la subcadena no se encontró)\n#Ejemplo 3 - Especificando un rango de búsqueda\ntexto = \"El perro marrón salta sobre la valla\"\nindice = texto.find(\"la\", 10)  # Buscar \"la\" a partir del índice 10\nprint(indice)  # Output: 28 (encuentra la segunda \"la\")\n#Ejemplo 4 - Uso de find() para validar datos\nemail = \"micorreo@ejemplo.com\"\narroba = email.find(\"@\")",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "indice",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "indice = texto.find(\"Python\")\nprint(indice)  # Output: -1 (la subcadena no se encontró)\n#Ejemplo 3 - Especificando un rango de búsqueda\ntexto = \"El perro marrón salta sobre la valla\"\nindice = texto.find(\"la\", 10)  # Buscar \"la\" a partir del índice 10\nprint(indice)  # Output: 28 (encuentra la segunda \"la\")\n#Ejemplo 4 - Uso de find() para validar datos\nemail = \"micorreo@ejemplo.com\"\narroba = email.find(\"@\")\nif arroba != -1:",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "texto = \"El perro marrón salta sobre la valla\"\nindice = texto.find(\"la\", 10)  # Buscar \"la\" a partir del índice 10\nprint(indice)  # Output: 28 (encuentra la segunda \"la\")\n#Ejemplo 4 - Uso de find() para validar datos\nemail = \"micorreo@ejemplo.com\"\narroba = email.find(\"@\")\nif arroba != -1:\n    print(\"El correo electrónico es válido.\")\nelse:\n    print(\"El correo electrónico no es válido.\")",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "indice",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "indice = texto.find(\"la\", 10)  # Buscar \"la\" a partir del índice 10\nprint(indice)  # Output: 28 (encuentra la segunda \"la\")\n#Ejemplo 4 - Uso de find() para validar datos\nemail = \"micorreo@ejemplo.com\"\narroba = email.find(\"@\")\nif arroba != -1:\n    print(\"El correo electrónico es válido.\")\nelse:\n    print(\"El correo electrónico no es válido.\")\n#Ejemplo 5 - Combinando find() con slicing para extraer subcadenas",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "email",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "email = \"micorreo@ejemplo.com\"\narroba = email.find(\"@\")\nif arroba != -1:\n    print(\"El correo electrónico es válido.\")\nelse:\n    print(\"El correo electrónico no es válido.\")\n#Ejemplo 5 - Combinando find() con slicing para extraer subcadenas\ntexto = \"Hola, mundo. Esto es un ejemplo.\"\nindice_coma = texto.find(\",\")\nsaludo = texto[:indice_coma]",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "arroba",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "arroba = email.find(\"@\")\nif arroba != -1:\n    print(\"El correo electrónico es válido.\")\nelse:\n    print(\"El correo electrónico no es válido.\")\n#Ejemplo 5 - Combinando find() con slicing para extraer subcadenas\ntexto = \"Hola, mundo. Esto es un ejemplo.\"\nindice_coma = texto.find(\",\")\nsaludo = texto[:indice_coma]\nprint(saludo)  # Output: Hola",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "texto = \"Hola, mundo. Esto es un ejemplo.\"\nindice_coma = texto.find(\",\")\nsaludo = texto[:indice_coma]\nprint(saludo)  # Output: Hola",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "indice_coma",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "indice_coma = texto.find(\",\")\nsaludo = texto[:indice_coma]\nprint(saludo)  # Output: Hola",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "saludo",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "description": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "peekOfCode": "saludo = texto[:indice_coma]\nprint(saludo)  # Output: Hola",
+        "detail": "UD.0.Ejemplos.2.1.1ejemploCadenasFind",
+        "documentation": {}
+    },
+    {
+        "label": "nombre",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "nombre = \"Alejandro \" #Dejamos un espacio al final\napellido1 = \"Perez\"\napellido2 = \"Alvarez\"\nnombreCompleto = nombre + apellido1 + apellido2\n#Al utilizar concatenar las cadenas se unen tal se escriben\n#Al no haber espacios los apellidos se concatenan juntos\nprint(nombreCompleto) \nsaludo =\"Buenas tardes \"\nprint(saludo * 4)\ntexto = \"Bienvenidos al curso de Python\"",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "apellido1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "apellido1 = \"Perez\"\napellido2 = \"Alvarez\"\nnombreCompleto = nombre + apellido1 + apellido2\n#Al utilizar concatenar las cadenas se unen tal se escriben\n#Al no haber espacios los apellidos se concatenan juntos\nprint(nombreCompleto) \nsaludo =\"Buenas tardes \"\nprint(saludo * 4)\ntexto = \"Bienvenidos al curso de Python\"\ntexto[:] #Parametros por defecto",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "apellido2",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "apellido2 = \"Alvarez\"\nnombreCompleto = nombre + apellido1 + apellido2\n#Al utilizar concatenar las cadenas se unen tal se escriben\n#Al no haber espacios los apellidos se concatenan juntos\nprint(nombreCompleto) \nsaludo =\"Buenas tardes \"\nprint(saludo * 4)\ntexto = \"Bienvenidos al curso de Python\"\ntexto[:] #Parametros por defecto\n\"Bienvenidos al curso de Python\" #Se muestra la cadena entera",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "nombreCompleto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "nombreCompleto = nombre + apellido1 + apellido2\n#Al utilizar concatenar las cadenas se unen tal se escriben\n#Al no haber espacios los apellidos se concatenan juntos\nprint(nombreCompleto) \nsaludo =\"Buenas tardes \"\nprint(saludo * 4)\ntexto = \"Bienvenidos al curso de Python\"\ntexto[:] #Parametros por defecto\n\"Bienvenidos al curso de Python\" #Se muestra la cadena entera\ntexto[::] #Tambien mostrará la cadena completa",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "texto = \"Bienvenidos al curso de Python\"\ntexto[:] #Parametros por defecto\n\"Bienvenidos al curso de Python\" #Se muestra la cadena entera\ntexto[::] #Tambien mostrará la cadena completa\n\"Bienvenidos al curso de Python\"\ntexto[0] #Primer caracter\n\"B\"\ntexto[-1] #Ultimo caracter\n\"n\"\nprint(texto[:6]) #Desde la posicion 0 a la 5",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "ruta",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "ruta = r\"C:\\Proyectos\\Carpeta\\Unidad2\\Python\"\nprint(ruta)\ntexto = \"El numero ganador del sorteo es:\"\nnumero = 345982\n#print(texto+numero) #Esto producirá un error, porque no son del mismo tipo\nprint(texto+str(numero))\nnumero = 345982\nprint(f'El numero ganador del sorteo es: {numero}')\nprint(f\"El numero es {numero}\")\nnumero = 345982",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "texto = \"El numero ganador del sorteo es:\"\nnumero = 345982\n#print(texto+numero) #Esto producirá un error, porque no son del mismo tipo\nprint(texto+str(numero))\nnumero = 345982\nprint(f'El numero ganador del sorteo es: {numero}')\nprint(f\"El numero es {numero}\")\nnumero = 345982\nprint(\"El numero ganador del sorteo es: {}\".format(numero))\n#Tambien se pueden declarar las variables dentro del .format()",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "numero",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "numero = 345982\n#print(texto+numero) #Esto producirá un error, porque no son del mismo tipo\nprint(texto+str(numero))\nnumero = 345982\nprint(f'El numero ganador del sorteo es: {numero}')\nprint(f\"El numero es {numero}\")\nnumero = 345982\nprint(\"El numero ganador del sorteo es: {}\".format(numero))\n#Tambien se pueden declarar las variables dentro del .format()\nprint(\"Mi hijo tiene {edad} años\".format(edad=12)) ",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "numero",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "numero = 345982\nprint(f'El numero ganador del sorteo es: {numero}')\nprint(f\"El numero es {numero}\")\nnumero = 345982\nprint(\"El numero ganador del sorteo es: {}\".format(numero))\n#Tambien se pueden declarar las variables dentro del .format()\nprint(\"Mi hijo tiene {edad} años\".format(edad=12)) \ncadena = \"HOLA\"\nprint(cadena.lower()) #hola\ncadena1 = \"hola\"",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "numero",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "numero = 345982\nprint(\"El numero ganador del sorteo es: {}\".format(numero))\n#Tambien se pueden declarar las variables dentro del .format()\nprint(\"Mi hijo tiene {edad} años\".format(edad=12)) \ncadena = \"HOLA\"\nprint(cadena.lower()) #hola\ncadena1 = \"hola\"\nprint(cadena1.upper()) #HOLA\ncadena2 = \"hola caracola\"\nprint(cadena2.title()) #Hola",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "cadena",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "cadena = \"HOLA\"\nprint(cadena.lower()) #hola\ncadena1 = \"hola\"\nprint(cadena1.upper()) #HOLA\ncadena2 = \"hola caracola\"\nprint(cadena2.title()) #Hola\ntexto = \"El sofa es rojo\"\nprint(texto.count(\"o\")) #3\ntexto1 = \" Ya estamos aquí \"\nprint(texto1.strip()) #Ya estamos aquí",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "cadena1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "cadena1 = \"hola\"\nprint(cadena1.upper()) #HOLA\ncadena2 = \"hola caracola\"\nprint(cadena2.title()) #Hola\ntexto = \"El sofa es rojo\"\nprint(texto.count(\"o\")) #3\ntexto1 = \" Ya estamos aquí \"\nprint(texto1.strip()) #Ya estamos aquí\ntexto2 = \"en un lugar de la mancha\" \nprint(texto2.capitalize()) #En un lugar de la mancha",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "cadena2",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "cadena2 = \"hola caracola\"\nprint(cadena2.title()) #Hola\ntexto = \"El sofa es rojo\"\nprint(texto.count(\"o\")) #3\ntexto1 = \" Ya estamos aquí \"\nprint(texto1.strip()) #Ya estamos aquí\ntexto2 = \"en un lugar de la mancha\" \nprint(texto2.capitalize()) #En un lugar de la mancha\ntexto3 = \"Tengo una camiseta rosa y unos vaqueros negros\"\nprint(texto3.split(\"o\")) #['Teng', ' una camiseta r', 'sa y un', 's vaquer', 's negr', 's']",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "texto = \"El sofa es rojo\"\nprint(texto.count(\"o\")) #3\ntexto1 = \" Ya estamos aquí \"\nprint(texto1.strip()) #Ya estamos aquí\ntexto2 = \"en un lugar de la mancha\" \nprint(texto2.capitalize()) #En un lugar de la mancha\ntexto3 = \"Tengo una camiseta rosa y unos vaqueros negros\"\nprint(texto3.split(\"o\")) #['Teng', ' una camiseta r', 'sa y un', 's vaquer', 's negr', 's']\nprint(texto3.replace(\"a\",\"u\")) #Tengo unu cumisetu rosu y unos vuqueros negros\ntexto = \"Acabo de llegar a clase\"",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "texto1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "texto1 = \" Ya estamos aquí \"\nprint(texto1.strip()) #Ya estamos aquí\ntexto2 = \"en un lugar de la mancha\" \nprint(texto2.capitalize()) #En un lugar de la mancha\ntexto3 = \"Tengo una camiseta rosa y unos vaqueros negros\"\nprint(texto3.split(\"o\")) #['Teng', ' una camiseta r', 'sa y un', 's vaquer', 's negr', 's']\nprint(texto3.replace(\"a\",\"u\")) #Tengo unu cumisetu rosu y unos vuqueros negros\ntexto = \"Acabo de llegar a clase\"\nprint(len(texto)) #23\ntexto = \"El barco es rosa\"",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "texto2",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "texto2 = \"en un lugar de la mancha\" \nprint(texto2.capitalize()) #En un lugar de la mancha\ntexto3 = \"Tengo una camiseta rosa y unos vaqueros negros\"\nprint(texto3.split(\"o\")) #['Teng', ' una camiseta r', 'sa y un', 's vaquer', 's negr', 's']\nprint(texto3.replace(\"a\",\"u\")) #Tengo unu cumisetu rosu y unos vuqueros negros\ntexto = \"Acabo de llegar a clase\"\nprint(len(texto)) #23\ntexto = \"El barco es rosa\"\nfor letra in texto:\n    print(letra)",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "texto3",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "texto3 = \"Tengo una camiseta rosa y unos vaqueros negros\"\nprint(texto3.split(\"o\")) #['Teng', ' una camiseta r', 'sa y un', 's vaquer', 's negr', 's']\nprint(texto3.replace(\"a\",\"u\")) #Tengo unu cumisetu rosu y unos vuqueros negros\ntexto = \"Acabo de llegar a clase\"\nprint(len(texto)) #23\ntexto = \"El barco es rosa\"\nfor letra in texto:\n    print(letra)",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "texto = \"Acabo de llegar a clase\"\nprint(len(texto)) #23\ntexto = \"El barco es rosa\"\nfor letra in texto:\n    print(letra)",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "description": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "peekOfCode": "texto = \"El barco es rosa\"\nfor letra in texto:\n    print(letra)",
+        "detail": "UD.0.Ejemplos.2.1ejemploCadenas",
+        "documentation": {}
+    },
+    {
+        "label": "compra",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "compra = [\"huevos\",\"tomates\",\"leche\"]\nprint(compra) #['huevos', 'tomates', 'leche']\n#Se introducen entre corchete los datos porque son varios\ndatos = list([\"Andres Rubio\",12,True, 6.22]) #['Andres Rubio', 12, True, 6.22]\nprint(datos)\nprint(type(datos)) #<class 'list'>\n\"\"\"Al ser una cadena que es una estructura iterable,\nPython los separa automaticamente en elementos individuales\ny crea la lista\"\"\"\nvocales = list(\"aeiou\") ",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "datos",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "datos = list([\"Andres Rubio\",12,True, 6.22]) #['Andres Rubio', 12, True, 6.22]\nprint(datos)\nprint(type(datos)) #<class 'list'>\n\"\"\"Al ser una cadena que es una estructura iterable,\nPython los separa automaticamente en elementos individuales\ny crea la lista\"\"\"\nvocales = list(\"aeiou\") \nprint(vocales) #['a', 'e', 'i', 'o', 'u']\n\"\"\"Por el contrario si se declara con numeros enteros\nse produce un error, ya que los enteros no son iterables\"\"\"",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "vocales",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "vocales = list(\"aeiou\") \nprint(vocales) #['a', 'e', 'i', 'o', 'u']\n\"\"\"Por el contrario si se declara con numeros enteros\nse produce un error, ya que los enteros no son iterables\"\"\"\n#numeros = list(12345)\n#print(numeros)\nprint(compra)\n#['huevos', 'tomates', 'leche']\nprint(compra[2])\n#leche",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "#numeros",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "#numeros = list(12345)\n#print(numeros)\nprint(compra)\n#['huevos', 'tomates', 'leche']\nprint(compra[2])\n#leche\n\"\"\"crear sublistas más pequeñas de una más grande. Para ello debemos de usar : entre corchetes, \nindicando a la izquierda el valor de inicio, y a la izquierda el valor final que no está incluido.\"\"\"\nprint(compra[1:2]) \n#['tomates']",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "compra[0]",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "compra[0] = \"Espinacas\" #Modificamos datos en la posicion 0\nprint(id(compra)) #Aunque se ha modificado el id de memoria es el mismo ya que es mutable el objeto \n#2079295150336\nprint(compra) #Se ha modificado huevos por espinacas\n#['Espinacas', 'tomates', 'leche']\nprint(len(compra))\n#3\nprint(compra *3)\n#['Espinacas', 'tomates', 'leche', 'Espinacas', 'tomates', 'leche', 'Espinacas', 'tomates', 'leche']\nprint(datos + compra)",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "coches",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "coches = [\"Mercedes\",\"Audi\",\"BMW\",\"Seat\",\"Opel\"] #Creamos la lista\ncoches.append(\"Toyota\") #Añadimos Toyota a la lista \nprint(coches)\n#['Mercedes', 'Audi', 'BMW', 'Seat', 'Opel', 'Toyota']\ncoches.pop() #Se limina el ultimo elemento de la lista (Toyota)\nprint(coches) \n#['Mercedes', 'Audi', 'BMW', 'Seat', 'Opel']\n#Sort Ordena por orden alfabetico y de menor a mayor\ncoches.sort()\nprint(coches)",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "numeros",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "numeros = [1,6,23,88,20,14,7,23, 35]\nnumeros.sort()\nprint(numeros)\n#[1, 6, 7, 14, 20, 23, 23, 35, 88]\nnumeros.reverse()\nprint(numeros)\n#[88, 35, 23, 23, 20, 14, 7, 6, 1]\nnumeros.count(23)\nprint(numeros)\n#2",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "numeros",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "numeros = [2,5,7,8,15]\nfor i in numeros:\n    print(i + 2)\n\"\"\"4\n7\n9\n10\n17\"\"\"\nx = [1, 2, 3, ['p', 'q', [5, 6, 7]]]\nprint(x[3][0])    #p",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "x = [1, 2, 3, ['p', 'q', [5, 6, 7]]]\nprint(x[3][0])    #p\nprint(x[3][2][0]) #5\nprint(x[3][2][2]) #7\nprint(\"Iteración lista anidada\")\nfor i in x:\n    print(i)\n\"\"\"\n1\n2",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "saludo",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.2.ejemploListas",
+        "description": "UD.0.Ejemplos.2.2.ejemploListas",
+        "peekOfCode": "saludo = [letra for letra in \"hola\"]\nprint(saludo) #['h', 'o', 'l', 'a']\n#Crear una lista de los cuadrados de los pares con rango comprendido entre 1 y 19\nnumeros_pares =[i*2 for i in range(0,20) if i%2 ==0]\nprint(numeros_pares) #[0, 4, 8, 12, 16, 20, 24, 28, 32, 36]",
+        "detail": "UD.0.Ejemplos.2.2.ejemploListas",
+        "documentation": {}
+    },
+    {
+        "label": "tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "tupla = (1, 2, 3)\nprint(tupla) #(1, 2, 3)\ntupla = 1, 2, 3\nprint(type(tupla)) #<class 'tuple'>\nprint(tupla)       #(1, 2, 3)\ntupla = (1, 2, 3)\n#tupla[0] = 5 # Error! TypeError\ntupla = 1, 2, ('a', 'b'), 3\nprint(tupla)       #(1, 2, ('a', 'b'), 3)\nprint(tupla[2][0]) #a",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "tupla = 1, 2, 3\nprint(type(tupla)) #<class 'tuple'>\nprint(tupla)       #(1, 2, 3)\ntupla = (1, 2, 3)\n#tupla[0] = 5 # Error! TypeError\ntupla = 1, 2, ('a', 'b'), 3\nprint(tupla)       #(1, 2, ('a', 'b'), 3)\nprint(tupla[2][0]) #a\nlista = [1, 2, 3]\ntupla = tuple(lista)",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "tupla = (1, 2, 3)\n#tupla[0] = 5 # Error! TypeError\ntupla = 1, 2, ('a', 'b'), 3\nprint(tupla)       #(1, 2, ('a', 'b'), 3)\nprint(tupla[2][0]) #a\nlista = [1, 2, 3]\ntupla = tuple(lista)\nprint(type(tupla)) #<class 'tuple'>\nprint(tupla)       #(1, 2, 3)\ntupla = (1, 2, 3)",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "#tupla[0]",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "#tupla[0] = 5 # Error! TypeError\ntupla = 1, 2, ('a', 'b'), 3\nprint(tupla)       #(1, 2, ('a', 'b'), 3)\nprint(tupla[2][0]) #a\nlista = [1, 2, 3]\ntupla = tuple(lista)\nprint(type(tupla)) #<class 'tuple'>\nprint(tupla)       #(1, 2, 3)\ntupla = (1, 2, 3)\nfor t in tupla:",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "tupla = 1, 2, ('a', 'b'), 3\nprint(tupla)       #(1, 2, ('a', 'b'), 3)\nprint(tupla[2][0]) #a\nlista = [1, 2, 3]\ntupla = tuple(lista)\nprint(type(tupla)) #<class 'tuple'>\nprint(tupla)       #(1, 2, 3)\ntupla = (1, 2, 3)\nfor t in tupla:\n    print(t) #1, 2, 3",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "lista",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "lista = [1, 2, 3]\ntupla = tuple(lista)\nprint(type(tupla)) #<class 'tuple'>\nprint(tupla)       #(1, 2, 3)\ntupla = (1, 2, 3)\nfor t in tupla:\n    print(t) #1, 2, 3\nl = (1, 2, 3)\nx, y, z = l\nprint(x, y, z) #1 2 3",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "tupla = tuple(lista)\nprint(type(tupla)) #<class 'tuple'>\nprint(tupla)       #(1, 2, 3)\ntupla = (1, 2, 3)\nfor t in tupla:\n    print(t) #1, 2, 3\nl = (1, 2, 3)\nx, y, z = l\nprint(x, y, z) #1 2 3\nl = (7, 7, 7, 3, 5)",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "tupla = (1, 2, 3)\nfor t in tupla:\n    print(t) #1, 2, 3\nl = (1, 2, 3)\nx, y, z = l\nprint(x, y, z) #1 2 3\nl = (7, 7, 7, 3, 5)\nprint(l.index(5)) #4\nl = (7, 7, 7, 3, 5)\n#print(l.index(35)) #Error! ValueError",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "l",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "l = (1, 2, 3)\nx, y, z = l\nprint(x, y, z) #1 2 3\nl = (7, 7, 7, 3, 5)\nprint(l.index(5)) #4\nl = (7, 7, 7, 3, 5)\n#print(l.index(35)) #Error! ValueError\n\"\"\"El método index() también acepta un segundo parámetro opcional, \nque indica a partir de que índice empezar a buscar el objeto.\"\"\"\nl = (7, 7, 7, 3, 5)",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "l",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "l = (7, 7, 7, 3, 5)\nprint(l.index(5)) #4\nl = (7, 7, 7, 3, 5)\n#print(l.index(35)) #Error! ValueError\n\"\"\"El método index() también acepta un segundo parámetro opcional, \nque indica a partir de que índice empezar a buscar el objeto.\"\"\"\nl = (7, 7, 7, 3, 5)\nprint(l.index(7, 2)) #2\nl = (1, 1, 1, 3, 5)\nprint(l.count(1)) #3",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "l",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "l = (7, 7, 7, 3, 5)\n#print(l.index(35)) #Error! ValueError\n\"\"\"El método index() también acepta un segundo parámetro opcional, \nque indica a partir de que índice empezar a buscar el objeto.\"\"\"\nl = (7, 7, 7, 3, 5)\nprint(l.index(7, 2)) #2\nl = (1, 1, 1, 3, 5)\nprint(l.count(1)) #3\n\"\"\"Como añadir elementos a una tupla.\nUna tupla es inmutable, pero una lista no, por lo tanto, se transformarica la tupla en lista,",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "l",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "l = (7, 7, 7, 3, 5)\nprint(l.index(7, 2)) #2\nl = (1, 1, 1, 3, 5)\nprint(l.count(1)) #3\n\"\"\"Como añadir elementos a una tupla.\nUna tupla es inmutable, pero una lista no, por lo tanto, se transformarica la tupla en lista,\nse le añadirian los elementos y luego se convierte en tupla otra vez\"\"\"\ntupla = (1, 2, 3)\nlista = list(tupla)\nnuevo_elemento = int(input(\"Ingrese un nuevo elemento: \"))",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "l",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "l = (1, 1, 1, 3, 5)\nprint(l.count(1)) #3\n\"\"\"Como añadir elementos a una tupla.\nUna tupla es inmutable, pero una lista no, por lo tanto, se transformarica la tupla en lista,\nse le añadirian los elementos y luego se convierte en tupla otra vez\"\"\"\ntupla = (1, 2, 3)\nlista = list(tupla)\nnuevo_elemento = int(input(\"Ingrese un nuevo elemento: \"))\nlista.append(nuevo_elemento)\ntupla = tuple(lista)",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "tupla = (1, 2, 3)\nlista = list(tupla)\nnuevo_elemento = int(input(\"Ingrese un nuevo elemento: \"))\nlista.append(nuevo_elemento)\ntupla = tuple(lista)\nprint(tupla)",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "lista",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "lista = list(tupla)\nnuevo_elemento = int(input(\"Ingrese un nuevo elemento: \"))\nlista.append(nuevo_elemento)\ntupla = tuple(lista)\nprint(tupla)",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "nuevo_elemento",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "nuevo_elemento = int(input(\"Ingrese un nuevo elemento: \"))\nlista.append(nuevo_elemento)\ntupla = tuple(lista)\nprint(tupla)",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "description": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "peekOfCode": "tupla = tuple(lista)\nprint(tupla)",
+        "detail": "UD.0.Ejemplos.2.3.ejemploTuplas",
+        "documentation": {}
+    },
+    {
+        "label": "d1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d1 = {\n  \"Nombre\": \"Sara\",\n  \"Edad\": 27,\n  \"Documento\": 1003882\n}\nprint(d1)\n#{'Nombre': 'Sara', 'Edad': 27, 'Documento': 1003882}\nd2 = dict([\n      ('Nombre', 'Sara'),\n      ('Edad', 27),",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d2",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d2 = dict([\n      ('Nombre', 'Sara'),\n      ('Edad', 27),\n      ('Documento', 1003882),\n])\nprint(d2)\n#{'Nombre': 'Sara', 'Edad': '27', 'Documento': '1003882'}\nd3 = dict(Nombre='Sara',\n          Edad=27,\n          Documento=1003882)",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d3",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d3 = dict(Nombre='Sara',\n          Edad=27,\n          Documento=1003882)\nprint(d3)\n#{'Nombre': 'Sara', 'Edad': 27, 'Documento': 1003882}\nprint(d1['Nombre'])     #Sara\nprint(d1.get('Nombre')) #Sara\nd1['Nombre'] = \"Laura\"\nprint(d1)\n#{'Nombre': Laura', 'Edad': 27, 'Documento': 1003882}",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d1['Nombre']",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d1['Nombre'] = \"Laura\"\nprint(d1)\n#{'Nombre': Laura', 'Edad': 27, 'Documento': 1003882}\nd1['Direccion'] = \"Calle 123\"\nprint(d1)\n#{'Nombre': 'Laura', 'Edad': 27, 'Documento': 1003882, 'Direccion': 'Calle 123'}\n# Imprime los key del diccionario\nfor x in d1:\n    print(x)\n#Nombre",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d1['Direccion']",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d1['Direccion'] = \"Calle 123\"\nprint(d1)\n#{'Nombre': 'Laura', 'Edad': 27, 'Documento': 1003882, 'Direccion': 'Calle 123'}\n# Imprime los key del diccionario\nfor x in d1:\n    print(x)\n#Nombre\n#Edad\n#Documento\n#Direccion",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "anidado1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "anidado1 = {\"a\": 1, \"b\": 2}\nanidado2 = {\"a\": 1, \"b\": 2}\nd = {\n  \"anidado1\" : anidado1,\n  \"anidado2\" : anidado2\n}\nprint(d)\n#{'anidado1': {'a': 1, 'b': 2}, 'anidado2': {'a': 1, 'b': 2}}\n#Metodos Diccionarios\nd = {'a': 1, 'b': 2}",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "anidado2",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "anidado2 = {\"a\": 1, \"b\": 2}\nd = {\n  \"anidado1\" : anidado1,\n  \"anidado2\" : anidado2\n}\nprint(d)\n#{'anidado1': {'a': 1, 'b': 2}, 'anidado2': {'a': 1, 'b': 2}}\n#Metodos Diccionarios\nd = {'a': 1, 'b': 2}\nprint(list(d.values())) #[1, 2]",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d = {\n  \"anidado1\" : anidado1,\n  \"anidado2\" : anidado2\n}\nprint(d)\n#{'anidado1': {'a': 1, 'b': 2}, 'anidado2': {'a': 1, 'b': 2}}\n#Metodos Diccionarios\nd = {'a': 1, 'b': 2}\nprint(list(d.values())) #[1, 2]\nd = {'a': 1, 'b': 2}",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d = {'a': 1, 'b': 2}\nprint(list(d.values())) #[1, 2]\nd = {'a': 1, 'b': 2}\nk = d.keys()\nprint(k)       #dict_keys(['a', 'b'])\nprint(list(k)) #['a', 'b']\n\"\"\"El método items() devuelve una lista con los keys y values del diccionario.\n Si se convierte en list se puede indexar como si de una lista normal se tratase, \n siendo los primeros elementos las key y los segundos los value.\"\"\"\nd = {'a': 1, 'b': 2}",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d = {'a': 1, 'b': 2}\nk = d.keys()\nprint(k)       #dict_keys(['a', 'b'])\nprint(list(k)) #['a', 'b']\n\"\"\"El método items() devuelve una lista con los keys y values del diccionario.\n Si se convierte en list se puede indexar como si de una lista normal se tratase, \n siendo los primeros elementos las key y los segundos los value.\"\"\"\nd = {'a': 1, 'b': 2}\nit = d.items()\nprint(it)             #dict_items([('a', 1), ('b', 2)])",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "k",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "k = d.keys()\nprint(k)       #dict_keys(['a', 'b'])\nprint(list(k)) #['a', 'b']\n\"\"\"El método items() devuelve una lista con los keys y values del diccionario.\n Si se convierte en list se puede indexar como si de una lista normal se tratase, \n siendo los primeros elementos las key y los segundos los value.\"\"\"\nd = {'a': 1, 'b': 2}\nit = d.items()\nprint(it)             #dict_items([('a', 1), ('b', 2)])\nprint(list(it))       #[('a', 1), ('b', 2)]",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d = {'a': 1, 'b': 2}\nit = d.items()\nprint(it)             #dict_items([('a', 1), ('b', 2)])\nprint(list(it))       #[('a', 1), ('b', 2)]\nprint(list(it)[0][0]) #a\nd = {'a': 1, 'b': 2}\nd.clear()\nprint(d) #{}\nd = {'a': 1, 'b': 2}\nprint(d.get('a')) #1",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "it",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "it = d.items()\nprint(it)             #dict_items([('a', 1), ('b', 2)])\nprint(list(it))       #[('a', 1), ('b', 2)]\nprint(list(it)[0][0]) #a\nd = {'a': 1, 'b': 2}\nd.clear()\nprint(d) #{}\nd = {'a': 1, 'b': 2}\nprint(d.get('a')) #1\nprint(d.get('z', 'No encontrado')) #No encontrado",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d = {'a': 1, 'b': 2}\nd.clear()\nprint(d) #{}\nd = {'a': 1, 'b': 2}\nprint(d.get('a')) #1\nprint(d.get('z', 'No encontrado')) #No encontrado\nd = {'a': 1, 'b': 2}\nd.pop('a')\nprint(d) #{'b': 2}\nd1 = {'a': 1, 'b': 2}",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d = {'a': 1, 'b': 2}\nprint(d.get('a')) #1\nprint(d.get('z', 'No encontrado')) #No encontrado\nd = {'a': 1, 'b': 2}\nd.pop('a')\nprint(d) #{'b': 2}\nd1 = {'a': 1, 'b': 2}\nd2 = {'a': 0, 'd': 400}\nd1.update(d2)\nprint(d1)",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d = {'a': 1, 'b': 2}\nd.pop('a')\nprint(d) #{'b': 2}\nd1 = {'a': 1, 'b': 2}\nd2 = {'a': 0, 'd': 400}\nd1.update(d2)\nprint(d1)\n#{'a': 0, 'b': 2, 'd': 400}",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d1 = {'a': 1, 'b': 2}\nd2 = {'a': 0, 'd': 400}\nd1.update(d2)\nprint(d1)\n#{'a': 0, 'b': 2, 'd': 400}",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "d2",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "description": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "peekOfCode": "d2 = {'a': 0, 'd': 400}\nd1.update(d2)\nprint(d1)\n#{'a': 0, 'b': 2, 'd': 400}",
+        "detail": "UD.0.Ejemplos.2.4.ejemploDiccionarios",
+        "documentation": {}
+    },
+    {
+        "label": "suma",
+        "kind": 2,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "def suma(a,b=6):\n    return a+b\nsum = suma(3,8)\nif __name__==\"main\":\n    suma(4,7)",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "num",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "num = 12\nprint(type(num))\nnum = num.__str__()\nprint(type(num))\nnum = float(num)\nprint(type(num))\nnum1 = int(input(\"Introduce un numero: \"))\nnum1 = float(input(\"Introduce un numero: \"))\nCasa = 2\ncasa = 1",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "num",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "num = num.__str__()\nprint(type(num))\nnum = float(num)\nprint(type(num))\nnum1 = int(input(\"Introduce un numero: \"))\nnum1 = float(input(\"Introduce un numero: \"))\nCasa = 2\ncasa = 1\nif (casa <= 3):\n    print(\"Hola\")",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "num",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "num = float(num)\nprint(type(num))\nnum1 = int(input(\"Introduce un numero: \"))\nnum1 = float(input(\"Introduce un numero: \"))\nCasa = 2\ncasa = 1\nif (casa <= 3):\n    print(\"Hola\")\nelif(casa == 1):\n    edad = 7",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "num1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "num1 = int(input(\"Introduce un numero: \"))\nnum1 = float(input(\"Introduce un numero: \"))\nCasa = 2\ncasa = 1\nif (casa <= 3):\n    print(\"Hola\")\nelif(casa == 1):\n    edad = 7\n    if edad < 18 and casa == 1: print(\"Hola\")\nelif(casa == 6):",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "num1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "num1 = float(input(\"Introduce un numero: \"))\nCasa = 2\ncasa = 1\nif (casa <= 3):\n    print(\"Hola\")\nelif(casa == 1):\n    edad = 7\n    if edad < 18 and casa == 1: print(\"Hola\")\nelif(casa == 6):\n    pass ",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "Casa",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "Casa = 2\ncasa = 1\nif (casa <= 3):\n    print(\"Hola\")\nelif(casa == 1):\n    edad = 7\n    if edad < 18 and casa == 1: print(\"Hola\")\nelif(casa == 6):\n    pass \nelif(casa ==9):",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "casa",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "casa = 1\nif (casa <= 3):\n    print(\"Hola\")\nelif(casa == 1):\n    edad = 7\n    if edad < 18 and casa == 1: print(\"Hola\")\nelif(casa == 6):\n    pass \nelif(casa ==9):\n    pass",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "email",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "email = \"rosaura.crespo@carm.es\"\nedad = 18\nif edad < 18 and casa == 1: print(\"Hola\")\nif edad < 18 or casa == 1: print(\"Hola\")\nif not(edad<18): print(\"Hola\")\nnumero= 8\nif(numero%2==0):\n    print(\"par\")\nnumero = 9\nfor i in range(1,numero,2):",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "edad",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "edad = 18\nif edad < 18 and casa == 1: print(\"Hola\")\nif edad < 18 or casa == 1: print(\"Hola\")\nif not(edad<18): print(\"Hola\")\nnumero= 8\nif(numero%2==0):\n    print(\"par\")\nnumero = 9\nfor i in range(1,numero,2):\n    print(i)",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "numero",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "numero = 9\nfor i in range(1,numero,2):\n    print(i)\n    if (i==3):\n        break\nx=0\nwhile x <=10:\n    print(x)\n    x +=1\n    # x = x+1",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "sum",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo1",
+        "description": "UD.0.Ejemplos.ejemplo1",
+        "peekOfCode": "sum = suma(3,8)\nif __name__==\"main\":\n    suma(4,7)",
+        "detail": "UD.0.Ejemplos.ejemplo1",
+        "documentation": {}
+    },
+    {
+        "label": "dividi",
+        "kind": 2,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "def dividir (dividendo,divisor):\n    cociente = dividendo // divisor\n    resto = dividendo % divisor\n    return (cociente,resto)\nc,r = dividir(10,4)\nprint(c,r)\n#DICCIONARIOS\ndiccionario = {\"nombre\":\"Loreto\",\"edad\":32}\nprint(diccionario[\"nombre\"])",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "nombre",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "nombre = \"Loreto\"\npoblacion = \"Murcia\"\nprint(f\"Soy {nombre} y vivo en {poblacion}\")\nprint(\"Soy {} y vivo en {}\".format(nombre,poblacion))\nprint(\"Soy\",nombre,\"y vivo en\",poblacion)\ntexto = \"En un lugar de Murcia.\"\ntexto1 =  texto.upper()\ntexto = texto.lower()\ntexto = texto.strip()\ntexto = texto.capitalize()",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "poblacion",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "poblacion = \"Murcia\"\nprint(f\"Soy {nombre} y vivo en {poblacion}\")\nprint(\"Soy {} y vivo en {}\".format(nombre,poblacion))\nprint(\"Soy\",nombre,\"y vivo en\",poblacion)\ntexto = \"En un lugar de Murcia.\"\ntexto1 =  texto.upper()\ntexto = texto.lower()\ntexto = texto.strip()\ntexto = texto.capitalize()\nfragmentos = texto.split(\" \")",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "texto = \"En un lugar de Murcia.\"\ntexto1 =  texto.upper()\ntexto = texto.lower()\ntexto = texto.strip()\ntexto = texto.capitalize()\nfragmentos = texto.split(\" \")\ntexto = \"\".join(\"Y se vive muy bien\")\nemail = \"rosaura.crepo@carm.es\"\nvalido = email.find(\"@carm.es\")\nnum_o = texto.count(\"a\")",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "texto1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "texto1 =  texto.upper()\ntexto = texto.lower()\ntexto = texto.strip()\ntexto = texto.capitalize()\nfragmentos = texto.split(\" \")\ntexto = \"\".join(\"Y se vive muy bien\")\nemail = \"rosaura.crepo@carm.es\"\nvalido = email.find(\"@carm.es\")\nnum_o = texto.count(\"a\")\ntexto = texto.replace(\"Murcia\",\"Zarandona\")",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "texto = texto.lower()\ntexto = texto.strip()\ntexto = texto.capitalize()\nfragmentos = texto.split(\" \")\ntexto = \"\".join(\"Y se vive muy bien\")\nemail = \"rosaura.crepo@carm.es\"\nvalido = email.find(\"@carm.es\")\nnum_o = texto.count(\"a\")\ntexto = texto.replace(\"Murcia\",\"Zarandona\")\nsubtexto = texto[2:8]",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "texto = texto.strip()\ntexto = texto.capitalize()\nfragmentos = texto.split(\" \")\ntexto = \"\".join(\"Y se vive muy bien\")\nemail = \"rosaura.crepo@carm.es\"\nvalido = email.find(\"@carm.es\")\nnum_o = texto.count(\"a\")\ntexto = texto.replace(\"Murcia\",\"Zarandona\")\nsubtexto = texto[2:8]\ntexto= texto[::-1]",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "texto = texto.capitalize()\nfragmentos = texto.split(\" \")\ntexto = \"\".join(\"Y se vive muy bien\")\nemail = \"rosaura.crepo@carm.es\"\nvalido = email.find(\"@carm.es\")\nnum_o = texto.count(\"a\")\ntexto = texto.replace(\"Murcia\",\"Zarandona\")\nsubtexto = texto[2:8]\ntexto= texto[::-1]\nlong = len(texto)",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "fragmentos",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "fragmentos = texto.split(\" \")\ntexto = \"\".join(\"Y se vive muy bien\")\nemail = \"rosaura.crepo@carm.es\"\nvalido = email.find(\"@carm.es\")\nnum_o = texto.count(\"a\")\ntexto = texto.replace(\"Murcia\",\"Zarandona\")\nsubtexto = texto[2:8]\ntexto= texto[::-1]\nlong = len(texto)\n#LISTAS",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "texto = \"\".join(\"Y se vive muy bien\")\nemail = \"rosaura.crepo@carm.es\"\nvalido = email.find(\"@carm.es\")\nnum_o = texto.count(\"a\")\ntexto = texto.replace(\"Murcia\",\"Zarandona\")\nsubtexto = texto[2:8]\ntexto= texto[::-1]\nlong = len(texto)\n#LISTAS\nlista = [1,3,5,\"hola\",\"agua\"]",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "email",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "email = \"rosaura.crepo@carm.es\"\nvalido = email.find(\"@carm.es\")\nnum_o = texto.count(\"a\")\ntexto = texto.replace(\"Murcia\",\"Zarandona\")\nsubtexto = texto[2:8]\ntexto= texto[::-1]\nlong = len(texto)\n#LISTAS\nlista = [1,3,5,\"hola\",\"agua\"]\nprimer = lista[0]",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "valido",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "valido = email.find(\"@carm.es\")\nnum_o = texto.count(\"a\")\ntexto = texto.replace(\"Murcia\",\"Zarandona\")\nsubtexto = texto[2:8]\ntexto= texto[::-1]\nlong = len(texto)\n#LISTAS\nlista = [1,3,5,\"hola\",\"agua\"]\nprimer = lista[0]\nultimo = lista[-1]",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "num_o",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "num_o = texto.count(\"a\")\ntexto = texto.replace(\"Murcia\",\"Zarandona\")\nsubtexto = texto[2:8]\ntexto= texto[::-1]\nlong = len(texto)\n#LISTAS\nlista = [1,3,5,\"hola\",\"agua\"]\nprimer = lista[0]\nultimo = lista[-1]\nlista[2]= \"mundo\"",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "texto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "texto = texto.replace(\"Murcia\",\"Zarandona\")\nsubtexto = texto[2:8]\ntexto= texto[::-1]\nlong = len(texto)\n#LISTAS\nlista = [1,3,5,\"hola\",\"agua\"]\nprimer = lista[0]\nultimo = lista[-1]\nlista[2]= \"mundo\"\n#Añadir elementos a la lista. Ultima posicion",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "subtexto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "subtexto = texto[2:8]\ntexto= texto[::-1]\nlong = len(texto)\n#LISTAS\nlista = [1,3,5,\"hola\",\"agua\"]\nprimer = lista[0]\nultimo = lista[-1]\nlista[2]= \"mundo\"\n#Añadir elementos a la lista. Ultima posicion\nlista.append(\"raton\")",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "long",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "long = len(texto)\n#LISTAS\nlista = [1,3,5,\"hola\",\"agua\"]\nprimer = lista[0]\nultimo = lista[-1]\nlista[2]= \"mundo\"\n#Añadir elementos a la lista. Ultima posicion\nlista.append(\"raton\")\n#Añadir elementos en posicion deseada. (Posicion,Valor)\nlista.insert(3,8)",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "lista",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "lista = [1,3,5,\"hola\",\"agua\"]\nprimer = lista[0]\nultimo = lista[-1]\nlista[2]= \"mundo\"\n#Añadir elementos a la lista. Ultima posicion\nlista.append(\"raton\")\n#Añadir elementos en posicion deseada. (Posicion,Valor)\nlista.insert(3,8)\n#Borrar elemento\nlista.remove(8)",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "primer",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "primer = lista[0]\nultimo = lista[-1]\nlista[2]= \"mundo\"\n#Añadir elementos a la lista. Ultima posicion\nlista.append(\"raton\")\n#Añadir elementos en posicion deseada. (Posicion,Valor)\nlista.insert(3,8)\n#Borrar elemento\nlista.remove(8)\n#Borra elemento por el indice",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "ultimo",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "ultimo = lista[-1]\nlista[2]= \"mundo\"\n#Añadir elementos a la lista. Ultima posicion\nlista.append(\"raton\")\n#Añadir elementos en posicion deseada. (Posicion,Valor)\nlista.insert(3,8)\n#Borrar elemento\nlista.remove(8)\n#Borra elemento por el indice\nlista.pop(2)",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "lista1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "lista1 = [8,2,4,1,8,6,2,9]\nlista1.sort(reverse=True)\nlista1.sort()\nlista1.reverse()\nsublista = lista1[1:4]\nfor elemento in lista1:\n    print(elemento)\n#Listas anidadas\nmatriz = [[1,2,3],[4,5,6],[7,[\"asdasdasd\",2],9]]\n#Listas de comprension",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "sublista",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "sublista = lista1[1:4]\nfor elemento in lista1:\n    print(elemento)\n#Listas anidadas\nmatriz = [[1,2,3],[4,5,6],[7,[\"asdasdasd\",2],9]]\n#Listas de comprension\nlista1 = [8,2,4,1,8,6,2,9]\ncuadrados = [x**2 for x in lista1]\ncuadrados1 = []\nfor x in range(5):",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "matriz",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "matriz = [[1,2,3],[4,5,6],[7,[\"asdasdasd\",2],9]]\n#Listas de comprension\nlista1 = [8,2,4,1,8,6,2,9]\ncuadrados = [x**2 for x in lista1]\ncuadrados1 = []\nfor x in range(5):\n    cuadrados1.append(x**2)\nfor indice, elemento in enumerate(cuadrados):\n    print(indice,elemento)\n#TUPLAS",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "lista1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "lista1 = [8,2,4,1,8,6,2,9]\ncuadrados = [x**2 for x in lista1]\ncuadrados1 = []\nfor x in range(5):\n    cuadrados1.append(x**2)\nfor indice, elemento in enumerate(cuadrados):\n    print(indice,elemento)\n#TUPLAS\ntupla = (1,2,4,5,63,4,9)\ntupla[2] ",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "cuadrados",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "cuadrados = [x**2 for x in lista1]\ncuadrados1 = []\nfor x in range(5):\n    cuadrados1.append(x**2)\nfor indice, elemento in enumerate(cuadrados):\n    print(indice,elemento)\n#TUPLAS\ntupla = (1,2,4,5,63,4,9)\ntupla[2] \nlista_tupla = list(tupla)",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "cuadrados1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "cuadrados1 = []\nfor x in range(5):\n    cuadrados1.append(x**2)\nfor indice, elemento in enumerate(cuadrados):\n    print(indice,elemento)\n#TUPLAS\ntupla = (1,2,4,5,63,4,9)\ntupla[2] \nlista_tupla = list(tupla)\nlista_tupla[2]= 9",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "tupla = (1,2,4,5,63,4,9)\ntupla[2] \nlista_tupla = list(tupla)\nlista_tupla[2]= 9\ntupla1 = tuple(lista_tupla)\na,b,c = (1,2,3)\nprint(a,b,c)\ndef dividir (dividendo,divisor):\n    cociente = dividendo // divisor\n    resto = dividendo % divisor",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "lista_tupla",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "lista_tupla = list(tupla)\nlista_tupla[2]= 9\ntupla1 = tuple(lista_tupla)\na,b,c = (1,2,3)\nprint(a,b,c)\ndef dividir (dividendo,divisor):\n    cociente = dividendo // divisor\n    resto = dividendo % divisor\n    return (cociente,resto)\nc,r = dividir(10,4)",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "tupla1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "tupla1 = tuple(lista_tupla)\na,b,c = (1,2,3)\nprint(a,b,c)\ndef dividir (dividendo,divisor):\n    cociente = dividendo // divisor\n    resto = dividendo % divisor\n    return (cociente,resto)\nc,r = dividir(10,4)\nprint(c,r)\n#DICCIONARIOS",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "a,b,c",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "a,b,c = (1,2,3)\nprint(a,b,c)\ndef dividir (dividendo,divisor):\n    cociente = dividendo // divisor\n    resto = dividendo % divisor\n    return (cociente,resto)\nc,r = dividir(10,4)\nprint(c,r)\n#DICCIONARIOS\ndiccionario = {\"nombre\":\"Loreto\",\"edad\":32}",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "c,r",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "c,r = dividir(10,4)\nprint(c,r)\n#DICCIONARIOS\ndiccionario = {\"nombre\":\"Loreto\",\"edad\":32}\nprint(diccionario[\"nombre\"])",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "diccionario",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.ejemplo2",
+        "description": "UD.0.Ejemplos.ejemplo2",
+        "peekOfCode": "diccionario = {\"nombre\":\"Loreto\",\"edad\":32}\nprint(diccionario[\"nombre\"])",
+        "detail": "UD.0.Ejemplos.ejemplo2",
+        "documentation": {}
+    },
+    {
+        "label": "dt",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "dt = datetime.now()\nprint(dt.year)\nprint(dt.month)\nprint(dt.day)\nprint(dt.hour)\nprint(dt.minute)\nprint(dt.second)\nprint(dt.microsecond)\n\"\"\"Conversión de fechas en cadenas con diferentes formatos\nd.strftime(formato) : Devuelve la cadena que resulta de transformar la fecha d con el formato indicado en la cadena formato.",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "d",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "d = datetime.now()\nprint(d.strftime('%d-%m-%Y'))\nprint(d.strftime('%A, %d %B, %y'))\nprint(d.strftime('%H:%M:%S'))\nprint(d.strftime('%H horas, %M minutos y %S segundos'))\n\"\"\"Conversión de cadenas en fechas\n Devuelve el objeto de tipo date, time o datetime que resulta de convertir la cadena s de acuerdo al formato indicado en la cadena formato.\n\"\"\"\nprint(datetime.strptime('15/10/2024', '%d/%m/%Y'))\nprint(datetime.strptime('2024-10-15 20:50:30', '%Y-%m-%d %H:%M:%S'))",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "d1",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "d1 = datetime(2025, 1, 1)\nprint(d1)\nprint(d1 + timedelta(31, 3600))\nprint(datetime.now() - d1)\n\"\"\"Formatero de fechas\n%Y: Año con cuatro dígitos.\n%m: Mes con dos dígitos (01-12).\n%d: Día del mes con dos dígitos (01-31).\n%H: Hora en formato 24 horas (00-23).\n%M: Minutos (00-59).",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "fecha_cadena",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "fecha_cadena = \"2024-11-22\"\n# Se utiliza datetime.datetime.strptime para convertir la fecha en formato string en formato datetime\nfecha_objeto = datetime.strptime(fecha_cadena, \"%Y-%m-%d\")\n# Se utiliza datetime.datetime.strftime para transformar una fecha (Y-M-D) a (D-M-Y) ambas tienen formato datetime\nfecha = datetime.strftime(fecha_objeto,\"%d-%m-%Y\")\nprint(fecha)\n# Para convertir una fecha introducida (int) por teclado en fecha\ndia_nacimiento = int(input(\"Ingrese el día de nacimiento: \"))\nmes_nacimiento = int(input(\"Ingrese el mes de nacimiento (1-12): \"))\naño_nacimiento = int(input(\"Ingrese el año de nacimiento: \"))",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "fecha_objeto",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "fecha_objeto = datetime.strptime(fecha_cadena, \"%Y-%m-%d\")\n# Se utiliza datetime.datetime.strftime para transformar una fecha (Y-M-D) a (D-M-Y) ambas tienen formato datetime\nfecha = datetime.strftime(fecha_objeto,\"%d-%m-%Y\")\nprint(fecha)\n# Para convertir una fecha introducida (int) por teclado en fecha\ndia_nacimiento = int(input(\"Ingrese el día de nacimiento: \"))\nmes_nacimiento = int(input(\"Ingrese el mes de nacimiento (1-12): \"))\naño_nacimiento = int(input(\"Ingrese el año de nacimiento: \"))\n# Se crea la fecha utilizando datetime.date, como es en formato ingles, primero año, mes, dia\nfecha_nac = date(año_nacimiento, mes_nacimiento, dia_nacimiento) #1992-01-31",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "fecha",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "fecha = datetime.strftime(fecha_objeto,\"%d-%m-%Y\")\nprint(fecha)\n# Para convertir una fecha introducida (int) por teclado en fecha\ndia_nacimiento = int(input(\"Ingrese el día de nacimiento: \"))\nmes_nacimiento = int(input(\"Ingrese el mes de nacimiento (1-12): \"))\naño_nacimiento = int(input(\"Ingrese el año de nacimiento: \"))\n# Se crea la fecha utilizando datetime.date, como es en formato ingles, primero año, mes, dia\nfecha_nac = date(año_nacimiento, mes_nacimiento, dia_nacimiento) #1992-01-31\n# Para transformalo a nuestro formato: datetime.datetime.strftime\nfecha_nacimiento = datetime.strftime(fecha_nac,\"%d/%m/%Y\")",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "dia_nacimiento",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "dia_nacimiento = int(input(\"Ingrese el día de nacimiento: \"))\nmes_nacimiento = int(input(\"Ingrese el mes de nacimiento (1-12): \"))\naño_nacimiento = int(input(\"Ingrese el año de nacimiento: \"))\n# Se crea la fecha utilizando datetime.date, como es en formato ingles, primero año, mes, dia\nfecha_nac = date(año_nacimiento, mes_nacimiento, dia_nacimiento) #1992-01-31\n# Para transformalo a nuestro formato: datetime.datetime.strftime\nfecha_nacimiento = datetime.strftime(fecha_nac,\"%d/%m/%Y\")\nprint(fecha_nacimiento)\n# Para sacar la fecha del dia de hoy\nhoy = date.today()",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "mes_nacimiento",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "mes_nacimiento = int(input(\"Ingrese el mes de nacimiento (1-12): \"))\naño_nacimiento = int(input(\"Ingrese el año de nacimiento: \"))\n# Se crea la fecha utilizando datetime.date, como es en formato ingles, primero año, mes, dia\nfecha_nac = date(año_nacimiento, mes_nacimiento, dia_nacimiento) #1992-01-31\n# Para transformalo a nuestro formato: datetime.datetime.strftime\nfecha_nacimiento = datetime.strftime(fecha_nac,\"%d/%m/%Y\")\nprint(fecha_nacimiento)\n# Para sacar la fecha del dia de hoy\nhoy = date.today()\nprint(hoy) ",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "año_nacimiento",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "año_nacimiento = int(input(\"Ingrese el año de nacimiento: \"))\n# Se crea la fecha utilizando datetime.date, como es en formato ingles, primero año, mes, dia\nfecha_nac = date(año_nacimiento, mes_nacimiento, dia_nacimiento) #1992-01-31\n# Para transformalo a nuestro formato: datetime.datetime.strftime\nfecha_nacimiento = datetime.strftime(fecha_nac,\"%d/%m/%Y\")\nprint(fecha_nacimiento)\n# Para sacar la fecha del dia de hoy\nhoy = date.today()\nprint(hoy) \n# Como el formato esta cambiado lo volvemos a formatear, si esta en formato datetime se le pueden pasar las funciones directamente",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "fecha_nac",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "fecha_nac = date(año_nacimiento, mes_nacimiento, dia_nacimiento) #1992-01-31\n# Para transformalo a nuestro formato: datetime.datetime.strftime\nfecha_nacimiento = datetime.strftime(fecha_nac,\"%d/%m/%Y\")\nprint(fecha_nacimiento)\n# Para sacar la fecha del dia de hoy\nhoy = date.today()\nprint(hoy) \n# Como el formato esta cambiado lo volvemos a formatear, si esta en formato datetime se le pueden pasar las funciones directamente\nhoy_formateado = hoy.strftime(\"%d-%m-%Y\")\nprint(hoy_formateado)",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "fecha_nacimiento",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "fecha_nacimiento = datetime.strftime(fecha_nac,\"%d/%m/%Y\")\nprint(fecha_nacimiento)\n# Para sacar la fecha del dia de hoy\nhoy = date.today()\nprint(hoy) \n# Como el formato esta cambiado lo volvemos a formatear, si esta en formato datetime se le pueden pasar las funciones directamente\nhoy_formateado = hoy.strftime(\"%d-%m-%Y\")\nprint(hoy_formateado)\n# Obtener la fecha y hora actual\nahora = datetime.now()",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "hoy",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "hoy = date.today()\nprint(hoy) \n# Como el formato esta cambiado lo volvemos a formatear, si esta en formato datetime se le pueden pasar las funciones directamente\nhoy_formateado = hoy.strftime(\"%d-%m-%Y\")\nprint(hoy_formateado)\n# Obtener la fecha y hora actual\nahora = datetime.now()\nprint(ahora)\n# Formatear la fecha y hora\nfecha_formateada_simple = ahora.strftime(\"%d-%m-%Y\")",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "hoy_formateado",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "hoy_formateado = hoy.strftime(\"%d-%m-%Y\")\nprint(hoy_formateado)\n# Obtener la fecha y hora actual\nahora = datetime.now()\nprint(ahora)\n# Formatear la fecha y hora\nfecha_formateada_simple = ahora.strftime(\"%d-%m-%Y\")\nfecha_formateada_larga = ahora.strftime(\"%d-%m-%Y %H:%M:%S\")\nprint(fecha_formateada_simple) \nprint(fecha_formateada_larga)",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "ahora",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "ahora = datetime.now()\nprint(ahora)\n# Formatear la fecha y hora\nfecha_formateada_simple = ahora.strftime(\"%d-%m-%Y\")\nfecha_formateada_larga = ahora.strftime(\"%d-%m-%Y %H:%M:%S\")\nprint(fecha_formateada_simple) \nprint(fecha_formateada_larga)",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "fecha_formateada_simple",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "fecha_formateada_simple = ahora.strftime(\"%d-%m-%Y\")\nfecha_formateada_larga = ahora.strftime(\"%d-%m-%Y %H:%M:%S\")\nprint(fecha_formateada_simple) \nprint(fecha_formateada_larga)",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "fecha_formateada_larga",
+        "kind": 5,
+        "importPath": "UD.0.Ejemplos.fechas",
+        "description": "UD.0.Ejemplos.fechas",
+        "peekOfCode": "fecha_formateada_larga = ahora.strftime(\"%d-%m-%Y %H:%M:%S\")\nprint(fecha_formateada_simple) \nprint(fecha_formateada_larga)",
+        "detail": "UD.0.Ejemplos.fechas",
+        "documentation": {}
+    },
+    {
+        "label": "saldo",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.EjerciciosRepaso",
+        "description": "UD.0.UD.0.1.EjerciciosRepaso",
+        "peekOfCode": "saldo = 1000  # Saldo inicial\nwhile True:\n    print(\"\\nBienvenido al cajero automático\")\n    print(\"1. Consultar saldo\")\n    print(\"2. Retirar dinero\")\n    print(\"3. Ingresar dinero\")\n    print(\"4. Salir\")\n    opcion = int(input(\"Ingrese una opción: \"))\n    if opcion == 1:\n        print(\"Su saldo actual es:\", saldo)",
+        "detail": "UD.0.UD.0.1.EjerciciosRepaso",
+        "documentation": {}
+    },
+    {
+        "label": "comprobar",
+        "kind": 2,
+        "importPath": "UD.0.UD.0.1.ejercicio_1",
+        "description": "UD.0.UD.0.1.ejercicio_1",
+        "peekOfCode": "def comprobar():\n    if num1 < 10 and num2 < 10 and num3 < 10:\n        print(f\"{num1}, {num2}, {num3} son menores que 10\")\n    else:\n        print(f\"{num1}, {num2}, {num3} son mayores que 10\")\ndef main():\n    comprobar()\nif __name__ == \"__main__\":\n    main()",
+        "detail": "UD.0.UD.0.1.ejercicio_1",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "UD.0.UD.0.1.ejercicio_1",
+        "description": "UD.0.UD.0.1.ejercicio_1",
+        "peekOfCode": "def main():\n    comprobar()\nif __name__ == \"__main__\":\n    main()",
+        "detail": "UD.0.UD.0.1.ejercicio_1",
+        "documentation": {}
+    },
+    {
+        "label": "num1",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_1",
+        "description": "UD.0.UD.0.1.ejercicio_1",
+        "peekOfCode": "num1 = int(input(\"Ingrese el primero número:\\n\"))\nnum2 = int(input(\"Ingrese el primero número:\\n\"))\nnum3 = int(input(\"Ingrese el primero número:\\n\"))\ndef comprobar():\n    if num1 < 10 and num2 < 10 and num3 < 10:\n        print(f\"{num1}, {num2}, {num3} son menores que 10\")\n    else:\n        print(f\"{num1}, {num2}, {num3} son mayores que 10\")\ndef main():\n    comprobar()",
+        "detail": "UD.0.UD.0.1.ejercicio_1",
+        "documentation": {}
+    },
+    {
+        "label": "num2",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_1",
+        "description": "UD.0.UD.0.1.ejercicio_1",
+        "peekOfCode": "num2 = int(input(\"Ingrese el primero número:\\n\"))\nnum3 = int(input(\"Ingrese el primero número:\\n\"))\ndef comprobar():\n    if num1 < 10 and num2 < 10 and num3 < 10:\n        print(f\"{num1}, {num2}, {num3} son menores que 10\")\n    else:\n        print(f\"{num1}, {num2}, {num3} son mayores que 10\")\ndef main():\n    comprobar()\nif __name__ == \"__main__\":",
+        "detail": "UD.0.UD.0.1.ejercicio_1",
+        "documentation": {}
+    },
+    {
+        "label": "num3",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_1",
+        "description": "UD.0.UD.0.1.ejercicio_1",
+        "peekOfCode": "num3 = int(input(\"Ingrese el primero número:\\n\"))\ndef comprobar():\n    if num1 < 10 and num2 < 10 and num3 < 10:\n        print(f\"{num1}, {num2}, {num3} son menores que 10\")\n    else:\n        print(f\"{num1}, {num2}, {num3} son mayores que 10\")\ndef main():\n    comprobar()\nif __name__ == \"__main__\":\n    main()",
+        "detail": "UD.0.UD.0.1.ejercicio_1",
+        "documentation": {}
+    },
+    {
+        "label": "num_mayor",
+        "kind": 2,
+        "importPath": "UD.0.UD.0.1.ejercicio_3",
+        "description": "UD.0.UD.0.1.ejercicio_3",
+        "peekOfCode": "def num_mayor():\n    for i in lista_numeros:\n        if num1 > num2 and num1 > num3:\n            print (f\"{num1} es mayor que {num2} y {num3}\")\n            break\n        elif num2 > num1 and num2 > num3:\n            print (f\"{num2} es mayor que {num1} y {num3}\")\n            break\n        else:\n            print (f\"{num3} es mayor que {num1} y {num2}\")",
+        "detail": "UD.0.UD.0.1.ejercicio_3",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "UD.0.UD.0.1.ejercicio_3",
+        "description": "UD.0.UD.0.1.ejercicio_3",
+        "peekOfCode": "def main():\n    num_mayor()\nif __name__ == \"__main__\":\n    main()",
+        "detail": "UD.0.UD.0.1.ejercicio_3",
+        "documentation": {}
+    },
+    {
+        "label": "num1",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_3",
+        "description": "UD.0.UD.0.1.ejercicio_3",
+        "peekOfCode": "num1 = int(input(\"Ingrese el primero número:\\n\"))\nnum2 = int(input(\"Ingrese el primero número:\\n\"))\nnum3 = int(input(\"Ingrese el primero número:\\n\"))\nlista_numeros = [num1,num2,num3]\ndef num_mayor():\n    for i in lista_numeros:\n        if num1 > num2 and num1 > num3:\n            print (f\"{num1} es mayor que {num2} y {num3}\")\n            break\n        elif num2 > num1 and num2 > num3:",
+        "detail": "UD.0.UD.0.1.ejercicio_3",
+        "documentation": {}
+    },
+    {
+        "label": "num2",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_3",
+        "description": "UD.0.UD.0.1.ejercicio_3",
+        "peekOfCode": "num2 = int(input(\"Ingrese el primero número:\\n\"))\nnum3 = int(input(\"Ingrese el primero número:\\n\"))\nlista_numeros = [num1,num2,num3]\ndef num_mayor():\n    for i in lista_numeros:\n        if num1 > num2 and num1 > num3:\n            print (f\"{num1} es mayor que {num2} y {num3}\")\n            break\n        elif num2 > num1 and num2 > num3:\n            print (f\"{num2} es mayor que {num1} y {num3}\")",
+        "detail": "UD.0.UD.0.1.ejercicio_3",
+        "documentation": {}
+    },
+    {
+        "label": "num3",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_3",
+        "description": "UD.0.UD.0.1.ejercicio_3",
+        "peekOfCode": "num3 = int(input(\"Ingrese el primero número:\\n\"))\nlista_numeros = [num1,num2,num3]\ndef num_mayor():\n    for i in lista_numeros:\n        if num1 > num2 and num1 > num3:\n            print (f\"{num1} es mayor que {num2} y {num3}\")\n            break\n        elif num2 > num1 and num2 > num3:\n            print (f\"{num2} es mayor que {num1} y {num3}\")\n            break",
+        "detail": "UD.0.UD.0.1.ejercicio_3",
+        "documentation": {}
+    },
+    {
+        "label": "lista_numeros",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_3",
+        "description": "UD.0.UD.0.1.ejercicio_3",
+        "peekOfCode": "lista_numeros = [num1,num2,num3]\ndef num_mayor():\n    for i in lista_numeros:\n        if num1 > num2 and num1 > num3:\n            print (f\"{num1} es mayor que {num2} y {num3}\")\n            break\n        elif num2 > num1 and num2 > num3:\n            print (f\"{num2} es mayor que {num1} y {num3}\")\n            break\n        else:",
+        "detail": "UD.0.UD.0.1.ejercicio_3",
+        "documentation": {}
+    },
+    {
+        "label": "num",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_5",
+        "description": "UD.0.UD.0.1.ejercicio_5",
+        "peekOfCode": "num = 1\nwhile num < 101:\n    print(num, end=\" \")\n    num += 1",
+        "detail": "UD.0.UD.0.1.ejercicio_5",
+        "documentation": {}
+    },
+    {
+        "label": "suma",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_6",
+        "description": "UD.0.UD.0.1.ejercicio_6",
+        "peekOfCode": "suma = 0\nprint(\"Introduzca tantos números como desee hasta que escriba [no].\\n Obtendrá la suma de todos los números que haya introducido.\")\nwhile True:\n    num = int(input(\"Ingrese un número:\\n\"))\n    suma += num\n    continuar = input(\"¿Desea añadir más números? [si] / [no]\\n\")\n    if continuar == \"no\":\n        break",
+        "detail": "UD.0.UD.0.1.ejercicio_6",
+        "documentation": {}
+    },
+    {
+        "label": "aprobados",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_8",
+        "description": "UD.0.UD.0.1.ejercicio_8",
+        "peekOfCode": "aprobados = 0\nsuspensos = 0\nfor i in range (10):\n    nota = int(input(f\"Ingrese calificación del alumno {i+1}:\\n\"))\n    if nota >= 7:\n        aprobados += 1\n    else:\n        suspensos += 1\nprint(f\"Cantidad de alumnos con nota mayor o igual a 7: {aprobados}\")\nprint(f\"Cantidad de alumnos suspensos: {suspensos}\")",
+        "detail": "UD.0.UD.0.1.ejercicio_8",
+        "documentation": {}
+    },
+    {
+        "label": "suspensos",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_8",
+        "description": "UD.0.UD.0.1.ejercicio_8",
+        "peekOfCode": "suspensos = 0\nfor i in range (10):\n    nota = int(input(f\"Ingrese calificación del alumno {i+1}:\\n\"))\n    if nota >= 7:\n        aprobados += 1\n    else:\n        suspensos += 1\nprint(f\"Cantidad de alumnos con nota mayor o igual a 7: {aprobados}\")\nprint(f\"Cantidad de alumnos suspensos: {suspensos}\")",
+        "detail": "UD.0.UD.0.1.ejercicio_8",
+        "documentation": {}
+    },
+    {
+        "label": "contraseña",
+        "kind": 5,
+        "importPath": "UD.0.UD.0.1.ejercicio_9",
+        "description": "UD.0.UD.0.1.ejercicio_9",
+        "peekOfCode": "contraseña = input(\"Introduce tu contraseña: \\n\")\nwhile True:\n    if 10 >= len(contraseña) and len(contraseña) <= 20:\n        print(\"La contraseña no es válida. Debe tener entre 10 y 20 caracteres.\")\n        break\n    else:\n        print(\"La contraseña es válida.\")\n        break",
+        "detail": "UD.0.UD.0.1.ejercicio_9",
+        "documentation": {}
+    },
+    {
+        "label": "Bebida",
+        "kind": 6,
+        "importPath": "UD.0.UD.0.2.Ejercicio_1.modelos.bebida",
+        "description": "UD.0.UD.0.2.Ejercicio_1.modelos.bebida",
+        "peekOfCode": "class Bebida:\n    def __init__(self, nombre, precio):\n        \"\"\"MÉTODO CONSTRUCTOR:\n        - Crearemos el objeto con los argumentos que pasamos a la hora de iniciar el objeto. \"\"\"\n        self.nombre = nombre\n        self.precio = precio\n    def mostrar_contenido(self):\n        \"\"\"Actúa como método __str__ y muestra las propiedades o atributos de cada bebida instanciada.\"\"\"\n        return (f\"El nombre del producto es {self.nombre} y su precio es {self.precio}€\")",
+        "detail": "UD.0.UD.0.2.Ejercicio_1.modelos.bebida",
+        "documentation": {}
+    },
+    {
+        "label": "Maquina",
+        "kind": 6,
+        "importPath": "UD.0.UD.0.2.Ejercicio_1.modelos.maquina",
+        "description": "UD.0.UD.0.2.Ejercicio_1.modelos.maquina",
+        "peekOfCode": "class Maquina:\n    def __init__(self):\n        \"\"\" - Se inicializan las bebidas disponibles creando un diccionario:\n                - KEY : '1'\n                - VALUE : El propio objeto Bebida y sus propiedades.\n                    self.bebidas = {\n                            \"1\": Bebida(\"Agua\", 0.50),\n                            \"2\": Bebida(\"Coca-Cola\", 1.20),\n                            \"3\": Bebida(\"Fanta\", 1.00)       \n                        }        ",
+        "detail": "UD.0.UD.0.2.Ejercicio_1.modelos.maquina",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "UD.0.UD.0.2.Ejercicio_1.main",
+        "description": "UD.0.UD.0.2.Ejercicio_1.main",
+        "peekOfCode": "def main():\n    maquina = Maquina()\n    while True:\n        maquina.mostrar_menu()\n        opcion = maquina.seleccionar_bebida()\n        if opcion == \"0\":\n            print(\"Saliendo..\")\n            break\n        if opcion in maquina.bebidas:\n            bebida = maquina.bebidas[opcion]",
+        "detail": "UD.0.UD.0.2.Ejercicio_1.main",
+        "documentation": {}
+    },
+    {
+        "label": "Gestor",
+        "kind": 6,
+        "importPath": "UD.0.UD.0.3.Ejercicio_1.modelos.gestor",
+        "description": "UD.0.UD.0.3.Ejercicio_1.modelos.gestor",
+        "peekOfCode": "class Gestor:\n    def __init__(self):\n        \"\"\"Constructor que inicializa un lista vacía de personas.\"\"\"\n        self.personas = []\n    def agregar_persona(self, nombre, edad, ciudad):\n        \"\"\"Agregar una persona a la lista.\"\"\"\n        nueva = Persona(nombre, edad, ciudad)\n        self.personas.append(nueva)\n    def por_ciudad(self, ciudad):\n        \"\"\"Método de búsqueda del nombre de personas usando como filtro la ciudad donde viven.\"\"\"",
+        "detail": "UD.0.UD.0.3.Ejercicio_1.modelos.gestor",
+        "documentation": {}
+    },
+    {
+        "label": "Persona",
+        "kind": 6,
+        "importPath": "UD.0.UD.0.3.Ejercicio_1.modelos.persona",
+        "description": "UD.0.UD.0.3.Ejercicio_1.modelos.persona",
+        "peekOfCode": "class Persona:\n    def __init__(self, nombre, edad, ciudad):\n        \"\"\"Constructor que inicializa los datos de la persona.\"\"\"\n        self.nombre = nombre\n        self.edad = edad\n        self.ciudad = ciudad\n    def __str__(self):\n        \"\"\"Método para mostrar la información de la persona.\"\"\"\n        return f\"{self.nombre}, {self.edad} años, vive en {self.ciudad}\"",
+        "detail": "UD.0.UD.0.3.Ejercicio_1.modelos.persona",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "UD.0.UD.0.3.Ejercicio_1.main",
+        "description": "UD.0.UD.0.3.Ejercicio_1.main",
+        "peekOfCode": "def main():\n    gestor = Gestor()\n    # Añadir personas\n    gestor.agregar_persona(\"Ana\", 28, \"Murcia\")\n    gestor.agregar_persona(\"Luis\", 33, \"Madrid\")\n    gestor.agregar_persona(\"Vladimir\", 45, \"Sebastopol\")\n    gestor.agregar_persona(\"María\", 56, \"Murcia\")\n    gestor.agregar_persona(\"Carlos\", 22, \"Barcelona\")\n    # Mostrar lista inicial de personas\n    gestor.mostrar_personas()",
+        "detail": "UD.0.UD.0.3.Ejercicio_1.main",
+        "documentation": {}
+    },
+    {
+        "label": "Construccion",
+        "kind": 6,
+        "importPath": "UD.0.UD.0.3.Ejercicio_3.modelos.construccion",
+        "description": "UD.0.UD.0.3.Ejercicio_3.modelos.construccion",
+        "peekOfCode": "class Construccion:\n    def __init__(self):\n        \"\"\"Constructoer vacío de la clase Construcción. Alojará una lista vacías de figuras.\"\"\"\n        self.figura = []\n    def construir(self, piezas):\n        \"\"\"Método para construir una figura de LEGO con las piezas en orden aleeatorio.\"\"\"\n        piezas_random = random.sample(piezas, len(piezas))\n        print(\"Construyendo la figura LEGO:\\n\")\n        for i, pieza in enumerate(piezas_random):\n            if i == 0:",
+        "detail": "UD.0.UD.0.3.Ejercicio_3.modelos.construccion",
+        "documentation": {}
+    },
+    {
+        "label": "Pieza",
+        "kind": 6,
+        "importPath": "UD.0.UD.0.3.Ejercicio_3.modelos.pieza",
+        "description": "UD.0.UD.0.3.Ejercicio_3.modelos.pieza",
+        "peekOfCode": "class Pieza:\n    def __init__(self, color, tamaño):\n        \"\"\"Constructor que inicializa los atributos de color y tamaño.\"\"\"\n        self.color = color\n        self.tamaño = tamaño\n    def __str__(self):\n        \"\"\"Método para mostrar la información de la pieza.\"\"\"\n        return f\"Pieza de color {self.color} y tamaño {self.tamaño}\"",
+        "detail": "UD.0.UD.0.3.Ejercicio_3.modelos.pieza",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "UD.0.UD.0.3.Ejercicio_3.main",
+        "description": "UD.0.UD.0.3.Ejercicio_3.main",
+        "peekOfCode": "def main():\n    # Instanciar 5 objetos de la clase Pieza\n    pieza1 = Pieza(\"rojo\", \"grande\")\n    pieza2 = Pieza(\"azul\", \"mediana\")\n    pieza3 = Pieza(\"verde\", \"pequeña\")\n    pieza4 = Pieza(\"amarilla\", \"mediana\")\n    pieza5 = Pieza(\"lila\", \"grande\")\n    lista_piezas = [pieza1, pieza2, pieza3, pieza4, pieza5]\n    lego = Construccion()\n    lego.construir(lista_piezas)",
+        "detail": "UD.0.UD.0.3.Ejercicio_3.main",
+        "documentation": {}
+    },
+    {
+        "label": "Jugador",
+        "kind": 6,
+        "importPath": "UD.0.UD.0.3.Ejercicio_4.modelos.jugador",
+        "description": "UD.0.UD.0.3.Ejercicio_4.modelos.jugador",
+        "peekOfCode": "class Jugador:\n    def __init__(self, nombre):\n        \"\"\"Constructor que inicializa el nombre del jugador.\"\"\"\n        self.nombre = nombre\n        self.puntuacion = 0\n    def __str__(self):\n        \"\"\"Devuelve el nombre del jugador.\"\"\"\n        return self.nombre\n    def ganar_punto(self):\n        \"\"\"Incrementa losm puntos del jugador.\"\"\"",
+        "detail": "UD.0.UD.0.3.Ejercicio_4.modelos.jugador",
+        "documentation": {}
+    },
+    {
+        "label": "Partido",
+        "kind": 6,
+        "importPath": "UD.0.UD.0.3.Ejercicio_4.modelos.partido",
+        "description": "UD.0.UD.0.3.Ejercicio_4.modelos.partido",
+        "peekOfCode": "class Partido:\n    def __init__(self, jugador1, jugador2):\n        \"\"\"Constructor que inicializa los jugadores del partido y sus puntuaciones.\"\"\"\n        self.jugadores = (jugador1, jugador2)\n    def jugar_juego(self):\n        \"\"\"Simula un juego entre los dos jugadores.\"\"\"\n        puntos = [0, 0]\n        while True:\n            # Simular el ganador de un punto\n            ganador = random.choice([self.jugadores])",
+        "detail": "UD.0.UD.0.3.Ejercicio_4.modelos.partido",
+        "documentation": {}
+    },
+    {
+        "label": "menu",
+        "kind": 2,
+        "importPath": "UD.0.UD.0.3.Ejercicio_4.main",
+        "description": "UD.0.UD.0.3.Ejercicio_4.main",
+        "peekOfCode": "def menu():\n    \"\"\"Muestra el menú de opciones de partido al usuario.\"\"\"\n    print(\"\\nMenú de Partidos de Tenis\\n\")\n    print(\"1. Jugar un partido al mejor de 3 sets.\")\n    print(\"2. Jugar un partido al mejor de 5 sets.\")\n    print(\"3. Salir.\")\n    return input(\"Selecciona una de la opciones [1], [2], [3]:\\n\")\ndef main():\n    # Solicitar nombres de los jugadores\n    nombre_jugador1 = input(\"Introduce el nombre para el Jugador 1:\\n\")",
+        "detail": "UD.0.UD.0.3.Ejercicio_4.main",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "UD.0.UD.0.3.Ejercicio_4.main",
+        "description": "UD.0.UD.0.3.Ejercicio_4.main",
+        "peekOfCode": "def main():\n    # Solicitar nombres de los jugadores\n    nombre_jugador1 = input(\"Introduce el nombre para el Jugador 1:\\n\")\n    nombre_jugador2 = input(\"Introduce el nombre para el Jugador 2:\\n\")\n    jugador1 = Jugador(nombre_jugador1)\n    jugador2 = Jugador(nombre_jugador2)\n    while True: \n        opcion = menu()\n        if opcion == \"1\":\n            partido = Partido(jugador1, jugador2)",
+        "detail": "UD.0.UD.0.3.Ejercicio_4.main",
+        "documentation": {}
+    },
+    {
+        "label": "Cliente",
+        "kind": 6,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.clientes.cliente",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.clientes.cliente",
+        "peekOfCode": "class Cliente:\n    def __init__(self, dni, nombre, edad, sexo, peso, altura):\n        self.__dni = dni\n        self.__nombre = nombre\n        self.__edad = edad\n        self.__sexo = self.comprobar_sexo(sexo)\n        self.__peso = peso\n        self.__altura = altura\n    def comprobar_sexo(self, sexo):\n        \"\"\"Comprueba que el sexo sea correcto, si no, será 'NULL' por defecto.\"\"\"",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.clientes.cliente",
+        "documentation": {}
+    },
+    {
+        "label": "comprobar_dni",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.seguridad.validaciones",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.seguridad.validaciones",
+        "peekOfCode": "def comprobar_dni(dni):\n    \"\"\"Verifica que el DNI sea válido (formato 8 números + letra).\"\"\"\n    patrones_regulares = r\"^\\d{8}[A-Z]$\"\n    return bool(re.match(patrones_regulares,dni))",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.seguridad.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "añadir_cliente",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "peekOfCode": "def añadir_cliente():\n    \"\"\"Permite crear un nuevo cliente.\"\"\"\n    dni = input(\"Introduce el DNI:\\n\")\n    while not comprobar_dni(dni):\n        print(\"DNI no válido.\")\n        dni = input(\"Introduce el DNI:\\n\")\n    nombre = input(\"Introduce el nombre:\\n\")\n    edad = int(input(\"Introduce la edad:\\n\"))\n    sexo = input(\"Introduce el sexo (H/M):\\n\")\n    peso = float(input(\"Introduce el peso (kg):\\n\"))",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_cliente",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "peekOfCode": "def buscar_cliente(dni):\n    \"\"\"Busca un cliente por DNI.\"\"\"\n    for cliente in clientes:\n        if cliente.get_dni() == dni:\n            return cliente\n    return None\ndef modificar_cliente():\n    \"\"\"Modifica los datos de un cliente.\"\"\"\n    dni = input(\"Introduce el DNI del cliente que buscas:\\n\")\n    cliente = buscar_cliente(dni)",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "documentation": {}
+    },
+    {
+        "label": "modificar_cliente",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "peekOfCode": "def modificar_cliente():\n    \"\"\"Modifica los datos de un cliente.\"\"\"\n    dni = input(\"Introduce el DNI del cliente que buscas:\\n\")\n    cliente = buscar_cliente(dni)\n    if cliente:\n        print(\"Cliente  encontrado.\")\n        nombre = input(f\"Introduce el nuevo nombre [{cliente.get_nombre()}]: \") or cliente.get_nombre()\n        edad = input(f\"Introduce la nueva edad [{cliente.get_edad()}]: \") or cliente.get_edad()\n        sexo = input(f\"Introduce el nuevo sexo [{cliente.get_sexo()}]: \") or cliente.get_sexo()\n        peso = input(f\"Introduce el nuevo peso [{cliente.get_peso()}]: \") or cliente.get_peso()",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_cliente",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "peekOfCode": "def borrar_cliente():\n    \"\"\"Borrar un cliente de la lista.\"\"\"\n    dni = input(\"Introduce el DNI del cliente que deseas borrar:\\n\")\n    cliente = buscar_cliente(dni)\n    if cliente:\n        clientes.remove(cliente)\n        print(f\"Cliente con DNI {dni} ha sido borrado correctamente.\")\n    else:\n        print(f\"No se encontró ningún cliente con el DNI {dni}.\")",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "documentation": {}
+    },
+    {
+        "label": "clientes",
+        "kind": 5,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "peekOfCode": "clientes = []\ndef añadir_cliente():\n    \"\"\"Permite crear un nuevo cliente.\"\"\"\n    dni = input(\"Introduce el DNI:\\n\")\n    while not comprobar_dni(dni):\n        print(\"DNI no válido.\")\n        dni = input(\"Introduce el DNI:\\n\")\n    nombre = input(\"Introduce el nombre:\\n\")\n    edad = int(input(\"Introduce la edad:\\n\"))\n    sexo = input(\"Introduce el sexo (H/M):\\n\")",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.crud",
+        "documentation": {}
+    },
+    {
+        "label": "comprobar_imc",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.herramientas",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.herramientas",
+        "peekOfCode": "def comprobar_imc(cliente):\n    \"\"\"Calcula el índice de masa corporal (IMC).\"\"\"\n    if cliente.get_altura() <= 0:  # Asegurar que la altura es válida\n        return \"Error: La altura debe ser mayor que 0.\"\n    imc = cliente.get_peso() / (cliente.get_altura() ** 2)\n    if imc < 18.5:\n        return f\"Su IMC es {imc:.2f}.Su peso está por debajo del ideal.\"  # IMC Bajo\n    elif 18.5 <= imc <= 24.9:\n        return f\"Su IMC es {imc:.2f}.Su peso está dentro de los parámetros.\"  # IMC Ideal\n    elif 25 <= imc <= 29.9:",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.herramientas",
+        "documentation": {}
+    },
+    {
+        "label": "comprobar_edad",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.herramientas",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.herramientas",
+        "peekOfCode": "def comprobar_edad(cliente):\n    \"\"\"Comprueba si el cliente es mayor de edad.\"\"\"\n    if cliente.get_edad() >= 18:\n        return f\"{cliente.get_nombre()} es mayor de edad.\"\n    else:\n        return f\"{cliente.get_nombre()} es menor de edad.\"",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.herramientas",
+        "documentation": {}
+    },
+    {
+        "label": "menu",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.menu",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.menu",
+        "peekOfCode": "def menu():\n    while True:\n        print(\"\\n1. Crear Nuevo Cliente.\")\n        print(\"2. Buscar Cliente.\")        \n        print(\"3. Modificar Cliente.\")\n        print(\"4. Borrar Cliente.\")\n        print(\"5. Comprobar IMC de un Cliente.\")\n        print(\"6. Comprobar mayoría de edad de un Cliente.\")\n        print(\"0. Salir.\")\n        opcion = input(\"Selecciona una opción:\\n\")",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_1.utilidades.menu",
+        "documentation": {}
+    },
+    {
+        "label": "menu",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.menu",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.menu",
+        "peekOfCode": "def menu():\n    deportistas = {\n        'futbolista': [],\n        'tenista': [],\n        'runner': []\n    }\n    inicializar_deportistas(deportistas)    \n    while True:\n        print(\"\\nBienvenido a Sports Affinity!\")\n        print(\"1. Fútbol.\")",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_futbol",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_futbol",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_futbol",
+        "peekOfCode": "def submenu_futbol(deportistas):\n    \"\"\"Submenú para seleccionar tipo de deporte y realizar acciones.\"\"\"\n    while True:\n        print(\"\\nSeleccione Acción:\")\n        print(\"1. Crear Futbolista.\")\n        print(\"2. Modificar Datos de un Futbolista.\")\n        print(\"3. Buscar un Futbolista.\")\n        print(\"4. Mostrar Todos los Futbolistas.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"Selecciona una opción:\\n\")",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_futbol",
+        "documentation": {}
+    },
+    {
+        "label": "modificar_datos_futbolista",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_futbol",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_futbol",
+        "peekOfCode": "def modificar_datos_futbolista(futbolistas):\n    \"\"\"Permite modificar los datos de un futbolista registrado.\"\"\"\n    nombre = input(\"Ingrese el nombre del futbolista a modificar:\\n\")\n    # Buscar futbolista en la lista de objetos Futbolista\n    for futbolista in futbolistas:\n        # Comparar el nombre del futbolista, usando el método get, que contiene la propiedad nombre encapsulada, ya que esta privatizada.\n        # Se ignoran mayúsculas y/o minúsculas.\n        if futbolista.get_nombre().lower() == nombre.lower():\n            print(f\"\\nModificando datos de {nombre}.\")\n            # Modificar atributo equipo",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_futbol",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_futbolista",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_futbol",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_futbol",
+        "peekOfCode": "def buscar_futbolista(futbolistas):\n    \"\"\"Busca un futbolista por nombre y muestra sus datos.\"\"\"\n    nombre = input(f\"Ingrese el nombre del futbolista que desea buscar:\\n\")\n    for futbolista in futbolistas:\n        if futbolista.get_nombre().lower() == nombre.lower():\n            # Mostrar datos del registro buscado\n            print(\"\\nResumen del futbolista:\")\n            print(futbolista.mostrar_datos())\n        else:\n            print(\"Futbolista no encontrado en los registros.\")",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_futbol",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_running",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_running",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_running",
+        "peekOfCode": "def submenu_running(deportistas):\n    \"\"\"Submenú para seleccionar tipo de deporte y realizar acciones.\"\"\"\n    while True:\n        print(\"\\nSeleccione Acción:\")\n        print(\"1. Crear Runner.\")\n        print(\"2. Modificar Datos de un Runner.\")\n        print(\"3. Buscar un Runner.\")\n        print(\"4. Mostrar Todos los Runners.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"Selecciona una opción:\\n\")",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_running",
+        "documentation": {}
+    },
+    {
+        "label": "modificar_datos_runner",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_running",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_running",
+        "peekOfCode": "def modificar_datos_runner(runners):\n    \"\"\"Permite modificar los datos de un runner registrado.\"\"\"\n    nombre = input(\"Ingrese el nombre del runner a modificar:\\n\")\n    # Buscar runner en la lista\n    for runner in runners:\n        if runner.get_nombre().lower() == nombre.lower():\n            print(f\"\\nModificando datos de {nombre}.\")\n            # Modificar atributo especialidad\n            nueva_especialidad = input(f\"Nuevo especialidad (actual: {runner.get_especialidad()}):\\n\")\n            if nueva_especialidad:",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_running",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_runner",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_running",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_running",
+        "peekOfCode": "def buscar_runner(runners):\n    \"\"\"Busca un deportista por nombre y muestra sus datos.\"\"\"\n    nombre = input(f\"Ingrese el nombre del Runner que desea buscar:\\n\")\n    # Buscar en la lista correspondiente al tipo de deportista\n    for runner in runners:\n        if runner.get_nombre().lower() == nombre.lower():\n            # Mostrar datos del registro buscado\n            print(\"\\nResumen del futbolista:\")\n            print(runner.mostrar_datos())\n        else:",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_running",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_tenis",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_tenis",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_tenis",
+        "peekOfCode": "def submenu_tenis(deportistas):\n    \"\"\"Submenú para seleccionar tipo de deporte y realizar acciones.\"\"\"\n    while True:\n        print(\"\\nSeleccione Acción:\")\n        print(\"1. Crear Tenista.\")\n        print(\"2. Modificar Datos de un Tenista.\")\n        print(\"3. Buscar un Tenista.\")\n        print(\"4. Mostrar Todos los Tenistas.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"Selecciona una opción:\\n\")",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_tenis",
+        "documentation": {}
+    },
+    {
+        "label": "modificar_datos_tenista",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_tenis",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_tenis",
+        "peekOfCode": "def modificar_datos_tenista(tenistas):\n    \"\"\"Permite modificar los datos de un tenista registrado.\"\"\"\n    nombre = input(\"Ingrese el nombre del tenista a modificar:\\n\")\n    # Buscar tenista en la lista\n    for tenista in tenistas:\n        if tenista.get_nombre().lower() == nombre.lower():\n            print(f\"\\nModificando datos de {nombre}.\")\n            # Modificar atributo ranking\n            nuevo_ranking = input(f\"Nuevo ranking (actual: {tenista.get_ranking()}):\\n\")\n            if nuevo_ranking:",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_tenis",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_tenista",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_tenis",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_tenis",
+        "peekOfCode": "def buscar_tenista(tenistas):\n    \"\"\"Busca un deportista por nombre y muestra sus datos.\"\"\"\n    nombre = input(f\"Ingrese el nombre del tenista que desea buscar:\\n\")\n    # Buscar en la lista correspondiente al tipo de deportista\n    for tenista in tenistas:\n        if tenista.get_nombre().lower() == nombre.lower():\n            # Mostrar datos del registro buscado\n            print(\"\\nResumen del futbolista:\")\n            print(tenista.mostrar_datos())\n        else:",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.menus.submenu_tenis",
+        "documentation": {}
+    },
+    {
+        "label": "Deportista",
+        "kind": 6,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.deportista",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.deportista",
+        "peekOfCode": "class Deportista:\n    def __init__(self, nombre, apellido, edad, nacionalidad):\n        self.__nombre = nombre\n        self.__apellido = apellido\n        self.__edad = edad\n        self.__nacionalidad = nacionalidad\n    def get_nombre(self):\n        return self.__nombre\n    def set_nombre(self, value):\n        self.__nombre = value",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.deportista",
+        "documentation": {}
+    },
+    {
+        "label": "Futbolista",
+        "kind": 6,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.futbolista",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.futbolista",
+        "peekOfCode": "class Futbolista(Deportista):\n    __id_counter = 1 # Contador único para registros de Futbolistas\n    def __init__(self, nombre, apellido, edad, nacionalidad, equipo, goles):\n        super().__init__(nombre, apellido, edad, nacionalidad)\n        self.__id = Futbolista.__id_counter # Asigna el ID actual, es decir, el ID = 1        \n        Futbolista.__id_counter += 1 # Contador autoincremental\n        self.__equipo = equipo\n        self.__goles = goles\n    def get_id(self):\n        return self.__id",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.futbolista",
+        "documentation": {}
+    },
+    {
+        "label": "Runner",
+        "kind": 6,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.runner",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.runner",
+        "peekOfCode": "class Runner(Deportista):\n    __id_counter = 1 # Contador único para registros de Futbolistas    \n    def __init__(self, nombre, apellido, edad, nacionalidad, especialidad, record):\n        super().__init__(nombre, apellido, edad, nacionalidad)\n        self.__id = Runner.__id_counter # Asigna el ID actual, es decir, el ID = 1        \n        Runner.__id_counter += 1 # Contador autoincremental\n        self.__especialidad = especialidad\n        self.__record = record\n    def get_id(self):\n        return self.__id",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.runner",
+        "documentation": {}
+    },
+    {
+        "label": "Tenista",
+        "kind": 6,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.tenista",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.tenista",
+        "peekOfCode": "class Tenista(Deportista):\n    __id_counter = 1 # Contador único para registros de Tenistas\n    def __init__(self, nombre, apellido, edad, nacionalidad, ranking, trofeos_ganados):\n        super().__init__(nombre, apellido, edad, nacionalidad)\n        self.__id = Tenista.__id_counter # Asigna el ID actual, es decir, el ID = 1        \n        Tenista.__id_counter += 1 # Contador autoincremental\n        self.__ranking = ranking\n        self.__trofeos_ganados = trofeos_ganados\n    def get_id(self):\n        return self.__id",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.modelos.tenista",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_datos_comunes",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "peekOfCode": "def obtener_datos_comunes():\n    \"\"\"Datos comunes heredados de clase padre.\"\"\"\n    nombre = input(\"Introduce el nombre:\\n\")\n    apellido = input(\"Introduce el apellido:\\n\")    \n    edad = int(input(\"Introduce la edad:\\n\"))\n    nacionalidad = input(\"Introduce la nacionalidad del deportista:\\n\")\n    return nombre, apellido, edad, nacionalidad\ndef crear_deportista(tipo):\n    \"\"\"Accede a las propiedades de cada Deportista(clase padre) según el tipo (clase hija)\"\"\"\n    nombre, apellido, edad, nacionalidad = obtener_datos_comunes()",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "documentation": {}
+    },
+    {
+        "label": "crear_deportista",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "peekOfCode": "def crear_deportista(tipo):\n    \"\"\"Accede a las propiedades de cada Deportista(clase padre) según el tipo (clase hija)\"\"\"\n    nombre, apellido, edad, nacionalidad = obtener_datos_comunes()\n    if tipo == \"futbolista\":\n        equipo = input(\"Introduce el equipo:\\n\")\n        goles = int(input(\"Introduce cantidad de goles:\\n\"))\n        return Futbolista(nombre, apellido, edad, nacionalidad, equipo, goles)\n    elif tipo == \"tenista\":\n        ranking = int(input(\"Introduce el ranking:\\n\"))\n        trofeos_ganados = int(input(\"Introduce la cantidad de torneos ganados:\\n\"))",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "documentation": {}
+    },
+    {
+        "label": "inicializar_deportistas",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "peekOfCode": "def inicializar_deportistas(deportistas):\n    \"\"\"Inicializa un Deportista por Defecto para la Pruebas de Funcionamiento.\"\"\"\n    # Agregar un futbolista predeterminado\n    deportistas['futbolista'].append(Futbolista(\"Lionel\", \"Messi\", 36, \"Argentina\", \"Inter Miami\", 800))\n    # Agregar un tenista predeterminado\n    deportistas['tenista'].append(Tenista(\"Rafael\", \"Nadal\", 37, \"España\", 2, 22))\n    # Agregar un runner predeterminado\n    deportistas['runner'].append(Runner(\"Usain\", \"Bolt\", 37, \"Jamaica\", \"100m\", 9.58))\ndef mostrar_futbolistas(deportistas):\n    \"\"\"Mostrar los Dato de Todos los Futbolistas Registrados.\"\"\"",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_futbolistas",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "peekOfCode": "def mostrar_futbolistas(deportistas):\n    \"\"\"Mostrar los Dato de Todos los Futbolistas Registrados.\"\"\"\n    for futbolista in deportistas['futbolista']:\n        print(futbolista.mostrar_datos())\ndef mostrar_tenistas(deportistas):\n    \"\"\"Mostrar los Dato de Todos los Tenistas Registrados.\"\"\"\n    for tenista in deportistas['tenista']:\n        print(tenista.mostrar_datos())\ndef mostrar_runners(deportistas):\n    \"\"\"Mostrar los Dato de Todos los Runners Registrados.\"\"\"",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_tenistas",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "peekOfCode": "def mostrar_tenistas(deportistas):\n    \"\"\"Mostrar los Dato de Todos los Tenistas Registrados.\"\"\"\n    for tenista in deportistas['tenista']:\n        print(tenista.mostrar_datos())\ndef mostrar_runners(deportistas):\n    \"\"\"Mostrar los Dato de Todos los Runners Registrados.\"\"\"\n    for runner in deportistas['runner']:\n        print(runner.mostrar_datos())\ndef mostrar_deportistas(deportistas):\n    \"\"\"Muestra todos los Deportistas existentes de cada tipo.\"\"\"",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_runners",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "peekOfCode": "def mostrar_runners(deportistas):\n    \"\"\"Mostrar los Dato de Todos los Runners Registrados.\"\"\"\n    for runner in deportistas['runner']:\n        print(runner.mostrar_datos())\ndef mostrar_deportistas(deportistas):\n    \"\"\"Muestra todos los Deportistas existentes de cada tipo.\"\"\"\n    for tipo, lista_deportistas in deportistas.items():\n        print(f\"\\n{tipo.capitalize()}s:\")\n        for deportista in  lista_deportistas:\n            print(deportista.mostrar_datos())",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_deportistas",
+        "kind": 2,
+        "importPath": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "description": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "peekOfCode": "def mostrar_deportistas(deportistas):\n    \"\"\"Muestra todos los Deportistas existentes de cada tipo.\"\"\"\n    for tipo, lista_deportistas in deportistas.items():\n        print(f\"\\n{tipo.capitalize()}s:\")\n        for deportista in  lista_deportistas:\n            print(deportista.mostrar_datos())\n            print()",
+        "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
+        "documentation": {}
+    }
+]

@@ -35,4 +35,4 @@ class Deportista:
         
     def mostrar_datos(self):
         """Método que actúa como __str__"""        
-        return f"Nombre: {self.get_nombre()}\nApellido: {self.get_apellido}\nEdad: {self.get_edad()}\nNacionalidad: {self.get_nacionalidad()}"
+        return f"Nombre: {self.get_nombre()}\nApellido: {self.get_apellido()}\nEdad: {self.get_edad()}\nNacionalidad: {self.get_nacionalidad()}"

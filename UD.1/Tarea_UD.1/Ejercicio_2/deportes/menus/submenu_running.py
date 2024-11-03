@@ -2,7 +2,7 @@
 
 from ..utilidades.utilidades import *
 
-def submenu_futbol(deportistas):
+def submenu_running(deportistas):
     """Submenú para seleccionar tipo de deporte y realizar acciones."""
     
     while True:
@@ -24,8 +24,8 @@ def submenu_futbol(deportistas):
         elif opcion == "2":
             modificar_datos_runner(deportistas['runner'])
         elif opcion == "3":
-            # Buscar Futbolista por nombre
-            buscar_deportista(deportistas, 'runner')
+            # Buscar Runner por nombre
+            buscar_runner(deportistas['runner'])
         elif opcion == "4":
             # Mostrar Futbolistas
             mostrar_runners(deportistas)
@@ -34,42 +34,39 @@ def submenu_futbol(deportistas):
         else:
             print("Opción no válida.")
             
-def modificar_datos_runner(deportistas):
+def modificar_datos_runner(runners):
     """Permite modificar los datos de un runner registrado."""
     nombre = input("Ingrese el nombre del runner a modificar:\n")
     
     # Buscar runner en la lista
-    futbolistas = deportistas.get('futbolista', [])
-    for futbolista in futbolistas:
-        if futbolista['nombre'] == nombre:
-            print(f"\nModificando datos de {nombre}. Deja el campo en blanco para mantener el valor actual.")
-            # Modificar atributos específicos
-            nuevo_nombre = input("Nuevo nombre (actual: {}): ".format(futbolista['nombre']))
-            if nuevo_nombre:
-                futbolista['nombre'] = nuevo_nombre
+    for runner in runners:
+        if runner.get_nombre().lower() == nombre.lower():
+            print(f"\nModificando datos de {nombre}.")
+            # Modificar atributo especialidad
+            nueva_especialidad = input(f"Nuevo especialidad (actual: {runner.get_especialidad()}):\n")
+            if nueva_especialidad:
+                runner.set_especialidad(nueva_especialidad)
             
-            # Modificar otros atributos
-            nueva_posicion = input("Nueva posición (actual: {}): ".format(futbolista.get('posicion', 'Desconocida')))
-            if nueva_posicion:
-                futbolista['posicion'] = nueva_posicion
+            # Modificar atributo record
+            nuevo_record = input(f"Nuevo Récord (actual: {runner.get_especialidad()}):\n")
+            if nuevo_record:
+                runner.set_record(nuevo_record)
 
-            # Puedes añadir más atributos aquí según la estructura de futbolista
+            # Puedes añadir más atributos aquí según la estructura de runner
             print(f"{nombre} ha sido actualizado correctamente.")
-            return  # Finaliza una vez que ha encontrado y modificado el futbolista
+            return  # Finaliza una vez que ha encontrado y modificado el runner
     
     print("Futbolista no encontrado.")
     
-def buscar_deportista(deportistas, tipo):
+def buscar_runner(runners):
     """Busca un deportista por nombre y muestra sus datos."""
-    nombre = input(f"Ingrese el nombre del {tipo} que desea buscar:\n")
+    nombre = input(f"Ingrese el nombre del Runner que desea buscar:\n")
 
     # Buscar en la lista correspondiente al tipo de deportista
-    for deportista in deportistas.get(tipo, []):
-        if deportista['nombre'].lower() == nombre.lower():
-            print("\nDatos del Deportista:")
-            print(f"Nombre: {deportista['nombre']}")
-            print(f"Posición: {deportista.get('posicion', 'Desconocida')}")
-            # Puedes añadir más atributos aquí según la estructura del deportista
-            return  # Finaliza la búsqueda una vez encontrado
-
-    print(f"{tipo.capitalize()} no encontrado.")
+    for runner in runners:
+        if runner.get_nombre().lower() == nombre.lower():
+            # Mostrar datos del registro buscado
+            print("\nResumen del futbolista:")
+            print(runner.mostrar_datos())
+        else:
+            print("Runner no encontrado en los registros.")

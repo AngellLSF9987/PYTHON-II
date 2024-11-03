@@ -2,74 +2,72 @@
 
 from ..utilidades.utilidades import *
 
-def submenu_futbol(deportistas):
+def submenu_tenis(deportistas):
     """Submenú para seleccionar tipo de deporte y realizar acciones."""
     
     while True:
         print("\nSeleccione Acción:")
-        print("1. Crear Futbolista.")
-        print("2. Modificar Datos de un Futbolista.")
-        print("3. Buscar un Futbolista.")
-        print("4. Mostrar Todos los Futbolistas.")
+        print("1. Crear Tenista.")
+        print("2. Modificar Datos de un Tenista.")
+        print("3. Buscar un Tenista.")
+        print("4. Mostrar Todos los Tenistas.")
         print("0. Menú Principal.")
         
         opcion = input("Selecciona una opción:\n")
 
         if opcion == "1":
-            # Crear Tipo Futbolista
-            deportista = crear_deportista('futbolista')
+            # Crear Tipo Tenista
+            deportista = crear_deportista('tenista')
             if deportista:
-                # Añadir Tipo Futbolista a la lista de Futbolista, al diccionario de Deportistas
-                deportistas['futbolista'].append(deportista)
+                # Añadir Tipo Tenista a la lista de Tenista, al diccionario de Deportistas
+                deportistas['tenista'].append(deportista)
         elif opcion == "2":
-            modificar_datos_futbolista(deportistas['futbolista'])
+            modificar_datos_tenista(deportistas['tenista'])
         elif opcion == "3":
-            # Buscar Futbolista por nombre
-            buscar_deportista(deportistas, 'futbolista')
+            # Buscar Tenista por nombre
+            buscar_tenista(deportistas['tenista'])
         elif opcion == "4":
-            # Mostrar Futbolistas
-            mostrar_futbolistas(deportistas)
+            # Mostrar Tenistas
+            mostrar_tenistas(deportistas)
         elif opcion == "0":
             return # Menú principal
         else:
             print("Opción no válida.")
             
-def modificar_datos_futbolista(deportistas):
-    """Permite modificar los datos de un futbolista registrado."""
-    nombre = input("Ingrese el nombre del futbolista a modificar:\n")
+def modificar_datos_tenista(tenistas):
+    """Permite modificar los datos de un tenista registrado."""
+    nombre = input("Ingrese el nombre del tenista a modificar:\n")
     
-    # Buscar futbolista en la lista
-    futbolistas = deportistas.get('futbolista', [])
-    for futbolista in futbolistas:
-        if futbolista['nombre'] == nombre:
-            print(f"\nModificando datos de {nombre}. Deja el campo en blanco para mantener el valor actual.")
-            # Modificar atributos específicos
-            nuevo_nombre = input("Nuevo nombre (actual: {}): ".format(futbolista['nombre']))
-            if nuevo_nombre:
-                futbolista['nombre'] = nuevo_nombre
+    # Buscar tenista en la lista
+    for tenista in tenistas:
+        if tenista.get_nombre().lower() == nombre.lower():
+            print(f"\nModificando datos de {nombre}.")
+            # Modificar atributo ranking
+            nuevo_ranking = input(f"Nuevo ranking (actual: {tenista.get_ranking()}):\n")
+            if nuevo_ranking:
+                tenista.set_ranking(nuevo_ranking)
             
-            # Modificar otros atributos
-            nueva_posicion = input("Nueva posición (actual: {}): ".format(futbolista.get('posicion', 'Desconocida')))
-            if nueva_posicion:
-                futbolista['posicion'] = nueva_posicion
+            # Modificar atributo trofeos ganados
+            nuevo_trofeos_ganados = input(f"Nuevos Trofeos Ganados (actual: {tenista.get_trofeos_ganados()}):\n")
+            if nuevo_trofeos_ganados:
+                tenista.set_trofeos_ganados(nuevo_trofeos_ganados)
 
-            # Puedes añadir más atributos aquí según la estructura de futbolista
+            # Puedes añadir más atributos aquí según la estructura de tenista
             print(f"{nombre} ha sido actualizado correctamente.")
-            return  # Finaliza una vez que ha encontrado y modificado el futbolista
+            return  # Finaliza una vez que ha encontrado y modificado el tenista
     
-    print("Futbolista no encontrado.")
+    print("Tenista no encontrado.")
     
-def buscar_deportista(deportistas, tipo):
+def buscar_tenista(tenistas):
     """Busca un deportista por nombre y muestra sus datos."""
-    nombre = input(f"Ingrese el nombre del {tipo} que desea buscar:\n")
+    nombre = input(f"Ingrese el nombre del tenista que desea buscar:\n")
 
     # Buscar en la lista correspondiente al tipo de deportista
-    for deportista in deportistas.get(tipo, []):
-        if deportista['nombre'].lower() == nombre.lower():
-            print("\nDatos del Deportista:")
-            print(f"Nombre: {deportista['nombre']}")
-            print(f"Posición: {deportista.get('posicion', 'Desconocida')}")
-            # Puedes añadir más atributos aquí según la estructura del deportista
-            return  # Finaliza la búsqueda una vez encontrado
-
-    print(f"{tipo.capitalize()} no encontrado.")
+    for tenista in tenistas:
+        if tenista.get_nombre().lower() == nombre.lower():
+            # Mostrar datos del registro buscado
+            print("\nResumen del futbolista:")
+            print(tenista.mostrar_datos())
+        else:
+            print("Tenista no encontrado en los registros.")
+        

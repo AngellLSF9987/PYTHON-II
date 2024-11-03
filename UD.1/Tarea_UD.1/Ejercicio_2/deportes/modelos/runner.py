@@ -33,6 +33,6 @@ class Runner(Deportista):
 
     def mostrar_datos(self):
         """Actúa como método __str__"""
-        return f"{super().mostrar_datos()}\nId: {self.get_id}\nEspecialidad: {self.get_especialidad()}\nRecord: {self.get_record()}"
+        return f"{super().mostrar_datos()}\nId: {self.get_id()}\nEspecialidad: {self.get_especialidad()}\nRecord: {self.get_record()}"
     
     

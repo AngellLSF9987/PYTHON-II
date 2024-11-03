@@ -5,6 +5,8 @@ from .deportista import Deportista
 
 class Tenista(Deportista):
     
+    __id_counter = 1 # Contador único para registros de Tenistas
+
     def __init__(self, nombre, apellido, edad, nacionalidad, ranking, trofeos_ganados):
         super().__init__(nombre, apellido, edad, nacionalidad)
 
@@ -31,6 +33,6 @@ class Tenista(Deportista):
 
     def mostrar_datos(self):
         """Actúa como método __str__"""
-        return f"{super().mostrar_datos()}\nId: {self.get_id}\nRanking: {self.get_ranking()}\nTrofeos Ganados: {self.get_trofeos_ganados()}"
+        return f"{super().mostrar_datos()}\nId: {self.get_id()}\nRanking: {self.get_ranking()}\nTrofeos Ganados: {self.get_trofeos_ganados()}"
     
     
