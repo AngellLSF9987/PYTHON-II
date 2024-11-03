@@ -1,4 +1,4 @@
-# deportes/main.py
+# main.py
 
 from deportes.menus.menu import menu
 
