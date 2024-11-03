@@ -2053,5 +2053,32 @@
         "peekOfCode": "def mostrar_deportistas(deportistas):\n    \"\"\"Muestra todos los Deportistas existentes de cada tipo.\"\"\"\n    for tipo, lista_deportistas in deportistas.items():\n        print(f\"\\n{tipo.capitalize()}s:\")\n        for deportista in  lista_deportistas:\n            print(deportista.mostrar_datos())\n            print()",
         "detail": "UD.1.Tarea_UD.1.Ejercicio_2.deportes.utilidades.utilidades",
         "documentation": {}
+    },
+    {
+        "label": "Estuche",
+        "kind": 6,
+        "importPath": "UD.2.Ejercicio1-Clase.UD.2",
+        "description": "UD.2.Ejercicio1-Clase.UD.2",
+        "peekOfCode": "class Estuche:\n    def __init__(self, capacidad):\n        self.capacidad = capacidad\n        self.boligrafos = []\n    def agregar_boligrafo(self):\n        if len(self.boligrafos) > self.capacidad:\n            self.boligrafos.append(boligrafo)\n        else:\n            raise EstucheLlenoError(\"El estuche está lleno\")\n    def quitar_boligrafo(self, indice):",
+        "detail": "UD.2.Ejercicio1-Clase.UD.2",
+        "documentation": {}
+    },
+    {
+        "label": "EstucheLlenoError",
+        "kind": 6,
+        "importPath": "UD.2.Ejercicio1-Clase.UD.2",
+        "description": "UD.2.Ejercicio1-Clase.UD.2",
+        "peekOfCode": "class EstucheLlenoError():\n    pass\nmi_estuche = Estuche(5)\nEstuche.agregar_boligrafo(\"Azul\")\nEstuche.agregar_boligrafo(\"Negro\")\nEstuche.agregar_boligrafo(\"Rojo\")\nEstuche.agregar_boligrafo(\"Verde\")\nEstuche.agregar_boligrafo(\"Violeta\")\ntry:\n    mi_estuche.agregar_boligrafo(\"Gris\")",
+        "detail": "UD.2.Ejercicio1-Clase.UD.2",
+        "documentation": {}
+    },
+    {
+        "label": "mi_estuche",
+        "kind": 5,
+        "importPath": "UD.2.Ejercicio1-Clase.UD.2",
+        "description": "UD.2.Ejercicio1-Clase.UD.2",
+        "peekOfCode": "mi_estuche = Estuche(5)\nEstuche.agregar_boligrafo(\"Azul\")\nEstuche.agregar_boligrafo(\"Negro\")\nEstuche.agregar_boligrafo(\"Rojo\")\nEstuche.agregar_boligrafo(\"Verde\")\nEstuche.agregar_boligrafo(\"Violeta\")\ntry:\n    mi_estuche.agregar_boligrafo(\"Gris\")\nexcept EstucheLlenoError as e:\n    print(e)",
+        "detail": "UD.2.Ejercicio1-Clase.UD.2",
+        "documentation": {}
     }
 ]
