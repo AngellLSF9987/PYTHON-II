@@ -1,8 +1,8 @@
 # biblioteca/menus/menu.py
 
-from ..crud.crud import leer_libro
+from ..crud.crud_libro import leer_libro
 from ..modelos.biblioteca import Biblioteca
-from ..menus import submenu_libro
+from ..menus import submenu_tareas
 
 def menu():
     
@@ -22,7 +22,7 @@ def menu():
 
         if opcion == "1":
            # LLama al submenu y le pasa la instancia de Biblioteca
-           submenu_libro.submenu_libro(biblioteca)
+           submenu_tareas.submenu_tareas(biblioteca)
         elif opcion == "2":
             leer_libro(biblioteca)
         elif opcion == "3":

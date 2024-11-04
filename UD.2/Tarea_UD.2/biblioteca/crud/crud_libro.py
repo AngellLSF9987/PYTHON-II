@@ -1,4 +1,4 @@
-# biblioteca/crud/crud.py
+# biblioteca/crud/crud_libro.py
 
 from ..modelos.libro import Libro
 from ..utilidades.validaciones import validar_fecha
@@ -27,10 +27,10 @@ def crear_libro(biblioteca):
 
         print("\nLibro registrado correctamente.\n")
 
-    except ValueError as e1:                              # Valores incorrectos al ingresar datos
-        print(f"\nError: Entrada inválida. {e1}\n")
+    except ValueError as e:                              # Valores incorrectos al ingresar datos
+        print(f"\nError: Entrada inválida. {e}\n")
     except Exception as e2:                               # Errores imprevistos
-        print(f"\nSe produjo un error inesperado: {e2}\n")
+        print(f"\nSe produjo un error inesperado: {e}\n")
 
 def leer_libro(biblioteca):
     """Busca y muestra la información de un libro por título."""
@@ -46,8 +46,8 @@ def leer_libro(biblioteca):
         else:
             print("\nTítulo no encontrado. Revise la información proporcionada e inténtelo de nuevo.\n")
 
-    except Exception as e3:                                         # Errores imprevistos
-        print(f"Se produjo un error al buscar el libro: {e3}")
+    except Exception as e:                                         # Errores imprevistos
+        print(f"Se produjo un error al buscar el libro: {e}")
 
 def actualizar_libro(biblioteca):
     """Actualiza la información de un libro existente."""
@@ -77,11 +77,11 @@ def actualizar_libro(biblioteca):
         else:
             print("\nLibro no encontrado.\n")
 
-    except ValueError as e4:                                                    # Valores incorrectos al ingresar datos
-        print(f"Error: Entrada inválida. {e4}")
+    except ValueError as e:                                                    # Valores incorrectos al ingresar datos
+        print(f"Error: Entrada inválida. {e}")
 
-    except Exception as e5:                                                     # Errores imprevistos
-        print(f"Se produjo un error inesperado. {e5}")
+    except Exception as e:                                                     # Errores imprevistos
+        print(f"Se produjo un error inesperado. {e}")
 
 def eliminar_libro(biblioteca):
     """Elimina un libro de la biblioteca búscado por título."""
@@ -104,8 +104,8 @@ def eliminar_libro(biblioteca):
         else:
             print("No se encontró ningún registro con ese título.\nCompruebe búsqueda e inténtelo de nuevo.")
             #return False  ->  # False si no se encuentra el libro.
-    except Exception as e6:                                                     # Errores imprevistos
-        print(f"\nSe produjo un error al intentar eliminar el libro: {e6}\n")
+    except Exception as e:                                                     # Errores imprevistos
+        print(f"\nSe produjo un error al intentar eliminar el libro: {e}\n")
 
 def consultar_paginas(biblioteca):
     """Consulta el número de páginas de un libro específico.
@@ -129,5 +129,5 @@ def consultar_paginas(biblioteca):
         else:
             print("El libro no se encuentra en el listado de registros de la Biblioteca.")
     
-    except Exception as e7:
-        print(f"Se produjo un error al consultar las páginas del libro: {e7}")
+    except Exception as e:
+        print(f"Se produjo un error al consultar las páginas del libro: {e}")

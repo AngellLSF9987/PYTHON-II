@@ -7,6 +7,8 @@ class Biblioteca:
     def __init__(self):
         """Método constructor a partir de la instanciación de un diccionario vacío donde quedarán alojados los objetos libro existentes o creados."""
         self.libros = []
+        self.generos = []
+        self.autores = []
         self.inicializar_biblioteca() # Llamada al método de inicialización
 
     def agregar_libro(self, libro):
