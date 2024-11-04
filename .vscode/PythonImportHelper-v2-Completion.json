@@ -218,30 +218,6 @@
         "documentation": {}
     },
     {
-        "label": "Libro",
-        "importPath": "modelos.libro",
-        "description": "modelos.libro",
-        "isExtraImport": true,
-        "detail": "modelos.libro",
-        "documentation": {}
-    },
-    {
-        "label": "Biblioteca",
-        "importPath": "modelos.biblioteca",
-        "description": "modelos.biblioteca",
-        "isExtraImport": true,
-        "detail": "modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "validar_fecha",
-        "importPath": "utilidades.validaciones",
-        "description": "utilidades.validaciones",
-        "isExtraImport": true,
-        "detail": "utilidades.validaciones",
-        "documentation": {}
-    },
-    {
         "label": "menu",
         "importPath": "biblioteca.menus.menu",
         "description": "biblioteca.menus.menu",
@@ -2095,20 +2071,11 @@
         "documentation": {}
     },
     {
-        "label": "inicializar_biblioteca",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "peekOfCode": "def inicializar_biblioteca():\n    \"\"\"Lista de libros registrados ya en la Biblioteca.\"\"\"\n    libros_existentes = [\n        {\n            \"autor\": \"Gabriel García Márquez\",\n            \"titulo\": \"Cien años de soledad\",\n            \"fecha_publicacion\": \"05-06-1967\",\n            \"num_paginas\": 417\n        },\n        {",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "documentation": {}
-    },
-    {
         "label": "crear_libro",
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "peekOfCode": "def crear_libro():\n    \"\"\"Crear un nuevo libro y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"Nuevo Registro de Libro.\")\n        titulo = input(\"Introduce el titulo:\\n\")\n        autor = input(\"Introduce el autor:\\n\")\n        # Tratamiento de validación de la fecha de publicación como objeto date()\n        fecha_publicacion_str = input(\"Introduce la fecha de publicación (DD-MM-AAAA):\\n\")\n        fecha_publicacion = validar_fecha(fecha_publicacion_str)\n        if not fecha_publicacion:",
+        "peekOfCode": "def crear_libro(biblioteca):\n    \"\"\"Crear un nuevo libro y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Libro -\\n\")\n        titulo = input(\"Introduce el titulo:\\n\")\n        autor = input(\"Introduce el autor:\\n\")\n        # Tratamiento de validación de la fecha de publicación como objeto date()\n        fecha_publicacion_str = input(\"Introduce la fecha de publicación (DD-MM-AAAA):\\n\")\n        fecha_publicacion = validar_fecha(fecha_publicacion_str)\n        if not fecha_publicacion:",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "documentation": {}
     },
@@ -2117,7 +2084,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "peekOfCode": "def leer_libro():\n    \"\"\"Busca y muestra la información de un libro por título.\"\"\"\n    try:\n        print(\"Información del Registrado deseado.\")\n        titulo = input(\"Introduzca el título del libro a buscar:\\n\")\n        libro = biblioteca.buscar_libro(titulo)\n        if libro:\n            print(\"Registro encontrado:\")\n            print(libro.mostrar_datos())\n        else:",
+        "peekOfCode": "def leer_libro(biblioteca):\n    \"\"\"Busca y muestra la información de un libro por título.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        titulo = input(\"Introduzca el título del libro a buscar:\\n\")\n        libro = biblioteca.buscar_libro(titulo)\n        if libro:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(libro.mostrar_datos())\n        else:",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "documentation": {}
     },
@@ -2126,7 +2093,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "peekOfCode": "def actualizar_libro():\n    \"\"\"Actualiza la información de un libro existente.\"\"\"\n    try:\n        print(\"Actualización del Registro.\")\n        titulo = input(\"Introduce el título del libro que deseas actualizar:\\n\")\n        libro = biblioteca.buscar_libro(titulo)\n        if libro:\n            print(\"Introduce los nuevos datos del libro (deja en blanco para mantener la información actual:)\")\n            nuevo_titulo = input(f\"Título [{libro.get_titulo()}]: \") or libro.get_titulo()\n            nuevo_autor = input(f\"Autor [{libro.get_autor()}]: \") or libro.get_autor()",
+        "peekOfCode": "def actualizar_libro(biblioteca):\n    \"\"\"Actualiza la información de un libro existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas actualizar:\\n\")\n        libro = biblioteca.buscar_libro(titulo)\n        if libro:\n            print(\"\\nIntroduce los nuevos datos del libro (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_titulo = input(f\"Título [{libro.get_titulo()}]: \") or libro.get_titulo()\n            nuevo_autor = input(f\"Autor [{libro.get_autor()}]: \") or libro.get_autor()",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "documentation": {}
     },
@@ -2135,7 +2102,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "peekOfCode": "def eliminar_libro():\n    \"\"\"Elimina un libro de la biblioteca búscado por título.\"\"\"\n    try:\n        print(\"Borrado de Registro.\")\n        titulo = input(\"Introduce el título del libro que deseas borrar:\\n\")\n        if biblioteca.eliminar_libro(titulo):\n            print(\"Libro eliminado correctamente.\")\n        else:\n            print(\"El libro no se encuentra en el listado de registros de la Biblioteca.\")\n    except Exception as e6:                                                     # Errores imprevistos",
+        "peekOfCode": "def eliminar_libro(biblioteca):\n    \"\"\"Elimina un libro de la biblioteca búscado por título.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas borrar:\\n\")\n        libro_eliminado = None\n        for libro in biblioteca.libros:\n            if libro.get_titulo().lower() == titulo.lower():\n                libro_eliminado = libro\n                break # Sale del bucle una vez encontrado el titulo.",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "documentation": {}
     },
@@ -2144,16 +2111,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "peekOfCode": "def consultar_paginas():\n    \"\"\"Consulta el número de páginas de un libro específico.\n        - Función < isinstance(objeto, clase) >: verifica que objeto pertenece al tipo o clase especificada,\n                   antes de realizar alguna operación con ese valor.\n                   Evita errores en tiempo de ejecución.\n    \"\"\"\n    try:\n        titulo = input(\"Introduce el título del libro que deseas consultar:\\n\")\n        paginas = biblioteca.paginas_por_libro(titulo)\n        if isinstance(paginas, int):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "documentation": {}
-    },
-    {
-        "label": "biblioteca",
-        "kind": 5,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "peekOfCode": "biblioteca = Biblioteca()\ndef inicializar_biblioteca():\n    \"\"\"Lista de libros registrados ya en la Biblioteca.\"\"\"\n    libros_existentes = [\n        {\n            \"autor\": \"Gabriel García Márquez\",\n            \"titulo\": \"Cien años de soledad\",\n            \"fecha_publicacion\": \"05-06-1967\",\n            \"num_paginas\": 417\n        },",
+        "peekOfCode": "def consultar_paginas(biblioteca):\n    \"\"\"Consulta el número de páginas de un libro específico.\n        - Función < isinstance(objeto, clase) >: verifica que objeto pertenece al tipo o clase especificada,\n                   antes de realizar alguna operación con ese valor.\n                   Evita errores en tiempo de ejecución.\n    \"\"\"\n    try:\n        print(\"\\n- Longitud de Impresión -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas consultar:\\n\")\n        paginas = biblioteca.paginas_por_libro(titulo)",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
         "documentation": {}
     },
@@ -2162,16 +2120,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
-        "peekOfCode": "def menu():\n    # Inicializa la biblioteca con libros por defecto\n    inicializar_biblioteca()\n    print(\"- Bienvenid@ a Biblioteca AVANZA! -\")\n    print(\"1. Menú Tareas de Biblioteca.\")\n    print(\"2. Buscar libro por nombre.\")\n    print(\"3. Mostrar libros por autor.\")\n    print(\"4. Mostrar todos libros.\")\n    print(\"0. Salir\")\n    opcion = input(\"Introduce una opción\")",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
-        "documentation": {}
-    },
-    {
-        "label": "biblioteca",
-        "kind": 5,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
-        "description": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
-        "peekOfCode": "biblioteca = Biblioteca()\ndef menu():\n    # Inicializa la biblioteca con libros por defecto\n    inicializar_biblioteca()\n    print(\"- Bienvenid@ a Biblioteca AVANZA! -\")\n    print(\"1. Menú Tareas de Biblioteca.\")\n    print(\"2. Buscar libro por nombre.\")\n    print(\"3. Mostrar libros por autor.\")\n    print(\"4. Mostrar todos libros.\")\n    print(\"0. Salir\")",
+        "peekOfCode": "def menu():\n    # Inicializa de manera Global la Biblioteca\n    biblioteca = Biblioteca()\n    while True:\n        print(\"\\n- Bienvenid@ a Biblioteca AVANZA! -\\n\")\n        print(\"1. Menú Tareas de Biblioteca.\")\n        print(\"2. Buscar libro por nombre.\")\n        print(\"3. Mostrar libros por autor.\")\n        print(\"4. Mostrar todos libros.\")\n        print(\"0. Salir\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
         "documentation": {}
     },
@@ -2180,7 +2129,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_libro",
-        "peekOfCode": "def submenu_libro():\n    while True:\n        print(\"- Menú Tareas de Biblioteca -\")\n        print(\"1. Añadir libro.\")\n        print(\"2. Buscar libro por título.\")\n        print(\"3. Modificar Datos Libro.\")\n        print(\"4. Eliminar Libro.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"Selecciona una opción:\\n\")\n        if opcion == \"1\":",
+        "peekOfCode": "def submenu_libro(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Biblioteca -\\n\")\n        print(\"1. Añadir libro.\")\n        print(\"2. Buscar libro por título.\")\n        print(\"3. Modificar Datos Libro.\")\n        print(\"4. Eliminar Libro.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_libro",
         "documentation": {}
     },
@@ -2189,7 +2138,7 @@
         "kind": 6,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"Método constructor a partir de la instanciación de una lista vacía donde quedarán alojados los objetos libro existentes o creados.\"\"\"\n        self.libros = []\n    def agregar_libro(self, libro):\n        \"\"\"Agrega un libro nuevo a la lista de libros de la biblioteca.\"\"\"\n        self.libros.append(libro)\n    def buscar_libro(self, titulo):\n        \"\"\"Busca un libro usando el método get_titulo(), que encapsula el atributo título, como referencia de la búsqueda. \n           Devuelve el objeto si se encuentra en la lista.\"\"\"",
+        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"Método constructor a partir de la instanciación de un diccionario vacío donde quedarán alojados los objetos libro existentes o creados.\"\"\"\n        self.libros = []\n        self.inicializar_biblioteca() # Llamada al método de inicialización\n    def agregar_libro(self, libro):\n        \"\"\"- Agrega un libro nuevo a la lista de libros de la biblioteca. \"\"\"\n        self.libros.append(libro)\n    def buscar_libro(self, titulo):\n        \"\"\"Busca un libro usando el método get_titulo(), que encapsula el atributo título, como referencia de la búsqueda. ",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
         "documentation": {}
     },

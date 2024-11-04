@@ -20,6 +20,7 @@
         "autoincremental",
         "autor",
         "Bajo",
+        "basado",
         "biblioteca",
         "Biblioteca",
         "blanco",
@@ -42,6 +43,7 @@
         "Comprueba",
         "Compruebe",
         "comunes",
+        "consecutivos",
         "contiene",
         "correctamente",
         "creado",
@@ -102,6 +104,7 @@
         "herramientas",
         "HIJA",
         "ignoran",
+        "Impresión",
         "imprevistos",
         "incorrectos",
         "inesperado",
@@ -114,6 +117,7 @@
         "Libro",
         "libros",
         "listar",
+        "Longitud",
         "mantener",
         "Márquez",
         "Matar",
@@ -162,6 +166,8 @@
         "quedarán",
         "Ratifica",
         "Redirige",
+        "reesctructurar",
+        "Reestructura",
         "referencia",
         "registrado",
         "Registrados",
@@ -199,6 +205,7 @@
         "vacía",
         "validación",
         "validaciones",
-        "validar"
+        "validar",
+        "vuelvan"
     ]
 }

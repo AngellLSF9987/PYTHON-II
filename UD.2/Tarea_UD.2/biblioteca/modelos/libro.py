@@ -1,4 +1,4 @@
-# Biblioteca/modelos/libro.py
+# biblioteca/modelos/libro.py
 
 from datetime import date
 
@@ -18,6 +18,9 @@ class Libro:
 
     def get_id(self):
         return self.__id
+
+    def set_id(self, nuevo_id):
+        self.__id = nuevo_id    # Método para actualizar el ID
 
     def get_titulo(self):
         return self.__titulo
@@ -44,5 +47,5 @@ class Libro:
         self.__num_paginas = value
 
     def mostrar_datos(self):
-        """Muestra todos los datos del cliente. Actúa como método __str__"""
-        return f"Id:Id: {self.get_id()}\nTítulo: {self.get_titulo()}.\nAutor: {self.get_autor()}.\nFecha Publicación: {self.get_fecha_publicacion()}.\nNº Páginas: {self.get_num_paginas()}.\n" 
+        """Muestra todos los datos del libro. Actúa como método __str__"""
+        return f"Id: {self.get_id()}\nTítulo: {self.get_titulo()}.\nAutor: {self.get_autor()}.\nFecha Publicación: {self.get_fecha_publicacion()}.\nNº Páginas: {self.get_num_paginas()}.\n" 

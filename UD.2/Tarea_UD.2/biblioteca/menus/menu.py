@@ -1,54 +1,54 @@
-# Biblioteca/utilidades/menu.py
+# biblioteca/menus/menu.py
 
-from ..crud.crud import leer_libro, inicializar_biblioteca
+from ..crud.crud import leer_libro
 from ..modelos.biblioteca import Biblioteca
-from .submenu_libro import submenu_libro
-
-# Instancia de la Biblioteca
-
-biblioteca = Biblioteca()
+from ..menus import submenu_libro
 
 def menu():
-
-    # Inicializa la biblioteca con libros por defecto
-    inicializar_biblioteca()
-
-    print("- Bienvenid@ a Biblioteca AVANZA! -")
-    print("1. Menú Tareas de Biblioteca.")
-    print("2. Buscar libro por nombre.")
-    print("3. Mostrar libros por autor.")
-    print("4. Mostrar todos libros.")
-    print("0. Salir")
-
-    opcion = input("Introduce una opción")
-
+    
+    # Inicializa de manera Global la Biblioteca
+    biblioteca = Biblioteca()
+    
     while True:
-        if opcion == 1:
-           # Redirige al submenú de Tareas CRUD de la Biblioteca
-           submenu_libro()
-        elif opcion == 2:
-            leer_libro()
-        elif opcion == 3:
-            autor = input("Introduzca el nombre del autor deseado:\n")
-            libros = biblioteca.mostrar_libros_por_autor()
+
+        print("\n- Bienvenid@ a Biblioteca AVANZA! -\n")
+        print("1. Menú Tareas de Biblioteca.")
+        print("2. Buscar libro por nombre.")
+        print("3. Mostrar libros por autor.")
+        print("4. Mostrar todos libros.")
+        print("0. Salir")
+
+        opcion = input("\nElija una de las opciones:\n")
+
+        if opcion == "1":
+           # LLama al submenu y le pasa la instancia de Biblioteca
+           submenu_libro.submenu_libro(biblioteca)
+        elif opcion == "2":
+            leer_libro(biblioteca)
+        elif opcion == "3":
+            autor = input("\nIntroduzca el nombre del autor deseado:\n")
+            libros = biblioteca.mostrar_libros_por_autor(autor)
 
             if libros:
-                print(f"- Libros de {autor} -")
+                print(f"\n- Libros de {autor} -\n")
                 for libro in libros:
                     print(libro.mostrar_datos())
             else:
-                print(f"No se encontraron registros de {autor}.")
+                print(f"\nNo se encontraron registros de {autor}.\n")
+
         elif opcion == "4":
-            libros = biblioteca.listar_libros()
+            libros = biblioteca.mostrar_libros()
 
             if libros:
-                print("Registro Completo de Libros existentes en la Biblioteca.")
+                print("\n- Registro Completo de Libros existentes en la Biblioteca -\n")
                 for libro in libros:
                     print(libro)
             else:
-                print("No existe ningún registro aún en la Biblioteca.")
+                print("\nNo existe ningún registro aún en la Biblioteca.\n")
+                return
         elif opcion == "0":
-            print("Hasta luego!")
+            print("\nHasta luego!\n")
             break
+
         else:
-            print("OJO! Opción no válida.")
+            print("\nOJO! Opción no válida.\n")

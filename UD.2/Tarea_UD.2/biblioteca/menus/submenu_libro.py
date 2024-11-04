@@ -1,11 +1,11 @@
 # Biblioteca/utilidades/submenu_libro.py
 
-from ..crud.crud import crear_libro, leer_libro, actualizar_libro, eliminar_libro
+from ..crud import crud
 
-def submenu_libro():
+def submenu_libro(biblioteca):
 
     while True:
-        print("- Menú Tareas de Biblioteca -")
+        print("\n- Tareas de Biblioteca -\n")
         print("1. Añadir libro.")
         print("2. Buscar libro por título.")
         print("3. Modificar Datos Libro.")
@@ -13,17 +13,17 @@ def submenu_libro():
         print("0. Menú Principal.")
 
 
-        opcion = input("Selecciona una opción:\n")
+        opcion = input("\nSelecciona una opción:\n")
 
         if opcion == "1":
-            crear_libro()
+            crud.crear_libro(biblioteca)
         elif opcion == "2":
-            leer_libro()
+            crud.leer_libro(biblioteca)
         elif opcion == "3":
-            actualizar_libro()
+            crud.actualizar_libro(biblioteca)
         elif opcion == "4":
-            eliminar_libro()
+            crud.eliminar_libro(biblioteca)
         elif opcion == "0":
             return # Volver Menú principal
         else:
-            print("Opción no válida.")
+            print("\nOpción no válida.\n")
