@@ -33,7 +33,7 @@ class Uña:
     def estado_uña(self):
         
         if self.__esmalte:
-            print(f"Uña {self.get_forma()} de longitud {self.get_longitud}mm con esmalte {self.__esmalte}")
+            print(f"Uña {self.get_forma()} de longitud {self.get_longitud()}mm con esmalte {self.__esmalte}")
     
         else:
             print(f"Uña {self.get_forma()} de longitud {self.get_longitud()}mm sin esmalte.")

@@ -1,9 +1,9 @@
 # examen30_Ej4/simulacion/metodos.py
 
-from ..modelos.lima import Lima
-from ..modelos.pincel import Pincel
-from ..modelos.esmalte import Esmalte
-from ..modelos.uña import Uña 
+from modelos.lima import Lima
+from modelos.pincel import Pincel
+from modelos.esmalte import Esmalte
+from modelos.uña import Uña
 
 def aplicar_manicura_basica(uñas, esmaltes):
     

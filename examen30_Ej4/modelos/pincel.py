@@ -1,8 +1,6 @@
 # examen30_Ej47modelos/pincel.py
 
-from .herramienta import Herramienta
-
-class Pincel(Herramienta):
+class Pincel:
     
-    def __init__(self):
-        super().__init__("pincel")
+    def usar(self):
+        print("Pincel en uso: Alisando la superficie de la uña...")

@@ -1,4 +1,4 @@
-# examen30_Ej47modelos7esmalte.py
+# examen30_Ej4/modelos/esmalte.py
 
 class Esmalte:
     
