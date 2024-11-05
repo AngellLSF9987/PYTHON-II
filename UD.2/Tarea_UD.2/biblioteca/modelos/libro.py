@@ -1,7 +1,7 @@
 # biblioteca/modelos/libro.py
 
 # from datetime import date
-
+from .autor import Autor
 class Libro:
 
     __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan
