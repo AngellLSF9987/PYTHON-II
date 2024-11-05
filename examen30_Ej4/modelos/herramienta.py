@@ -1,5 +1,4 @@
-# examen30_Ej47modelos7herramienta.py
-
+# examen30_Ej4/modelos/herramienta.py
 
 class Herramienta:
     

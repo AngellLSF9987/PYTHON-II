@@ -1,3 +1,5 @@
+# examen30_Ej4/main.py
+
 from modelos.uña import Uña
 from modelos.esmalte import Esmalte
 from simulacion.metodos import aplicar_manicura_basica

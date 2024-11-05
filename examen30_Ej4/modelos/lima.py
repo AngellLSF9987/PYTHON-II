@@ -1,4 +1,4 @@
-# examen30_Ej47modelos/lima.py
+# examen30_Ej4/modelos/lima.py
 
 class Lima:
     def usar(self):

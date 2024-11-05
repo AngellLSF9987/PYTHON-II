@@ -1,4 +1,4 @@
-# examen30_Ej47modelos/pincel.py
+# examen30_Ej4/modelos/pincel.py
 
 class Pincel:
     

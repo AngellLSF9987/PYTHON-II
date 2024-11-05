@@ -2,8 +2,9 @@
 
 from modelos.lima import Lima
 from modelos.pincel import Pincel
-from modelos.esmalte import Esmalte
-from modelos.uña import Uña
+from modelos.esmalte import *
+from modelos.uña import *
+
 
 def aplicar_manicura_basica(uñas, esmaltes):
     
