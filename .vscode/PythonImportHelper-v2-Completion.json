@@ -1,5 +1,77 @@
 [
     {
+        "label": "Lima",
+        "importPath": "modelos.lima",
+        "description": "modelos.lima",
+        "isExtraImport": true,
+        "detail": "modelos.lima",
+        "documentation": {}
+    },
+    {
+        "label": "Pincel",
+        "importPath": "modelos.pincel",
+        "description": "modelos.pincel",
+        "isExtraImport": true,
+        "detail": "modelos.pincel",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "modelos.esmalte",
+        "description": "modelos.esmalte",
+        "isExtraImport": true,
+        "detail": "modelos.esmalte",
+        "documentation": {}
+    },
+    {
+        "label": "Esmalte",
+        "importPath": "modelos.esmalte",
+        "description": "modelos.esmalte",
+        "isExtraImport": true,
+        "detail": "modelos.esmalte",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "modelos.uña",
+        "description": "modelos.uña",
+        "isExtraImport": true,
+        "detail": "modelos.uña",
+        "documentation": {}
+    },
+    {
+        "label": "Uña",
+        "importPath": "modelos.uña",
+        "description": "modelos.uña",
+        "isExtraImport": true,
+        "detail": "modelos.uña",
+        "documentation": {}
+    },
+    {
+        "label": "aplicar_manicura_basica",
+        "importPath": "simulacion.metodos",
+        "description": "simulacion.metodos",
+        "isExtraImport": true,
+        "detail": "simulacion.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorConversionFloat",
+        "importPath": "excepciones.error_conversion_float",
+        "description": "excepciones.error_conversion_float",
+        "isExtraImport": true,
+        "detail": "excepciones.error_conversion_float",
+        "documentation": {}
+    },
+    {
+        "label": "convertir_float",
+        "importPath": "excepciones.error_conversion_float",
+        "description": "excepciones.error_conversion_float",
+        "isExtraImport": true,
+        "detail": "excepciones.error_conversion_float",
+        "documentation": {}
+    },
+    {
         "label": "date",
         "importPath": "datetime",
         "description": "datetime",
@@ -25,14 +97,6 @@
     },
     {
         "label": "timedelta",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "date",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -223,6 +287,111 @@
         "description": "biblioteca.menus.menu",
         "isExtraImport": true,
         "detail": "biblioteca.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "Galleta",
+        "importPath": "modelos.galleta",
+        "description": "modelos.galleta",
+        "isExtraImport": true,
+        "detail": "modelos.galleta",
+        "documentation": {}
+    },
+    {
+        "label": "leer_galletas",
+        "importPath": "metodos.metodos",
+        "description": "metodos.metodos",
+        "isExtraImport": true,
+        "detail": "metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "mas_galletas",
+        "importPath": "metodos.metodos",
+        "description": "metodos.metodos",
+        "isExtraImport": true,
+        "detail": "metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "Esmalte",
+        "kind": 6,
+        "importPath": "examen30_Ej4.modelos.esmalte",
+        "description": "examen30_Ej4.modelos.esmalte",
+        "peekOfCode": "class Esmalte:\n    def __init__(self, color, marca):\n        self.__color = color\n        self.__marca = marca\n    def get_color(self):\n        return self.__color\n    def set_color(self, value):\n        self.__color = value\n    def get_marca(self):\n        return self.__marca",
+        "detail": "examen30_Ej4.modelos.esmalte",
+        "documentation": {}
+    },
+    {
+        "label": "Herramienta",
+        "kind": 6,
+        "importPath": "examen30_Ej4.modelos.herramienta",
+        "description": "examen30_Ej4.modelos.herramienta",
+        "peekOfCode": "class Herramienta:\n    def __init__(self, tipo):\n        self.__tipo = tipo\n    def get_tipo(self):\n        return self.__tipo\n    def set_tipo(self, value):\n        self.__tipo = value\n    def usar(self):\n        \"\"\"Método __str__\"\"\"\n        print(f\"Usando la herramienta: {self.get_tipo()}\")",
+        "detail": "examen30_Ej4.modelos.herramienta",
+        "documentation": {}
+    },
+    {
+        "label": "Lima",
+        "kind": 6,
+        "importPath": "examen30_Ej4.modelos.lima",
+        "description": "examen30_Ej4.modelos.lima",
+        "peekOfCode": "class Lima:\n    def usar(self):\n        print(\"Lima en uso: Limando la uña...\")",
+        "detail": "examen30_Ej4.modelos.lima",
+        "documentation": {}
+    },
+    {
+        "label": "Pincel",
+        "kind": 6,
+        "importPath": "examen30_Ej4.modelos.pincel",
+        "description": "examen30_Ej4.modelos.pincel",
+        "peekOfCode": "class Pincel:\n    def usar(self):\n        print(\"Pincel en uso: Alisando la superficie de la uña...\")",
+        "detail": "examen30_Ej4.modelos.pincel",
+        "documentation": {}
+    },
+    {
+        "label": "Uña",
+        "kind": 6,
+        "importPath": "examen30_Ej4.modelos.uña",
+        "description": "examen30_Ej4.modelos.uña",
+        "peekOfCode": "class Uña:\n    def __init__(self, longitud, forma):\n        self.__longitud = longitud\n        self.__forma = forma\n        self.__esmalte = None\n    def get_longitud(self):\n        return self.__longitud\n    def set_longitud(self, value):\n        self.__longitud = value\n    def get_forma(self):",
+        "detail": "examen30_Ej4.modelos.uña",
+        "documentation": {}
+    },
+    {
+        "label": "aplicar_manicura_basica",
+        "kind": 2,
+        "importPath": "examen30_Ej4.simulacion.metodos",
+        "description": "examen30_Ej4.simulacion.metodos",
+        "peekOfCode": "def aplicar_manicura_basica(uñas, esmaltes):\n    lima = Lima()\n    print(\"\\n- Limando las uñas -\\n\")\n    for uña in uñas:\n        lima.usar()\n        uña.estado_uña()\n        print(\"\\n- Aplicando esmlates en las uñas -\\n\")\n        for i, uña in enumerate(uñas):\n            esmalte = esmaltes[i % len(esmaltes)]\n            uña.aplicar_esmalte(esmalte)",
+        "detail": "examen30_Ej4.simulacion.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "examen30_Ej4.main",
+        "description": "examen30_Ej4.main",
+        "peekOfCode": "def main():\n    esmalte_rojo = Esmalte(\"rojo\", \"Loreal\")\n    esmalte_azul = Esmalte(\"azul\", \"Marvimundo\")\n    esmaltes = [esmalte_rojo, esmalte_azul]\n    uñas = [Uña(10, \"redonda\"), Uña(12, \"alargada\"), Uña(9, \"cuadrada\")]\n    aplicar_manicura_basica(uñas, esmaltes)\n    print(\"\\n- Estado Final -\\n\")\n    for uña in uñas:\n        uña.estado_uña()\nif __name__ == \"__main__\":",
+        "detail": "examen30_Ej4.main",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorConversionFloat",
+        "kind": 6,
+        "importPath": "examen30_Ej5.excepciones.error_conversion_float",
+        "description": "examen30_Ej5.excepciones.error_conversion_float",
+        "peekOfCode": "class ErrorConversionFloat(Exception):\n    \"\"\"Excepción personalizada para errores de conversión\"\"\"\n    def __init_(self, mensaje = \"Error: La cadena no se puede convertir. Compruebe e inténtelo nuevamente.\"):\n        self.mensaje = mensaje\n        super().__init__(self.mensaje)\ndef convertir_float(cadena):\n    \"\"\"Función personalizada para convertir una cadena a float.\"\"\"\n    try:\n        entrada = float(cadena)\n        return entrada",
+        "detail": "examen30_Ej5.excepciones.error_conversion_float",
+        "documentation": {}
+    },
+    {
+        "label": "convertir_float",
+        "kind": 2,
+        "importPath": "examen30_Ej5.excepciones.error_conversion_float",
+        "description": "examen30_Ej5.excepciones.error_conversion_float",
+        "peekOfCode": "def convertir_float(cadena):\n    \"\"\"Función personalizada para convertir una cadena a float.\"\"\"\n    try:\n        entrada = float(cadena)\n        return entrada\n    except ValueError:\n        raise ErrorConversionFloat(f\"No se pudo convertir '{cadena}' a float.\")",
+        "detail": "examen30_Ej5.excepciones.error_conversion_float",
         "documentation": {}
     },
     {
@@ -2071,48 +2240,120 @@
         "documentation": {}
     },
     {
-        "label": "crear_libro",
+        "label": "crear_autor",
         "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "peekOfCode": "def crear_libro(biblioteca):\n    \"\"\"Crear un nuevo libro y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Libro -\\n\")\n        titulo = input(\"Introduce el titulo:\\n\")\n        autor = input(\"Introduce el autor:\\n\")\n        # Tratamiento de validación de la fecha de publicación como objeto date()\n        fecha_publicacion_str = input(\"Introduce la fecha de publicación (DD-MM-AAAA):\\n\")\n        fecha_publicacion = validar_fecha(fecha_publicacion_str)\n        if not fecha_publicacion:",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "peekOfCode": "def crear_autor(biblioteca):\n    \"\"\"Crear un nuevo autor y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Autor -\\n\")\n        nombre = input(\"Introduce el nombre:\\n\")\n        apellido = input(\"Introduce el apellido:\\n\")\n        # Tratamiento de validación de la fecha de nacimiento como objeto date()\n        nacido_str = input(\"Introduce la fecha de nacimiento (DD-MM-AAAA):\\n\")\n        nacido = validar_fecha(nacido_str)\n        if not nacido:",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "documentation": {}
+    },
+    {
+        "label": "leer_autor",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "peekOfCode": "def leer_autor(biblioteca):\n    \"\"\"Busca y muestra la información de un autor por nombre.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        nombre = input(\"Introduzca el nombre del autor a buscar:\\n\")\n        autor = biblioteca.buscar_autor(nombre)\n        if autor:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(autor.mostrar_datos())\n        else:",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "documentation": {}
+    },
+    {
+        "label": "actualizar_autor",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "peekOfCode": "def actualizar_autor(biblioteca):\n    \"\"\"Actualiza la información de un autor existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre = input(\"Introduce el nombre del autor que deseas actualizar:\\n\")\n        autor = biblioteca.buscar_autor(nombre)\n        if autor:\n            print(\"\\nIntroduce los nuevos datos del autor (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_nombre = input(f\"Nombre [{autor.get_nombre()}]: \") or autor.get_nombre()\n            nuevo_apellido = input(f\"Apellido [{autor.get_apellido()()}]: \") or autor.get_apellido()",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_autor",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "peekOfCode": "def eliminar_autor(biblioteca):\n    \"\"\"Elimina un libro de la biblioteca búscado por título.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        nombre = input(\"Introduce el nombre del autor que deseas borrar:\\n\")\n        autor_eliminado = None\n        for autor in biblioteca.autores:\n            if autor.get_nombre().lower() == nombre.lower():\n                autor_eliminado = autor\n                break # Sale del bucle una vez encontrado el titulo.",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
+        "documentation": {}
+    },
+    {
+        "label": "crear_genero",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "peekOfCode": "def crear_genero(biblioteca):\n    \"\"\"Crear un nuevo género literario y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Género Literario -\\n\")\n        nombre = input(\"Introduce el nombre:\\n\")\n        # Creación y registro del nuevo objeto libro\n        genero = Genero(nombre)\n        biblioteca.agregar_genero(genero)  # Usar la instancia de biblioteca\n        print(\"\\nGénero Literario registrado correctamente.\\n\")\n    except ValueError as e:                              # Valores incorrectos al ingresar datos",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
         "documentation": {}
     },
     {
         "label": "leer_libro",
         "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "peekOfCode": "def leer_libro(biblioteca):\n    \"\"\"Busca y muestra la información de un libro por título.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        nombre = input(\"Introduzca el título del libro a buscar:\\n\")\n        genero = biblioteca.buscar_genero(nombre)\n        if genero:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(genero.mostrar_datos())\n        else:",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "documentation": {}
+    },
+    {
+        "label": "actualizar_genero",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "peekOfCode": "def actualizar_genero(biblioteca):\n    \"\"\"Actualiza la información de un género literario existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre = input(\"Introduce el nombre del género literario que deseas actualizar:\\n\")\n        genero = biblioteca.buscar_nombre(nombre)\n        if genero:\n            print(\"\\nIntroduce los nuevos datos del género literario (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_nombre = input(f\"Nombre [{genero.get_nombre()}]: \") or genero.get_nombre()\n            genero.set_titulo(nuevo_nombre)",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_genero",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "peekOfCode": "def eliminar_genero(biblioteca):\n    \"\"\"Elimina un género literario de la biblioteca búscado por nombre.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        nombre = input(\"Introduce el nombre del género literario que deseas borrar:\\n\")\n        genero_eliminado = None\n        for genero in biblioteca.generos:\n            if genero.get_titulo().lower() == genero.lower():\n                genero_eliminado = genero\n                break # Sale del bucle una vez encontrado el titulo.",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
+        "documentation": {}
+    },
+    {
+        "label": "crear_libro",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
+        "peekOfCode": "def crear_libro(biblioteca):\n    \"\"\"Crear un nuevo libro y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Libro -\\n\")\n        titulo = input(\"Introduce el titulo:\\n\")\n        autor = input(\"Introduce el autor:\\n\")\n        # Tratamiento de validación de la fecha de publicación como objeto date()\n        fecha_publicacion_str = input(\"Introduce la fecha de publicación (DD-MM-AAAA):\\n\")\n        fecha_publicacion = validar_fecha(fecha_publicacion_str)\n        if not fecha_publicacion:",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
+        "documentation": {}
+    },
+    {
+        "label": "leer_libro",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "peekOfCode": "def leer_libro(biblioteca):\n    \"\"\"Busca y muestra la información de un libro por título.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        titulo = input(\"Introduzca el título del libro a buscar:\\n\")\n        libro = biblioteca.buscar_libro(titulo)\n        if libro:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(libro.mostrar_datos())\n        else:",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
     {
         "label": "actualizar_libro",
         "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "peekOfCode": "def actualizar_libro(biblioteca):\n    \"\"\"Actualiza la información de un libro existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas actualizar:\\n\")\n        libro = biblioteca.buscar_libro(titulo)\n        if libro:\n            print(\"\\nIntroduce los nuevos datos del libro (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_titulo = input(f\"Título [{libro.get_titulo()}]: \") or libro.get_titulo()\n            nuevo_autor = input(f\"Autor [{libro.get_autor()}]: \") or libro.get_autor()",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
     {
         "label": "eliminar_libro",
         "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "peekOfCode": "def eliminar_libro(biblioteca):\n    \"\"\"Elimina un libro de la biblioteca búscado por título.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas borrar:\\n\")\n        libro_eliminado = None\n        for libro in biblioteca.libros:\n            if libro.get_titulo().lower() == titulo.lower():\n                libro_eliminado = libro\n                break # Sale del bucle una vez encontrado el titulo.",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
     {
         "label": "consultar_paginas",
         "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
-        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "peekOfCode": "def consultar_paginas(biblioteca):\n    \"\"\"Consulta el número de páginas de un libro específico.\n        - Función < isinstance(objeto, clase) >: verifica que objeto pertenece al tipo o clase especificada,\n                   antes de realizar alguna operación con ese valor.\n                   Evita errores en tiempo de ejecución.\n    \"\"\"\n    try:\n        print(\"\\n- Longitud de Impresión -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas consultar:\\n\")\n        paginas = biblioteca.paginas_por_libro(titulo)",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
     {
@@ -2125,12 +2366,48 @@
         "documentation": {}
     },
     {
+        "label": "submenu_autor",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_autor",
+        "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_autor",
+        "peekOfCode": "def submenu_autor(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Autores -\\n\")\n        print(\"1. Añadir Autor.\")\n        print(\"2. Buscar Autor por nombre.\")\n        print(\"3. Modificar Datos Autor.\")\n        print(\"4. Eliminar Autor.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_autor",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_genero",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_genero",
+        "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_genero",
+        "peekOfCode": "def submenu_genero(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Géneros Literarios -\\n\")\n        print(\"1. Añadir Género.\")\n        print(\"2. Modificar Datos Género.\")\n        print(\"3. Eliminar Género.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n            crud_genero.crear_genero(biblioteca)",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_genero",
+        "documentation": {}
+    },
+    {
         "label": "submenu_libro",
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_libro",
-        "peekOfCode": "def submenu_libro(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Biblioteca -\\n\")\n        print(\"1. Añadir libro.\")\n        print(\"2. Buscar libro por título.\")\n        print(\"3. Modificar Datos Libro.\")\n        print(\"4. Eliminar Libro.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
+        "peekOfCode": "def submenu_libro(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Libros -\\n\")\n        print(\"1. Añadir libro.\")\n        print(\"2. Buscar libro por título.\")\n        print(\"3. Modificar Datos Libro.\")\n        print(\"4. Eliminar Libro.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_libro",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_tareas",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_tareas",
+        "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_tareas",
+        "peekOfCode": "def submenu_tareas(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Biblioteca -\\n\")\n        print(\"1. Tareas de Libros.\")\n        print(\"2. Tareas de Géneros Literarios.\")\n        print(\"3. Tareas de Autores.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n           # LLama al submenu de tareas de libros y le pasa la instancia de Biblioteca",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenu_tareas",
+        "documentation": {}
+    },
+    {
+        "label": "Autor",
+        "kind": 6,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.autor",
+        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.autor",
+        "peekOfCode": "class Autor:\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre, apellido, nacido, fallecido, nacionalidad):\n        self.__id = Autor.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Autor.__id_counter += 1         # Contador autoincremental\n        self.__nombre = nombre\n        self.__apellido = apellido\n        self.__nacido = nacido\n        self.__fallecido = fallecido\n        self.__nacionalidad = nacionalidad",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.autor",
         "documentation": {}
     },
     {
@@ -2138,8 +2415,17 @@
         "kind": 6,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"Método constructor a partir de la instanciación de un diccionario vacío donde quedarán alojados los objetos libro existentes o creados.\"\"\"\n        self.libros = []\n        self.inicializar_biblioteca() # Llamada al método de inicialización\n    def agregar_libro(self, libro):\n        \"\"\"- Agrega un libro nuevo a la lista de libros de la biblioteca. \"\"\"\n        self.libros.append(libro)\n    def buscar_libro(self, titulo):\n        \"\"\"Busca un libro usando el método get_titulo(), que encapsula el atributo título, como referencia de la búsqueda. ",
+        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"Método constructor a partir de la instanciación de un diccionario vacío donde quedarán alojados los objetos libro existentes o creados.\"\"\"\n        self.libros = []\n        self.generos = []\n        self.autores = []\n        self.inicializar_biblioteca() # Llamada al método de inicialización\n    def agregar_libro(self, libro):\n        \"\"\"- Agrega un libro nuevo a la lista de libros de la biblioteca. \"\"\"\n        self.libros.append(libro)",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
+        "documentation": {}
+    },
+    {
+        "label": "Genero",
+        "kind": 6,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.genero",
+        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.genero",
+        "peekOfCode": "class Genero:\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre):\n        self.__id = Genero.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Genero.__id_counter += 1         # Contador autoincremental\n        self.__nombre = nombre\n    def get_id(self):\n        return self.__id\n    def set_id(self, nuevo_id):\n        self.__id = nuevo_id    # Método para actualizar el ID",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.genero",
         "documentation": {}
     },
     {
@@ -2147,7 +2433,7 @@
         "kind": 6,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.libro",
-        "peekOfCode": "class Libro:\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, titulo, autor, fecha_publicacion, num_paginas):\n        self.__id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Libro.__id_counter += 1         # Contador autoincremental\n        self.__titulo = titulo\n        self.__autor = autor\n        self.__fecha_publicacion = fecha_publicacion\n        self.__num_paginas = num_paginas\n    def get_id(self):",
+        "peekOfCode": "class Libro:\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, titulo, genero, autor, fecha_publicacion, num_paginas):\n        self.__id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Libro.__id_counter += 1         # Contador autoincremental\n        self.__titulo = titulo\n        self.__genero = genero\n        self.__autor = autor\n        self.__fecha_publicacion = fecha_publicacion\n        self.__num_paginas = num_paginas",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.libro",
         "documentation": {}
     },
@@ -2185,6 +2471,87 @@
         "description": "UD.2.Teoría y Ejemplos Didácticos.Ejercicio1-Clase.UD.2",
         "peekOfCode": "mi_estuche = Estuche(5)\nEstuche.agregar_boligrafo(\"Azul\")\nEstuche.agregar_boligrafo(\"Negro\")\nEstuche.agregar_boligrafo(\"Rojo\")\nEstuche.agregar_boligrafo(\"Verde\")\nEstuche.agregar_boligrafo(\"Violeta\")\ntry:\n    mi_estuche.agregar_boligrafo(\"Gris\")\nexcept EstucheLlenoError as e:\n    print(e)",
         "detail": "UD.2.Teoría y Ejemplos Didácticos.Ejercicio1-Clase.UD.2",
+        "documentation": {}
+    },
+    {
+        "label": "fichero",
+        "kind": 5,
+        "importPath": "UD.3.ejemplo_1.ejemplo_1.1",
+        "description": "UD.3.ejemplo_1.ejemplo_1.1",
+        "peekOfCode": "fichero = open(r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3/ejemplo_1/hola.txt\", 'r')\nfichero.seek(0)        # # Indica que empezará a leer desde el comienzo del fichero hasta el final.\nprint(fichero.read())\nfichero.close()",
+        "detail": "UD.3.ejemplo_1.ejemplo_1.1",
+        "documentation": {}
+    },
+    {
+        "label": "fichero",
+        "kind": 5,
+        "importPath": "UD.3.ejemplo_1.ejemplo_1.3_versiones_iteradas",
+        "description": "UD.3.ejemplo_1.ejemplo_1.3_versiones_iteradas",
+        "peekOfCode": "fichero = open(r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3/ejemplo_1/mensajes.txt\", 'r', encoding=\"utf-8\")\nfichero.seek(0)        # # Indica que empezará a leer desde el comienzo del fichero hasta el final.\nprint(fichero.read(26))\nfichero.close()\n# Versión 2\nwith open(r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3\\ejemplo_1/mensajes.txt\", \"r\", encoding=\"utf-8\") as adios:\n    adios.seek(29)                       # Indica que empezará a leer desde el comienzo del fichero hasta el final.\n    contenido = adios.read()\n    print(contenido)\nprint()",
+        "detail": "UD.3.ejemplo_1.ejemplo_1.3_versiones_iteradas",
+        "documentation": {}
+    },
+    {
+        "label": "leer_galletas",
+        "kind": 2,
+        "importPath": "UD.3.ejemplo_3.galleta.metodos.metodos",
+        "description": "UD.3.ejemplo_3.galleta.metodos.metodos",
+        "peekOfCode": "def leer_galletas(ruta_archivo):\n    \"\"\"\n    Leer datos del fichero. \n    Usa una lista vacía como mecanismo de \n    almacenamiento para su posterior lectura por líneas.\n    \"\"\"\n    mis_galletitas = []\n    with open(ruta_archivo, \"r\", encoding=\"utf-8\") as leer_lista:\n        for linea in leer_lista:\n            linea = linea.strip()                                     # Eliminar espacios en blanco  antes y después",
+        "detail": "UD.3.ejemplo_3.galleta.metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "mas_galletas",
+        "kind": 2,
+        "importPath": "UD.3.ejemplo_3.galleta.metodos.metodos",
+        "description": "UD.3.ejemplo_3.galleta.metodos.metodos",
+        "peekOfCode": "def mas_galletas():\n    \"\"\"\n    Añadir nuevas galletas al archivo.\n    Asegurarse de que no haya duplicados.\n    \"\"\"\n    nuevas_galletas = [\n        \"Chips Ahoy, Vainilla\",\n        \"Príncipe, Fresa\"\n    ]\n    ruta_archivo = r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3\\ejemplo_3\\galleta\\datos\\datos_galletas.txt\"",
+        "detail": "UD.3.ejemplo_3.galleta.metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "Galleta",
+        "kind": 6,
+        "importPath": "UD.3.ejemplo_3.galleta.modelos.galleta",
+        "description": "UD.3.ejemplo_3.galleta.modelos.galleta",
+        "peekOfCode": "class Galleta:\n    def __init__(self, marca, sabor):\n        self.__marca = marca\n        self.__sabor = sabor\n    def get_marca(self):\n        return self.__marca\n    def set_marca(self, value):\n        self.__marca = value\n    def get_sabor(self):\n        return self.__sabor",
+        "detail": "UD.3.ejemplo_3.galleta.modelos.galleta",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "UD.3.ejemplo_3.galleta.main",
+        "description": "UD.3.ejemplo_3.galleta.main",
+        "peekOfCode": "def main():\n    ruta_archivo = r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3\\ejemplo_3\\galleta\\datos\\datos_galletas.txt\"   \n    galletas = leer_galletas(ruta_archivo)\n    print(\"Galletas leídas del archivo:\")       \n    for galleta in galletas:\n        print(galleta)                                  # Imprime cada galleta usando el método __str__\n    mas_galletas()\nif __name__ == \"__main__\":\n    main()",
+        "detail": "UD.3.ejemplo_3.galleta.main",
+        "documentation": {}
+    },
+    {
+        "label": "Figura",
+        "kind": 6,
+        "importPath": "prueba",
+        "description": "prueba",
+        "peekOfCode": "class Figura:\n    def __init__(self, nombre, color):\n        self.__nombre = nombre\n        self.color = color\n    def get_nombre(self):\n        return self.__nombre\n    def calcular_area(self):\n        pass\n    def describir(self):\n        return f\"Soy una figura de nombre {self.get_nombre()} y color {self.color}\"",
+        "detail": "prueba",
+        "documentation": {}
+    },
+    {
+        "label": "Cuadrado",
+        "kind": 6,
+        "importPath": "prueba",
+        "description": "prueba",
+        "peekOfCode": "class Cuadrado(Figura):\n    def __init__(self, lado, nombre=\"Cuadrado\", color=\"Azul\"):\n        super().__init__(nombre,color)\n        self.__lado = lado\n    def get_lado(self):\n        return self.__lado\n    def calcular_area(self):\n        return self.get_lado() ** 2\n    def describir(self):\n        print(f\"{super().describir()} y con lado {self.get_lado()}\")",
+        "detail": "prueba",
+        "documentation": {}
+    },
+    {
+        "label": "cuadrado",
+        "kind": 5,
+        "importPath": "prueba",
+        "description": "prueba",
+        "peekOfCode": "cuadrado = Cuadrado(5)\nprint(cuadrado.calcular_area())\ncuadrado.describir()",
+        "detail": "prueba",
         "documentation": {}
     }
 ]
