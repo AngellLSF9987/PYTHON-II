@@ -38,7 +38,7 @@ def leer_libro(biblioteca):
     try:
         print("\n- Información del Registro deseado -\n")
         titulo = input("Introduzca el título del libro a buscar:\n")
-        libro = biblioteca.buscar_libro(titulo)
+        libro = biblioteca.buscar_libro_titulo(titulo)
 
         if libro:
             print("\nRegistro encontrado.\n")
@@ -55,7 +55,7 @@ def actualizar_libro(biblioteca):
     try:
         print("\n- Actualización del Registro -\n")
         titulo = input("Introduce el título del libro que deseas actualizar:\n")
-        libro = biblioteca.buscar_libro(titulo)
+        libro = biblioteca.buscar_libro_titulo(titulo)
 
         if libro:
             print("\nIntroduce los nuevos datos del libro (deja en blanco para mantener la información actual:)\n")
@@ -100,34 +100,9 @@ def eliminar_libro(biblioteca):
             biblioteca.libros.remove(libro_eliminado)  # Elimina el libro de la lista
             print("El registro ha sido eliminado correctamente.")
             #return True   ->   # True si se elimina con éxito
-            biblioteca.reestructurar_ids()  # Reestructura los ids del resto de registros después de eliminar
+            biblioteca.reestructurar_ids_libros()  # Reestructura los ids del resto de registros después de eliminar
         else:
             print("No se encontró ningún registro con ese título.\nCompruebe búsqueda e inténtelo de nuevo.")
             #return False  ->  # False si no se encuentra el libro.
     except Exception as e:                                                     # Errores imprevistos
         print(f"\nSe produjo un error al intentar eliminar el libro: {e}\n")
-
-def consultar_paginas(biblioteca):
-    """Consulta el número de páginas de un libro específico.
-    
-        - Función < isinstance(objeto, clase) >: verifica que objeto pertenece al tipo o clase especificada,
-                   antes de realizar alguna operación con ese valor.
-                   Evita errores en tiempo de ejecución.
-    """
-
-    try:
-        print("\n- Longitud de Impresión -\n")
-        titulo = input("Introduce el título del libro que deseas consultar:\n")
-        paginas = biblioteca.paginas_por_libro(titulo)
-
-        if isinstance(paginas, int):
-        # Ratifica que paginas sea de tipo int (entero). Si paginas fuera None o cualquier otro tipo de dato, el programa mostrará
-        # un mensaje de error, evitando problemas si se intentara imprimir o usar paginas como un entero cuando no lo es.
-            """Ratifica que paginas sea de tipo int (entero). Si paginas fuera None o cualquier otro tipo de dato, el programa mostrará
-               un mensaje de error, evitando problemas si se intentara imprimir o usar paginas como un entero cuando no lo es."""
-            print(f"El libro '{titulo}' tiene {paginas} páginas.")
-        else:
-            print("El libro no se encuentra en el listado de registros de la Biblioteca.")
-    
-    except Exception as e:
-        print(f"Se produjo un error al consultar las páginas del libro: {e}")

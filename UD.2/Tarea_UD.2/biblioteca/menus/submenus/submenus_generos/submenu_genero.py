@@ -1,6 +1,6 @@
-# biblioteca/utilidades/submenu_genero.py
+# biblioteca/menus/submenus_generos/submenu_genero.py
 
-from ..crud import crud_genero
+from ....crud import crud_genero
 
 def submenu_genero(biblioteca):
 
@@ -21,6 +21,6 @@ def submenu_genero(biblioteca):
         elif opcion == "3":
             crud_genero.eliminar_genero(biblioteca)
         elif opcion == "0":
-            return          # Volver SubMenú Tareas
+            return          # Volver SubMenú Géneros
         else:
             print("\nOpción no válida.\n")

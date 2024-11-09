@@ -1,7 +1,6 @@
 # biblioteca/crud/crud_genero.py
 
-from ..modelos.genero import Genero
-from ..utilidades.validaciones import validar_fecha
+from ..modelos.generos.genero import Genero
 
 def crear_genero(biblioteca):
     """Crear un nuevo género literario y lo añade a la Biblioteca."""
@@ -21,22 +20,22 @@ def crear_genero(biblioteca):
     except Exception as e2:                               # Errores imprevistos
         print(f"\nSe produjo un error inesperado: {e}\n")
 
-def leer_libro(biblioteca):
-    """Busca y muestra la información de un libro por título."""
+def leer_genero(biblioteca):
+    """Busca y muestra la información de un género literario por nombre."""
 
     try:
         print("\n- Información del Registro deseado -\n")
-        nombre = input("Introduzca el título del libro a buscar:\n")
-        genero = biblioteca.buscar_genero(nombre)
+        nombre = input("Introduzca el nombre del género literario a buscar:\n")
+        genero = biblioteca.buscar_genero_nombre(nombre)
 
         if genero:
             print("\nRegistro encontrado.\n")
-            print(genero.mostrar_datos())
+            print(genero.mostrar_datos_genero())
         else:
             print("\nGénero Literario no encontrado. Revise la información proporcionada e inténtelo de nuevo.\n")
 
     except Exception as e:                                         # Errores imprevistos
-        print(f"Se produjo un error al buscar el libro: {e}")
+        print(f"Se produjo un error al buscar el género literario: {e}")
 
 def actualizar_genero(biblioteca):
     """Actualiza la información de un género literario existente."""
@@ -44,7 +43,7 @@ def actualizar_genero(biblioteca):
     try:
         print("\n- Actualización del Registro -\n")
         nombre = input("Introduce el nombre del género literario que deseas actualizar:\n")
-        genero = biblioteca.buscar_nombre(nombre)
+        genero = biblioteca.buscar_genero_nombre(nombre)
 
         if genero:
             print("\nIntroduce los nuevos datos del género literario (deja en blanco para mantener la información actual:)\n")
@@ -73,7 +72,7 @@ def eliminar_genero(biblioteca):
         
         genero_eliminado = None
         for genero in biblioteca.generos:
-            if genero.get_titulo().lower() == genero.lower():
+            if genero.get_nombre().lower() == nombre.lower():
                 genero_eliminado = genero
                 break # Sale del bucle una vez encontrado el titulo.
 
@@ -81,7 +80,7 @@ def eliminar_genero(biblioteca):
             biblioteca.generos.remove(genero_eliminado)  # Elimina el género literario de la lista
             print("El registro ha sido eliminado correctamente.")
             #return True   ->   # True si se elimina con éxito
-            biblioteca.reestructurar_ids()  # Reestructura los ids del resto de registros después de eliminar
+            biblioteca.reestructurar_ids_generos()  # Reestructura los ids del resto de registros después de eliminar
         else:
             print("No se encontró ningún registro con ese nombre.\nCompruebe búsqueda e inténtelo de nuevo.")
             #return False  ->  # False si no se encuentra el libro.

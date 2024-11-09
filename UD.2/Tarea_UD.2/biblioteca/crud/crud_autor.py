@@ -46,11 +46,11 @@ def leer_autor(biblioteca):
     try:
         print("\n- Información del Registro deseado -\n")
         nombre = input("Introduzca el nombre del autor a buscar:\n")
-        autor = biblioteca.buscar_autor(nombre)
+        autor = biblioteca.buscar_autor_nombre(nombre)
 
         if autor:
             print("\nRegistro encontrado.\n")
-            print(autor.mostrar_datos())
+            print(autor.mostrar_datos_autor())
         else:
             print("\nAutor no encontrado. Revise la información proporcionada e inténtelo de nuevo.\n")
 
@@ -63,7 +63,7 @@ def actualizar_autor(biblioteca):
     try:
         print("\n- Actualización del Registro -\n")
         nombre = input("Introduce el nombre del autor que deseas actualizar:\n")
-        autor = biblioteca.buscar_autor(nombre)
+        autor = biblioteca.buscar_autor_nombre(nombre)
 
         if autor:
             print("\nIntroduce los nuevos datos del autor (deja en blanco para mantener la información actual:)\n")
@@ -110,7 +110,7 @@ def eliminar_autor(biblioteca):
             biblioteca.autores.remove(autor_eliminado)  # Elimina el libro de la lista
             print("El registro ha sido eliminado correctamente.")
             #return True   ->   # True si se elimina con éxito
-            biblioteca.reestructurar_ids()  # Reestructura los ids del resto de registros después de eliminar
+            biblioteca.reestructurar_ids_autores()  # Reestructura los ids del resto de registros después de eliminar
         else:
             print("No se encontró ningún registro de autor con ese nombre.\nCompruebe búsqueda e inténtelo de nuevo.")
             #return False  ->  # False si no se encuentra el libro.

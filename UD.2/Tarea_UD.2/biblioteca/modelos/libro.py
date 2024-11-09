@@ -2,18 +2,21 @@
 
 # from datetime import date
 from .autor import Autor
+from .generos.genero import Genero
+from .generos.subgenero import Subgenero
 class Libro:
 
     __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan
 
-    def __init__(self, titulo, genero, autor, fecha_publicacion, num_paginas):
+    def __init__(self, titulo, autor, genero, subgenero, fecha_publicacion, num_paginas):
 
         self.__id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1
         Libro.__id_counter += 1         # Contador autoincremental
 
         self.__titulo = titulo
+        self.__autor = autor        
         self.__genero = genero
-        self.__autor = autor
+        self.__subgenero = subgenero
         self.__fecha_publicacion = fecha_publicacion
         self.__num_paginas = num_paginas
 
@@ -29,17 +32,23 @@ class Libro:
     def set_titulo(self, value):
         self.__titulo = value
 
+    def get_autor(self):
+        return self.__autor
+
+    def set_autor(self, value):
+        self.__autor = value        
+
     def get_genero(self):
         return self.__genero
 
     def set_genero(self, value):
         self.__genero = value
 
-    def get_autor(self):
-        return self.__autor
+    def get_subgenero(self):
+        return self.__subgenero
 
-    def set_autor(self, value):
-        self.__autor = value
+    def set_subgenero(self, value):
+        self.__subgenero = value       
 
     def get_fecha_publicacion(self):
         return self.__fecha_publicacion
@@ -53,6 +62,6 @@ class Libro:
     def set_num_paginas(self, value):
         self.__num_paginas = value
 
-    def mostrar_datos(self):
+    def mostrar_datos_libro(self):
         """Muestra todos los datos del libro. Actúa como método __str__"""
-        return f"Id: {self.get_id()}.\nTítulo: {self.get_titulo()}.\nGénero Literario: {self.get_genero}.\nAutor: {self.get_autor()}.\nFecha Publicación: {self.get_fecha_publicacion()}.\nNº Páginas: {self.get_num_paginas()}.\n" 
+        return f"Id: {self.get_id()}.\nTítulo: {self.get_titulo()}.\nAutor: {self.get_autor()}.\nGénero Literario: {self.get_genero()}.\nSubgénero Literario: {self.get_subgenero()}.\nFecha Publicación: {self.get_fecha_publicacion()}.\nNº Páginas: {self.get_num_paginas()}.\n" 
