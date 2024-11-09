@@ -2,7 +2,7 @@
 
 from ..crud.crud_libro import leer_libro
 from ..modelos.biblioteca import Biblioteca
-from ..menus import submenu_tareas
+from ..menus.submenus import submenu_tareas
 
 def menu():
     

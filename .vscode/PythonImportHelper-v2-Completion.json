@@ -298,14 +298,6 @@
         "documentation": {}
     },
     {
-        "label": "menu",
-        "importPath": "biblioteca.menus.menu",
-        "description": "biblioteca.menus.menu",
-        "isExtraImport": true,
-        "detail": "biblioteca.menus.menu",
-        "documentation": {}
-    },
-    {
         "label": "Galleta",
         "importPath": "modelos.galleta",
         "description": "modelos.galleta",
