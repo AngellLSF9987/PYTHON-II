@@ -1,9 +1,9 @@
 # biblioteca/modelos/libro.py
 
 # from datetime import date
-from .autor import Autor
-from .generos.genero import Genero
-from .generos.subgenero import Subgenero
+from biblioteca.modelos.autor import Autor
+from biblioteca.modelos.generos.genero import Genero
+from biblioteca.modelos.generos.subgenero import Subgenero
 class Libro:
 
     __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan

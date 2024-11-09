@@ -282,51 +282,219 @@
         "documentation": {}
     },
     {
-        "label": "submenu_genero",
-        "importPath": "submenus_generos.submenu_genero",
-        "description": "submenus_generos.submenu_genero",
+        "label": "Autor",
+        "importPath": "biblioteca.modelos.autor",
+        "description": "biblioteca.modelos.autor",
         "isExtraImport": true,
-        "detail": "submenus_generos.submenu_genero",
+        "detail": "biblioteca.modelos.autor",
+        "documentation": {}
+    },
+    {
+        "label": "Autor",
+        "importPath": "biblioteca.modelos.autor",
+        "description": "biblioteca.modelos.autor",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.autor",
+        "documentation": {}
+    },
+    {
+        "label": "Autor",
+        "importPath": "biblioteca.modelos.autor",
+        "description": "biblioteca.modelos.autor",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.autor",
+        "documentation": {}
+    },
+    {
+        "label": "validar_fecha",
+        "importPath": "biblioteca.utilidades.validaciones",
+        "description": "biblioteca.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_fecha",
+        "importPath": "biblioteca.utilidades.validaciones",
+        "description": "biblioteca.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_fecha",
+        "importPath": "biblioteca.utilidades.validaciones",
+        "description": "biblioteca.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "Genero",
+        "importPath": "biblioteca.modelos.generos.genero",
+        "description": "biblioteca.modelos.generos.genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.genero",
+        "documentation": {}
+    },
+    {
+        "label": "Genero",
+        "importPath": "biblioteca.modelos.generos.genero",
+        "description": "biblioteca.modelos.generos.genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.genero",
+        "documentation": {}
+    },
+    {
+        "label": "Genero",
+        "importPath": "biblioteca.modelos.generos.genero",
+        "description": "biblioteca.modelos.generos.genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.genero",
+        "documentation": {}
+    },
+    {
+        "label": "Genero",
+        "importPath": "biblioteca.modelos.generos.genero",
+        "description": "biblioteca.modelos.generos.genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.genero",
+        "documentation": {}
+    },
+    {
+        "label": "Libro",
+        "importPath": "biblioteca.modelos.libro",
+        "description": "biblioteca.modelos.libro",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.libro",
+        "documentation": {}
+    },
+    {
+        "label": "Libro",
+        "importPath": "biblioteca.modelos.libro",
+        "description": "biblioteca.modelos.libro",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.libro",
+        "documentation": {}
+    },
+    {
+        "label": "Subgenero",
+        "importPath": "biblioteca.modelos.generos.subgenero",
+        "description": "biblioteca.modelos.generos.subgenero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.subgenero",
+        "documentation": {}
+    },
+    {
+        "label": "Subgenero",
+        "importPath": "biblioteca.modelos.generos.subgenero",
+        "description": "biblioteca.modelos.generos.subgenero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.subgenero",
+        "documentation": {}
+    },
+    {
+        "label": "Subgenero",
+        "importPath": "biblioteca.modelos.generos.subgenero",
+        "description": "biblioteca.modelos.generos.subgenero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.subgenero",
+        "documentation": {}
+    },
+    {
+        "label": "crud_genero",
+        "importPath": "biblioteca.crud",
+        "description": "biblioteca.crud",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud",
+        "documentation": {}
+    },
+    {
+        "label": "crud_subgenero",
+        "importPath": "biblioteca.crud",
+        "description": "biblioteca.crud",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud",
+        "documentation": {}
+    },
+    {
+        "label": "crud_autor",
+        "importPath": "biblioteca.crud",
+        "description": "biblioteca.crud",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud",
+        "documentation": {}
+    },
+    {
+        "label": "crud_libro",
+        "importPath": "biblioteca.crud",
+        "description": "biblioteca.crud",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_genero",
+        "importPath": "biblioteca.menus.submenus.submenus_generos",
+        "description": "biblioteca.menus.submenus.submenus_generos",
+        "isExtraImport": true,
+        "detail": "biblioteca.menus.submenus.submenus_generos",
         "documentation": {}
     },
     {
         "label": "submenu_subgenero",
-        "importPath": "submenus_generos.submenu_subgenero",
-        "description": "submenus_generos.submenu_subgenero",
+        "importPath": "biblioteca.menus.submenus.submenus_generos",
+        "description": "biblioteca.menus.submenus.submenus_generos",
         "isExtraImport": true,
-        "detail": "submenus_generos.submenu_subgenero",
+        "detail": "biblioteca.menus.submenus.submenus_generos",
         "documentation": {}
     },
     {
         "label": "submenu_libro",
-        "importPath": "submenu_tareas",
-        "description": "submenu_tareas",
+        "importPath": "biblioteca.menus.submenus",
+        "description": "biblioteca.menus.submenus",
         "isExtraImport": true,
-        "detail": "submenu_tareas",
+        "detail": "biblioteca.menus.submenus",
         "documentation": {}
     },
     {
-        "label": "submenu_genero",
-        "importPath": "submenu_tareas",
-        "description": "submenu_tareas",
+        "label": "submenu_generos",
+        "importPath": "biblioteca.menus.submenus",
+        "description": "biblioteca.menus.submenus",
         "isExtraImport": true,
-        "detail": "submenu_tareas",
+        "detail": "biblioteca.menus.submenus",
         "documentation": {}
     },
     {
         "label": "submenu_autor",
-        "importPath": "submenu_tareas",
-        "description": "submenu_tareas",
+        "importPath": "biblioteca.menus.submenus",
+        "description": "biblioteca.menus.submenus",
         "isExtraImport": true,
-        "detail": "submenu_tareas",
+        "detail": "biblioteca.menus.submenus",
         "documentation": {}
     },
     {
         "label": "submenu_tareas",
-        "importPath": "menus.submenus",
-        "description": "menus.submenus",
+        "importPath": "biblioteca.menus.submenus",
+        "description": "biblioteca.menus.submenus",
         "isExtraImport": true,
-        "detail": "menus.submenus",
+        "detail": "biblioteca.menus.submenus",
+        "documentation": {}
+    },
+    {
+        "label": "leer_libro",
+        "importPath": "biblioteca.crud.crud_libro",
+        "description": "biblioteca.crud.crud_libro",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud.crud_libro",
+        "documentation": {}
+    },
+    {
+        "label": "Biblioteca",
+        "importPath": "biblioteca.modelos.biblioteca",
+        "description": "biblioteca.modelos.biblioteca",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.biblioteca",
         "documentation": {}
     },
     {
@@ -2441,11 +2609,11 @@
         "documentation": {}
     },
     {
-        "label": "submenu_subgenero",
+        "label": "submenu_subgeneros",
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_subgenero",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_subgenero",
-        "peekOfCode": "def submenu_subgenero(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Géneros Literarios -\\n\")\n        print(\"1. Añadir Subgénero.\")\n        print(\"2. Modificar Datos Subgénero.\")\n        print(\"3. Eliminar Subgénero.\")\n        print(\"0. Menú Géneros.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n            crud_subgenero.crear_subgenero(biblioteca)",
+        "peekOfCode": "def submenu_subgeneros(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Géneros Literarios -\\n\")\n        print(\"1. Añadir Subgénero.\")\n        print(\"2. Modificar Datos Subgénero.\")\n        print(\"3. Eliminar Subgénero.\")\n        print(\"0. Menú Géneros.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n            crud_subgenero.crear_subgenero(biblioteca)",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_subgenero",
         "documentation": {}
     },

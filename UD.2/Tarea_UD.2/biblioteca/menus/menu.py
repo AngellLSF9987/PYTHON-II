@@ -1,8 +1,8 @@
 # biblioteca/menus/menu.py
 
-from ..crud.crud_libro import leer_libro
-from ..modelos.biblioteca import Biblioteca
-from menus.submenus import submenu_tareas
+from biblioteca.crud.crud_libro import leer_libro
+from biblioteca.modelos.biblioteca import Biblioteca
+from biblioteca.menus.submenus import submenu_tareas
 
 def menu():
     

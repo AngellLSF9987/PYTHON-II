@@ -1,6 +1,6 @@
-# biblioteca/utilidades/submenu_libro.py
+# biblioteca/menu/submenus/submenu_libro.py
 
-from ..crud import crud_libro
+from biblioteca.crud import crud_libro
 
 def submenu_libro(biblioteca):
 

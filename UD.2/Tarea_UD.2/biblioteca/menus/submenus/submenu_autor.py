@@ -1,6 +1,6 @@
-# biblioteca/utilidades/submenu_autor.py
+# biblioteca/menu/submenus/submenu_autor.py
 
-from ..crud import crud_autor
+from biblioteca.crud import crud_autor
 
 def submenu_autor(biblioteca):
 

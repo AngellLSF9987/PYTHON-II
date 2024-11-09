@@ -1,8 +1,8 @@
 # biblioteca/menus/submenus/submenu_tareas.py
 
-from submenu_tareas import submenu_libro
-from submenu_tareas import submenu_genero
-from submenu_tareas import submenu_autor
+from biblioteca.menus.submenus import submenu_libro
+from biblioteca.menus.submenus import submenu_generos
+from biblioteca.menus.submenus import submenu_autor
 
 def submenu_tareas(biblioteca):
     
@@ -20,7 +20,7 @@ def submenu_tareas(biblioteca):
            submenu_libro.submenu_libro(biblioteca)
         elif opcion == "2":
             # LLama al submenu de tareas de géneros literarios y le pasa la instancia de Biblioteca
-           submenu_genero.submenu_genero(biblioteca)
+           submenu_generos.submenu_generos(biblioteca)
         elif opcion == "3":
             # LLama al submenu de tareas de autores y le pasa la instancia de Biblioteca
             submenu_autor.submenu_autor(biblioteca)

@@ -1,6 +1,6 @@
-# biblioteca/crud/crud_genero.py
+# biblioteca/crud/crud_subgenero.py
 
-from ..modelos.generos.subgenero import Subgenero
+from biblioteca.modelos.generos.subgenero import Subgenero
 
 def crear_subgenero(biblioteca):
     """Crear un nuevo género literario y lo añade a la Biblioteca."""

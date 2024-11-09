@@ -1,7 +1,7 @@
 # biblioteca/crud/crud_libro.py
 
-from ..modelos.libro import Libro
-from ..utilidades.validaciones import validar_fecha
+from biblioteca.modelos.libro import Libro
+from biblioteca.utilidades.validaciones import validar_fecha
 
 def crear_libro(biblioteca):
     """Crear un nuevo libro y lo añade a la Biblioteca."""

@@ -1,7 +1,7 @@
-# biblioteca/menus/submenu_generos.py
+# biblioteca/menus/submenus/submenu_generos.py
 
-from submenus_generos.submenu_genero import submenu_genero
-from submenus_generos.submenu_subgenero import submenu_subgenero
+from biblioteca.menus.submenus.submenus_generos import submenu_genero
+from biblioteca.menus.submenus.submenus_generos import submenu_subgenero
 
 def submenu_generos(biblioteca):
     

@@ -1,7 +1,7 @@
 # biblioteca/crud/crud_autor.py
 
-from ..modelos.autor import Autor
-from ..utilidades.validaciones import validar_fecha
+from biblioteca.modelos.autor import Autor
+from biblioteca.utilidades.validaciones import validar_fecha
 
 def crear_autor(biblioteca):
     """Crear un nuevo autor y lo añade a la Biblioteca."""

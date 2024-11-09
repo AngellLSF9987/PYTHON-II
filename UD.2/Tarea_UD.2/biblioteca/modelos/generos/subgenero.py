@@ -1,6 +1,6 @@
 # biblioteca/modelos/generos/subgenero.py
 
-from .genero import Genero
+from biblioteca.modelos.generos.genero import Genero
 
 class Subgenero(Genero):
 

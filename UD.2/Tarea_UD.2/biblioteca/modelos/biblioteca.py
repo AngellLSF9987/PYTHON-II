@@ -1,10 +1,10 @@
 # biblioteca/modelos/biblioteca.py
 
-from .libro import Libro
-from .autor import Autor
-from .generos.genero import Genero
-from .generos.subgenero import Subgenero
-from ..utilidades.validaciones import validar_fecha
+from biblioteca.modelos.libro import Libro
+from biblioteca.modelos.autor import Autor
+from biblioteca.modelos.generos.genero import Genero
+from biblioteca.modelos.generos.subgenero import Subgenero
+from biblioteca.utilidades.validaciones import validar_fecha
 
 class Biblioteca:
     def __init__(self):
