@@ -42,7 +42,7 @@ def leer_libro(biblioteca):
 
         if libro:
             print("\nRegistro encontrado.\n")
-            print(libro.mostrar_datos())
+            print(libro.mostrar_datos_libro())
         else:
             print("\nTítulo no encontrado. Revise la información proporcionada e inténtelo de nuevo.\n")
 

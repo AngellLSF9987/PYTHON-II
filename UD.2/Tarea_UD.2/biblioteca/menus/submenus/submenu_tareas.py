@@ -10,7 +10,7 @@ def submenu_tareas(biblioteca):
         print("\n- Tareas de Biblioteca -\n")
         print("1. Tareas de Libros.")
         print("2. Tareas de Autores.")
-        print("3. Tareas de Géneros Literarios.")
+        print("3. Tareas de Géneros y Subgéneros Literarios.")
         print("0. Menú Principal.")
         
         opcion = input("\nSelecciona una opción:\n")

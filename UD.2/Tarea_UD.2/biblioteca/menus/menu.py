@@ -1,6 +1,7 @@
 # biblioteca/menus/menu.py
 
 from biblioteca.crud.crud_libro import leer_libro
+from biblioteca.crud.crud_autor import leer_autor
 from biblioteca.modelos.biblioteca import Biblioteca
 from biblioteca.menus.submenus import submenu_tareas
 
@@ -13,9 +14,14 @@ def menu():
 
         print("\n- Bienvenid@ a Biblioteca AVANZA! -\n")
         print("1. Menú Tareas de Biblioteca.")
-        print("2. Buscar libro por nombre.")
-        print("3. Mostrar libros por autor.")
-        print("4. Mostrar todos libros.")
+        print("2. Buscar libro por Título.")
+        print("3. Buscar Autor por Pseudónimo.")
+        print("4. Mostrar libros por Autor.")
+        print("5. Mostrar libros por Género.")
+        print("6. Mostrar libros por Subgénero.")
+        print("7. Mostrar todos los Libros.")
+        print("8. Mostrar todos los Autores.")
+        print("9. Mostrar todos los Géneros Literarios.")
         print("0. Salir")
 
         opcion = input("\nElija una de las opciones:\n")
@@ -26,6 +32,8 @@ def menu():
         elif opcion == "2":
             leer_libro(biblioteca)
         elif opcion == "3":
+            leer_autor(biblioteca)
+        elif opcion == "4":
             autor = input("\nIntroduzca el nombre del autor deseado:\n")
             libros = biblioteca.mostrar_libros_por_autor(autor)
 
@@ -35,14 +43,49 @@ def menu():
                     print(libro.mostrar_datos_libro())
             else:
                 print(f"\nNo se encontraron registros de {autor}.\n")
+        elif opcion == "5":
+            genero = input("\nIntroduzca el nombre del Género Literario buscado:\n")
+            libros = biblioteca.mostrar_libros_por_genero(genero)
 
-        elif opcion == "4":
+            if libros:
+                print(f"\n - Libros por {genero} -\n")
+                for libro in libros:
+                    print(libro.mostrar_datos_libro())
+        elif opcion == "6":
+            subgenero = input("\nIntroduzca el nombre del Subgénero Literario buscado:\n")
+            libros = biblioteca.mostrar_libros_por_subgenero(subgenero)
+
+            if libros:
+                print(f"\n - Libros por {subgenero} -\n")
+                for libro in libros:
+                    print(libro.mostrar_datos_libro())
+        elif opcion == "7":
             libros = biblioteca.mostrar_libros()
 
             if libros:
                 print("\n- Registro Completo de Libros existentes en la Biblioteca -\n")
                 for libro in libros:
                     print(libro)
+            else:
+                print("\nNo existe ningún registro aún en la Biblioteca.\n")
+                return
+        elif opcion == "8":
+            autores = biblioteca.mostrar_autores()
+
+            if autores:
+                print("\n- Registro Completo de Autores existentes en la Biblioteca -\n")
+                for autor in autores:
+                    print(autor)
+            else:
+                print("\nNo existe ningún registro aún en la Biblioteca.\n")
+                return
+        elif opcion == "9":
+            subgeneros = biblioteca.mostrar_subgeneros()
+
+            if subgeneros:
+                print("\n- Registro Completo de Subgéneros existentes en la Biblioteca -\n")
+                for subgenero in subgeneros:
+                    print(subgenero)
             else:
                 print("\nNo existe ningún registro aún en la Biblioteca.\n")
                 return

@@ -37,4 +37,4 @@ class Subgenero(Genero):
 
     def mostrar_datos_subgenero(self):
         """Muestra todos los datos del Género Literario. Actúa como método __str__"""
-        return f"{super().mostrar_datos_genero()}\nId: {self.get_id()}.\nNombre Subgénero Literario: {self.get_nombre_subgenero()}({self.get_tipo() if self.get_tipo() else "Tipo no definido"})."
+        return f"Id: {self.get_id()}.\nGénero Literario:{super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_subgenero()}({self.get_tipo() if self.get_tipo() else "Tipo no definido"})."

@@ -490,6 +490,14 @@
         "documentation": {}
     },
     {
+        "label": "leer_autor",
+        "importPath": "biblioteca.crud.crud_autor",
+        "description": "biblioteca.crud.crud_autor",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud.crud_autor",
+        "documentation": {}
+    },
+    {
         "label": "Biblioteca",
         "importPath": "biblioteca.modelos.biblioteca",
         "description": "biblioteca.modelos.biblioteca",
@@ -2469,7 +2477,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
-        "peekOfCode": "def leer_autor(biblioteca):\n    \"\"\"Busca y muestra la información de un autor por nombre.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        nombre = input(\"Introduzca el nombre del autor a buscar:\\n\")\n        autor = biblioteca.buscar_autor_nombre(nombre)\n        if autor:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(autor.mostrar_datos_autor())\n        else:",
+        "peekOfCode": "def leer_autor(biblioteca):\n    \"\"\"Busca y muestra la información de un autor por nombre.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        conocido = input(\"Introduzca el nombre del autor a buscar:\\n\")\n        autor = biblioteca.buscar_autor_nombre(conocido)\n        if autor:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(autor.mostrar_datos_autor())\n        else:",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "documentation": {}
     },
@@ -2541,7 +2549,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
-        "peekOfCode": "def leer_libro(biblioteca):\n    \"\"\"Busca y muestra la información de un libro por título.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        titulo = input(\"Introduzca el título del libro a buscar:\\n\")\n        libro = biblioteca.buscar_libro_titulo(titulo)\n        if libro:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(libro.mostrar_datos())\n        else:",
+        "peekOfCode": "def leer_libro(biblioteca):\n    \"\"\"Busca y muestra la información de un libro por título.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        titulo = input(\"Introduzca el título del libro a buscar:\\n\")\n        libro = biblioteca.buscar_libro_titulo(titulo)\n        if libro:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(libro.mostrar_datos_libro())\n        else:",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
@@ -2604,7 +2612,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_genero",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_genero",
-        "peekOfCode": "def submenu_genero(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Géneros Literarios -\\n\")\n        print(\"1. Añadir Género.\")\n        print(\"2. Modificar Datos Género.\")\n        print(\"3. Eliminar Género.\")\n        print(\"0. Menú Tareas de Géneros y Subgéneros Literarios.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n            crud_genero.crear_genero(biblioteca)",
+        "peekOfCode": "def submenu_genero(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Géneros Literarios -\\n\")\n        print(\"1. Mostrar Géneros.\")\n        print(\"2. Añadir Género.\")\n        print(\"3. Modificar Datos Género.\")\n        print(\"4. Eliminar Género.\")\n        print(\"0. Menú Tareas de Géneros y Subgéneros Literarios.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_genero",
         "documentation": {}
     },
@@ -2613,7 +2621,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_subgenero",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_subgenero",
-        "peekOfCode": "def submenu_subgenero(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Subgéneros Literarios -\\n\")\n        print(\"1. Añadir Subgénero.\")\n        print(\"2. Modificar Datos Subgénero.\")\n        print(\"3. Eliminar Subgénero.\")\n        print(\"0. Menú Tareas de Géneros y Subgéneros Literarios.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n            crud_subgenero.crear_subgenero(biblioteca)",
+        "peekOfCode": "def submenu_subgenero(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Subgéneros Literarios -\\n\")\n        print(\"1. Mostrar Subgéneros.\")\n        print(\"2. Añadir Subgénero.\")\n        print(\"3. Modificar Datos Subgénero.\")\n        print(\"4. Eliminar Subgénero.\")\n        print(\"0. Menú Tareas de Géneros y Subgéneros Literarios.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_subgenero",
         "documentation": {}
     },
@@ -2622,7 +2630,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_autor",
-        "peekOfCode": "def submenu_autor(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Autores -\\n\")\n        print(\"1. Añadir Autor.\")\n        print(\"2. Buscar Autor por nombre.\")\n        print(\"3. Modificar Datos Autor.\")\n        print(\"4. Eliminar Autor.\")\n        print(\"0. Menú Tareas de Biblioteca.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
+        "peekOfCode": "def submenu_autor(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Autores -\\n\")\n        print(\"1. Mostrar Autores.\")\n        print(\"2. Añadir Autor.\")\n        print(\"3. Buscar Autor por nombre.\")\n        print(\"4. Modificar Datos Autor.\")\n        print(\"5. Eliminar Autor.\")\n        print(\"0. Menú Tareas de Biblioteca.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_autor",
         "documentation": {}
     },
@@ -2640,7 +2648,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_libro",
-        "peekOfCode": "def submenu_libro(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Libros -\\n\")\n        print(\"1. Añadir libro.\")\n        print(\"2. Buscar libro por título.\")\n        print(\"3. Modificar Datos Libro.\")\n        print(\"4. Eliminar Libro.\")\n        print(\"0. Menú Tareas de Biblioteca.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
+        "peekOfCode": "def submenu_libro(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Libros -\\n\")\n        print(\"1. Mostrar Libros.\")\n        print(\"2. Añadir Libro.\")\n        print(\"3. Buscar Libro por Título.\")\n        print(\"4. Modificar Datos Libro.\")\n        print(\"5. Eliminar Libro.\")\n        print(\"0. Menú Tareas de Biblioteca.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_libro",
         "documentation": {}
     },
@@ -2649,7 +2657,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_tareas",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_tareas",
-        "peekOfCode": "def submenu_tareas(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Biblioteca -\\n\")\n        print(\"1. Tareas de Libros.\")\n        print(\"2. Tareas de Autores.\")\n        print(\"3. Tareas de Géneros Literarios.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n           # LLama al submenu de tareas de libros y le pasa la instancia de Biblioteca",
+        "peekOfCode": "def submenu_tareas(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Biblioteca -\\n\")\n        print(\"1. Tareas de Libros.\")\n        print(\"2. Tareas de Autores.\")\n        print(\"3. Tareas de Géneros y Subgéneros Literarios.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n           # LLama al submenu de tareas de libros y le pasa la instancia de Biblioteca",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_tareas",
         "documentation": {}
     },
@@ -2658,7 +2666,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
-        "peekOfCode": "def menu():\n    # Inicializa de manera Global la Biblioteca\n    biblioteca = Biblioteca()\n    while True:\n        print(\"\\n- Bienvenid@ a Biblioteca AVANZA! -\\n\")\n        print(\"1. Menú Tareas de Biblioteca.\")\n        print(\"2. Buscar libro por nombre.\")\n        print(\"3. Mostrar libros por autor.\")\n        print(\"4. Mostrar todos libros.\")\n        print(\"0. Salir\")",
+        "peekOfCode": "def menu():\n    # Inicializa de manera Global la Biblioteca\n    biblioteca = Biblioteca()\n    while True:\n        print(\"\\n- Bienvenid@ a Biblioteca AVANZA! -\\n\")\n        print(\"1. Menú Tareas de Biblioteca.\")\n        print(\"2. Buscar libro por Título.\")\n        print(\"3. Buscar Autor por Pseudónimo.\")\n        print(\"4. Mostrar libros por Autor.\")\n        print(\"5. Mostrar libros por Género.\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
         "documentation": {}
     },

@@ -44,6 +44,10 @@ class Biblioteca:
     def mostrar_libros_por_genero(self, genero):
         """Muestra todos los libros existentes, publicados por un genero específico."""
         return [libro for libro in self.libros if libro.get_genero().lower() == genero.lower()]
+    
+    def mostrar_libros_por_subgenero(self, subgenero):
+        """Muestra todos los libros existentes, publicados por un genero específico."""
+        return [libro for libro in self.libros if libro.get_subgenero().lower() == subgenero.lower()]
 
 #####       FIN REGION INTERFAZ GESTIÓN BIBLIOTECA - LIBROS     #####
 
@@ -53,10 +57,10 @@ class Biblioteca:
         """- Agrega un autor nuevo a la lista de autores de la biblioteca. """
         self.autores.append(autor)
 
-    def buscar_autor_nombre(self, nombre):
+    def buscar_autor_nombre(self, conocido):
         """- Busca un autor específico, usando la propiedad nombre, en la lista de autores. Devuelve el objeto Autor buscado si existe."""
         for autor in self.autores:
-            if autor.get_nombre().lower() == nombre.lower():
+            if autor.get_conocido().lower() == conocido.lower():
                 return autor
         return None
 

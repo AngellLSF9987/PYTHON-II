@@ -45,8 +45,8 @@ def leer_autor(biblioteca):
 
     try:
         print("\n- Información del Registro deseado -\n")
-        nombre = input("Introduzca el nombre del autor a buscar:\n")
-        autor = biblioteca.buscar_autor_nombre(nombre)
+        conocido = input("Introduzca el nombre del autor a buscar:\n")
+        autor = biblioteca.buscar_autor_nombre(conocido)
 
         if autor:
             print("\nRegistro encontrado.\n")
