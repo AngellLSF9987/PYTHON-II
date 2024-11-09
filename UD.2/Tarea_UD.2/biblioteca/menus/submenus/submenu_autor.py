@@ -10,7 +10,7 @@ def submenu_autor(biblioteca):
         print("2. Buscar Autor por nombre.")
         print("3. Modificar Datos Autor.")
         print("4. Eliminar Autor.")
-        print("0. Menú Principal.")
+        print("0. Menú Tareas de Biblioteca.")
 
 
         opcion = input("\nSelecciona una opción:\n")

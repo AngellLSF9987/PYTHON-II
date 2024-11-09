@@ -10,7 +10,7 @@ def submenu_libro(biblioteca):
         print("2. Buscar libro por título.")
         print("3. Modificar Datos Libro.")
         print("4. Eliminar Libro.")
-        print("0. Menú Principal.")
+        print("0. Menú Tareas de Biblioteca.")
 
 
         opcion = input("\nSelecciona una opción:\n")
@@ -24,6 +24,6 @@ def submenu_libro(biblioteca):
         elif opcion == "4":
             crud_libro.eliminar_libro(biblioteca)
         elif opcion == "0":
-            return            # Volver SubMenú Tareas
+            return            # Volver SubMenú Tareas de Biblioteca
         else:
             print("\nOpción no válida.\n")

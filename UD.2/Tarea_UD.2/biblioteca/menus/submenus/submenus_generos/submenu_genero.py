@@ -9,7 +9,7 @@ def submenu_genero(biblioteca):
         print("1. Añadir Género.")
         print("2. Modificar Datos Género.")
         print("3. Eliminar Género.")
-        print("0. Menú Principal.")
+        print("0. Menú Tareas de Géneros y Subgéneros Literarios.")
 
 
         opcion = input("\nSelecciona una opción:\n")

@@ -32,7 +32,7 @@ def menu():
             if libros:
                 print(f"\n- Libros de {autor} -\n")
                 for libro in libros:
-                    print(libro.mostrar_datos())
+                    print(libro.mostrar_datos_libro())
             else:
                 print(f"\nNo se encontraron registros de {autor}.\n")
 

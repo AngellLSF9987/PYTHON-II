@@ -458,7 +458,7 @@
         "documentation": {}
     },
     {
-        "label": "submenu_generos",
+        "label": "submenu_autor",
         "importPath": "biblioteca.menus.submenus",
         "description": "biblioteca.menus.submenus",
         "isExtraImport": true,
@@ -466,7 +466,7 @@
         "documentation": {}
     },
     {
-        "label": "submenu_autor",
+        "label": "submenu_generos",
         "importPath": "biblioteca.menus.submenus",
         "description": "biblioteca.menus.submenus",
         "isExtraImport": true,
@@ -2604,16 +2604,16 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_genero",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_genero",
-        "peekOfCode": "def submenu_genero(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Géneros Literarios -\\n\")\n        print(\"1. Añadir Género.\")\n        print(\"2. Modificar Datos Género.\")\n        print(\"3. Eliminar Género.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n            crud_genero.crear_genero(biblioteca)",
+        "peekOfCode": "def submenu_genero(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Géneros Literarios -\\n\")\n        print(\"1. Añadir Género.\")\n        print(\"2. Modificar Datos Género.\")\n        print(\"3. Eliminar Género.\")\n        print(\"0. Menú Tareas de Géneros y Subgéneros Literarios.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n            crud_genero.crear_genero(biblioteca)",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_genero",
         "documentation": {}
     },
     {
-        "label": "submenu_subgeneros",
+        "label": "submenu_subgenero",
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_subgenero",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_subgenero",
-        "peekOfCode": "def submenu_subgeneros(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Géneros Literarios -\\n\")\n        print(\"1. Añadir Subgénero.\")\n        print(\"2. Modificar Datos Subgénero.\")\n        print(\"3. Eliminar Subgénero.\")\n        print(\"0. Menú Géneros.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n            crud_subgenero.crear_subgenero(biblioteca)",
+        "peekOfCode": "def submenu_subgenero(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Subgéneros Literarios -\\n\")\n        print(\"1. Añadir Subgénero.\")\n        print(\"2. Modificar Datos Subgénero.\")\n        print(\"3. Eliminar Subgénero.\")\n        print(\"0. Menú Tareas de Géneros y Subgéneros Literarios.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n            crud_subgenero.crear_subgenero(biblioteca)",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenus_generos.submenu_subgenero",
         "documentation": {}
     },
@@ -2622,7 +2622,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_autor",
-        "peekOfCode": "def submenu_autor(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Autores -\\n\")\n        print(\"1. Añadir Autor.\")\n        print(\"2. Buscar Autor por nombre.\")\n        print(\"3. Modificar Datos Autor.\")\n        print(\"4. Eliminar Autor.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
+        "peekOfCode": "def submenu_autor(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Autores -\\n\")\n        print(\"1. Añadir Autor.\")\n        print(\"2. Buscar Autor por nombre.\")\n        print(\"3. Modificar Datos Autor.\")\n        print(\"4. Eliminar Autor.\")\n        print(\"0. Menú Tareas de Biblioteca.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_autor",
         "documentation": {}
     },
@@ -2640,7 +2640,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_libro",
-        "peekOfCode": "def submenu_libro(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Libros -\\n\")\n        print(\"1. Añadir libro.\")\n        print(\"2. Buscar libro por título.\")\n        print(\"3. Modificar Datos Libro.\")\n        print(\"4. Eliminar Libro.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
+        "peekOfCode": "def submenu_libro(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Libros -\\n\")\n        print(\"1. Añadir libro.\")\n        print(\"2. Buscar libro por título.\")\n        print(\"3. Modificar Datos Libro.\")\n        print(\"4. Eliminar Libro.\")\n        print(\"0. Menú Tareas de Biblioteca.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_libro",
         "documentation": {}
     },
@@ -2649,7 +2649,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_tareas",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_tareas",
-        "peekOfCode": "def submenu_tareas(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Biblioteca -\\n\")\n        print(\"1. Tareas de Libros.\")\n        print(\"2. Tareas de Géneros Literarios.\")\n        print(\"3. Tareas de Autores.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n           # LLama al submenu de tareas de libros y le pasa la instancia de Biblioteca",
+        "peekOfCode": "def submenu_tareas(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Biblioteca -\\n\")\n        print(\"1. Tareas de Libros.\")\n        print(\"2. Tareas de Autores.\")\n        print(\"3. Tareas de Géneros Literarios.\")\n        print(\"0. Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")\n        if opcion == \"1\":\n           # LLama al submenu de tareas de libros y le pasa la instancia de Biblioteca",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_tareas",
         "documentation": {}
     },
@@ -2695,123 +2695,6 @@
         "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
         "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"Método constructor a partir de la instanciación de un diccionario vacío donde quedarán alojados los objetos libro existentes o creados.\"\"\"\n        self.libros = []\n        self.generos = []\n        self.subgeneros = []       \n        self.autores = []\n        self.inicializar_biblioteca() # Llamada al método de inicialización\n#####   1.    REGION INTERFAZ GESTIÓN BIBLIOTECA - LIBROS     #####\n    def agregar_libro(self, libro):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "agregar_autor",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def agregar_autor(self, autor):\n    \"\"\"- Agrega un autor nuevo a la lista de autores de la biblioteca. \"\"\"\n    self.autores.append(autor)\ndef buscar_autor_nombre(self, nombre):\n    \"\"\"- Busca un autor específico, usando la propiedad nombre, en la lista de autores. Devuelve el objeto Autor buscado si existe.\"\"\"\n    for autor in self.autores:\n        if autor.get_nombre().lower() == nombre.lower():\n            return autor\n    return None\ndef reestructurar_ids_autores(self):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "buscar_autor_nombre",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def buscar_autor_nombre(self, nombre):\n    \"\"\"- Busca un autor específico, usando la propiedad nombre, en la lista de autores. Devuelve el objeto Autor buscado si existe.\"\"\"\n    for autor in self.autores:\n        if autor.get_nombre().lower() == nombre.lower():\n            return autor\n    return None\ndef reestructurar_ids_autores(self):\n    for index, autor in enumerate(self.autores):\n        autor.set_id(index + 1) # Actualiza los ids, usando el método set_id de forma que vuelvan a ser consecutivos en el resto registros.\ndef mostrar_autores(self):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "reestructurar_ids_autores",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def reestructurar_ids_autores(self):\n    for index, autor in enumerate(self.autores):\n        autor.set_id(index + 1) # Actualiza los ids, usando el método set_id de forma que vuelvan a ser consecutivos en el resto registros.\ndef mostrar_autores(self):\n    \"\"\"Devuelve una lista completa de todos los autores existentes en la Biblioteca.\"\"\"\n    return [autor.mostrar_datos_autor() for autor in self.autores]\n#####       FIN REGION INTERFAZ GESTIÓN BIBLIOTECA - AUTORES     #####\n#####   3.    REGION INTERFAZ GESTIÓN BIBLIOTECA - GÉNEROS Y SUBGÉNEROS LITERARIOS    #####\n            ####   3.1.     GÉNEROS LITERARIOS      ####\ndef agregar_genero(self, genero):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "mostrar_autores",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def mostrar_autores(self):\n    \"\"\"Devuelve una lista completa de todos los autores existentes en la Biblioteca.\"\"\"\n    return [autor.mostrar_datos_autor() for autor in self.autores]\n#####       FIN REGION INTERFAZ GESTIÓN BIBLIOTECA - AUTORES     #####\n#####   3.    REGION INTERFAZ GESTIÓN BIBLIOTECA - GÉNEROS Y SUBGÉNEROS LITERARIOS    #####\n            ####   3.1.     GÉNEROS LITERARIOS      ####\ndef agregar_genero(self, genero):\n    \"\"\"- Agrega un género literario nuevo a la lista de generos de la biblioteca. \"\"\"\n    self.generos.append(genero)\ndef buscar_genero_nombre(self, nombre_genero):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "agregar_genero",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def agregar_genero(self, genero):\n    \"\"\"- Agrega un género literario nuevo a la lista de generos de la biblioteca. \"\"\"\n    self.generos.append(genero)\ndef buscar_genero_nombre(self, nombre_genero):\n    \"\"\"- Busca un género literario específico, usando la propiedad nombre, en la lista de generos. Devuelve el objeto Género buscado si existe.\"\"\"\n    for genero in self.generos:\n        if genero.get_nombre_genero().lower() == nombre_genero.lower():\n            return genero\n    return None\ndef reestructurar_ids_generos(self):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "buscar_genero_nombre",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def buscar_genero_nombre(self, nombre_genero):\n    \"\"\"- Busca un género literario específico, usando la propiedad nombre, en la lista de generos. Devuelve el objeto Género buscado si existe.\"\"\"\n    for genero in self.generos:\n        if genero.get_nombre_genero().lower() == nombre_genero.lower():\n            return genero\n    return None\ndef reestructurar_ids_generos(self):\n    for index, genero in enumerate(self.generos):\n        genero.set_id(index + 1) # Actualiza los ids, usando el método set_id de forma que vuelvan a ser consecutivos en el resto registros.\ndef mostrar_generos(self):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "reestructurar_ids_generos",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def reestructurar_ids_generos(self):\n    for index, genero in enumerate(self.generos):\n        genero.set_id(index + 1) # Actualiza los ids, usando el método set_id de forma que vuelvan a ser consecutivos en el resto registros.\ndef mostrar_generos(self):\n    \"\"\"Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca.\"\"\"\n    return [genero.mostrar_datos_genero() for genero in self.generos]\n            ####   3.2.     SUBGÉNEROS LITERARIOS      ####\ndef agregar_subgenero(self, subgenero):\n    \"\"\"- Agrega un género literario nuevo a la lista de generos de la biblioteca. \"\"\"\n    self.subgeneros.append(subgenero)",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "mostrar_generos",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def mostrar_generos(self):\n    \"\"\"Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca.\"\"\"\n    return [genero.mostrar_datos_genero() for genero in self.generos]\n            ####   3.2.     SUBGÉNEROS LITERARIOS      ####\ndef agregar_subgenero(self, subgenero):\n    \"\"\"- Agrega un género literario nuevo a la lista de generos de la biblioteca. \"\"\"\n    self.subgeneros.append(subgenero)\ndef buscar_genero_nombre(self, nombre_subgenero):\n    \"\"\"- Busca un género literario específico, usando la propiedad nombre, en la lista de generos. Devuelve el objeto Género buscado si existe.\"\"\"\n    for subgenero in self.subgeneros:",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "agregar_subgenero",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def agregar_subgenero(self, subgenero):\n    \"\"\"- Agrega un género literario nuevo a la lista de generos de la biblioteca. \"\"\"\n    self.subgeneros.append(subgenero)\ndef buscar_genero_nombre(self, nombre_subgenero):\n    \"\"\"- Busca un género literario específico, usando la propiedad nombre, en la lista de generos. Devuelve el objeto Género buscado si existe.\"\"\"\n    for subgenero in self.subgeneros:\n        if subgenero.get_nombre_subgenero().lower() == nombre_subgenero.lower():\n            return subgenero\n    return None\ndef reestructurar_ids_subgeneros(self):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "buscar_genero_nombre",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def buscar_genero_nombre(self, nombre_subgenero):\n    \"\"\"- Busca un género literario específico, usando la propiedad nombre, en la lista de generos. Devuelve el objeto Género buscado si existe.\"\"\"\n    for subgenero in self.subgeneros:\n        if subgenero.get_nombre_subgenero().lower() == nombre_subgenero.lower():\n            return subgenero\n    return None\ndef reestructurar_ids_subgeneros(self):\n    for index, subgenero in enumerate(self.subgeneros):\n        subgenero.set_id(index + 1) # Actualiza los ids, usando el método set_id de forma que vuelvan a ser consecutivos en el resto registros.\ndef mostrar_subgeneros(self):",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "reestructurar_ids_subgeneros",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def reestructurar_ids_subgeneros(self):\n    for index, subgenero in enumerate(self.subgeneros):\n        subgenero.set_id(index + 1) # Actualiza los ids, usando el método set_id de forma que vuelvan a ser consecutivos en el resto registros.\ndef mostrar_subgeneros(self):\n    \"\"\"Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca.\"\"\"\n    return [subgenero.mostrar_datos_subgenero() for subgenero in self.subgeneros]\n#####       FIN REGION INTERFAZ GESTIÓN BIBLIOTECA - GÉNEROS Y SUBGÉNEROS LITERARIOS     #####\n#####   4.    REGION INICIALIZACIÓN DE LA INTERFAZ BIBLIOTECA CON OBJETOS AÑADIDOS     #####\ndef inicializar_biblioteca(self):\n    \"\"\"Inicializa la biblioteca con autores, géneros literarios y libros registrados ya en la Biblioteca.\"\"\"",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "mostrar_subgeneros",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def mostrar_subgeneros(self):\n    \"\"\"Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca.\"\"\"\n    return [subgenero.mostrar_datos_subgenero() for subgenero in self.subgeneros]\n#####       FIN REGION INTERFAZ GESTIÓN BIBLIOTECA - GÉNEROS Y SUBGÉNEROS LITERARIOS     #####\n#####   4.    REGION INICIALIZACIÓN DE LA INTERFAZ BIBLIOTECA CON OBJETOS AÑADIDOS     #####\ndef inicializar_biblioteca(self):\n    \"\"\"Inicializa la biblioteca con autores, géneros literarios y libros registrados ya en la Biblioteca.\"\"\"\n    # Inicializar lista de Autores\n    autores_existentes = [\n        {\"nombre\": \"Gabriel\", \"apellido1\": \"García\", \"apellido2\": \"Márquez\", \"conocido\":\" \" ,\"nacido\": \"06-03-1927\", \"fallecido\": \"17-04-2014\", \"nacionalidad\": \"Colombiano\"},",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "inicializar_biblioteca",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "def inicializar_biblioteca(self):\n    \"\"\"Inicializa la biblioteca con autores, géneros literarios y libros registrados ya en la Biblioteca.\"\"\"\n    # Inicializar lista de Autores\n    autores_existentes = [\n        {\"nombre\": \"Gabriel\", \"apellido1\": \"García\", \"apellido2\": \"Márquez\", \"conocido\":\" \" ,\"nacido\": \"06-03-1927\", \"fallecido\": \"17-04-2014\", \"nacionalidad\": \"Colombiano\"},\n        {\"nombre\": \"Jhon Ronald\", \"apellido1\": \"Reuel\", \"apellido2\": \"Tolkien\",\"conocido\":\"J.R.R. Tolkien\", \"nacido\": \"03-01-1892\", \"fallecido\": \"02-09-1973\", \"nacionalidad\": \"Británico\"},\n        {\"nombre\": \"Eric\", \"apellido1\": \"Arthur\", \"apellido2\": \"Blair\",\"conocido\":\"George Orwell\", \"nacido\": \"25-06-1903\", \"fallecido\": \"21-01-1950\", \"nacionalidad\": \"Británico\"},\n        {\"nombre\": \"Stephen\", \"apellido1\": \"Edwing\", \"apellido2\": \"King\",\"conocido\":\"Stephen King\", \"nacido\": \"21-09-1947\", \"fallecido\": \"No fallecido\", \"nacionalidad\": \"EE.UU\"},\n        {\"nombre\": \"Nelle\", \"apellido1\": \"Harper\", \"apellido2\": \"Lee\",\"conocido\":\"Harper Lee\", \"nacido\": \"28-04-1926\", \"fallecido\": \"19-02-2016\", \"nacionalidad\": \"EE.UU\"},\n    ]",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
         "documentation": {}
     },

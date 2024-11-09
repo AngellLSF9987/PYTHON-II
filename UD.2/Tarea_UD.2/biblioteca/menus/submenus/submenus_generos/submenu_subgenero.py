@@ -2,14 +2,14 @@
 
 from biblioteca.crud import crud_subgenero
 
-def submenu_subgeneros(biblioteca):
+def submenu_subgenero(biblioteca):
 
     while True:
-        print("\n- Tareas de Géneros Literarios -\n")
+        print("\n- Tareas de Subgéneros Literarios -\n")
         print("1. Añadir Subgénero.")
         print("2. Modificar Datos Subgénero.")
         print("3. Eliminar Subgénero.")
-        print("0. Menú Géneros.")
+        print("0. Menú Tareas de Géneros y Subgéneros Literarios.")
 
 
         opcion = input("\nSelecciona una opción:\n")
