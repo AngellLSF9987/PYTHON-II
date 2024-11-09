@@ -298,6 +298,46 @@
         "documentation": {}
     },
     {
+        "label": "submenu_libro",
+        "importPath": "submenu_tareas",
+        "description": "submenu_tareas",
+        "isExtraImport": true,
+        "detail": "submenu_tareas",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_genero",
+        "importPath": "submenu_tareas",
+        "description": "submenu_tareas",
+        "isExtraImport": true,
+        "detail": "submenu_tareas",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_autor",
+        "importPath": "submenu_tareas",
+        "description": "submenu_tareas",
+        "isExtraImport": true,
+        "detail": "submenu_tareas",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_tareas",
+        "importPath": "menus.submenus",
+        "description": "menus.submenus",
+        "isExtraImport": true,
+        "detail": "menus.submenus",
+        "documentation": {}
+    },
+    {
+        "label": "menu",
+        "importPath": "biblioteca.menus.menu",
+        "description": "biblioteca.menus.menu",
+        "isExtraImport": true,
+        "detail": "biblioteca.menus.menu",
+        "documentation": {}
+    },
+    {
         "label": "Galleta",
         "importPath": "modelos.galleta",
         "description": "modelos.galleta",

@@ -1,8 +1,8 @@
-# biblioteca/utilidades/submenu_tareas.py
+# biblioteca/menus/submenus/submenu_tareas.py
 
-from ..menus import submenu_libro
-from ..menus import submenu_genero
-from ..menus import submenu_autor
+from submenu_tareas import submenu_libro
+from submenu_tareas import submenu_genero
+from submenu_tareas import submenu_autor
 
 def submenu_tareas(biblioteca):
     
