@@ -22,7 +22,11 @@ class Genero:
 
     def set_nombre(self, value):
         self.__nombre_genero = value
-        
-    def mostrar_datos_genero(self):
-        """Muestra todos los datos del Género Literario. Actúa como método __str__"""
+
+    def __str__(self):
+        """Método __str__. Muestra todos los datos de modelo Subgénero"""
         return f"Id: {self.get_id()}.\nNombre Género Literario: {self.get_nombre_genero()}."
+
+    def mostrar_datos_genero(self):
+        """Muestra los datos específicos del Género Literario."""
+        return f"Nombre Género Literario: {self.get_nombre_genero()}."

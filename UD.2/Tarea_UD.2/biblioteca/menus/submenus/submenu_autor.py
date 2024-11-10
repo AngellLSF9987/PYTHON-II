@@ -17,7 +17,7 @@ def submenu_autor(biblioteca):
         opcion = input("\nSelecciona una opción:\n")
 
         if opcion == "1":
-            crud_autor.leer_autor(biblioteca)
+            crud_autor.mostrar_autores(biblioteca)
         elif opcion == "2":
             crud_autor.crear_autor(biblioteca)
         elif opcion == "3":
@@ -27,6 +27,6 @@ def submenu_autor(biblioteca):
         elif opcion == "5":
             crud_autor.eliminar_autor(biblioteca)
         elif opcion == "0":
-            return           # Volver SubMenú Tareas
+            return           # Volver SubMenú Tareas de Biblioteca
         else:
             print("\nOpción no válida.\n")

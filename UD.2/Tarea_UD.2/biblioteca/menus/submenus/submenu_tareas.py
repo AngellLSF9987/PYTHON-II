@@ -25,7 +25,7 @@ def submenu_tareas(biblioteca):
             # LLama al submenu de tareas de géneros y subgéneros literarios y le pasa la instancia de Biblioteca
             submenu_generos.submenu_generos(biblioteca)
         elif opcion == "0":
-            return # Volver Menú principal
+            return          # Volver Menú principal
         else:
             print("\nOpción no válida.\n")
             

@@ -37,6 +37,16 @@ def leer_genero(biblioteca):
     except Exception as e:                                         # Errores imprevistos
         print(f"Se produjo un error al buscar el género literario: {e}")
 
+def mostrar_generos(biblioteca):
+    """Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca."""
+    if not biblioteca.generos:
+        print("\nNo hay géneros literarios registrados en la biblioteca")
+        return 
+    print(f"\n- Lista de Géneros Literarios -\n")
+    for genero in biblioteca.generos:
+        print(genero.mostrar_datos_genero())
+        print()
+
 def actualizar_genero(biblioteca):
     """Actualiza la información de un género literario existente."""
 

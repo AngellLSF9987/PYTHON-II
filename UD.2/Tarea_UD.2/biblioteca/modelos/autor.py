@@ -65,7 +65,11 @@ class Autor:
 
     def set_nacionalidad(self, value):
         self.__nacionalidad = value
-              
-    def mostrar_datos_autor(self):
-        """Muestra todos los datos del libro. Actúa como método __str__"""
+
+    def __str__(self):
+        """Método __str__. Muestra todos los datos de modelo Autor"""
         return f"Id: {self.get_id()}.\nNombre: {self.get_nombre()}.\nApellidos: {self.get_apellido1()} {self.get_apellido2()}.\nConocido/a como: {self.get_conocido()}\nNacido/a: {self.get_nacido()}.\nFallecido/a: {self.get_fallecido()}.\nNacionalidad: {self.get_nacionalidad()}.\n"
+    
+    def mostrar_datos_autor(self):
+        """Muestra todos los datos específicos del libro."""
+        return f"Nombre: {self.get_nombre()}.\nApellidos: {self.get_apellido1()} {self.get_apellido2()}.\nConocido/a como: {self.get_conocido()}\nNacido/a: {self.get_nacido()}.\nFallecido/a: {self.get_fallecido()}.\nNacionalidad: {self.get_nacionalidad()}.\n"

@@ -57,6 +57,16 @@ def leer_autor(biblioteca):
     except Exception as e:                                         # Errores imprevistos
         print(f"Se produjo un error al buscar el libro: {e}")
 
+def mostrar_autores(biblioteca):
+    """Devuelve una lista completa de todos los autores existentes en la Biblioteca."""
+    if not biblioteca.autores:
+        print("\nNo hay autores registrados en la biblioteca")
+        return 
+    print(f"\n- Lista de Autores -\n")
+    for autor in biblioteca.autores:
+        print(autor.mostrar_datos_autor())
+        print()
+
 def actualizar_autor(biblioteca):
     """Actualiza la información de un autor existente."""
 

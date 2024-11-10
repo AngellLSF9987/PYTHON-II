@@ -3,7 +3,7 @@
 from biblioteca.modelos.libro import Libro
 from biblioteca.modelos.autor import Autor
 from biblioteca.modelos.generos.genero import Genero
-from biblioteca.modelos.generos.subgenero import Subgenero
+from biblioteca.modelos.generos.especifico import Especifico
 from biblioteca.utilidades.validaciones import validar_fecha
 
 class Biblioteca:
@@ -11,7 +11,7 @@ class Biblioteca:
         """Método constructor a partir de la instanciación de un diccionario vacío donde quedarán alojados los objetos libro existentes o creados."""
         self.libros = []
         self.generos = []
-        self.subgeneros = []       
+        self.especificos = []       
         self.autores = []
         self.inicializar_biblioteca() # Llamada al método de inicialización
 
@@ -39,15 +39,25 @@ class Biblioteca:
     
     def mostrar_libros_por_autor(self, autor):
         """Muestra todos los libros existentes, publicados por un autor específico."""
-        return [libro for libro in self.libros if libro.get_autor().lower() == autor.lower()]
+
+        autor_buscado = autor  # El autor que buscas debe ser una instancia de `Autor`
+
+        # Encontrar los libros de ese autor
+        libros_del_autor = [libro for libro in self.libros if libro.get_autor() == autor_buscado]
+
+        # Muestra los resultados
+        for libro in libros_del_autor:
+            print(libro.mostrar_datos_libro())
+
+        #return [libro for libro in self.libros if libro.get_autor().lower() == autor.lower()]
     
     def mostrar_libros_por_genero(self, genero):
         """Muestra todos los libros existentes, publicados por un genero específico."""
         return [libro for libro in self.libros if libro.get_genero().lower() == genero.lower()]
     
-    def mostrar_libros_por_subgenero(self, subgenero):
+    def mostrar_libros_especifico(self, especifico):
         """Muestra todos los libros existentes, publicados por un genero específico."""
-        return [libro for libro in self.libros if libro.get_subgenero().lower() == subgenero.lower()]
+        return [libro for libro in self.libros if libro.get_especifico().lower() == especifico.lower()]
 
 #####       FIN REGION INTERFAZ GESTIÓN BIBLIOTECA - LIBROS     #####
 
@@ -70,7 +80,7 @@ class Biblioteca:
 
     def mostrar_autores(self):
         """Devuelve una lista completa de todos los autores existentes en la Biblioteca."""
-        return [autor.mostrar_datos_autor() for autor in self.autores]
+        return [autor.__str__() for autor in self.autores]
 
 #####       FIN REGION INTERFAZ GESTIÓN BIBLIOTECA - AUTORES     #####
 
@@ -95,28 +105,28 @@ class Biblioteca:
 
     def mostrar_generos(self):
         """Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca."""
-        return [genero.mostrar_datos_genero() for genero in self.generos]
+        return [genero.__str__() for genero in self.generos]
 
             ####   3.2.     SUBGÉNEROS LITERARIOS      ####
 
-    def agregar_subgenero(self, subgenero):
+    def agregar_especifico(self, especifico):
         """- Agrega un género literario nuevo a la lista de generos de la biblioteca. """
-        self.subgeneros.append(subgenero)
+        self.especificos.append(especifico)
 
-    def buscar_genero_nombre(self, nombre_subgenero):
-        """- Busca un género literario específico, usando la propiedad nombre, en la lista de generos. Devuelve el objeto Género buscado si existe."""
-        for subgenero in self.subgeneros:
-            if subgenero.get_nombre_subgenero().lower() == nombre_subgenero.lower():
-                return subgenero
-        return None
+    def buscar_especifico_nombre(self, nombre_genero, nombre_especifico, tipo):
+        """- Busca un género literario específico, usando la propiedad nombre y tipo, en la lista de generos. Devuelve el objeto Subgénero buscado si existe."""
+        for especifico in self.especificos:
+            if especifico.get_nombre_genero().lower() == nombre_genero.lower() and especifico.get_nombre_especifico().lower() == nombre_especifico.lower() and especifico.get_tipo() == tipo.lower():
+                return especifico
+        return None    
 
-    def reestructurar_ids_subgeneros(self):
-        for index, subgenero in enumerate(self.subgeneros):
-            subgenero.set_id(index + 1) # Actualiza los ids, usando el método set_id de forma que vuelvan a ser consecutivos en el resto registros.
+    def reestructurar_ids_especificos(self):
+        for index, especifico in enumerate(self.especificos):
+            especifico.set_id(index + 1) # Actualiza los ids, usando el método set_id de forma que vuelvan a ser consecutivos en el resto registros.
 
-    def mostrar_subgeneros(self):
+    def mostrar_especificos(self):
         """Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca."""
-        return [subgenero.mostrar_datos_subgenero() for subgenero in self.subgeneros]
+        return [especifico.__str__() for especifico in self.especificos]
 
 #####       FIN REGION INTERFAZ GESTIÓN BIBLIOTECA - GÉNEROS Y SUBGÉNEROS LITERARIOS     #####
 
@@ -129,7 +139,7 @@ class Biblioteca:
         # Inicializar lista de Autores
 
         autores_existentes = [
-            {"nombre": "Gabriel", "apellido1": "García", "apellido2": "Márquez", "conocido":" " ,"nacido": "06-03-1927", "fallecido": "17-04-2014", "nacionalidad": "Colombiano"},
+            {"nombre": "Gabriel", "apellido1": "García", "apellido2": "Márquez", "conocido":"Gabriel García Márquez" ,"nacido": "06-03-1927", "fallecido": "17-04-2014", "nacionalidad": "Colombiano"},
             {"nombre": "Jhon Ronald", "apellido1": "Reuel", "apellido2": "Tolkien","conocido":"J.R.R. Tolkien", "nacido": "03-01-1892", "fallecido": "02-09-1973", "nacionalidad": "Británico"},
             {"nombre": "Eric", "apellido1": "Arthur", "apellido2": "Blair","conocido":"George Orwell", "nacido": "25-06-1903", "fallecido": "21-01-1950", "nacionalidad": "Británico"},
             {"nombre": "Stephen", "apellido1": "Edwing", "apellido2": "King","conocido":"Stephen King", "nacido": "21-09-1947", "fallecido": "No fallecido", "nacionalidad": "EE.UU"},
@@ -144,39 +154,37 @@ class Biblioteca:
 
         generos_existentes = [
             {"nombre_genero":"Narrativo"},
-            {"nombre_genero":"Lírico"},
-            {"nombre_genero":"Drámatico"},
-            {"nombre_genero":"Didáctico"},
+            {"nombre_genero":"Lirico"},
+            {"nombre_genero":"Dramatico"},
         ]
 
         for genero_info in generos_existentes:
             genero = Genero(genero_info["nombre_genero"])
             self.agregar_genero(genero)
 
-        # Inicializar lista de Subgéneros Literarios
+        # Inicializar lista de Específicos Literarios
 
-        subgeneros_existentes = [
-            {"nombre_genero":"Narrativo","nombre_subgenero":"Novela"},
-            {"nombre_genero":"Narrativo","nombre_subgenero":"Cuento"},
-            {"nombre_genero":"Narrativo","nombre_subgenero":"Fábula"},
-            {"nombre_genero":"Narrativo","nombre_subgenero":"Leyenda"},
-            {"nombre_genero":"Lírico","nombre_subgenero":"Égloga"},
-            {"nombre_genero":"Lírico","nombre_subgenero":"Sátira"},
-            {"nombre_genero":"Lírico","nombre_subgenero":"Soneto"},
-            {"nombre_genero":"Lírico","nombre_subgenero":"Himno"},
-            {"nombre_genero":"Dramático","nombre_subgenero":"Tragedia"},
-            {"nombre_genero":"Dramático","nombre_subgenero":"Drama"},
-            {"nombre_genero":"Dramático","nombre_subgenero":"Comedia"},
-            {"nombre_genero":"Didáctico","nombre_subgenero":"Ensayo"},
-            {"nombre_genero":"Dramático","nombre_subgenero":"Biografía"},
-            {"nombre_genero":"Dramático","nombre_subgenero":"Carta"},
-            {"nombre_genero":"Dramático","nombre_subgenero":"Artículo Científico"},
-            {"nombre_genero":"Dramático","nombre_subgenero":"Discurso"}
+        especificos_existentes = [
+            {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Terror"},
+            {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Suspense"},
+            {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Distópica"},
+            {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Realismo Mágico"},
+            {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Fantasía"},
+            {"nombre_genero":"Narrativo","nombre_especifico":"Cuento", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Narrativo","nombre_especifico":"Fábula", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Narrativo","nombre_especifico":"Leyenda", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Lirico","nombre_especifico":"Égloga", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Lirico","nombre_especifico":"Sátira", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Lirico","nombre_especifico":"Soneto", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Lirico","nombre_especifico":"Himno", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Dramatico","nombre_especifico":"Tragedia", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Dramatico","nombre_especifico":"Drama", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Dramatico","nombre_especifico":"Comedia", "tipo":"Tipo no definido"},
         ]
 
-        for subgenero_info in subgeneros_existentes:
-            subgenero = Subgenero(subgenero_info["nombre_genero"], subgenero_info["nombre_subgenero"])
-            self.agregar_subgenero(subgenero)
+        for especifico_info in especificos_existentes:
+            especifico = Especifico(especifico_info["nombre_genero"], especifico_info["nombre_especifico"], especifico_info["tipo"])
+            self.agregar_especifico(especifico)
 
 
         # Inicializar lista de Libros
@@ -184,42 +192,36 @@ class Biblioteca:
         libros_existentes = [
                     {
                         "titulo": "Cien años de soledad",
-                        "autor": "Gabriel García Márquez",
-                        "genero": "Narrativo",
-                        "subgenero": "Novela",
+                        "autor" : self.buscar_autor_nombre("Gabriel García Márquez"),
+                        "genero": self.buscar_especifico_nombre("Narrativo", "Novela", "Realismo Mágico"),
                         "fecha_publicacion": "05-06-1967",
                         "num_paginas": 417
                     },
                     {
                         "titulo": "El hobbit",
-                        "autor": "J.R.R. Tolkien",
-                        "genero": "Narrativo",
-                        "subgenero": "Novela",
+                        "autor" : self.buscar_autor_nombre("J.R.R. Tolkien"),
+                        "genero": self.buscar_especifico_nombre("Narrativo", "Novela", "Fantasía"),
                         "fecha_publicacion": "21-09-1937",
                         "num_paginas": 310
                     },
                     {
                         "titulo": "1984",
-                        "autor": "George Orwell",
-                        "genero": "Narrativo",
-                        "subgenero": "Novela",                    
+                        "autor" : self.buscar_autor_nombre("George Orwell"),
+                        "genero": self.buscar_especifico_nombre("Narrativo", "Novela", "Distópica"),               
                         "fecha_publicacion": "08-06-1949",
                         "num_paginas": 328
                     },
                     {
                         "titulo": "Matar a un ruiseñor",
-                        "autor": "Harper Lee",
-                        "genero": "Narrativo",
-                        "subgenero": "Novela",
-                        "tipo": "Suspense",                    
+                        "autor" : self.buscar_autor_nombre("Harper Lee"),
+                        "genero": self.buscar_especifico_nombre("Narrativo", "Novela", "Suspense"),                  
                         "fecha_publicacion": "11-07-1960",
                         "num_paginas": 281
                     },
                     {
                         "titulo": "El Resplandor",
-                        "autor": "Stephen King",
-                        "genero": "Narrativo",
-                        "subgenero": "Novela",
+                        "autor" : self.buscar_autor_nombre("Stephen King"),
+                        "genero": self.buscar_especifico_nombre("Narrativo", "Novela", "Terror"),
                         "fecha_publicacion": "28-01-1977",
                         "num_paginas": 688
                     }
@@ -229,6 +231,6 @@ class Biblioteca:
             fecha_publicacion = validar_fecha(libro_info["fecha_publicacion"])
 
             if fecha_publicacion:
-                libro = Libro(libro_info["titulo"], libro_info["autor"], libro_info["genero"], libro_info["subgenero"], fecha_publicacion, libro_info["num_paginas"])
+                libro = Libro(libro_info["titulo"], libro_info["autor"], libro_info["genero"], fecha_publicacion, libro_info["num_paginas"])
                 self.agregar_libro(libro)
         print("Biblioteca inicializada con registros de libros.")

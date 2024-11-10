@@ -1,17 +1,17 @@
 # biblioteca/crud/crud_subgenero.py
 
-from biblioteca.modelos.generos.subgenero import Subgenero
+from biblioteca.modelos.generos.especifico import Especifico
 
-def crear_subgenero(biblioteca):
-    """Crear un nuevo género literario y lo añade a la Biblioteca."""
+def crear_especifico(biblioteca):
+    """Crear un nuevo subgénero literario y lo añade a la Biblioteca."""
 
     try:
-        print("\n- Nuevo Registro de Género Literario -\n")
-        nombre = input("Introduce el nombre:\n")
+        print("\n- Nuevo Registro de SubGénero Literario -\n")
+        nombre_especifico = input("Introduce el nombre:\n")
 
         # Creación y registro del nuevo objeto subgenero
-        subgenero = Subgenero(nombre)
-        biblioteca.agregar_subgenero(subgenero)  # Usar la instancia de biblioteca
+        especifico = Especifico(nombre_especifico)
+        biblioteca.agregar_especifico(especifico)  # Usar la instancia de biblioteca
 
         print("\nSubgénero Literario registrado correctamente.\n")
 
@@ -20,37 +20,48 @@ def crear_subgenero(biblioteca):
     except Exception as e2:                               # Errores imprevistos
         print(f"\nSe produjo un error inesperado: {e}\n")
 
-def leer_subgenero(biblioteca):
+def leer_especifico(biblioteca):
     """Busca y muestra la información de un subgenero por nombre."""
 
     try:
         print("\n- Información del Registro deseado -\n")
-        nombre = input("Introduzca el nombre del subgénero literario a buscar:\n")
-        subgenero = biblioteca.buscar_subgenero_nombre(nombre)
+        nombre_especifico = input("Introduzca el nombre del subgénero literario a buscar:\n")
+        especifico = biblioteca.buscar_especifico_nombre(nombre_especifico)
 
-        if subgenero:
+        if especifico:
             print("\nRegistro encontrado.\n")
-            print(subgenero.mostrar_datos_subgenero())
+            print(especifico.mostrar_datos_especifico())
         else:
             print("\nSubgénero Literario no encontrado. Revise la información proporcionada e inténtelo de nuevo.\n")
 
     except Exception as e:                                         # Errores imprevistos
         print(f"Se produjo un error al buscar el libro: {e}")
 
-def actualizar_subgenero(biblioteca):
+
+def mostrar_especificos(biblioteca):
+    """Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca."""
+    if not biblioteca.especificos:
+        print("\nNo hay subgéneros literarios registrados en la biblioteca")
+        return 
+    print(f"\n- Lista de Subgéneros Literarios -\n")
+    for especifico in biblioteca.especificos:
+        print(especifico.mostrar_datos_especifico())
+        print()
+
+def actualizar_especifico(biblioteca):
     """Actualiza la información de un subgénero literario existente."""
 
     try:
         print("\n- Actualización del Registro -\n")
-        nombre = input("Introduce el nombre del subgénero literario que deseas actualizar:\n")
-        subgenero = biblioteca.buscar_subgenero_nombre(nombre)
+        nombre_especifico = input("Introduce el nombre del subgénero literario que deseas actualizar:\n")
+        especifico = biblioteca.buscar_especifico_nombre(nombre_especifico)
 
-        if subgenero:
+        if especifico:
             print("\nIntroduce los nuevos datos del subgénero literario (deja en blanco para mantener la información actual:)\n")
 
-            nuevo_nombre = input(f"Nombre [{subgenero.get_nombre()}]: ") or subgenero.get_nombre()
+            nuevo_nombre_especifico = input(f"Nombre [{especifico.get_nombre_especifico()}]: ") or especifico.get_nombre_especifico()
 
-            subgenero.set_nombre(nuevo_nombre)
+            especifico.set_nombre_especifico(nuevo_nombre_especifico)
 
             print("\nSubgénero Literario actualizado correctamente.\n")
 
@@ -63,24 +74,24 @@ def actualizar_subgenero(biblioteca):
     except Exception as e:                                                     # Errores imprevistos
         print(f"Se produjo un error inesperado. {e}")
 
-def eliminar_subgenero(biblioteca):
+def eliminar_especifico(biblioteca):
     """Elimina un subgénero literario de la biblioteca búscado por nombre."""
 
     try:
         print("\n- Borrado de Registro -\n")
-        nombre = input("Introduce el nombre del subgénero literario que deseas borrar:\n")
+        nombre_especifico = input("Introduce el nombre del subgénero literario que deseas borrar:\n")
         
-        subgenero_eliminado = None
-        for subgenero in biblioteca.subgeneros:
-            if subgenero.get_nombre().lower() == nombre.lower():
-                subgenero_eliminado = subgenero
+        especifico_eliminado = None
+        for especifico in biblioteca.especificos:
+            if especifico.get_nombre_especifico().lower() == nombre_especifico.lower():
+                especifico_eliminado = especifico
                 break # Sale del bucle una vez encontrado el titulo.
 
-        if subgenero_eliminado:
-            biblioteca.generos.remove(subgenero_eliminado)  # Elimina el subgénero literario de la lista
+        if especifico_eliminado:
+            biblioteca.especificos.remove(especifico_eliminado)  # Elimina el subgénero literario de la lista
             print("El registro ha sido eliminado correctamente.")
             #return True   ->   # True si se elimina con éxito
-            biblioteca.reestructurar_ids_subgeneros()  # Reestructura los ids del resto de registros después de eliminar
+            biblioteca.reestructurar_ids_especificos()  # Reestructura los ids del resto de registros después de eliminar
         else:
             print("No se encontró ningún registro con ese nombre.\nCompruebe búsqueda e inténtelo de nuevo.")
             #return False  ->  # False si no se encuentra el subgénero.

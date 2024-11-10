@@ -15,7 +15,7 @@ def submenu_genero(biblioteca):
 
         opcion = input("\nSelecciona una opción:\n")
         if opcion == "1":
-            crud_genero.leer_genero(biblioteca)
+            crud_genero.mostrar_generos(biblioteca)
         elif opcion == "2":
             crud_genero.crear_genero(biblioteca)
         elif opcion == "3":

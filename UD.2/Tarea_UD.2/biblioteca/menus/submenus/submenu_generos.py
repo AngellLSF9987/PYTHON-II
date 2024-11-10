@@ -1,7 +1,7 @@
 # biblioteca/menus/submenus/submenu_generos.py
 
 from biblioteca.menus.submenus.submenus_generos import submenu_genero
-from biblioteca.menus.submenus.submenus_generos import submenu_subgenero
+from biblioteca.menus.submenus.submenus_generos import submenu_especifico
 
 def submenu_generos(biblioteca):
     
@@ -18,8 +18,8 @@ def submenu_generos(biblioteca):
            submenu_genero.submenu_genero(biblioteca)
         elif opcion == "2":
             # LLama al submenu de tareas de subgéneros literarios y le pasa la instancia de Biblioteca
-           submenu_subgenero.submenu_subgenero(biblioteca)
+           submenu_especifico.submenu_especifico(biblioteca)
         elif opcion == "0":
-            return # Volver Menú Tareas de Biblioteca
+            return          # Volver SubMenú Tareas de Biblioteca
         else:
             print("\nOpción no válida.\n")

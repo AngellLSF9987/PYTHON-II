@@ -44,19 +44,19 @@ def menu():
             else:
                 print(f"\nNo se encontraron registros de {autor}.\n")
         elif opcion == "5":
-            genero = input("\nIntroduzca el nombre del Género Literario buscado:\n")
-            libros = biblioteca.mostrar_libros_por_genero(genero)
+            nombre_genero = input("\nIntroduzca el nombre del Género Literario buscado:\n")
+            libros = biblioteca.mostrar_libros_por_genero(nombre_genero)
 
             if libros:
-                print(f"\n - Libros por {genero} -\n")
+                print(f"\n - Libros por {nombre_genero} -\n")
                 for libro in libros:
                     print(libro.mostrar_datos_libro())
         elif opcion == "6":
-            subgenero = input("\nIntroduzca el nombre del Subgénero Literario buscado:\n")
-            libros = biblioteca.mostrar_libros_por_subgenero(subgenero)
+            nombre_especifico = input("\nIntroduzca el nombre del Subgénero Literario buscado:\n")
+            libros = biblioteca.mostrar_libros_especifico(nombre_especifico)
 
             if libros:
-                print(f"\n - Libros por {subgenero} -\n")
+                print(f"\n - Libros por {nombre_especifico} -\n")
                 for libro in libros:
                     print(libro.mostrar_datos_libro())
         elif opcion == "7":
@@ -80,12 +80,12 @@ def menu():
                 print("\nNo existe ningún registro aún en la Biblioteca.\n")
                 return
         elif opcion == "9":
-            subgeneros = biblioteca.mostrar_subgeneros()
+            especificos = biblioteca.mostrar_especificos()
 
-            if subgeneros:
+            if especificos:
                 print("\n- Registro Completo de Subgéneros existentes en la Biblioteca -\n")
-                for subgenero in subgeneros:
-                    print(subgenero)
+                for especifico in especificos:
+                    print(especifico)
             else:
                 print("\nNo existe ningún registro aún en la Biblioteca.\n")
                 return

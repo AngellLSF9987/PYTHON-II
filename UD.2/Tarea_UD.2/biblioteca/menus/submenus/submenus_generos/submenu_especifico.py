@@ -1,8 +1,8 @@
 # biblioteca/menus/submenus/submenus_generos/submenu_genero.py
 
-from biblioteca.crud import crud_subgenero
+from biblioteca.crud import crud_especifico
 
-def submenu_subgenero(biblioteca):
+def submenu_especifico(biblioteca):
 
     while True:
         print("\n- Tareas de Subgéneros Literarios -\n")
@@ -16,13 +16,13 @@ def submenu_subgenero(biblioteca):
         opcion = input("\nSelecciona una opción:\n")
         
         if opcion == "1":
-            crud_subgenero.leer_subgenero(biblioteca)
+            crud_especifico.mostrar_especificos(biblioteca)
         elif opcion == "2":
-            crud_subgenero.crear_subgenero(biblioteca)
+            crud_especifico.crear_especifico(biblioteca)
         elif opcion == "3":
-            crud_subgenero.actualizar_subgenero(biblioteca)
+            crud_especifico.actualizar_especifico(biblioteca)
         elif opcion == "4":
-            crud_subgenero.eliminar_subgenero(biblioteca)
+            crud_especifico.eliminar_especifico(biblioteca)
         elif opcion == "0":
             return          # Volver SubMenú Tareas de Géneros y Subgéneros Literarios
         else:

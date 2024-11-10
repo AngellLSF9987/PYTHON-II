@@ -32,6 +32,16 @@ def crear_libro(biblioteca):
     except Exception as e2:                               # Errores imprevistos
         print(f"\nSe produjo un error inesperado: {e}\n")
 
+def mostrar_libros(biblioteca):
+    """Devuelve una lista completa de todos los libros existentes en la Biblioteca."""
+    if not biblioteca.libros:
+        print("\nNo hay libros registrados en la biblioteca")
+        return 
+    print(f"\n- Lista de Libros -\n")
+    for libro in biblioteca.libros:
+        print(libro.mostrar_datos_libro())
+        print()
+
 def leer_libro(biblioteca):
     """Busca y muestra la información de un libro por título."""
 

@@ -17,7 +17,7 @@ def submenu_libro(biblioteca):
         opcion = input("\nSelecciona una opción:\n")
         
         if opcion == "1":
-            crud_libro.leer_libro(biblioteca)
+            crud_libro.mostrar_libros(biblioteca)
         elif opcion == "2":
             crud_libro.crear_libro(biblioteca)
         elif opcion == "3":
