@@ -5,7 +5,7 @@ class Autor:
     
     __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan
     
-    def __init__(self, nombre, apellido1, apellido2, conocido, nacido, fallecido, nacionalidad):
+    def __init__(self, nombre, apellido1, apellido2, pseudonimo, nacido, fallecido, nacionalidad):
         
         self.__id = Autor.__id_counter  # Asigna el ID actual, es decir, el ID = 1
         Autor.__id_counter += 1         # Contador autoincremental
@@ -13,7 +13,7 @@ class Autor:
         self.__nombre = nombre
         self.__apellido1 = apellido1
         self.__apellido2 = apellido2
-        self.__conocido = conocido
+        self.__pseudonimo = pseudonimo
         self.__nacido = nacido
         self.__fallecido = fallecido
         self.__nacionalidad = nacionalidad
@@ -42,11 +42,11 @@ class Autor:
     def set_apellido2(self, value):
         self.__apellido2 = value
 
-    def get_conocido(self):
-        return self.__conocido
+    def get_pseudonimo(self):
+        return self.__pseudonimo
 
-    def set_conocido(self, value):
-        self.__conocido = value
+    def set_pseudonimo(self, value):
+        self.__pseudonimo = value
 
     def get_nacido(self):
         return self.__nacido
@@ -68,8 +68,8 @@ class Autor:
 
     def __str__(self):
         """Método __str__. Muestra todos los datos de modelo Autor"""
-        return f"Id: {self.get_id()}.\nNombre: {self.get_nombre()}.\nApellidos: {self.get_apellido1()} {self.get_apellido2()}.\nConocido/a como: {self.get_conocido()}\nNacido/a: {self.get_nacido()}.\nFallecido/a: {self.get_fallecido()}.\nNacionalidad: {self.get_nacionalidad()}.\n"
+        return f"Id: {self.get_id()}.\nNombre: {self.get_nombre()}.\nApellidos: {self.get_apellido1()} {self.get_apellido2()}.\nConocido/a como: {self.get_pseudonimo()}\nNacido/a: {self.get_nacido()}.\nFallecido/a: {self.get_fallecido()}.\nNacionalidad: {self.get_nacionalidad()}.\n"
     
     def mostrar_datos_autor(self):
         """Muestra todos los datos específicos del libro."""
-        return f"Nombre: {self.get_nombre()}.\nApellidos: {self.get_apellido1()} {self.get_apellido2()}.\nConocido/a como: {self.get_conocido()}\nNacido/a: {self.get_nacido()}.\nFallecido/a: {self.get_fallecido()}.\nNacionalidad: {self.get_nacionalidad()}.\n"
+        return f"Nombre: {self.get_nombre()}.\nApellidos: {self.get_apellido1()} {self.get_apellido2()}.\nConocido/a como: {self.get_pseudonimo()}\nNacido/a: {self.get_nacido()}.\nFallecido/a: {self.get_fallecido()}.\nNacionalidad: {self.get_nacionalidad()}.\n"

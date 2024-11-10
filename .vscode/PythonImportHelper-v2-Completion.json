@@ -410,6 +410,14 @@
         "documentation": {}
     },
     {
+        "label": "Libro",
+        "importPath": "biblioteca.modelos.libro",
+        "description": "biblioteca.modelos.libro",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.libro",
+        "documentation": {}
+    },
+    {
         "label": "crud_especifico",
         "importPath": "biblioteca.crud",
         "description": "biblioteca.crud",
@@ -2611,7 +2619,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
-        "peekOfCode": "def crear_libro(biblioteca):\n    \"\"\"Crear un nuevo libro y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Libro -\\n\")\n        titulo = input(\"Introduce el titulo:\\n\")\n        autor = input(\"Introduce el autor:\\n\")\n        # Tratamiento de validación de la fecha de publicación como objeto date()\n        fecha_publicacion_str = input(\"Introduce la fecha de publicación (DD-MM-AAAA):\\n\")\n        fecha_publicacion = validar_fecha(fecha_publicacion_str)\n        if not fecha_publicacion:",
+        "peekOfCode": "def crear_libro(biblioteca):\n    \"\"\"Crear un nuevo libro y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Libro -\\n\")\n        titulo = input(\"Introduce el titulo:\\n\")\n        # Tratamiento de validación de la fecha de publicación como objeto date()\n        fecha_publicacion_str = input(\"Introduce la fecha de publicación (DD-MM-AAAA):\\n\")\n        fecha_publicacion = validar_fecha(fecha_publicacion_str)\n        if not fecha_publicacion:\n            print(\"\\nRegistro cancelado: Fecha de publicación inválida. Revise la información proporcionada.\\n\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
@@ -2737,7 +2745,7 @@
         "kind": 6,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.autor",
-        "peekOfCode": "class Autor:\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre, apellido1, apellido2, conocido, nacido, fallecido, nacionalidad):\n        self.__id = Autor.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Autor.__id_counter += 1         # Contador autoincremental\n        self.__nombre = nombre\n        self.__apellido1 = apellido1\n        self.__apellido2 = apellido2\n        self.__conocido = conocido\n        self.__nacido = nacido",
+        "peekOfCode": "class Autor:\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre, apellido1, apellido2, pseudonimo, nacido, fallecido, nacionalidad):\n        self.__id = Autor.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Autor.__id_counter += 1         # Contador autoincremental\n        self.__nombre = nombre\n        self.__apellido1 = apellido1\n        self.__apellido2 = apellido2\n        self.__pseudonimo = pseudonimo\n        self.__nacido = nacido",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.autor",
         "documentation": {}
     },
@@ -2746,7 +2754,7 @@
         "kind": 6,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
-        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"Método constructor a partir de la instanciación de un diccionario vacío donde quedarán alojados los objetos libro existentes o creados.\"\"\"\n        self.libros = []\n        self.generos = []\n        self.especificos = []       \n        self.autores = []\n        self.inicializar_biblioteca() # Llamada al método de inicialización\n#####   1.    REGION INTERFAZ GESTIÓN BIBLIOTECA - LIBROS     #####\n    def agregar_libro(self, libro):",
+        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"Método constructor a partir de la instanciación de un diccionario vacío donde quedarán alojados los objetos libro existentes o creados.\"\"\"\n        self.libros = []\n        self.generos = []\n        self.especificos = []       \n        self.autores = []\n        # Diccionarios de búsqueda rápida\n        self.diccionario_libros = {}\n        self.diccionario_autores = {}",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.biblioteca",
         "documentation": {}
     },
@@ -2755,8 +2763,17 @@
         "kind": 6,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.libro",
-        "peekOfCode": "class Libro():\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n#genero_id=None, subgenero_id=None, genero\n    def __init__(self, titulo, especifico, fecha_publicacion, num_paginas, autor):\n        self.__id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Libro.__id_counter += 1         # Contador autoincremental\n        self.__titulo = titulo\n        self.__autor = autor     \n        self.__especifico = especifico\n        self.__fecha_publicacion = fecha_publicacion",
+        "peekOfCode": "class Libro():\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n#genero_id=None, subgenero_id=None, genero\n    def __init__(self, titulo, especifico, fecha_publicacion, num_paginas, autor):\n        if not isinstance(especifico, Especifico):\n            raise TypeError(\"El parámetro 'especifico' debe ser una instancia de la clase 'Especifico'\")\n        if not isinstance(autor, Autor):\n            raise TypeError(\"El parámetro 'autor' debe ser una instancia de la clase 'Autor'\")\n        self.__id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Libro.__id_counter += 1         # Contador autoincremental",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.libro",
+        "documentation": {}
+    },
+    {
+        "label": "Especificos",
+        "kind": 5,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "peekOfCode": "Especificos = {\n    1: Especifico(nombre_genero=\"Narrativo\", nombre_especifico=\"Novela\",\n                 tipo = {\n                     \"Fantasía\",\n                     \"Terror\",\n                     \"Suspense\",\n                     \"Realismo Mágico\",\n                     \"Distópica\"\n                 }),\n    2: Especifico(nombre_genero=\"Narrativo\", nombre_especifico=\"Cuento\",",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
         "documentation": {}
     },
     {
@@ -2769,12 +2786,12 @@
         "documentation": {}
     },
     {
-        "label": "EspecificoS",
+        "label": "Libros",
         "kind": 5,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_subgenero",
-        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_subgenero",
-        "peekOfCode": "EspecificoS = {\n    1: Especifico(nombre_genero=\"Narrativo\", nombre_Especifico=\"Novela\",\n                 tipo = {\n                     \"Fantasía\",\n                     \"Terror\",\n                     \"Suspense\",\n                     \"Realismo Mágico\",\n                     \"Distópica\"\n                 }),\n    2: Especifico(nombre_genero=\"Narrativo\", nombre_Especifico=\"Cuento\",",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_subgenero",
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
+        "peekOfCode": "Libros = {\n    1: Libro(titulo=\"Cien Años de Soledad\", \n             especifico=(\"Narrativo\", \"Novela\", \"Realismo Mágico\"), \n             fecha_publicacion=\"05-06-1967\",\n             num_paginas=417,\n             autor=\"Gabriel García Marquéz\"\n            ),\n    2: Libro(titulo=\"El Hobbit\", \n             especifico=(\"Narrativo\", \"Novela\", \"Fantasía\"), \n             fecha_publicacion=\"21-09-1937\",",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
         "documentation": {}
     },
     {

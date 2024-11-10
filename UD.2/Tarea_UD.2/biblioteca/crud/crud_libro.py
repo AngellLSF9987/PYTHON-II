@@ -9,7 +9,6 @@ def crear_libro(biblioteca):
     try:
         print("\n- Nuevo Registro de Libro -\n")
         titulo = input("Introduce el titulo:\n")
-        autor = input("Introduce el autor:\n")
 
         # Tratamiento de validación de la fecha de publicación como objeto date()
         fecha_publicacion_str = input("Introduce la fecha de publicación (DD-MM-AAAA):\n")
@@ -20,9 +19,9 @@ def crear_libro(biblioteca):
             return
         
         num_paginas = int(input("\nIntroduce el numero de paginas:\n"))
-
+        autor = input("Introduce el autor:\n")
         # Creación y registro del nuevo objeto libro
-        libro = Libro(titulo,autor,fecha_publicacion,num_paginas)
+        libro = Libro(titulo, fecha_publicacion, num_paginas, autor)
         biblioteca.agregar_libro(libro)  # Usar la instancia de biblioteca
 
         print("\nLibro registrado correctamente.\n")
