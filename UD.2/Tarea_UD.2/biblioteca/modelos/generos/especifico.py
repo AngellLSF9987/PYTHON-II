@@ -39,4 +39,8 @@ class Especifico(Genero):
 
     def mostrar_datos_especifico(self):
         """Muestra los datos especificos del Género Literario."""
-        return f"Género Literario:{super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo() if self.get_tipo() else "Tipo no definido"}."
+        return f"Género Literario: {super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo() if self.get_tipo() else "Tipo no definido"}"
+
+    def mostrar_datos_especifico_crud(self):
+        """Muestra los datos especificos del Género Literario."""
+        return f"Subgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo() if self.get_tipo() else "Tipo no definido"}."

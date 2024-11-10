@@ -64,10 +64,10 @@ class Libro():
             - Llama a las clases Autor, Género y Subgénero e incluye todos los datos de autor, género y subgénero, referidos, cada uno de ellos, en sus respectivos diccionarios y tratados a través de su ID correspondiente     
         """
         especifico = self.get_especifico()
-        print(f"Tipo de especifico: {type(especifico)}")
+        #print(f"Tipo de especifico: {type(especifico)}")
         datos_especifico = especifico.mostrar_datos_especifico()
         
         autor = self.get_autor()
         datos_autor = autor.mostrar_datos_autor()
         
-        return f"Id: {self.get_id()}.\nTítulo: {self.get_titulo()}.\nGénero Literario: {datos_especifico}.\nFecha Publicación: {self.get_fecha_publicacion()}.\nNº Páginas: {self.get_num_paginas()}.\nAutor: {datos_autor}.\n" 
+        return f"Id: {self.get_id()}.\nTítulo: {self.get_titulo()}.\n{datos_especifico}.\nFecha Publicación: {self.get_fecha_publicacion()}.\nNº Páginas: {self.get_num_paginas()}.\n- Autor -\n{datos_autor}.\n" 

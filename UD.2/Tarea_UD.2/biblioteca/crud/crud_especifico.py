@@ -7,10 +7,11 @@ def crear_especifico(biblioteca):
 
     try:
         print("\n- Nuevo Registro de SubGénero Literario -\n")
-        nombre_especifico = input("Introduce el nombre:\n")
+        nombre_especifico = input("Introduce el nombre subgénero específico:\n")
+        tipo = input("Introduzca el tipo de subgénero específico:\n")
 
         # Creación y registro del nuevo objeto subgenero
-        especifico = Especifico(nombre_especifico)
+        especifico = Especifico(nombre_especifico, tipo)
         biblioteca.agregar_especifico(especifico)  # Usar la instancia de biblioteca
 
         print("\nSubgénero Literario registrado correctamente.\n")
@@ -46,6 +47,16 @@ def mostrar_especificos(biblioteca):
     print(f"\n- Lista de Subgéneros Literarios -\n")
     for especifico in biblioteca.especificos:
         print(especifico.mostrar_datos_especifico())
+        print()
+
+def mostrar_especificos_crud(biblioteca):
+    """Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca."""
+    if not biblioteca.especificos:
+        print("\nNo hay subgéneros literarios registrados en la biblioteca")
+        return 
+    print(f"\n- Lista de Subgéneros Literarios -\n")
+    for especifico in biblioteca.especificos:
+        print(especifico.mostrar_datos_especifico_crud())
         print()
 
 def actualizar_especifico(biblioteca):

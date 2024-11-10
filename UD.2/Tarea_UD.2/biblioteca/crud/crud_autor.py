@@ -8,8 +8,9 @@ def crear_autor(biblioteca):
 
     try:
         print("\n- Nuevo Registro de Autor -\n")
-        nombre = input("Introduce el nombre:\n")
-        apellido = input("Introduce el apellido:\n")
+        nombre = input("Introduce el nombre del autor:\n")
+        apellido1 = input("Introduce el primer apellido o segundo nombre del autor:\n")
+        apellido2 = input("Introduce el segundo apellido o el apellido único del autor:\n")
 
         # Tratamiento de validación de la fecha de nacimiento como objeto date()
         nacido_str = input("Introduce la fecha de nacimiento (DD-MM-AAAA):\n")
@@ -27,17 +28,17 @@ def crear_autor(biblioteca):
             print("\nRegistro cancelado: Fecha de fallecimiento inválida. Revise la información proporcionada.\n")
             return
 
-        nacionalidad = input("Introduce el apellido:\n")
+        nacionalidad = input("Introduce la nacionalidad del autor:\n")
 
         # Creación y registro del nuevo objeto libro
-        autor = Autor(nombre, apellido, nacido, fallecido, nacionalidad)
+        autor = Autor(nombre, apellido1, apellido2, nacido, fallecido, nacionalidad)
         biblioteca.agregar_autor(autor)  # Usar la instancia de biblioteca
 
         print("\nAutor registrado correctamente.\n")
 
     except ValueError as e:                              # Valores incorrectos al ingresar datos
         print(f"\nError: Entrada inválida. {e}\n")
-    except Exception as e2:                               # Errores imprevistos
+    except Exception as e:                               # Errores imprevistos
         print(f"\nSe produjo un error inesperado: {e}\n")
 
 def leer_autor(biblioteca):

@@ -306,6 +306,14 @@
         "documentation": {}
     },
     {
+        "label": "Autor",
+        "importPath": "biblioteca.modelos.autor",
+        "description": "biblioteca.modelos.autor",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.autor",
+        "documentation": {}
+    },
+    {
         "label": "validar_fecha",
         "importPath": "biblioteca.utilidades.validaciones",
         "description": "biblioteca.utilidades.validaciones",
@@ -2484,7 +2492,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
-        "peekOfCode": "def crear_autor(biblioteca):\n    \"\"\"Crear un nuevo autor y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Autor -\\n\")\n        nombre = input(\"Introduce el nombre:\\n\")\n        apellido = input(\"Introduce el apellido:\\n\")\n        # Tratamiento de validación de la fecha de nacimiento como objeto date()\n        nacido_str = input(\"Introduce la fecha de nacimiento (DD-MM-AAAA):\\n\")\n        nacido = validar_fecha(nacido_str)\n        if not nacido:",
+        "peekOfCode": "def crear_autor(biblioteca):\n    \"\"\"Crear un nuevo autor y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Autor -\\n\")\n        nombre = input(\"Introduce el nombre del autor:\\n\")\n        apellido1 = input(\"Introduce el primer apellido o segundo nombre del autor:\\n\")\n        apellido2 = input(\"Introduce el segundo apellido o el apellido único del autor:\\n\")\n        # Tratamiento de validación de la fecha de nacimiento como objeto date()\n        nacido_str = input(\"Introduce la fecha de nacimiento (DD-MM-AAAA):\\n\")\n        nacido = validar_fecha(nacido_str)",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "documentation": {}
     },
@@ -2529,7 +2537,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
-        "peekOfCode": "def crear_especifico(biblioteca):\n    \"\"\"Crear un nuevo subgénero literario y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de SubGénero Literario -\\n\")\n        nombre_especifico = input(\"Introduce el nombre:\\n\")\n        # Creación y registro del nuevo objeto subgenero\n        especifico = Especifico(nombre_especifico)\n        biblioteca.agregar_especifico(especifico)  # Usar la instancia de biblioteca\n        print(\"\\nSubgénero Literario registrado correctamente.\\n\")\n    except ValueError as e:                              # Valores incorrectos al ingresar datos",
+        "peekOfCode": "def crear_especifico(biblioteca):\n    \"\"\"Crear un nuevo subgénero literario y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de SubGénero Literario -\\n\")\n        nombre_especifico = input(\"Introduce el nombre subgénero específico:\\n\")\n        tipo = input(\"Introduzca el tipo de subgénero específico:\\n\")\n        # Creación y registro del nuevo objeto subgenero\n        especifico = Especifico(nombre_especifico, tipo)\n        biblioteca.agregar_especifico(especifico)  # Usar la instancia de biblioteca\n        print(\"\\nSubgénero Literario registrado correctamente.\\n\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
         "documentation": {}
     },
@@ -2547,7 +2555,16 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
-        "peekOfCode": "def mostrar_especificos(biblioteca):\n    \"\"\"Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca.\"\"\"\n    if not biblioteca.especificos:\n        print(\"\\nNo hay subgéneros literarios registrados en la biblioteca\")\n        return \n    print(f\"\\n- Lista de Subgéneros Literarios -\\n\")\n    for especifico in biblioteca.especificos:\n        print(especifico.mostrar_datos_especifico())\n        print()\ndef actualizar_especifico(biblioteca):",
+        "peekOfCode": "def mostrar_especificos(biblioteca):\n    \"\"\"Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca.\"\"\"\n    if not biblioteca.especificos:\n        print(\"\\nNo hay subgéneros literarios registrados en la biblioteca\")\n        return \n    print(f\"\\n- Lista de Subgéneros Literarios -\\n\")\n    for especifico in biblioteca.especificos:\n        print(especifico.mostrar_datos_especifico())\n        print()\ndef mostrar_especificos_crud(biblioteca):",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_especificos_crud",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
+        "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
+        "peekOfCode": "def mostrar_especificos_crud(biblioteca):\n    \"\"\"Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca.\"\"\"\n    if not biblioteca.especificos:\n        print(\"\\nNo hay subgéneros literarios registrados en la biblioteca\")\n        return \n    print(f\"\\n- Lista de Subgéneros Literarios -\\n\")\n    for especifico in biblioteca.especificos:\n        print(especifico.mostrar_datos_especifico_crud())\n        print()\ndef actualizar_especifico(biblioteca):",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
         "documentation": {}
     },
@@ -2768,11 +2785,29 @@
         "documentation": {}
     },
     {
+        "label": "Autores",
+        "kind": 5,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
+        "peekOfCode": "Autores = {\n    1: Autor(nombre=\"Gabriel\", \n             apellido1=\"García\", \n             apellido2=\"Márquez\",\n             pseudonimo=\"Gabriel García Márquez\",\n             nacido=\"06-03-1927\",\n             fallecido=\"17-04-2014\",\n             nacionalidad=\"Colombia\"\n            ),\n    2: Autor(nombre=\"Jhon Ronald\", ",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_especificos",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "peekOfCode": "def obtener_especificos():\n    \"\"\"Devuelve el diccionario con los subgéneros específicos\"\"\"\n    return {\n        1: Especifico(\n            nombre_genero=\"Narrativo\",\n            nombre_especifico=\"Novela\",\n            tipo = {\n                \"Fantasía\",\n                \"Terror\",\n                \"Suspense\",",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "documentation": {}
+    },
+    {
         "label": "Especificos",
         "kind": 5,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
         "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
-        "peekOfCode": "Especificos = {\n    1: Especifico(nombre_genero=\"Narrativo\", nombre_especifico=\"Novela\",\n                 tipo = {\n                     \"Fantasía\",\n                     \"Terror\",\n                     \"Suspense\",\n                     \"Realismo Mágico\",\n                     \"Distópica\"\n                 }),\n    2: Especifico(nombre_genero=\"Narrativo\", nombre_especifico=\"Cuento\",",
+        "peekOfCode": "Especificos = {\n    1: Especifico(nombre_genero=\"Narrativo\", nombre_especifico=\"Novela\",\n                 tipo = {\n                     \"Fantasía\",\n                     \"Terror\",\n                     \"Suspense\",\n                     \"Realismo Mágico\",\n                     \"Distópica\"\n                 })\n}",
         "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
         "documentation": {}
     },
@@ -2781,7 +2816,7 @@
         "kind": 5,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_genero",
         "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_genero",
-        "peekOfCode": "GENEROS = {\n    1: Genero(nombre_genero=\"Narrativo\"),\n    2: Genero(nombre_genero=\"Lirico\"),\n    3: Genero(nombre_genero=\"Dramatico\")\n}\n# def obtener_genero_id(genero_id):\n#     genero = GENEROS.get(genero_id)\n#     if genero:   # True\n#         return genero\n#     else:",
+        "peekOfCode": "GENEROS = {\n    1: Genero(nombre_genero=\"Narrativo\"),\n    2: Genero(nombre_genero=\"Lirico\"),\n    3: Genero(nombre_genero=\"Dramatico\")\n}",
         "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_genero",
         "documentation": {}
     },
@@ -2790,7 +2825,7 @@
         "kind": 5,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
-        "peekOfCode": "Libros = {\n    1: Libro(titulo=\"Cien Años de Soledad\", \n             especifico=(\"Narrativo\", \"Novela\", \"Realismo Mágico\"), \n             fecha_publicacion=\"05-06-1967\",\n             num_paginas=417,\n             autor=\"Gabriel García Marquéz\"\n            ),\n    2: Libro(titulo=\"El Hobbit\", \n             especifico=(\"Narrativo\", \"Novela\", \"Fantasía\"), \n             fecha_publicacion=\"21-09-1937\",",
+        "peekOfCode": "Libros = {\n    1: Libro(titulo=\"Cien Años de Soledad\", \n             especifico=(\"Narrativo_Novela_Realismo Mágico\"), \n             fecha_publicacion=\"05-06-1967\",\n             num_paginas=417,\n             autor=\"Gabriel García Marquéz\"\n            ),\n    2: Libro(titulo=\"El Hobbit\", \n             especifico=(\"Narrativo_Novela_Fantasía\"), \n             fecha_publicacion=\"21-09-1937\",",
         "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
         "documentation": {}
     },

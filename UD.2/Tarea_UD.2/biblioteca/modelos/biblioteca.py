@@ -25,9 +25,14 @@ class Biblioteca:
 #####   1.    REGION INTERFAZ GESTIÓN BIBLIOTECA - LIBROS     #####
 
     def agregar_libro(self, libro):
-        """- Agrega un libro nuevo a la lista de libros de la biblioteca. """
-        self.libros.append(libro)
-        self.diccionario_libros[libro.get_titulo().lower()] = libro
+        """- Agrega un libro nuevo al diccionario de libros de la biblioteca. """
+        try:
+            titulo = libro.get_titulo().lower()
+        
+            if titulo not in self.diccionario_libros:
+                self.diccionario_libros[titulo] = libro
+        except Exception as e:
+            print(f'El libro "{libro.get_titulo()}" ya está registrado. {e}')            
 
     def buscar_libro_titulo(self, titulo):
         """Busca un libro usando el método get_titulo(), que encapsula el atributo título, como referencia de la búsqueda. 
@@ -43,7 +48,7 @@ class Biblioteca:
 
     def mostrar_libros(self):
         """Devuelve una lista completa de todos los libros existentes en la Biblioteca."""
-        return [libro.mostrar_datos_libro() for libro in self.diccionario_libros]
+        return [libro.mostrar_datos_libro() for libro in self.diccionario_libros.values()]
     
     def mostrar_libros_por_autor(self, autor):
         """Muestra todos los libros existentes, publicados por un autor específico."""
@@ -51,7 +56,7 @@ class Biblioteca:
         autor_buscado = autor  # El autor que buscas debe ser una instancia de `Autor`
 
         # Encontrar los libros de ese autor
-        libros_del_autor = [libro for libro in self.libros if libro.get_autor() == autor_buscado]
+        libros_del_autor = [libro for libro in self.libros if libro.get_autor().lower() == autor_buscado]
 
         # Muestra los resultados
         for libro in libros_del_autor:
@@ -143,9 +148,9 @@ class Biblioteca:
         # Inicializar lista de Autores
 
         autores_existentes = [
-            {"nombre": "Gabriel", "apellido1": "García", "apellido2": "Márquez", "pseudonimo":"Gabriel García Márquez" ,"nacido": "06-03-1927", "fallecido": "17-04-2014", "nacionalidad": "Colombiano"},
-            {"nombre": "Jhon Ronald", "apellido1": "Reuel", "apellido2": "Tolkien","pseudonimo":"J.R.R. Tolkien", "nacido": "03-01-1892", "fallecido": "02-09-1973", "nacionalidad": "Británico"},
-            {"nombre": "Eric", "apellido1": "Arthur", "apellido2": "Blair","pseudonimo":"George Orwell", "nacido": "25-06-1903", "fallecido": "21-01-1950", "nacionalidad": "Británico"},
+            {"nombre": "Gabriel", "apellido1": "García", "apellido2": "Márquez", "pseudonimo":"Gabriel García Márquez" ,"nacido": "06-03-1927", "fallecido": "17-04-2014", "nacionalidad": "Colombia"},
+            {"nombre": "Jhon Ronald", "apellido1": "Reuel", "apellido2": "Tolkien","pseudonimo":"J.R.R. Tolkien", "nacido": "03-01-1892", "fallecido": "02-09-1973", "nacionalidad": "Reino Unido"},
+            {"nombre": "Eric", "apellido1": "Arthur", "apellido2": "Blair","pseudonimo":"George Orwell", "nacido": "25-06-1903", "fallecido": "21-01-1950", "nacionalidad": "Reino Unido"},
             {"nombre": "Stephen", "apellido1": "Edwing", "apellido2": "King","pseudonimo":"Stephen King", "nacido": "21-09-1947", "fallecido": "No fallecido", "nacionalidad": "EE.UU"},
             {"nombre": "Nelle", "apellido1": "Harper", "apellido2": "Lee","pseudonimo":"Harper Lee", "nacido": "28-04-1926", "fallecido": "19-02-2016", "nacionalidad": "EE.UU"},
         ]
@@ -173,17 +178,7 @@ class Biblioteca:
             {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Suspense"},
             {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Distópica"},
             {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Realismo Mágico"},
-            {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Fantasía"},
-            {"nombre_genero":"Narrativo","nombre_especifico":"Cuento", "tipo":"Tipo no definido"},
-            {"nombre_genero":"Narrativo","nombre_especifico":"Fábula", "tipo":"Tipo no definido"},
-            {"nombre_genero":"Narrativo","nombre_especifico":"Leyenda", "tipo":"Tipo no definido"},
-            {"nombre_genero":"Lirico","nombre_especifico":"Égloga", "tipo":"Tipo no definido"},
-            {"nombre_genero":"Lirico","nombre_especifico":"Sátira", "tipo":"Tipo no definido"},
-            {"nombre_genero":"Lirico","nombre_especifico":"Soneto", "tipo":"Tipo no definido"},
-            {"nombre_genero":"Lirico","nombre_especifico":"Himno", "tipo":"Tipo no definido"},
-            {"nombre_genero":"Dramatico","nombre_especifico":"Tragedia", "tipo":"Tipo no definido"},
-            {"nombre_genero":"Dramatico","nombre_especifico":"Drama", "tipo":"Tipo no definido"},
-            {"nombre_genero":"Dramatico","nombre_especifico":"Comedia", "tipo":"Tipo no definido"},
+            {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Fantasía"}
         ]
 
         for especifico_info in especificos_existentes:

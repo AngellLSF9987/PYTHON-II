@@ -16,7 +16,7 @@ def submenu_especifico(biblioteca):
         opcion = input("\nSelecciona una opción:\n")
         
         if opcion == "1":
-            crud_especifico.mostrar_especificos(biblioteca)
+            crud_especifico.mostrar_especificos_crud(biblioteca)
         elif opcion == "2":
             crud_especifico.crear_especifico(biblioteca)
         elif opcion == "3":
