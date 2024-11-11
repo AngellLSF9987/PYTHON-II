@@ -1,4 +1,4 @@
-# main.py
+# biblioteca/main.py
 
 from biblioteca.menus.menu import menu
 

@@ -71,3 +71,5 @@ class Libro():
         datos_autor = autor.mostrar_datos_autor()
         
         return f"Id: {self.get_id()}.\nTítulo: {self.get_titulo()}.\n{datos_especifico}.\nFecha Publicación: {self.get_fecha_publicacion()}.\nNº Páginas: {self.get_num_paginas()}.\n- Autor -\n{datos_autor}.\n" 
+    
+    

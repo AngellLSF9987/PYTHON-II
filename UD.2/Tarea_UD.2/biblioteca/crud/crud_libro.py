@@ -33,13 +33,14 @@ def crear_libro(biblioteca):
 
 def mostrar_libros(biblioteca):
     """Devuelve una lista completa de todos los libros existentes en la Biblioteca."""
-    if not biblioteca.libros:
-        print("\nNo hay libros registrados en la biblioteca")
-        return 
-    print(f"\n- Lista de Libros -\n")
-    for libro in biblioteca.libros:
-        print(libro.mostrar_datos_libro())
-        print()
+    libros = biblioteca.mostrar_libros()
+    if libros:
+        print("\n- Registro Completo de Libros existentes en la Biblioteca -\n")
+        for libro in libros:
+            print(libro)
+    else:
+        print("\nNo existe ningún registro aún en la Biblioteca.\n")
+    return
 
 def leer_libro(biblioteca):
     """Busca y muestra la información de un libro por título."""
