@@ -1,0 +1,68 @@
+import json
+
+# Crear un diccionario
+
+personas =  {
+    "Nombre":"Angel",
+    "Ciudad":"Murcia",
+    "Hobbies":["Salir","Cine","Programar"],
+    "contacto":{
+        "email": "alsaorin9987@gmail.com",
+        "telefono": "642698285"
+        }
+}
+
+# Escribir el diccionario en el fichero JSON
+
+def escribir():
+
+    try:
+        # Leer 
+            
+        with open (r"UD.3\ejemplos_json\ejemplo_8\personas.json", "w", encoding="utf-16", newline="") as a_json:
+            json.dump(personas, a_json, indent=4) # Indent facilita la lectura. Lo normal se usa con valor 4
+
+    except FileExistsError:
+        print("Error1: Fichero no accesible o línea no escrita.")
+        
+escribir()
+
+def leer():
+
+    try:   
+        # Leer
+        with open (r"UD.3\ejemplos_json\ejemplo_8\personas.json", "r", encoding="utf-16") as a_json:
+            fichero = json.load(a_json)
+            print(fichero)
+    
+    except FileNotFoundError:
+        print("Error2: No se ha encontrado al archivo.\n")
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+leer()
+
+# Modificar
+
+def modificar():
+    
+    try:
+        
+        with open(r"UD.3\ejemplos_json\ejemplo_8\personas.json", "r", encoding="utf-16") as a_json:
+            fichero = json.load(a_json)
+            
+            # Modificar el valor
+        fichero["Nombre"] = "Angel Luis Saorin Faura"
+
+        # Reescribir el valor
+        with open (r"UD.3\ejemplos_json\ejemplo_8\personas.json", "w", encoding="utf-16", newline="") as a_json:          
+            json.dump(fichero, a_json, indent=4)
+    
+    except FileNotFoundError:
+        print("Error3: El fichero no se ha encontrado.\n")
+    except FileExistsError:
+        print("Error4: Fila no accesible o la información dada es errónea.")
+        
+modificar()
+leer()
