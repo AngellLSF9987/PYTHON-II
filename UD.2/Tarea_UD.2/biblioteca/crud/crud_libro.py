@@ -1,7 +1,7 @@
 # biblioteca/crud/crud_libro.py
 
-from ..modelos.libro import Libro
-from ..utilidades.validaciones import validar_fecha
+from biblioteca.modelos.libro import Libro
+from biblioteca.utilidades.validaciones import validar_fecha
 
 def crear_libro(biblioteca):
     """Crear un nuevo libro y lo añade a la Biblioteca."""
@@ -9,7 +9,6 @@ def crear_libro(biblioteca):
     try:
         print("\n- Nuevo Registro de Libro -\n")
         titulo = input("Introduce el titulo:\n")
-        autor = input("Introduce el autor:\n")
 
         # Tratamiento de validación de la fecha de publicación como objeto date()
         fecha_publicacion_str = input("Introduce la fecha de publicación (DD-MM-AAAA):\n")
@@ -20,9 +19,9 @@ def crear_libro(biblioteca):
             return
         
         num_paginas = int(input("\nIntroduce el numero de paginas:\n"))
-
+        autor = input("Introduce el autor:\n")
         # Creación y registro del nuevo objeto libro
-        libro = Libro(titulo,autor,fecha_publicacion,num_paginas)
+        libro = Libro(titulo, fecha_publicacion, num_paginas, autor)
         biblioteca.agregar_libro(libro)  # Usar la instancia de biblioteca
 
         print("\nLibro registrado correctamente.\n")
@@ -32,17 +31,27 @@ def crear_libro(biblioteca):
     except Exception as e2:                               # Errores imprevistos
         print(f"\nSe produjo un error inesperado: {e}\n")
 
+def mostrar_libros(biblioteca):
+    """Devuelve una lista completa de todos los libros existentes en la Biblioteca."""
+    if not biblioteca.libros:
+        print("\nNo hay libros registrados en la biblioteca")
+        return 
+    print(f"\n- Lista de Libros -\n")
+    for libro in biblioteca.libros:
+        print(libro.mostrar_datos_libro())
+        print()
+
 def leer_libro(biblioteca):
     """Busca y muestra la información de un libro por título."""
 
     try:
         print("\n- Información del Registro deseado -\n")
         titulo = input("Introduzca el título del libro a buscar:\n")
-        libro = biblioteca.buscar_libro(titulo)
+        libro = biblioteca.buscar_libro_titulo(titulo)
 
         if libro:
             print("\nRegistro encontrado.\n")
-            print(libro.mostrar_datos())
+            print(libro.mostrar_datos_libro())
         else:
             print("\nTítulo no encontrado. Revise la información proporcionada e inténtelo de nuevo.\n")
 
@@ -55,7 +64,7 @@ def actualizar_libro(biblioteca):
     try:
         print("\n- Actualización del Registro -\n")
         titulo = input("Introduce el título del libro que deseas actualizar:\n")
-        libro = biblioteca.buscar_libro(titulo)
+        libro = biblioteca.buscar_libro_titulo(titulo)
 
         if libro:
             print("\nIntroduce los nuevos datos del libro (deja en blanco para mantener la información actual:)\n")
@@ -100,34 +109,9 @@ def eliminar_libro(biblioteca):
             biblioteca.libros.remove(libro_eliminado)  # Elimina el libro de la lista
             print("El registro ha sido eliminado correctamente.")
             #return True   ->   # True si se elimina con éxito
-            biblioteca.reestructurar_ids()  # Reestructura los ids del resto de registros después de eliminar
+            biblioteca.reestructurar_ids_libros()  # Reestructura los ids del resto de registros después de eliminar
         else:
             print("No se encontró ningún registro con ese título.\nCompruebe búsqueda e inténtelo de nuevo.")
             #return False  ->  # False si no se encuentra el libro.
     except Exception as e:                                                     # Errores imprevistos
         print(f"\nSe produjo un error al intentar eliminar el libro: {e}\n")
-
-def consultar_paginas(biblioteca):
-    """Consulta el número de páginas de un libro específico.
-    
-        - Función < isinstance(objeto, clase) >: verifica que objeto pertenece al tipo o clase especificada,
-                   antes de realizar alguna operación con ese valor.
-                   Evita errores en tiempo de ejecución.
-    """
-
-    try:
-        print("\n- Longitud de Impresión -\n")
-        titulo = input("Introduce el título del libro que deseas consultar:\n")
-        paginas = biblioteca.paginas_por_libro(titulo)
-
-        if isinstance(paginas, int):
-        # Ratifica que paginas sea de tipo int (entero). Si paginas fuera None o cualquier otro tipo de dato, el programa mostrará
-        # un mensaje de error, evitando problemas si se intentara imprimir o usar paginas como un entero cuando no lo es.
-            """Ratifica que paginas sea de tipo int (entero). Si paginas fuera None o cualquier otro tipo de dato, el programa mostrará
-               un mensaje de error, evitando problemas si se intentara imprimir o usar paginas como un entero cuando no lo es."""
-            print(f"El libro '{titulo}' tiene {paginas} páginas.")
-        else:
-            print("El libro no se encuentra en el listado de registros de la Biblioteca.")
-    
-    except Exception as e:
-        print(f"Se produjo un error al consultar las páginas del libro: {e}")

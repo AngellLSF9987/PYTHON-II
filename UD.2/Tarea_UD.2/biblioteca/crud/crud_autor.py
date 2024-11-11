@@ -1,15 +1,16 @@
 # biblioteca/crud/crud_autor.py
 
-from ..modelos.autor import Autor
-from ..utilidades.validaciones import validar_fecha
+from biblioteca.modelos.autor import Autor
+from biblioteca.utilidades.validaciones import validar_fecha
 
 def crear_autor(biblioteca):
     """Crear un nuevo autor y lo añade a la Biblioteca."""
 
     try:
         print("\n- Nuevo Registro de Autor -\n")
-        nombre = input("Introduce el nombre:\n")
-        apellido = input("Introduce el apellido:\n")
+        nombre = input("Introduce el nombre del autor:\n")
+        apellido1 = input("Introduce el primer apellido o segundo nombre del autor:\n")
+        apellido2 = input("Introduce el segundo apellido o el apellido único del autor:\n")
 
         # Tratamiento de validación de la fecha de nacimiento como objeto date()
         nacido_str = input("Introduce la fecha de nacimiento (DD-MM-AAAA):\n")
@@ -27,17 +28,17 @@ def crear_autor(biblioteca):
             print("\nRegistro cancelado: Fecha de fallecimiento inválida. Revise la información proporcionada.\n")
             return
 
-        nacionalidad = input("Introduce el apellido:\n")
+        nacionalidad = input("Introduce la nacionalidad del autor:\n")
 
         # Creación y registro del nuevo objeto libro
-        autor = Autor(nombre, apellido, nacido, fallecido, nacionalidad)
+        autor = Autor(nombre, apellido1, apellido2, nacido, fallecido, nacionalidad)
         biblioteca.agregar_autor(autor)  # Usar la instancia de biblioteca
 
         print("\nAutor registrado correctamente.\n")
 
     except ValueError as e:                              # Valores incorrectos al ingresar datos
         print(f"\nError: Entrada inválida. {e}\n")
-    except Exception as e2:                               # Errores imprevistos
+    except Exception as e:                               # Errores imprevistos
         print(f"\nSe produjo un error inesperado: {e}\n")
 
 def leer_autor(biblioteca):
@@ -45,17 +46,27 @@ def leer_autor(biblioteca):
 
     try:
         print("\n- Información del Registro deseado -\n")
-        nombre = input("Introduzca el nombre del autor a buscar:\n")
-        autor = biblioteca.buscar_autor(nombre)
+        conocido = input("Introduzca el nombre del autor a buscar:\n")
+        autor = biblioteca.buscar_autor_nombre(conocido)
 
         if autor:
             print("\nRegistro encontrado.\n")
-            print(autor.mostrar_datos())
+            print(autor.mostrar_datos_autor())
         else:
             print("\nAutor no encontrado. Revise la información proporcionada e inténtelo de nuevo.\n")
 
     except Exception as e:                                         # Errores imprevistos
         print(f"Se produjo un error al buscar el libro: {e}")
+
+def mostrar_autores(biblioteca):
+    """Devuelve una lista completa de todos los autores existentes en la Biblioteca."""
+    if not biblioteca.autores:
+        print("\nNo hay autores registrados en la biblioteca")
+        return 
+    print(f"\n- Lista de Autores -\n")
+    for autor in biblioteca.autores:
+        print(autor.mostrar_datos_autor())
+        print()
 
 def actualizar_autor(biblioteca):
     """Actualiza la información de un autor existente."""
@@ -63,7 +74,7 @@ def actualizar_autor(biblioteca):
     try:
         print("\n- Actualización del Registro -\n")
         nombre = input("Introduce el nombre del autor que deseas actualizar:\n")
-        autor = biblioteca.buscar_autor(nombre)
+        autor = biblioteca.buscar_autor_nombre(nombre)
 
         if autor:
             print("\nIntroduce los nuevos datos del autor (deja en blanco para mantener la información actual:)\n")
@@ -110,7 +121,7 @@ def eliminar_autor(biblioteca):
             biblioteca.autores.remove(autor_eliminado)  # Elimina el libro de la lista
             print("El registro ha sido eliminado correctamente.")
             #return True   ->   # True si se elimina con éxito
-            biblioteca.reestructurar_ids()  # Reestructura los ids del resto de registros después de eliminar
+            biblioteca.reestructurar_ids_autores()  # Reestructura los ids del resto de registros después de eliminar
         else:
             print("No se encontró ningún registro de autor con ese nombre.\nCompruebe búsqueda e inténtelo de nuevo.")
             #return False  ->  # False si no se encuentra el libro.
