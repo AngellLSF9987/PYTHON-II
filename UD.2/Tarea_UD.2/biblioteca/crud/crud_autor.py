@@ -11,6 +11,7 @@ def crear_autor(biblioteca):
         nombre = input("Introduce el nombre del autor:\n")
         apellido1 = input("Introduce el primer apellido o segundo nombre del autor:\n")
         apellido2 = input("Introduce el segundo apellido o el apellido único del autor:\n")
+        pseudonimo = input("Introduce el pseudónimo que se le atribuye al autor(si no existe, introduce el nombre completo):\n")
 
         # Tratamiento de validación de la fecha de nacimiento como objeto date()
         nacido_str = input("Introduce la fecha de nacimiento (DD-MM-AAAA):\n")
@@ -31,7 +32,7 @@ def crear_autor(biblioteca):
         nacionalidad = input("Introduce la nacionalidad del autor:\n")
 
         # Creación y registro del nuevo objeto libro
-        autor = Autor(nombre, apellido1, apellido2, nacido, fallecido, nacionalidad)
+        autor = Autor(nombre, apellido1, apellido2, pseudonimo, nacido, fallecido, nacionalidad)
         biblioteca.agregar_autor(autor)  # Usar la instancia de biblioteca
 
         print("\nAutor registrado correctamente.\n")
@@ -73,22 +74,24 @@ def actualizar_autor(biblioteca):
 
     try:
         print("\n- Actualización del Registro -\n")
-        nombre = input("Introduce el nombre del autor que deseas actualizar:\n")
+        nombre = input("Introduce el nombre o pseudonimo del autor que deseas actualizar:\n")
         autor = biblioteca.buscar_autor_nombre(nombre)
 
         if autor:
             print("\nIntroduce los nuevos datos del autor (deja en blanco para mantener la información actual:)\n")
 
-            nuevo_nombre = input(f"Nombre [{autor.get_nombre()}]: ") or autor.get_nombre()
-            nuevo_apellido = input(f"Apellido [{autor.get_apellido()()}]: ") or autor.get_apellido()
+            nuevo_nombre = input(f"Nombre del autor[{autor.get_nombre()}]: ") or autor.get_nombre()
+            nuevo_apellido1 = input(f"Primer apellido o Segundo nnombre del autor [{autor.get_apellido1()()}]: ") or autor.get_apellido1()
+            nuevo_apellido2 = input(f"Segundo apellido o apellido único del autor [{autor.get_apellido2()()}]: ") or autor.get_apellido2()
             
-            nueva_nacido = input(f"Fecha de Nacimiento [{autor.get_nacido}]: ") or autor.get_nacido()
-            nueva_fallecido = input(f"Nº de Páginas[{autor.get_fallecido()}]: ") or autor.get_fallecido()
+            nueva_nacido = input(f"Fecha de Nacimiento del autor[{autor.get_nacido}]: ") or autor.get_nacido()
+            nueva_fallecido = input(f"Fecha de Fallecimiento del autor[{autor.get_fallecido()}]: ") or autor.get_fallecido()
             
-            nueva_nacionalidad = input(f"Nacionalidad [{autor.get_nacionalidad()}]: ") or autor.get_nacionalidad()
+            nueva_nacionalidad = input(f"Nacionalidad del autor[{autor.get_nacionalidad()}]: ") or autor.get_nacionalidad()
             
             autor.set_nombre(nuevo_nombre)
-            autor.set_apellido(nuevo_apellido)
+            autor.set_apellido1(nuevo_apellido1)
+            autor.set_apellido2(nuevo_apellido2)
             autor.set_nacido(nueva_nacido)
             autor.set_fallecido(nueva_fallecido)
             autor.set_nacionalidad(nueva_nacionalidad)
@@ -109,7 +112,7 @@ def eliminar_autor(biblioteca):
 
     try:
         print("\n- Borrado de Registro -\n")
-        nombre = input("Introduce el nombre del autor que deseas borrar:\n")
+        nombre = input("Introduce el nombre o pseudonimo del autor que deseas borrar:\n")
         
         autor_eliminado = None
         for autor in biblioteca.autores:

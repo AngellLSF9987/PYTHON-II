@@ -1,35 +1,51 @@
 # biblioteca/crud/crud_libro.py
 
 from biblioteca.modelos.libro import Libro
-from biblioteca.utilidades.validaciones import validar_fecha
+from biblioteca.utilidades.validaciones import *
 
 def crear_libro(biblioteca):
     """Crear un nuevo libro y lo añade a la Biblioteca."""
 
     try:
         print("\n- Nuevo Registro de Libro -\n")
-        titulo = input("Introduce el titulo:\n")
-
-        # Tratamiento de validación de la fecha de publicación como objeto date()
-        fecha_publicacion_str = input("Introduce la fecha de publicación (DD-MM-AAAA):\n")
-        fecha_publicacion = validar_fecha(fecha_publicacion_str)
-
-        if not fecha_publicacion:
-            print("\nRegistro cancelado: Fecha de publicación inválida. Revise la información proporcionada.\n")
-            return
+        titulo = input("Introduce el título del libro:\n")
         
+        try:         
+            especifico = validar_genero_especifico(biblioteca)
+        
+        except Exception as ErrorValidarEspecifico:
+            print(f"Error: Método validar_especifico no funciona, {ErrorValidarEspecifico}")
+             
         num_paginas = int(input("\nIntroduce el numero de paginas:\n"))
-        autor = input("Introduce el autor:\n")
+
+        try:        
+            # Tratamiento de validación de la fecha de publicación como objeto date()
+            fecha_publicacion_str = input("Introduce la fecha de publicación (DD-MM-AAAA):\n")
+            fecha_publicacion = validar_fecha(fecha_publicacion_str)
+
+            if not fecha_publicacion:
+                print("\nRegistro cancelado: Fecha de publicación inválida. Revise la información proporcionada.\n")
+                return
+        
+        except Exception as ErrorValidarFecha:
+            print(f"Error: Método validar_fecha no funciona, {ErrorValidarFecha}")
+
+        try:
+            autor = validar_autor(biblioteca)
+        
+        except Exception as ErrorValidarAutor:
+            print(f"Error: Método validar_fecha no funciona, {ErrorValidarAutor}")
+            
         # Creación y registro del nuevo objeto libro
-        libro = Libro(titulo, fecha_publicacion, num_paginas, autor)
+        libro = Libro(titulo = titulo, especifico = especifico, fecha_publicacion = fecha_publicacion, num_paginas = num_paginas, autor = autor)
         biblioteca.agregar_libro(libro)  # Usar la instancia de biblioteca
 
-        print("\nLibro registrado correctamente.\n")
+        print(f"\nEl libro '{titulo}' registrado correctamente.\n")
 
     except ValueError as e:                              # Valores incorrectos al ingresar datos
         print(f"\nError: Entrada inválida. {e}\n")
     except Exception as e2:                               # Errores imprevistos
-        print(f"\nSe produjo un error inesperado: {e}\n")
+        print(f"\nSe produjo un error inesperado: {e2}\n")
 
 def mostrar_libros(biblioteca):
     """Devuelve una lista completa de todos los libros existentes en la Biblioteca."""

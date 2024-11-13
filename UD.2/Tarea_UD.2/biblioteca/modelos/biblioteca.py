@@ -37,7 +37,7 @@ class Biblioteca:
     def buscar_libro_titulo(self, titulo):
         """Busca un libro usando el método get_titulo(), que encapsula el atributo título, como referencia de la búsqueda. 
            Devuelve el objeto si se encuentra en la lista."""
-        for libro in self.libros:
+        for libro in self.diccionario_libros:
             if libro.get_titulo().lower() == titulo.lower(): # Uso del método get_titulo(), que encapsula el atributo título.
                 return libro
         return None
@@ -91,7 +91,7 @@ class Biblioteca:
 
     def mostrar_autores(self):
         """Devuelve una lista completa de todos los autores existentes en la Biblioteca."""
-        return [autor.__str__() for autor in self.diccionario_autores]
+        return [autor.__str__() for autor in self.autores]
 
 #####       FIN REGION INTERFAZ GESTIÓN BIBLIOTECA - AUTORES     #####
 
@@ -114,7 +114,7 @@ class Biblioteca:
 
     def mostrar_generos(self):
         """Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca."""
-        return [genero.__str__() for genero in self.diccionario_generos]
+        return [genero.__str__() for genero in self.generos]
 
             ####   3.2.     SUBGÉNEROS LITERARIOS      ####
 
