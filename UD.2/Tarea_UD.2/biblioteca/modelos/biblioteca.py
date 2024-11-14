@@ -4,7 +4,6 @@ from biblioteca.modelos.libro import Libro
 from biblioteca.modelos.autor import Autor
 from biblioteca.modelos.generos.genero import Genero
 from biblioteca.modelos.generos.especifico import Especifico
-from biblioteca.utilidades.diccionarios.diccionario_autor import diccionario_autores
 from biblioteca.utilidades.validaciones import validar_fecha
 
 class Biblioteca:
@@ -18,7 +17,6 @@ class Biblioteca:
         # Diccionarios de búsqueda rápida
         self.diccionario_libros = {}
         self.diccionario_autores = {}
-        self.diccionario_autores = diccionario_autores
         self.diccionario_generos = {}
         self.diccionario_especificos = {}
         
@@ -39,7 +37,7 @@ class Biblioteca:
     def buscar_libro_titulo(self, titulo):
         """Busca un libro usando el método get_titulo(), que encapsula el atributo título, como referencia de la búsqueda. 
            Devuelve el objeto si se encuentra en la lista."""
-        for libro in self.diccionario_libros:
+        for libro in self.diccionario_libros.values():
             if libro.get_titulo().lower() == titulo.lower(): # Uso del método get_titulo(), que encapsula el atributo título.
                 return libro
         return None
@@ -54,17 +52,12 @@ class Biblioteca:
     
     def mostrar_libros_por_autor(self, autor):
         """Muestra todos los libros existentes, publicados por un autor específico."""
-
-        autor_buscado = autor  # El autor que buscas debe ser una instancia de `Autor`
-
-        # Encontrar los libros de ese autor
-        libros_del_autor = [libro for libro in self.libros if libro.get_autor().lower() == autor_buscado]
-
+        autor_buscado = autor.lower() # El autor que buscas debe ser un pseudónimo en minúsculas
+        libros_del_autor = [libro for libro in self.diccionario_libros.values() if libro.get_autor().lower() == autor_buscado]
+        
         # Muestra los resultados
         for libro in libros_del_autor:
             print(libro.mostrar_datos_libro())
-
-        #return [libro for libro in self.libros if libro.get_autor().lower() == autor.lower()]
     
     def mostrar_libros_por_genero(self, genero):
         """Muestra todos los libros existentes, publicados por un genero específico."""
@@ -121,15 +114,45 @@ class Biblioteca:
             ####   3.2.     SUBGÉNEROS LITERARIOS      ####
 
     def agregar_especifico(self, especifico):
-        """- Agrega un género literario nuevo a la lista de generos de la biblioteca. """
+        """Agrega un subgénero literario nuevo a la lista de específicos de la biblioteca."""
+
+        # Verificar si alguno de los valores es None antes de agregar
+        if especifico.get_nombre_genero() is None or especifico.get_nombre_especifico() is None or especifico.get_tipo() is None:
+            raise ValueError("El nombre del género, el subgénero o el tipo no pueden ser nulos.")
+
+        # Asegurar de que el género existe antes de agregar el subgénero
+        genero = especifico.get_nombre_genero().lower()  # Obtener el género en minúsculas
+        if genero not in self.diccionario_generos:
+            raise ValueError(f"El género '{genero}' no existe en la biblioteca. Por favor, primero agregue el género.")
+
+        # Pasar verificación, se agrega el subgénero
         self.especificos.append(especifico)
-        nuevo_especifico = (especifico.get_nombre_genero().lower(), especifico.get_nombre_especifico().lower(), especifico.get_tipo().lower())
-        self.diccionario_especificos[nuevo_especifico] = especifico
+
+        # Crear la clave compuesta o "clave de tupla" para el diccionario (género, subgénero, tipo)
+        clave = (
+            especifico.get_nombre_genero().lower(),
+            especifico.get_nombre_especifico().lower(),
+            especifico.get_tipo().lower()
+        )
+
+        # Almacenar el objeto 'Especifico' en el diccionario usando la clave compuesta
+        self.diccionario_especificos[clave] = especifico
+        print(f"Subgénero '{especifico.get_nombre_especifico()}' agregado correctamente al género '{especifico.get_nombre_genero()}'.")
+
+
 
     def buscar_especifico_nombre(self, nombre_genero, nombre_especifico, tipo):
-        """- Busca un género literario, almacenando todos sus atributos en una variable con la que iterar los resultados existentes dentro del diccionario de generos. Devuelve el objeto Género buscado si existe."""
-        especifico_buscado = (nombre_genero.lower(), nombre_especifico.lower(), tipo.lower())
-        return self.diccionario_especificos.get(especifico_buscado, None)   
+        """Busca un subgénero literario por su género, nombre específico y tipo en el diccionario."""
+        # Crear la clave compuesta con los tres parámetros
+        clave = (
+            nombre_genero.lower(),
+            nombre_especifico.lower(),
+            tipo.lower()
+        )
+        
+        # Buscar en el diccionario usando la clave
+        return self.diccionario_especificos.get(clave, None)
+
 
     def reestructurar_ids_especificos(self):
         for index, especifico in enumerate(self.especificos):

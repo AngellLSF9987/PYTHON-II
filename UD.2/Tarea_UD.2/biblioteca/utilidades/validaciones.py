@@ -1,4 +1,4 @@
-# Biblioteca/utilidades/validaciones.py
+# biblioteca/utilidades/validaciones.py
 
 from datetime import datetime
 from biblioteca.modelos.generos.genero import Genero
@@ -26,48 +26,44 @@ def validar_fecha(fecha_str):
         return None
 
 def validar_genero_especifico(biblioteca):
+    # Asegurar de que se está usando un string en la entrada
+    nombre_genero = input("Introduce el Género Literario:\n").strip().lower()
+    genero_encontrado = None
     
-    # Verificar si el género ya existe en la biblioteca
-        nombre_genero = input("Introduce el Género Literario:\n").lower()
-        genero_encontrado = None
-        
-        for genero in biblioteca.generos:
-            if genero.get_nombre_genero().lower() == nombre_genero:
-                genero_encontrado = genero
-                print(f"\nGénero '{nombre_genero}' encontrado.\n")
-                break
-        
-        # Si el género no existe, crearlo y añadirlo a la biblioteca
-        
-        if genero_encontrado is None:
-            print(f"\n\nGénero '{nombre_genero}' no encontrado. Creando nuevo género.\n")
-            genero_encontrado = Genero(nombre_genero)
-            biblioteca.generos.append(genero_encontrado)
-        
-        nombre_especifico = input("Introduce el Subgénero Literario:\n").lower()
-        tipo = input("Introduce el Tipo Específico de Subgénero:\n").lower()
-            
-        # Verificar si el Género, Subgénero y tipo de subgénero (específico) existe
-        especifico_encontrado = None
-
-        for especifico in biblioteca.especificos:
-            if (especifico.get_nombre_genero().lower() == genero_encontrado.get_nombre_genero().lower()
-                and especifico.get_nombre_especifico().lower() == nombre_especifico.lower()
-                and especifico.get_tipo().lower() == tipo.lower()):
-                    especifico_encontrado = especifico
-                    break
-
-            # Si no se encontró el Subgénero Literario, solicitar los demás datos y crear uno nuevo
-        if especifico_encontrado is None:
-                print(f"\n\nSubgénero '{nombre_especifico}' y Tipo de Subgénero '{tipo}' no encontrado. Creando nuevo género.\n")
-                nombre_especifico = input("Introduce el nombre del Subgénero Literario:\n")
-                tipo = input("Introduce el Tipo Específico de Subgénero Literario:\n")        
-            
-                especifico_encontrado = Especifico(genero_encontrado, nombre_especifico, tipo)
-                biblioteca.especificos.append(especifico_encontrado)
-                
-        return especifico_encontrado
-        
+    for genero in biblioteca.generos:
+        # Asegurar de que get_nombre_genero() devuelve un string
+        if genero.get_nombre_genero().strip().lower() == nombre_genero:
+            genero_encontrado = genero
+            print(f"\nGénero '{nombre_genero}' encontrado.\n")
+            break
+    
+    # Si el género no existe, crear y añadir a la biblioteca
+    if genero_encontrado is None:
+        print(f"\nGénero '{nombre_genero}' no encontrado. Creando nuevo género.\n")
+        genero_encontrado = Genero(nombre_genero)
+        biblioteca.generos.append(genero_encontrado)
+    
+    # Verificar si el subgénero y el tipo de subgénero ya existen
+    nombre_especifico = input("Introduce el Subgénero Literario:\n").strip().lower()
+    tipo = input("Introduce el Tipo Específico de Subgénero:\n").strip().lower()
+    
+    especifico_encontrado = None
+    
+    for especifico in biblioteca.especificos:
+        if (especifico.get_nombre_genero().strip().lower() == genero_encontrado.get_nombre_genero().strip().lower() and
+            especifico.get_nombre_especifico().strip().lower() == nombre_especifico and
+            especifico.get_tipo().strip().lower() == tipo):
+            especifico_encontrado = especifico
+            break
+    
+    if especifico_encontrado is None:
+        # Crear si no se encontró el subgénero
+        print(f"\nSubgénero '{nombre_especifico}' y Tipo '{tipo}' no encontrado. Creando nuevo subgénero.\n")
+        especifico_encontrado = Especifico(genero_encontrado.get_nombre_genero(), nombre_especifico, tipo)
+        biblioteca.especificos.append(especifico_encontrado)
+    
+    return especifico_encontrado
+    
 def validar_autor(biblioteca):
     
         # Verificar o crear autor

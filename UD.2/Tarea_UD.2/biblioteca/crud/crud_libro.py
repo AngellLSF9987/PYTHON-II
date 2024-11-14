@@ -86,10 +86,10 @@ def actualizar_libro(biblioteca):
         if libro:
             print("\nIntroduce los nuevos datos del libro (deja en blanco para mantener la información actual:)\n")
 
-            nuevo_titulo = input(f"Título [{libro.get_titulo()}]: ") or libro.get_titulo()
-            nuevo_autor = input(f"Autor [{libro.get_autor()}]: ") or libro.get_autor()
-            nueva_fecha_publicacion = input(f"Fecha de Publicación [{libro.get_fecha_publicacion()}]: ") or libro.get_fecha_publicacion()
-            nueva_num_paginas = input(f"Nº de Páginas[{libro.get_num_paginas()}]: ") or libro.get_num_paginas()
+            nuevo_titulo = input(f"Título [{libro.get_titulo()}] o presione ENTER si no es el dato a modificar:\n") or libro.get_titulo()
+            nuevo_autor = input(f"Autor [{libro.get_autor()}] o presione ENTER si no es el dato a modificar:\n") or libro.get_autor()
+            nueva_fecha_publicacion = input(f"Fecha de Publicación [{libro.get_fecha_publicacion()}] o presione ENTER si no es el dato a modificar:\n") or libro.get_fecha_publicacion()
+            nueva_num_paginas = input(f"Nº de Páginas[{libro.get_num_paginas()}] o presione ENTER si no es el dato a modificar:\n") or libro.get_num_paginas()
             
             libro.set_titulo(nuevo_titulo)
             libro.set_autor(nuevo_autor)
@@ -109,26 +109,41 @@ def actualizar_libro(biblioteca):
     except Exception as e:                                                     # Errores imprevistos
         print(f"Se produjo un error inesperado. {e}")
 
-def eliminar_libro(biblioteca):
-    """Elimina un libro de la biblioteca búscado por título."""
 
+
+def eliminar_libro(biblioteca):
+    """Elimina un libro de la biblioteca y reestructura los IDs."""
     try:
         print("\n- Borrado de Registro -\n")
-        titulo = input("Introduce el título del libro que deseas borrar:\n")
+        titulo = input("Introduce el título del libro que deseas borrar:\n").strip().lower()
         
-        libro_eliminado = None
-        for libro in biblioteca.libros:
-            if libro.get_titulo().lower() == titulo.lower():
-                libro_eliminado = libro
-                break # Sale del bucle una vez encontrado el titulo.
-
-        if libro_eliminado:
-            biblioteca.libros.remove(libro_eliminado)  # Elimina el libro de la lista
-            print("El registro ha sido eliminado correctamente.")
-            #return True   ->   # True si se elimina con éxito
-            biblioteca.reestructurar_ids_libros()  # Reestructura los ids del resto de registros después de eliminar
+        # Usar el método buscar_libro_titulo para encontrar el libro
+        libro_a_eliminar = biblioteca.buscar_libro_titulo(titulo)
+        print(f"Título ingresado: '{titulo}'")  # Para depuración
+        
+        if libro_a_eliminar:
+            print(f"Libro encontrado para eliminar: {libro_a_eliminar.get_titulo()}")  # Depuración
+            libro_id = libro_a_eliminar.get_id()
+            print(f"ID del libro a eliminar: {libro_id}")  # Depuración
+            
+            # Eliminar del diccionario usando el título (clave)
+            if titulo in biblioteca.diccionario_libros:
+                del biblioteca.diccionario_libros[titulo]
+                print("El registro ha sido eliminado correctamente.")
+                
+                # Actualizar la lista de libros después de eliminar
+                biblioteca.libros = list(biblioteca.diccionario_libros.values())
+                
+                # Reestructurar los IDs de diccionario después de eliminar
+                biblioteca.reestructurar_ids_libros()
+            else:
+                print(f"Error: No se pudo encontrar el libro con título '{titulo}' en el diccionario.")
+            
         else:
             print("No se encontró ningún registro con ese título.\nCompruebe búsqueda e inténtelo de nuevo.")
-            #return False  ->  # False si no se encuentra el libro.
-    except Exception as e:                                                     # Errores imprevistos
+
+    except Exception as e:
         print(f"\nSe produjo un error al intentar eliminar el libro: {e}\n")
+
+
+

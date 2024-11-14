@@ -314,14 +314,6 @@
         "documentation": {}
     },
     {
-        "label": "Autor",
-        "importPath": "biblioteca.modelos.autor",
-        "description": "biblioteca.modelos.autor",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.autor",
-        "documentation": {}
-    },
-    {
         "label": "validar_fecha",
         "importPath": "biblioteca.utilidades.validaciones",
         "description": "biblioteca.utilidades.validaciones",
@@ -378,14 +370,6 @@
         "documentation": {}
     },
     {
-        "label": "Especifico",
-        "importPath": "biblioteca.modelos.generos.especifico",
-        "description": "biblioteca.modelos.generos.especifico",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.generos.especifico",
-        "documentation": {}
-    },
-    {
         "label": "Genero",
         "importPath": "biblioteca.modelos.generos.genero",
         "description": "biblioteca.modelos.generos.genero",
@@ -415,22 +399,6 @@
         "description": "biblioteca.modelos.generos.genero",
         "isExtraImport": true,
         "detail": "biblioteca.modelos.generos.genero",
-        "documentation": {}
-    },
-    {
-        "label": "Genero",
-        "importPath": "biblioteca.modelos.generos.genero",
-        "description": "biblioteca.modelos.generos.genero",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.generos.genero",
-        "documentation": {}
-    },
-    {
-        "label": "Libro",
-        "importPath": "biblioteca.modelos.libro",
-        "description": "biblioteca.modelos.libro",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.libro",
         "documentation": {}
     },
     {
@@ -551,14 +519,6 @@
         "description": "biblioteca.modelos.biblioteca",
         "isExtraImport": true,
         "detail": "biblioteca.modelos.biblioteca",
-        "documentation": {}
-    },
-    {
-        "label": "diccionario_autores",
-        "importPath": "biblioteca.utilidades.diccionarios.diccionario_autor",
-        "description": "biblioteca.utilidades.diccionarios.diccionario_autor",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.diccionarios.diccionario_autor",
         "documentation": {}
     },
     {
@@ -2551,7 +2511,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
-        "peekOfCode": "def leer_autor(biblioteca):\n    \"\"\"Busca y muestra la información de un autor por nombre.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        conocido = input(\"Introduzca el nombre del autor a buscar:\\n\")\n        autor = biblioteca.buscar_autor_nombre(conocido)\n        if autor:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(autor.mostrar_datos_autor())\n        else:",
+        "peekOfCode": "def leer_autor(biblioteca):\n    \"\"\"Busca y muestra la información de un autor por nombre o pseudónimo.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        tipo_busqueda = input(\"¿Deseas buscar por pseudónimo (P) o por nombre completo (N)?\\n\").strip().lower()\n        if tipo_busqueda == \"p\":\n            pseudonimo = input(\"Introduce el pseudónimo del autor:\\n\").strip().lower()\n            autor = biblioteca.buscar_autor_nombre(pseudonimo)\n            if autor:\n                print(\"\\nRegistro encontrado.\\n\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "documentation": {}
     },
@@ -2569,7 +2529,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
-        "peekOfCode": "def actualizar_autor(biblioteca):\n    \"\"\"Actualiza la información de un autor existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre = input(\"Introduce el nombre o pseudonimo del autor que deseas actualizar:\\n\")\n        autor = biblioteca.buscar_autor_nombre(nombre)\n        if autor:\n            print(\"\\nIntroduce los nuevos datos del autor (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_nombre = input(f\"Nombre del autor[{autor.get_nombre()}]: \") or autor.get_nombre()\n            nuevo_apellido1 = input(f\"Primer apellido o Segundo nnombre del autor [{autor.get_apellido1()()}]: \") or autor.get_apellido1()",
+        "peekOfCode": "def actualizar_autor(biblioteca):\n    \"\"\"Actualiza la información de un autor existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre = input(\"Introduce el nombre o pseudonimo del autor que deseas actualizar:\\n\")\n        autor = biblioteca.buscar_autor_nombre(nombre)\n        if autor:\n            print(\"\\nIntroduce los nuevos datos del autor (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_nombre = input(f\"Nombre del autor[{autor.get_nombre()}] o presione ENTER si no es el dato a modificar:\\n\") or autor.get_nombre()\n            nuevo_apellido1 = input(f\"Primer apellido o Segundo nombre del autor [{autor.get_apellido1()}] o presione ENTER si no es el dato a modificar:\\n\") or autor.get_apellido1()",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "documentation": {}
     },
@@ -2587,7 +2547,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
-        "peekOfCode": "def crear_especifico(biblioteca):\n    \"\"\"Crear un nuevo subgénero literario y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de SubGénero Literario -\\n\")\n        nombre_especifico = input(\"Introduce el nombre subgénero específico:\\n\")\n        tipo = input(\"Introduzca el tipo de subgénero específico:\\n\")\n        # Creación y registro del nuevo objeto subgenero\n        especifico = Especifico(nombre_especifico, tipo)\n        biblioteca.agregar_especifico(especifico)  # Usar la instancia de biblioteca\n        print(\"\\nSubgénero Literario registrado correctamente.\\n\")",
+        "peekOfCode": "def crear_especifico(biblioteca):\n    \"\"\"Crear un nuevo subgénero literario y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de SubGénero Literario -\\n\")\n        # Obtener el género del usuario\n        genero = input(\"Introduce el nombre del género literario:\\n\").strip()\n        # Validar que el género no esté vacío\n        if not genero:\n            raise ValueError(\"El nombre del género no puede estar vacío.\")\n        # Validar si el género existe en la biblioteca",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
         "documentation": {}
     },
@@ -2623,7 +2583,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
-        "peekOfCode": "def actualizar_especifico(biblioteca):\n    \"\"\"Actualiza la información de un subgénero literario existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre_especifico = input(\"Introduce el nombre del subgénero literario que deseas actualizar:\\n\")\n        especifico = biblioteca.buscar_especifico_nombre(nombre_especifico)\n        if especifico:\n            print(\"\\nIntroduce los nuevos datos del subgénero literario (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_nombre_especifico = input(f\"Nombre [{especifico.get_nombre_especifico()}]: \") or especifico.get_nombre_especifico()\n            especifico.set_nombre_especifico(nuevo_nombre_especifico)",
+        "peekOfCode": "def actualizar_especifico(biblioteca):\n        \"\"\"Permite actualizar un subgénero literario existente.\"\"\"\n        try:\n            print(\"\\n- Actualizar Subgénero Literario -\\n\")\n            genero = input(\"Introduce el nombre del género literario:\\n\").strip()\n            nombre_especifico = input(\"Introduce el nombre del subgénero literario a actualizar:\\n\").strip()\n            tipo = input(\"Introduce el tipo de subgénero literario:\\n\").strip()\n            # Verificación de existencia del subgénero\n            clave = (genero.lower(), nombre_especifico.lower(), tipo.lower())\n            if clave not in biblioteca.diccionario_especificos:",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_especifico",
         "documentation": {}
     },
@@ -2668,7 +2628,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
-        "peekOfCode": "def actualizar_genero(biblioteca):\n    \"\"\"Actualiza la información de un género literario existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre = input(\"Introduce el nombre del género literario que deseas actualizar:\\n\")\n        genero = biblioteca.buscar_genero_nombre(nombre)\n        if genero:\n            print(\"\\nIntroduce los nuevos datos del género literario (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_nombre = input(f\"Nombre [{genero.get_nombre()}]: \") or genero.get_nombre()\n            genero.set_titulo(nuevo_nombre)",
+        "peekOfCode": "def actualizar_genero(biblioteca):\n    \"\"\"Actualiza la información de un género literario existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre = input(\"Introduce el nombre del género literario que deseas actualizar:\\n\")\n        genero = biblioteca.buscar_genero_nombre(nombre)\n        if genero:\n            print(\"\\nIntroduce los nuevos datos del género literario (deja en blanco para mantener la información actual:)\\n\")\n            # Usar el método correcto para obtener el nombre del género\n            nuevo_nombre = input(f\"Nombre [{genero.get_nombre_genero()}] o presione ENTER si no es el dato a modificar:\\n\") or genero.get_nombre_genero()",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
         "documentation": {}
     },
@@ -2677,7 +2637,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
-        "peekOfCode": "def eliminar_genero(biblioteca):\n    \"\"\"Elimina un género literario de la biblioteca búscado por nombre.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        nombre = input(\"Introduce el nombre del género literario que deseas borrar:\\n\")\n        genero_eliminado = None\n        for genero in biblioteca.generos:\n            if genero.get_nombre().lower() == nombre.lower():\n                genero_eliminado = genero\n                break # Sale del bucle una vez encontrado el titulo.",
+        "peekOfCode": "def eliminar_genero(biblioteca):\n    \"\"\"Elimina un género literario de la biblioteca buscando por nombre.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        nombre = input(\"Introduce el nombre del género literario que deseas borrar:\\n\")\n        genero_eliminado = None\n        for genero in biblioteca.generos:\n            # Usar get_nombre_genero() en lugar de get_nombre()\n            if genero.get_nombre_genero().lower() == nombre.lower():\n                genero_eliminado = genero",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_genero",
         "documentation": {}
     },
@@ -2713,7 +2673,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
-        "peekOfCode": "def actualizar_libro(biblioteca):\n    \"\"\"Actualiza la información de un libro existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas actualizar:\\n\")\n        libro = biblioteca.buscar_libro_titulo(titulo)\n        if libro:\n            print(\"\\nIntroduce los nuevos datos del libro (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_titulo = input(f\"Título [{libro.get_titulo()}]: \") or libro.get_titulo()\n            nuevo_autor = input(f\"Autor [{libro.get_autor()}]: \") or libro.get_autor()",
+        "peekOfCode": "def actualizar_libro(biblioteca):\n    \"\"\"Actualiza la información de un libro existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas actualizar:\\n\")\n        libro = biblioteca.buscar_libro_titulo(titulo)\n        if libro:\n            print(\"\\nIntroduce los nuevos datos del libro (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_titulo = input(f\"Título [{libro.get_titulo()}] o presione ENTER si no es el dato a modificar:\\n\") or libro.get_titulo()\n            nuevo_autor = input(f\"Autor [{libro.get_autor()}] o presione ENTER si no es el dato a modificar:\\n\") or libro.get_autor()",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
@@ -2722,7 +2682,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
-        "peekOfCode": "def eliminar_libro(biblioteca):\n    \"\"\"Elimina un libro de la biblioteca búscado por título.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas borrar:\\n\")\n        libro_eliminado = None\n        for libro in biblioteca.libros:\n            if libro.get_titulo().lower() == titulo.lower():\n                libro_eliminado = libro\n                break # Sale del bucle una vez encontrado el titulo.",
+        "peekOfCode": "def eliminar_libro(biblioteca):\n    \"\"\"Elimina un libro de la biblioteca y reestructura los IDs.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas borrar:\\n\").strip().lower()\n        # Usar el método buscar_libro_titulo para encontrar el libro\n        libro_a_eliminar = biblioteca.buscar_libro_titulo(titulo)\n        print(f\"Título ingresado: '{titulo}'\")  # Para depuración\n        if libro_a_eliminar:\n            print(f\"Libro encontrado para eliminar: {libro_a_eliminar.get_titulo()}\")  # Depuración",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
@@ -2749,7 +2709,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_autor",
-        "peekOfCode": "def submenu_autor(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Autores -\\n\")\n        print(\"1. Mostrar Autores.\")\n        print(\"2. Añadir Autor.\")\n        print(\"3. Buscar Autor por nombre.\")\n        print(\"4. Modificar Datos Autor.\")\n        print(\"5. Eliminar Autor.\")\n        print(\"0. Menú Tareas de Biblioteca.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")",
+        "peekOfCode": "def submenu_autor(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Autores -\\n\")\n        print(\"1. Mostrar Autores.\")\n        print(\"2. Añadir Autor.\")\n        print(\"3. Buscar Autor por Nombre Completo o por Pseudónimo Atribuido.\")\n        print(\"4. Modificar Datos Autor.\")\n        print(\"5. Eliminar Autor.\")\n        print(\"0. Menú Tareas de Biblioteca.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.submenus.submenu_autor",
         "documentation": {}
     },
@@ -2785,7 +2745,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
         "description": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
-        "peekOfCode": "def menu():\n    # Inicializa de manera Global la Biblioteca\n    biblioteca = Biblioteca()\n    while True:\n        print(\"\\n- Bienvenid@ a Biblioteca AVANZA! -\\n\")\n        print(\"1. Menú Tareas de Biblioteca.\")\n        print(\"2. Buscar libro por Título.\")\n        print(\"3. Buscar Autor por Pseudónimo.\")\n        print(\"4. Mostrar libros por Autor.\")\n        print(\"5. Mostrar libros por Género.\")",
+        "peekOfCode": "def menu():\n    # Inicializa de manera Global la Biblioteca\n    biblioteca = Biblioteca()\n    while True:\n        print(\"\\n- Bienvenid@ a Biblioteca AVANZA! -\\n\")\n        print(\"1. Menú Tareas de Biblioteca.\")\n        print(\"2. Buscar libro por Título.\")\n        print(\"3. Buscar Autor por Nombre Completo o por Pseudónimo Atribuido.\")\n        print(\"4. Mostrar todos los Libros.\")\n        print(\"5. Mostrar todos los Autores.\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.menus.menu",
         "documentation": {}
     },
@@ -2794,7 +2754,7 @@
         "kind": 6,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.generos.especifico",
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.generos.especifico",
-        "peekOfCode": "class Especifico(Genero):\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre_genero, nombre_especifico, tipo=None):\n        super().__init__(nombre_genero)\n        self.__id = Especifico.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Especifico.__id_counter += 1         # Contador autoincremental\n        self.__nombre_especifico = nombre_especifico\n        self.__tipo = tipo\n    def get_id(self):\n        return self.__id",
+        "peekOfCode": "class Especifico(Genero):\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre_genero, nombre_especifico, tipo=None):\n        # Validar que nombre_genero y nombre_especifico no sean None o vacíos\n        if not nombre_genero or not nombre_especifico:\n            raise ValueError(\"El nombre del género y del subgénero son obligatorios.\")\n        super().__init__(nombre_genero)\n        self.__id = Especifico.__id_counter  # Asigna el ID actual\n        Especifico.__id_counter += 1         # Contador autoincremental\n        # Asignar nombre_especifico y tipo, con validación si tipo es None",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.generos.especifico",
         "documentation": {}
     },
@@ -2803,7 +2763,7 @@
         "kind": 6,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.modelos.generos.genero",
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.generos.genero",
-        "peekOfCode": "class Genero:\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre_genero):\n        self.__id = Genero.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Genero.__id_counter += 1         # Contador autoincremental\n        self.__nombre_genero = nombre_genero\n    def get_id(self):\n        return self.__id\n    def set_id(self, nuevo_id):\n        self.__id = nuevo_id    # Método para actualizar el ID",
+        "peekOfCode": "class Genero:\n    __id_counter = 1  # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre_genero):\n        \"\"\"Inicializa el género literario con un nombre y un ID único.\"\"\"\n        if isinstance(nombre_genero, str):\n            self.nombre_genero = nombre_genero.strip()\n        else:\n            raise ValueError(f\"nombre_genero debe ser un string, pero se recibió {type(nombre_genero)}.\")\n        self.__id = Genero.__id_counter  # Asigna el ID actual\n        Genero.__id_counter += 1         # Incrementa el contador autoincremental",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.generos.genero",
         "documentation": {}
     },
@@ -2835,51 +2795,6 @@
         "documentation": {}
     },
     {
-        "label": "diccionario_autores",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
-        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
-        "peekOfCode": "def diccionario_autores(biblioteca):\n        Autores = {\n        1: Autor(nombre=\"Gabriel\", \n                apellido1=\"García\", \n                apellido2=\"Márquez\",\n                pseudonimo=\"Gabriel García Márquez\",\n                nacido=\"06-03-1927\",\n                fallecido=\"17-04-2014\",\n                nacionalidad=\"Colombia\"\n                ),",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
-        "documentation": {}
-    },
-    {
-        "label": "obtener_especificos",
-        "kind": 2,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
-        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
-        "peekOfCode": "def obtener_especificos():\n    \"\"\"Devuelve el diccionario con los subgéneros específicos\"\"\"\n    return {\n        1: Especifico(\n            nombre_genero=\"Narrativo\",\n            nombre_especifico=\"Novela\",\n            tipo = {\n                \"Fantasía\",\n                \"Terror\",\n                \"Suspense\",",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
-        "documentation": {}
-    },
-    {
-        "label": "Especificos",
-        "kind": 5,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
-        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
-        "peekOfCode": "Especificos = {\n    1: Especifico(nombre_genero=\"Narrativo\", nombre_especifico=\"Novela\",\n                 tipo = {\n                     \"Fantasía\",\n                     \"Terror\",\n                     \"Suspense\",\n                     \"Realismo Mágico\",\n                     \"Distópica\"\n                 })\n}",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
-        "documentation": {}
-    },
-    {
-        "label": "GENEROS",
-        "kind": 5,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_genero",
-        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_genero",
-        "peekOfCode": "GENEROS = {\n    1: Genero(nombre_genero=\"Narrativo\"),\n    2: Genero(nombre_genero=\"Lirico\"),\n    3: Genero(nombre_genero=\"Dramatico\")\n}",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_genero",
-        "documentation": {}
-    },
-    {
-        "label": "Libros",
-        "kind": 5,
-        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
-        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
-        "peekOfCode": "Libros = {\n    1: Libro(titulo=\"Cien Años de Soledad\", \n             especifico=(\"Narrativo_Novela_Realismo Mágico\"), \n             fecha_publicacion=\"05-06-1967\",\n             num_paginas=417,\n             autor=\"Gabriel García Marquéz\"\n            ),\n    2: Libro(titulo=\"El Hobbit\", \n             especifico=(\"Narrativo_Novela_Fantasía\"), \n             fecha_publicacion=\"21-09-1937\",",
-        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
-        "documentation": {}
-    },
-    {
         "label": "validar_fecha",
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
@@ -2893,7 +2808,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
         "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
-        "peekOfCode": "def validar_genero_especifico(biblioteca):\n    # Verificar si el género ya existe en la biblioteca\n        nombre_genero = input(\"Introduce el Género Literario:\\n\").lower()\n        genero_encontrado = None\n        for genero in biblioteca.generos:\n            if genero.get_nombre_genero().lower() == nombre_genero:\n                genero_encontrado = genero\n                print(f\"\\nGénero '{nombre_genero}' encontrado.\\n\")\n                break\n        # Si el género no existe, crearlo y añadirlo a la biblioteca",
+        "peekOfCode": "def validar_genero_especifico(biblioteca):\n    # Asegurar de que se está usando un string en la entrada\n    nombre_genero = input(\"Introduce el Género Literario:\\n\").strip().lower()\n    genero_encontrado = None\n    for genero in biblioteca.generos:\n        # Asegurar de que get_nombre_genero() devuelve un string\n        if genero.get_nombre_genero().strip().lower() == nombre_genero:\n            genero_encontrado = genero\n            print(f\"\\nGénero '{nombre_genero}' encontrado.\\n\")\n            break",
         "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
         "documentation": {}
     },
