@@ -4,6 +4,7 @@ from biblioteca.modelos.libro import Libro
 from biblioteca.modelos.autor import Autor
 from biblioteca.modelos.generos.genero import Genero
 from biblioteca.modelos.generos.especifico import Especifico
+from biblioteca.utilidades.diccionarios.diccionario_autor import diccionario_autores
 from biblioteca.utilidades.validaciones import validar_fecha
 
 class Biblioteca:
@@ -17,6 +18,7 @@ class Biblioteca:
         # Diccionarios de búsqueda rápida
         self.diccionario_libros = {}
         self.diccionario_autores = {}
+        self.diccionario_autores = diccionario_autores
         self.diccionario_generos = {}
         self.diccionario_especificos = {}
         
