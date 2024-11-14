@@ -314,7 +314,23 @@
         "documentation": {}
     },
     {
+        "label": "Autor",
+        "importPath": "biblioteca.modelos.autor",
+        "description": "biblioteca.modelos.autor",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.autor",
+        "documentation": {}
+    },
+    {
         "label": "validar_fecha",
+        "importPath": "biblioteca.utilidades.validaciones",
+        "description": "biblioteca.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "*",
         "importPath": "biblioteca.utilidades.validaciones",
         "description": "biblioteca.utilidades.validaciones",
         "isExtraImport": true,
@@ -330,14 +346,6 @@
         "documentation": {}
     },
     {
-        "label": "validar_fecha",
-        "importPath": "biblioteca.utilidades.validaciones",
-        "description": "biblioteca.utilidades.validaciones",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.validaciones",
-        "documentation": {}
-    },
-    {
         "label": "Especifico",
         "importPath": "biblioteca.modelos.generos.especifico",
         "description": "biblioteca.modelos.generos.especifico",
@@ -367,6 +375,22 @@
         "description": "biblioteca.modelos.generos.especifico",
         "isExtraImport": true,
         "detail": "biblioteca.modelos.generos.especifico",
+        "documentation": {}
+    },
+    {
+        "label": "Especifico",
+        "importPath": "biblioteca.modelos.generos.especifico",
+        "description": "biblioteca.modelos.generos.especifico",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.especifico",
+        "documentation": {}
+    },
+    {
+        "label": "Genero",
+        "importPath": "biblioteca.modelos.generos.genero",
+        "description": "biblioteca.modelos.generos.genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.genero",
         "documentation": {}
     },
     {
@@ -530,11 +554,28 @@
         "documentation": {}
     },
     {
+        "label": "diccionario_autores",
+        "importPath": "biblioteca.utilidades.diccionarios.diccionario_autor",
+        "description": "biblioteca.utilidades.diccionarios.diccionario_autor",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.diccionarios.diccionario_autor",
+        "documentation": {}
+    },
+    {
         "label": "menu",
         "importPath": "biblioteca.menus.menu",
         "description": "biblioteca.menus.menu",
         "isExtraImport": true,
         "detail": "biblioteca.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
         "documentation": {}
     },
     {
@@ -559,6 +600,15 @@
         "description": "metodos.metodos",
         "isExtraImport": true,
         "detail": "metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
         "documentation": {}
     },
     {
@@ -2492,7 +2542,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
-        "peekOfCode": "def crear_autor(biblioteca):\n    \"\"\"Crear un nuevo autor y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Autor -\\n\")\n        nombre = input(\"Introduce el nombre del autor:\\n\")\n        apellido1 = input(\"Introduce el primer apellido o segundo nombre del autor:\\n\")\n        apellido2 = input(\"Introduce el segundo apellido o el apellido único del autor:\\n\")\n        # Tratamiento de validación de la fecha de nacimiento como objeto date()\n        nacido_str = input(\"Introduce la fecha de nacimiento (DD-MM-AAAA):\\n\")\n        nacido = validar_fecha(nacido_str)",
+        "peekOfCode": "def crear_autor(biblioteca):\n    \"\"\"Crear un nuevo autor y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Autor -\\n\")\n        nombre = input(\"Introduce el nombre del autor:\\n\")\n        apellido1 = input(\"Introduce el primer apellido o segundo nombre del autor:\\n\")\n        apellido2 = input(\"Introduce el segundo apellido o el apellido único del autor:\\n\")\n        pseudonimo = input(\"Introduce el pseudónimo que se le atribuye al autor(si no existe, introduce el nombre completo):\\n\")\n        # Tratamiento de validación de la fecha de nacimiento como objeto date()\n        nacido_str = input(\"Introduce la fecha de nacimiento (DD-MM-AAAA):\\n\")",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "documentation": {}
     },
@@ -2519,7 +2569,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
-        "peekOfCode": "def actualizar_autor(biblioteca):\n    \"\"\"Actualiza la información de un autor existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre = input(\"Introduce el nombre del autor que deseas actualizar:\\n\")\n        autor = biblioteca.buscar_autor_nombre(nombre)\n        if autor:\n            print(\"\\nIntroduce los nuevos datos del autor (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_nombre = input(f\"Nombre [{autor.get_nombre()}]: \") or autor.get_nombre()\n            nuevo_apellido = input(f\"Apellido [{autor.get_apellido()()}]: \") or autor.get_apellido()",
+        "peekOfCode": "def actualizar_autor(biblioteca):\n    \"\"\"Actualiza la información de un autor existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre = input(\"Introduce el nombre o pseudonimo del autor que deseas actualizar:\\n\")\n        autor = biblioteca.buscar_autor_nombre(nombre)\n        if autor:\n            print(\"\\nIntroduce los nuevos datos del autor (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_nombre = input(f\"Nombre del autor[{autor.get_nombre()}]: \") or autor.get_nombre()\n            nuevo_apellido1 = input(f\"Primer apellido o Segundo nnombre del autor [{autor.get_apellido1()()}]: \") or autor.get_apellido1()",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "documentation": {}
     },
@@ -2528,7 +2578,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
-        "peekOfCode": "def eliminar_autor(biblioteca):\n    \"\"\"Elimina un libro de la biblioteca búscado por título.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        nombre = input(\"Introduce el nombre del autor que deseas borrar:\\n\")\n        autor_eliminado = None\n        for autor in biblioteca.autores:\n            if autor.get_nombre().lower() == nombre.lower():\n                autor_eliminado = autor\n                break # Sale del bucle una vez encontrado el titulo.",
+        "peekOfCode": "def eliminar_autor(biblioteca):\n    \"\"\"Elimina un libro de la biblioteca búscado por título.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        nombre = input(\"Introduce el nombre o pseudonimo del autor que deseas borrar:\\n\")\n        autor_eliminado = None\n        for autor in biblioteca.autores:\n            if autor.get_nombre().lower() == nombre.lower():\n                autor_eliminado = autor\n                break # Sale del bucle una vez encontrado el titulo.",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_autor",
         "documentation": {}
     },
@@ -2636,7 +2686,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
-        "peekOfCode": "def crear_libro(biblioteca):\n    \"\"\"Crear un nuevo libro y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Libro -\\n\")\n        titulo = input(\"Introduce el titulo:\\n\")\n        # Tratamiento de validación de la fecha de publicación como objeto date()\n        fecha_publicacion_str = input(\"Introduce la fecha de publicación (DD-MM-AAAA):\\n\")\n        fecha_publicacion = validar_fecha(fecha_publicacion_str)\n        if not fecha_publicacion:\n            print(\"\\nRegistro cancelado: Fecha de publicación inválida. Revise la información proporcionada.\\n\")",
+        "peekOfCode": "def crear_libro(biblioteca):\n    \"\"\"Crear un nuevo libro y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Libro -\\n\")\n        titulo = input(\"Introduce el título del libro:\\n\")\n        try:         \n            especifico = validar_genero_especifico(biblioteca)\n        except Exception as ErrorValidarEspecifico:\n            print(f\"Error: Método validar_especifico no funciona, {ErrorValidarEspecifico}\")\n        num_paginas = int(input(\"\\nIntroduce el numero de paginas:\\n\"))",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
@@ -2645,7 +2695,7 @@
         "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "description": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
-        "peekOfCode": "def mostrar_libros(biblioteca):\n    \"\"\"Devuelve una lista completa de todos los libros existentes en la Biblioteca.\"\"\"\n    if not biblioteca.libros:\n        print(\"\\nNo hay libros registrados en la biblioteca\")\n        return \n    print(f\"\\n- Lista de Libros -\\n\")\n    for libro in biblioteca.libros:\n        print(libro.mostrar_datos_libro())\n        print()\ndef leer_libro(biblioteca):",
+        "peekOfCode": "def mostrar_libros(biblioteca):\n    \"\"\"Devuelve una lista completa de todos los libros existentes en la Biblioteca.\"\"\"\n    libros = biblioteca.mostrar_libros()\n    if libros:\n        print(\"\\n- Registro Completo de Libros existentes en la Biblioteca -\\n\")\n        for libro in libros:\n            print(libro)\n    else:\n        print(\"\\nNo existe ningún registro aún en la Biblioteca.\\n\")\n    return",
         "detail": "UD.2.Tarea_UD.2.biblioteca.crud.crud_libro",
         "documentation": {}
     },
@@ -2785,11 +2835,11 @@
         "documentation": {}
     },
     {
-        "label": "Autores",
-        "kind": 5,
+        "label": "diccionario_autores",
+        "kind": 2,
         "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
         "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
-        "peekOfCode": "Autores = {\n    1: Autor(nombre=\"Gabriel\", \n             apellido1=\"García\", \n             apellido2=\"Márquez\",\n             pseudonimo=\"Gabriel García Márquez\",\n             nacido=\"06-03-1927\",\n             fallecido=\"17-04-2014\",\n             nacionalidad=\"Colombia\"\n            ),\n    2: Autor(nombre=\"Jhon Ronald\", ",
+        "peekOfCode": "def diccionario_autores(biblioteca):\n        Autores = {\n        1: Autor(nombre=\"Gabriel\", \n                apellido1=\"García\", \n                apellido2=\"Márquez\",\n                pseudonimo=\"Gabriel García Márquez\",\n                nacido=\"06-03-1927\",\n                fallecido=\"17-04-2014\",\n                nacionalidad=\"Colombia\"\n                ),",
         "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
         "documentation": {}
     },
@@ -2839,6 +2889,24 @@
         "documentation": {}
     },
     {
+        "label": "validar_genero_especifico",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
+        "peekOfCode": "def validar_genero_especifico(biblioteca):\n    # Verificar si el género ya existe en la biblioteca\n        nombre_genero = input(\"Introduce el Género Literario:\\n\").lower()\n        genero_encontrado = None\n        for genero in biblioteca.generos:\n            if genero.get_nombre_genero().lower() == nombre_genero:\n                genero_encontrado = genero\n                print(f\"\\nGénero '{nombre_genero}' encontrado.\\n\")\n                break\n        # Si el género no existe, crearlo y añadirlo a la biblioteca",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_autor",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
+        "peekOfCode": "def validar_autor(biblioteca):\n        # Verificar o crear autor\n        nombre = input(\"Introduce el nombre de pila del autor: \")\n        pseudonimo = None # Valor por defecto\n        # Comprobar psseudonimo\n        tiene_pseudonimo = input(\"Introduce el pseudonimo del autor(si se le atribuye) - (s = [sí] / n = [no]):\\n\").strip().lower()\n        if tiene_pseudonimo == \"s\":\n                pseudonimo = input(\"Introduce el pseudónimo del autor: \").strip().lower()\n        autor_encontrado = None\n        for autor in biblioteca.autores:",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
         "label": "Estuche",
         "kind": 6,
         "importPath": "UD.2.Teoría y Ejemplos Didácticos.Ejercicio1-Clase.UD.2",
@@ -2863,6 +2931,24 @@
         "description": "UD.2.Teoría y Ejemplos Didácticos.Ejercicio1-Clase.UD.2",
         "peekOfCode": "mi_estuche = Estuche(5)\nEstuche.agregar_boligrafo(\"Azul\")\nEstuche.agregar_boligrafo(\"Negro\")\nEstuche.agregar_boligrafo(\"Rojo\")\nEstuche.agregar_boligrafo(\"Verde\")\nEstuche.agregar_boligrafo(\"Violeta\")\ntry:\n    mi_estuche.agregar_boligrafo(\"Gris\")\nexcept EstucheLlenoError as e:\n    print(e)",
         "detail": "UD.2.Teoría y Ejemplos Didácticos.Ejercicio1-Clase.UD.2",
+        "documentation": {}
+    },
+    {
+        "label": "escribir",
+        "kind": 2,
+        "importPath": "UD.3.ejemplos_json.ejemplo_9.ejemplo_9",
+        "description": "UD.3.ejemplos_json.ejemplo_9.ejemplo_9",
+        "peekOfCode": "def escribir():\n    try:\n        # Leer \n        with open (r\"UD.3\\ejemplos_json\\ejemplo_9\\compras.json\", \"w\", encoding=\"utf-16\", newline=\"\") as compras:\n            json.dump(productos, compras, indent=4) # Indent facilita la lectura. Lo normal se usa con valor 4\n    except FileExistsError:\n        print(\"Error1: Fichero no accesible o línea no escrita.\")\nescribir()\n# # IMPRIMIR JSON FORMATEADO\n# def imp_formateado():",
+        "detail": "UD.3.ejemplos_json.ejemplo_9.ejemplo_9",
+        "documentation": {}
+    },
+    {
+        "label": "productos",
+        "kind": 5,
+        "importPath": "UD.3.ejemplos_json.ejemplo_9.ejemplo_9",
+        "description": "UD.3.ejemplos_json.ejemplo_9.ejemplo_9",
+        "peekOfCode": "productos = [\n    {\"Refrescos\": \n        {{\"Nombre\": \"Coca-Cola\", \"Precio\": \"2.40\"},\n        {\"Nombre\": \"Fanta Naranja\", \"Precio\": \"2.00\"},\n        {\"Nombre\": \"Fanta Limón\", \"Precio\":\"2.00\"}}\n    },\n    {\"Conservas\": \n        {{\"Nombre\": \"Berberechos\", \"Precio\": \"7.49\"},\n        {\"nombre\": \"Mejillones\", \"Precio\": \"6.49\"}}\n    },",
+        "detail": "UD.3.ejemplos_json.ejemplo_9.ejemplo_9",
         "documentation": {}
     },
     {
@@ -2917,6 +3003,33 @@
         "description": "UD.3.ejemplo_3.galleta.main",
         "peekOfCode": "def main():\n    ruta_archivo = r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3\\ejemplo_3\\galleta\\datos\\datos_galletas.txt\"   \n    galletas = leer_galletas(ruta_archivo)\n    print(\"Galletas leídas del archivo:\")       \n    for galleta in galletas:\n        print(galleta)                                  # Imprime cada galleta usando el método __str__\n    mas_galletas()\nif __name__ == \"__main__\":\n    main()",
         "detail": "UD.3.ejemplo_3.galleta.main",
+        "documentation": {}
+    },
+    {
+        "label": "leer",
+        "kind": 2,
+        "importPath": "UD.3.ejemplo_7_csv.ejemplo_7",
+        "description": "UD.3.ejemplo_7_csv.ejemplo_7",
+        "peekOfCode": "def leer():\n    try:   \n        # Leer\n        with open (r\"UD.3\\ejemplo_7_csv\\perros.csv\", \"r\", encoding=\"utf-8\") as a_csv:\n            lector_csv = csv.reader(a_csv)\n            # Almacenar los encabezados en una lista\n            encabezado = next(lector_csv)\n            for fila in lector_csv:\n                print(f\"{encabezado[0]}: {fila[0]} | {encabezado[1]}: {fila[1]} | {encabezado[2]}: {fila[2]} | {encabezado[3]}: {fila[3]} | {encabezado[4]}: {fila[4]} \\\n                    {encabezado[5]}: {fila[5]} | {encabezado[6]}: {fila[6]} | {encabezado[7]}: {fila[7]}\")",
+        "detail": "UD.3.ejemplo_7_csv.ejemplo_7",
+        "documentation": {}
+    },
+    {
+        "label": "escribir",
+        "kind": 2,
+        "importPath": "UD.3.ejemplo_7_csv.ejemplo_7",
+        "description": "UD.3.ejemplo_7_csv.ejemplo_7",
+        "peekOfCode": "def escribir():\n    try:\n        # Leer \n        with open (r\"UD.3\\ejemplo_7_csv\\perros.csv\", \"a\", encoding=\"utf-8\", newline=\"\") as a_csv:\n            escribrir_csv = csv.writer(a_csv)\n            nueva_fila = [\"Locky\",10,\"Golden Retriever\",30,\"Grande\",\"Blanco Dorado\",\"No\",\"Sí\"]\n            escribrir_csv.writerow(nueva_fila)\n    except FileExistsError:\n        print(\"Error: Fichero no accesible o línea no escrita.\")\n# Modificar",
+        "detail": "UD.3.ejemplo_7_csv.ejemplo_7",
+        "documentation": {}
+    },
+    {
+        "label": "modificar",
+        "kind": 2,
+        "importPath": "UD.3.ejemplo_7_csv.ejemplo_7",
+        "description": "UD.3.ejemplo_7_csv.ejemplo_7",
+        "peekOfCode": "def modificar():\n    try:\n        with open (r\"UD.3\\ejemplo_7_csv\\perros.csv\", \"r\", encoding=\"utf-8\") as a_csv:\n            lector_csv = csv.reader(a_csv)\n            filas = list(lector_csv)\n            print(filas)\n        nuevo_peso = 23.7\n        filas[12][3] = nuevo_peso\n        # Escribir\n        with open (r\"UD.3\\ejemplo_7_csv\\perros.csv\", \"w\", encoding=\"utf-8\", newline=\"\") as a_csv:",
+        "detail": "UD.3.ejemplo_7_csv.ejemplo_7",
         "documentation": {}
     },
     {
