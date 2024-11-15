@@ -1,0 +1,81 @@
+{
+    "autores" : [
+        {"nombre": "Gabriel", "apellido1": "García", "apellido2": "Márquez", "pseudonimo":"Gabriel García Márquez" ,"nacido": "06-03-1927", "fallecido": "17-04-2014", "nacionalidad": "Colombia"},
+        {"nombre": "Jhon Ronald", "apellido1": "Reuel", "apellido2": "Tolkien","pseudonimo":"J.R.R. Tolkien", "nacido": "03-01-1892", "fallecido": "02-09-1973", "nacionalidad": "Reino Unido"},
+        {"nombre": "Eric", "apellido1": "Arthur", "apellido2": "Blair","pseudonimo":"George Orwell", "nacido": "25-06-1903", "fallecido": "21-01-1950", "nacionalidad": "Reino Unido"},
+        {"nombre": "Stephen", "apellido1": "Edwing", "apellido2": "King","pseudonimo":"Stephen King", "nacido": "21-09-1947", "fallecido": "No fallecido", "nacionalidad": "EE.UU"},
+        {"nombre": "Nelle", "apellido1": "Harper", "apellido2": "Lee","pseudonimo":"Harper Lee", "nacido": "28-04-1926", "fallecido": "19-02-2016", "nacionalidad": "EE.UU"}
+    ],
+
+    "generos" : [
+        {"nombre_genero":"Narrativo"},
+        {"nombre_genero":"Lirico"},
+        {"nombre_genero":"Dramatico"}
+    ],
+
+    "especificos" : [
+        {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Terror"},
+        {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Suspense"},
+        {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Distópica"},
+        {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Realismo Mágico"},
+        {"nombre_genero":"Narrativo","nombre_especifico":"Novela", "tipo":"Fantasía"}
+    ],
+
+    "libros" : [
+        {
+            "titulo": "Cien años de soledad",
+            "especifico": {
+                "nombre_genero" : "Narrativo", 
+                "nombre_especifico" : "Novela", 
+                "tipo" : "Realismo Mágico"
+            },
+            "fecha_publicacion": "05-06-1967",
+            "num_paginas": 417,
+            "autor" : "Gabriel García Márquez"
+        },
+        {
+            "titulo": "El hobbit",
+            "especifico": {
+                "nombre_genero" : "Narrativo", 
+                "nombre_especifico" : "Novela", 
+                "tipo" : "Fantasía"
+            },
+            "fecha_publicacion": "21-09-1937",
+            "num_paginas": 310,
+            "autor" : "J.R.R. Tolkien"
+        },
+        {
+            "titulo": "1984",
+            "especifico": {
+                "nombre_genero" : "Narrativo", 
+                "nombre_especifico" : "Novela", 
+                "tipo" : "Distópica"
+            },
+            "fecha_publicacion": "08-06-1949",
+            "num_paginas": 328,
+            "autor" : "George Orwell"
+        },
+        {
+            "titulo": "Matar a un ruiseñor",
+            "especifico": {
+                "nombre_genero" : "Narrativo", 
+                "nombre_especifico" : "Novela", 
+                "tipo" : "Suspense"
+            },
+            "fecha_publicacion": "11-07-1960",
+            "num_paginas": 281,
+            "autor" : "Harper Lee"
+        },
+        {
+            "titulo": "El Resplandor",
+            "especifico": {
+                "nombre_genero" : "Narrativo", 
+                "nombre_especifico" : "Novela", 
+                "tipo" : "Terror"
+            },
+            "fecha_publicacion": "28-01-1977",
+            "num_paginas": 688,
+            "autor" : "Stephen King"
+        }
+    ]
+}
