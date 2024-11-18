@@ -1,4 +1,3 @@
-# biblioteca/repositorios/repositorio_genero.py
 from biblioteca.utilidades.lector_json import cargar_datos_json
 from biblioteca.modelos.generos.genero import Genero
 
@@ -21,16 +20,17 @@ class RepositorioGenero:
         
         # Si los datos no son válidos (diccionario vacío), termina la función
         if not datos:
-                return
+            print(f"Error: No se pudo cargar el archivo {datos_biblioteca}.")
+            return
         
         for genero_data in datos.get("generos", []):
-                nuevo_genero = Genero(
-                        genero_data["nombre_genero"]
-                )
-                # Añadir el autor a la lista de autores
-                self.generos.append(nuevo_genero)
-                # Añadir el autor al diccionario, usando su pseudónimo como clave (en minúsculas)
-                self.diccionario_generos[nuevo_genero.get_nombre_genero().lower()] = nuevo_genero
+            nuevo_genero = Genero(
+                    genero_data["nombre_genero"]
+            )
+            # Añadir el género a la lista de géneros
+            self.generos.append(nuevo_genero)
+            # Añadir el género al diccionario, usando su nombre en minúsculas como clave
+            self.diccionario_generos[nuevo_genero.get_nombre_genero().lower()] = nuevo_genero
         
         print(f"Generos cargados desde {datos_biblioteca}")
         

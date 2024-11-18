@@ -15,34 +15,39 @@ class RepositorioEspecifico:
         """
         Carga los géneros específicos desde un archivo JSON utilizando la función cargar_datos_json.
         """
-        # Cargar los datos desde el archivo JSON
-        datos = cargar_datos_json(datos_biblioteca)
+        try: 
+            # Cargar los datos desde el archivo JSON
+            datos = cargar_datos_json(datos_biblioteca)
+            
+            # Si los datos no son válidos (diccionario vacío), termina la función
+            if not datos:
+                return
         
-        # Si los datos no son válidos (diccionario vacío), termina la función
-        if not datos:
-            return
-        
-        # Recorrer la lista de géneros específicos en el JSON
-        for especifico_data in datos.get("especificos", []):
-            # Crea un nuevo género específico usando los datos del JSON
-            nuevo_especifico = Especifico(
-                especifico_data["nombre_genero"],  # Nombre del género (heredado de la clase Genero)
-                especifico_data["nombre_especifico"],
-                especifico_data["tipo"]
-            )
-            
-            # Añadir el nuevo género específico a la lista
-            self.especificos.append(nuevo_especifico)
-            
-            # Crear una clave compuesta con el nombre del género, subgénero y tipo para el diccionario
-            clave = (
-                nuevo_especifico.get_nombre_genero().lower(),  # Género en minúsculas
-                nuevo_especifico.get_nombre_especifico().lower(),  # Subgénero en minúsculas
-                nuevo_especifico.get_tipo().lower()  # Tipo en minúsculas
-            )
-            
-            # Añadir el género específico al diccionario usando la clave compuesta
-            self.diccionario_especificos[clave] = nuevo_especifico
+            # Recorrer la lista de géneros específicos en el JSON
+            for especifico_data in datos.get("especificos", []):
+                # Crea un nuevo género específico usando los datos del JSON
+                nuevo_especifico = Especifico(
+                    especifico_data["nombre_genero"],  # Nombre del género (heredado de la clase Genero)
+                    especifico_data["nombre_especifico"],
+                    especifico_data["tipo"]
+                )
+                
+                # Añadir el nuevo género específico a la lista
+                self.especificos.append(nuevo_especifico)
+                
+                # Crear una clave compuesta con el nombre del género, subgénero y tipo para el diccionario
+                clave = (
+                    nuevo_especifico.get_nombre_genero().lower(),  # Género en minúsculas
+                    nuevo_especifico.get_nombre_especifico().lower(),  # Subgénero en minúsculas
+                    nuevo_especifico.get_tipo().lower()  # Tipo en minúsculas
+                )
+                
+                # Añadir el género específico al diccionario usando la clave compuesta
+                self.diccionario_especificos[clave] = nuevo_especifico
+        except FileNotFoundError:
+            print(f"El archivo {datos_biblioteca} no fue encontrado.")
+        except Exception as e:
+            print(f"Hubo un error al cargar los géneros específicos: {e}")
 
         print(f"Géneros específicos cargados desde {datos_biblioteca}")
         

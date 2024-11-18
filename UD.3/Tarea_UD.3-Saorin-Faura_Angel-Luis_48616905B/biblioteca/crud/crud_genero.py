@@ -1,5 +1,3 @@
-# biblioteca/crud/crud_genero.py
-
 from biblioteca.modelos.generos.genero import Genero
 
 def crear_genero(biblioteca):
@@ -9,16 +7,16 @@ def crear_genero(biblioteca):
         print("\n- Nuevo Registro de Género Literario -\n")
         nombre = input("Introduce el nombre:\n")
 
-        # Creación y registro del nuevo objeto libro
+        # Creación y registro del nuevo objeto genero
         genero = Genero(nombre)
         biblioteca.agregar_genero(genero)  # Usar la instancia de biblioteca
 
         print("\nGénero Literario registrado correctamente.\n")
 
-    except ValueError as e:                              # Valores incorrectos al ingresar datos
+    except ValueError as e:  # Valores incorrectos al ingresar datos
         print(f"\nError: Entrada inválida. {e}\n")
-    except Exception as e2:                               # Errores imprevistos
-        print(f"\nSe produjo un error inesperado: {e}\n")
+    except Exception as e2:  # Errores imprevistos
+        print(f"\nSe produjo un error inesperado: {e2}\n")
 
 def leer_genero(biblioteca):
     """Busca y muestra la información de un género literario por nombre."""
@@ -34,7 +32,7 @@ def leer_genero(biblioteca):
         else:
             print("\nGénero Literario no encontrado. Revise la información proporcionada e inténtelo de nuevo.\n")
 
-    except Exception as e:                                         # Errores imprevistos
+    except Exception as e:  # Errores imprevistos
         print(f"Se produjo un error al buscar el género literario: {e}")
 
 def mostrar_generos(biblioteca):
@@ -74,7 +72,6 @@ def actualizar_genero(biblioteca):
 
     except Exception as e:
         print(f"Se produjo un error inesperado. {e}")
-
 
 def eliminar_genero(biblioteca):
     """Elimina un género literario de la biblioteca buscando por nombre."""
