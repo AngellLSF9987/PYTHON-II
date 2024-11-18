@@ -7,16 +7,20 @@ from biblioteca.repositorios.repositorio_libro import RepositorioLibro
 
 from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
 from biblioteca.utilidades.lector_json import cargar_datos_json
+
 class Biblioteca:
     def __init__(self):
         """
         Constructor de la clase Biblioteca.
-        Inicializa listas y diccionarios para almacenar libros, autores, géneros y específicos.
+        Inicializa repositorios para almacenar libros, autores, géneros y específicos.
         """
-        self.repositorio_libro = RepositorioLibro()
-        self.repositorio_genero = RepositorioGenero()
-        self.repositorio_especifico = RepositorioEspecifico() 
+        # Inicializamos los repositorios
         self.repositorio_autor = RepositorioAutor()
+        self.repositorio_genero = RepositorioGenero()
+        self.repositorio_especifico = RepositorioEspecifico()
+        
+        # El repositorio de libros necesita los repositorios de autor y género
+        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_genero)
         
         # Inicializar biblioteca con los datos del archivo JSON
         self.inicializar_biblioteca()
@@ -29,7 +33,7 @@ class Biblioteca:
         datos = cargar_datos_json(RUTA_DATOS_BIBLIOTECA)
         
         # Cargar cada sección de datos si están presentes en el JSON
-        self.cargar_autores(datos.get("autores", []))
-        self.cargar_generos(datos.get("generos", []))
-        self.cargar_especificos(datos.get("especificos", []))
-        self.cargar_libros(datos.get("libros", []))
+        self.repositorio_autor.cargar_autores(datos.get("autores", []))
+        self.repositorio_genero.cargar_generos(datos.get("generos", []))
+        self.repositorio_especifico.cargar_especificos(datos.get("especificos", []))
+        self.repositorio_libro.cargar_libros(datos.get("libros", []))

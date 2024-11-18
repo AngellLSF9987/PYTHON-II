@@ -9,7 +9,6 @@ class RepositorioAutor:
             self.autores = []
             self.diccionario_autores = {}
             
-                
         def cargar_autores(self, lista_autores):
                 """
                 Carga la lista de autores en la biblioteca.
@@ -18,7 +17,6 @@ class RepositorioAutor:
                         nuevo_autor = Autor(autor["nombre"], autor["nacionalidad"])
                         self.autores.append(nuevo_autor)
                         self.diccionario_autores[nuevo_autor.nombre] = nuevo_autor
-
 
         def agregar_autor(self, autor):
                         """- Agrega un autor nuevo a la lista de autores de la biblioteca. """
