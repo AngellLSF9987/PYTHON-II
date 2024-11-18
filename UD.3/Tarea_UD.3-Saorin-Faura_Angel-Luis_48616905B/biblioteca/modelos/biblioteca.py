@@ -1,27 +1,35 @@
 # biblioteca/modelos/biblioteca.py
 
-from biblioteca.modelos.libro import Libro
-from biblioteca.modelos.autor import Autor
-from biblioteca.modelos.generos.genero import Genero
-from biblioteca.modelos.generos.especifico import Especifico
-from biblioteca.utilidades.validaciones import validar_fecha
+from biblioteca.repositorios.repositorio_autor import RepositorioAutor
+from biblioteca.repositorios.repositorio_genero import RepositorioGenero
+from biblioteca.repositorios.repositorio_especifico import RepositorioEspecifico
+from biblioteca.repositorios.repositorio_libro import RepositorioLibro
 
+from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
+from biblioteca.utilidades.lector_json import cargar_datos_json
 class Biblioteca:
     def __init__(self):
-        """Método constructor a partir de la instanciación de un diccionario vacío donde quedarán alojados los objetos libro existentes o creados."""
-        self.libros = []
-        self.generos = []
-        self.especificos = []       
-        self.autores = []
+        """
+        Constructor de la clase Biblioteca.
+        Inicializa listas y diccionarios para almacenar libros, autores, géneros y específicos.
+        """
+        self.repositorio_libro = RepositorioLibro()
+        self.repositorio_genero = RepositorioGenero()
+        self.repositorio_especifico = RepositorioEspecifico() 
+        self.repositorio_autor = RepositorioAutor()
         
-        # Diccionarios de búsqueda rápida
-        self.diccionario_libros = {}
-        self.diccionario_autores = {}
-        self.diccionario_generos = {}
-        self.diccionario_especificos = {}
-        
-        self.inicializar_biblioteca() # Llamada al método de inicialización
-
+        # Inicializar biblioteca con los datos del archivo JSON
+        self.inicializar_biblioteca()
 
     def inicializar_biblioteca(self):
-        """Inicializa la biblioteca con autores, géneros literarios y libros registrados ya en la Biblioteca."""
+        """
+        Inicializa la biblioteca cargando datos desde el archivo JSON.
+        """
+        # Cargar datos desde el JSON
+        datos = cargar_datos_json(RUTA_DATOS_BIBLIOTECA)
+        
+        # Cargar cada sección de datos si están presentes en el JSON
+        self.cargar_autores(datos.get("autores", []))
+        self.cargar_generos(datos.get("generos", []))
+        self.cargar_especificos(datos.get("especificos", []))
+        self.cargar_libros(datos.get("libros", []))
