@@ -15,7 +15,7 @@ def cargar_datos_json(ruta):
     """
     try:
     
-        with open(ruta, "r", encoding = "utf-16") as datos_biblioteca:
+        with open(ruta, "r", encoding = "utf-8-sig") as datos_biblioteca:
             return json.load(datos_biblioteca)
         
     except FileNotFoundError:

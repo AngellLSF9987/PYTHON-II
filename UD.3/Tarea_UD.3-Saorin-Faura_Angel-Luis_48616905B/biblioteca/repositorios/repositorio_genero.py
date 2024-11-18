@@ -1,37 +1,76 @@
 # biblioteca/repositorios/repositorio_genero.py
-
+from biblioteca.utilidades.lector_json import cargar_datos_json
 from biblioteca.modelos.generos.genero import Genero
 
 class RepositorioGenero:
         
-        def __init__(self):
-                
-                self.generos = []
-                self.diccionario_generos = {}
+    def __init__(self):
+        """Inicializa el repositorio con una lista de géneros y un diccionario de géneros."""
+        self.generos = []  # Lista para almacenar los objetos Genero
+        self.diccionario_generos = {}  # Diccionario para buscar géneros por nombre_genero
+
+    def cargar_generos(self, datos_biblioteca):
+        """
+        Carga la lista de géneros literarios en el repositorio.
+
+        Args:
+            lista_generos (list): Una lista de diccionarios con los nombres de los géneros a cargar.
+        """
+        # Cargar los datos desde el archivo JSON
+        datos = cargar_datos_json(datos_biblioteca)
         
-        def cargar_generos(self, lista_generos):
-                """
-                Carga la lista de géneros en la biblioteca.
-                """
-                for genero in lista_generos:
-                        nuevo_genero = Genero(genero["nombre"])
-                        self.generos.append(nuevo_genero)
-                        self.diccionario_generos[nuevo_genero.nombre] = nuevo_genero
+        # Si los datos no son válidos (diccionario vacío), termina la función
+        if not datos:
+                return
+        
+        for genero_data in datos.get("generos", []):
+                nuevo_genero = Genero(
+                        genero_data["nombre_genero"]
+                )
+                # Añadir el autor a la lista de autores
+                self.generos.append(nuevo_genero)
+                # Añadir el autor al diccionario, usando su pseudónimo como clave (en minúsculas)
+                self.diccionario_generos[nuevo_genero.get_nombre_genero().lower()] = nuevo_genero
+        
+        print(f"Generos cargados desde {datos_biblioteca}")
+        
+    def agregar_genero(self, genero):
+        """
+        Agrega un nuevo género literario al repositorio.
 
+        Args:
+            genero (Genero): Un objeto Genero que representa el género a agregar.
+        """
+        if isinstance(genero, Genero):
+            self.generos.append(genero)
+            self.diccionario_generos[genero.get_nombre_genero().lower()] = genero
+        else:
+            raise ValueError("El parámetro debe ser un objeto de tipo Genero.")
 
-        def agregar_genero(self, genero):
-                """- Agrega un género literario nuevo a la lista de generos de la biblioteca. """
-                self.generos.append(genero)
-                self.diccionario_generos[genero.get_nombre_genero().lower()] = genero
+    def buscar_genero_nombre(self, nombre_genero):
+        """
+        Busca un género literario por su nombre en el repositorio.
 
-        def buscar_genero_nombre(self, nombre_genero):
-                """- Busca un género literario, usando su atributo nombre_genero, dentro del diccionario de generos. Devuelve el objeto Género buscado si existe."""
-                return self.diccionario_generos.get(nombre_genero.lower(), None)
+        Args:
+            nombre_genero (str): El nombre del género a buscar.
 
-        def mostrar_generos(self):
-                """Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca."""
-                return [genero.__str__() for genero in self.generos]
+        Returns:
+            Genero: El objeto Genero encontrado o None si no se encuentra.
+        """
+        return self.diccionario_generos.get(nombre_genero.lower(), None)
 
-        def reestructurar_ids_generos(self):
-                for index, genero in enumerate(self.generos):
-                        genero.set_id(index + 1) # Actualiza los ids, usando el método set_id de forma que vuelvan a ser consecutivos en el resto registros.
+    def mostrar_generos(self):
+        """
+        Devuelve una lista con las representaciones en cadena de todos los géneros en el repositorio.
+
+        Returns:
+            list: Lista de cadenas con los detalles de cada género.
+        """
+        return [genero.__str__() for genero in self.generos]
+
+    def reestructurar_ids_generos(self):
+        """
+        Reestructura los IDs de los géneros para que sean consecutivos, empezando desde 1.
+        """
+        for index, genero in enumerate(self.generos):
+            genero.set_id(index + 1)  # Actualiza los ids, asegurando que sean consecutivos
