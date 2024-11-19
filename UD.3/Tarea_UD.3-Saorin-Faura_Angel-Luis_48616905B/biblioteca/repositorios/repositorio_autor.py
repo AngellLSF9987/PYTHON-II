@@ -9,7 +9,7 @@ class RepositorioAutor:
         
         # Inicializa las listas y el diccionario donde se almacenarán los autores
         self.autores = []
-        self.diccionario_autores = {}
+        # self.diccionario_autores = {}
 
     def cargar_autores(self, datos_biblioteca):
         """
@@ -25,20 +25,16 @@ class RepositorioAutor:
         # Recorrer la lista de autores en el JSON
         for autor_data in datos.get("autores", []):
             # Crea un nuevo autor usando los datos del JSON
-            nuevo_autor = Autor(
-                autor_data["nombre"],
-                autor_data["apellido1"],
-                autor_data["apellido2"],
-                autor_data["pseudonimo"],
-                autor_data["nacido"],
-                autor_data["fallecido"],
-                autor_data["nacionalidad"]
+            autor = Autor(
+                nombre = autor_data["nombre"],
+                apellido1 = autor_data["apellido1"],
+                apellido2 = autor_data["apellido2"],
+                pseudonimo = autor_data["pseudonimo"],
+                nacido = autor_data["nacido"],
+                fallecido = autor_data["fallecido"],
+                nacionalidad = autor_data["nacionalidad"]
             )
-            # Añadir el autor a la lista de autores
-            self.autores.append(nuevo_autor)
-            # Añadir el autor al diccionario, usando su pseudónimo como clave (en minúsculas)
-            self.diccionario_autores[nuevo_autor.get_pseudonimo().lower()] = nuevo_autor
-
+            return autor
         print(f"Autores cargados desde {datos_biblioteca}")
         
     def agregar_autor(self, autor):

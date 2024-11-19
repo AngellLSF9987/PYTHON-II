@@ -17,10 +17,10 @@ class Biblioteca:
         # Inicializamos los repositorios
         self.repositorio_autor = RepositorioAutor()
         self.repositorio_genero = RepositorioGenero()
-        self.repositorio_especifico = RepositorioEspecifico()
+        self.repositorio_especifico = RepositorioEspecifico(self.repositorio_genero)
         
-        # El repositorio de libros necesita los repositorios de autor y género
-        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_genero)
+        # El repositorio de libros necesita los repositorios de autor y específico (repositorio especifico ya contiene los datos de repositorio género)
+        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico)
         
         # Inicializar biblioteca con los datos del archivo JSON
         self.inicializar_biblioteca()
