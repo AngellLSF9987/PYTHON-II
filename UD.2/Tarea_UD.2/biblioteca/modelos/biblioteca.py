@@ -137,7 +137,7 @@ class Biblioteca:
 
         # Almacenar el objeto 'Especifico' en el diccionario usando la clave compuesta
         self.diccionario_especificos[clave] = especifico
-        print(f"Subgénero '{especifico.get_nombre_especifico()}' agregado correctamente al género '{especifico.get_nombre_genero()}'.")
+        #print(f"Subgénero '{especifico.get_nombre_especifico()}' agregado correctamente al género '{especifico.get_nombre_genero()}'.")
 
 
 
