@@ -42,15 +42,13 @@ def menu():
                 print("\nNo existe ningún registro aún en la Biblioteca.\n")
                 return
         elif opcion == "5":
-            autores = biblioteca.mostrar_autores()
-
-            if autores:
-                print("\n- Registro Completo de Autores existentes en la Biblioteca -\n")
-                for autor in autores:
-                    print(autor)
-            else:
-                print("\nNo existe ningún registro aún en la Biblioteca.\n")
-                return
+           
+            datos_autores = biblioteca.obtener_datos_seccion("autores")
+            biblioteca.repositorio_autor.cargar_autores(datos_autores)
+            
+            print("\n- Registro Completo de Autores existentes en la Biblioteca -\n")
+            print(biblioteca.repositorio_autor.mostrar_autores())
+            
         elif opcion == "6":
             especificos = biblioteca.mostrar_especificos()
 
