@@ -314,6 +314,14 @@
         "documentation": {}
     },
     {
+        "label": "Autor",
+        "importPath": "biblioteca.modelos.autor",
+        "description": "biblioteca.modelos.autor",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.autor",
+        "documentation": {}
+    },
+    {
         "label": "validar_fecha",
         "importPath": "biblioteca.utilidades.validaciones",
         "description": "biblioteca.utilidades.validaciones",
@@ -370,11 +378,11 @@
         "documentation": {}
     },
     {
-        "label": "Genero",
-        "importPath": "biblioteca.modelos.generos.genero",
-        "description": "biblioteca.modelos.generos.genero",
+        "label": "Especifico",
+        "importPath": "biblioteca.modelos.generos.especifico",
+        "description": "biblioteca.modelos.generos.especifico",
         "isExtraImport": true,
-        "detail": "biblioteca.modelos.generos.genero",
+        "detail": "biblioteca.modelos.generos.especifico",
         "documentation": {}
     },
     {
@@ -399,6 +407,30 @@
         "description": "biblioteca.modelos.generos.genero",
         "isExtraImport": true,
         "detail": "biblioteca.modelos.generos.genero",
+        "documentation": {}
+    },
+    {
+        "label": "Genero",
+        "importPath": "biblioteca.modelos.generos.genero",
+        "description": "biblioteca.modelos.generos.genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.genero",
+        "documentation": {}
+    },
+    {
+        "label": "Genero",
+        "importPath": "biblioteca.modelos.generos.genero",
+        "description": "biblioteca.modelos.generos.genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.genero",
+        "documentation": {}
+    },
+    {
+        "label": "Libro",
+        "importPath": "biblioteca.modelos.libro",
+        "description": "biblioteca.modelos.libro",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.libro",
         "documentation": {}
     },
     {
@@ -2792,6 +2824,51 @@
         "description": "UD.2.Tarea_UD.2.biblioteca.modelos.libro",
         "peekOfCode": "class Libro():\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n#genero_id=None, subgenero_id=None, genero\n    def __init__(self, titulo, especifico, fecha_publicacion, num_paginas, autor):\n        if not isinstance(especifico, Especifico):\n            raise TypeError(\"El parámetro 'especifico' debe ser una instancia de la clase 'Especifico'\")\n        if not isinstance(autor, Autor):\n            raise TypeError(\"El parámetro 'autor' debe ser una instancia de la clase 'Autor'\")\n        self.__id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Libro.__id_counter += 1         # Contador autoincremental",
         "detail": "UD.2.Tarea_UD.2.biblioteca.modelos.libro",
+        "documentation": {}
+    },
+    {
+        "label": "diccionario_autores",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
+        "peekOfCode": "def diccionario_autores():\n        AUTORES = {\n                1: Autor(nombre=\"Gabriel\", \n                        apellido1=\"García\", \n                        apellido2=\"Márquez\",\n                        pseudonimo=\"Gabriel García Márquez\",\n                        nacido=\"06-03-1927\",\n                        fallecido=\"17-04-2014\",\n                        nacionalidad=\"Colombia\"\n                        ),",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_autor",
+        "documentation": {}
+    },
+    {
+        "label": "diccionario_especificos",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "peekOfCode": "def diccionario_especificos():\n    ESPECIFICOS = {\n        1: Especifico(nombre_genero=\"Narrativo\", nombre_especifico=\"Novela\",\n                    tipo = {\n                        \"Fantasía\",\n                        \"Terror\",\n                        \"Suspense\",\n                        \"Realismo Mágico\",\n                        \"Distópica\"\n                    })",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_especificos",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "peekOfCode": "def obtener_especificos():\n    \"\"\"Devuelve el diccionario con los subgéneros específicos\"\"\"\n    return {\n        1: Especifico(\n            nombre_genero=\"Narrativo\",\n            nombre_especifico=\"Novela\",\n            tipo = {\n                \"Fantasía\",\n                \"Terror\",\n                \"Suspense\",",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_especifico",
+        "documentation": {}
+    },
+    {
+        "label": "diccionario_generos",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_genero",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_genero",
+        "peekOfCode": "def diccionario_generos():\n    GENEROS = {\n        1: Genero(nombre_genero=\"Narrativo\"),\n        2: Genero(nombre_genero=\"Lirico\"),\n        3: Genero(nombre_genero=\"Dramatico\")\n    }",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_genero",
+        "documentation": {}
+    },
+    {
+        "label": "diccionarios_libros",
+        "kind": 2,
+        "importPath": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
+        "description": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
+        "peekOfCode": "def diccionarios_libros():\n        LIBROS = {\n        1: Libro(titulo=\"Cien Años de Soledad\", \n                especifico=(\"Narrativo_Novela_Realismo Mágico\"), \n                fecha_publicacion=\"05-06-1967\",\n                num_paginas=417,\n                autor=\"Gabriel García Marquéz\"\n                ),\n        2: Libro(titulo=\"El Hobbit\", \n                especifico=(\"Narrativo_Novela_Fantasía\"), ",
+        "detail": "UD.2.Tarea_UD.2.biblioteca.utilidades.diccionarios.diccionario_libro",
         "documentation": {}
     },
     {
