@@ -1,98 +1,100 @@
-from biblioteca.modelos.generos.genero import Genero
+import json
+import shutil  # Para respaldar datos antes de guardar
 
-def crear_genero(biblioteca):
-    """Crear un nuevo género literario y lo añade a la Biblioteca."""
+class CRUDAutor:
 
-    try:
-        print("\n- Nuevo Registro de Género Literario -\n")
-        nombre = input("Introduce el nombre:\n")
+    def __init__(self, ruta_json):
+        self.ruta_json = ruta_json
+        self.datos = self.cargar_datos()
+        self.autor_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental
 
-        # Creación y registro del nuevo objeto genero
-        genero = Genero(nombre)
-        biblioteca.agregar_genero(genero)  # Usar la instancia de biblioteca
+    def cargar_datos(self):
+        """Carga los datos desde el archivo JSON."""
+        try:
+            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:
+                return json.load(archivo)
+        except FileNotFoundError:
+            print("Archivo JSON no encontrado. Se creará un nuevo archivo.")
+            return {"autores": []}  # Inicializa con lista vacía si no existe
+        except json.JSONDecodeError:
+            print("Error al leer el archivo JSON. Archivo vacío o malformado.")
+            return {"autores": []}
 
-        print("\nGénero Literario registrado correctamente.\n")
+    def guardar_datos(self):
+        """Guarda los datos en el archivo JSON y realiza un respaldo previo."""
+        try:
+            # Crear respaldo del archivo
+            shutil.copy(self.ruta_json, self.ruta_json + ".bak")
+            with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
+                json.dump(self.datos, archivo, ensure_ascii=False, indent=4)
+        except Exception as e:
+            print(f"Error al guardar los datos: {e}")
 
-    except ValueError as e:  # Valores incorrectos al ingresar datos
-        print(f"\nError: Entrada inválida. {e}\n")
-    except Exception as e2:  # Errores imprevistos
-        print(f"\nSe produjo un error inesperado: {e2}\n")
+    def obtener_max_id(self):
+        """Obtiene el máximo ID existente en los Géneros Literarios."""
+        if not self.datos["generos"]:
+            return 0  # Si no hay géneros, inicia en 0
+        return max(int(genero["genero_id"]) for genero in self.datos["generos"])
 
-def leer_genero(biblioteca):
-    """Busca y muestra la información de un género literario por nombre."""
+    def agregar_genero(self, nombre_genero):
+        """
+        Agrega un nuevo Género Literario con ID autoincremental.
+        Parámetros:
+            - nombre: Nombre completo del Género Literario (obligatorio).
+        """
+        if not nombre_genero.strip():
+            print("⚠️ El nombre del autor no puede estar vacío.")
+            return False
 
-    try:
-        print("\n- Información del Registro deseado -\n")
-        nombre = input("Introduzca el nombre del género literario a buscar:\n")
-        genero = biblioteca.buscar_genero_nombre(nombre)
-
-        if genero:
-            print("\nRegistro encontrado.\n")
-            print(genero.mostrar_datos_genero())
-        else:
-            print("\nGénero Literario no encontrado. Revise la información proporcionada e inténtelo de nuevo.\n")
-
-    except Exception as e:  # Errores imprevistos
-        print(f"Se produjo un error al buscar el género literario: {e}")
-
-def mostrar_generos(biblioteca):
-    """Devuelve una lista completa de todos los géneros literarios existentes en la Biblioteca."""
-    if not biblioteca.generos:
-        print("\nNo hay géneros literarios registrados en la biblioteca")
-        return 
-    print(f"\n- Lista de Géneros Literarios -\n")
-    for genero in biblioteca.generos:
-        print(genero.mostrar_datos_genero())
-        print()
-
-def actualizar_genero(biblioteca):
-    """Actualiza la información de un género literario existente."""
-
-    try:
-        print("\n- Actualización del Registro -\n")
-        nombre = input("Introduce el nombre del género literario que deseas actualizar:\n")
-        genero = biblioteca.buscar_genero_nombre(nombre)
-
-        if genero:
-            print("\nIntroduce los nuevos datos del género literario (deja en blanco para mantener la información actual:)\n")
-
-            # Usar el método correcto para obtener el nombre del género
-            nuevo_nombre = input(f"Nombre [{genero.get_nombre_genero()}] o presione ENTER si no es el dato a modificar:\n") or genero.get_nombre_genero()
-
-            # Usar el método set_nombre para actualizar el nombre
-            genero.set_nombre(nuevo_nombre)
-
-            print("\nGénero Literario actualizado correctamente.\n")
-
-        else:
-            print("\nGénero Literario no encontrado.\n")
-
-    except ValueError as e:
-        print(f"Error: Entrada inválida. {e}")
-
-    except Exception as e:
-        print(f"Se produjo un error inesperado. {e}")
-
-def eliminar_genero(biblioteca):
-    """Elimina un género literario de la biblioteca buscando por nombre."""
-
-    try:
-        print("\n- Borrado de Registro -\n")
-        nombre = input("Introduce el nombre del género literario que deseas borrar:\n")
-        
-        genero_eliminado = None
-        for genero in biblioteca.generos:
-            # Usar get_nombre_genero() en lugar de get_nombre()
-            if genero.get_nombre_genero().lower() == nombre.lower():
-                genero_eliminado = genero
-                break  # Sale del bucle una vez encontrado el género.
-
-        if genero_eliminado:
-            biblioteca.generos.remove(genero_eliminado)  # Elimina el género literario de la lista
-            print("El registro ha sido eliminado correctamente.")
-            biblioteca.reestructurar_ids_generos()  # Reestructura los ids del resto de registros después de eliminar
-        else:
-            print("No se encontró ningún registro con ese nombre.\nCompruebe la búsqueda e inténtelo de nuevo.")
+        genero = {
+            "genero_id": str(self.genero_id_actual),
+            "nombre_genero": nombre_genero.strip(),
+        }
+        self.datos["generos"].append(genero)
+        self.genero_id_actual += 1
+        self.guardar_datos()
+        print(f"✅ Género Literario agregado con éxito: {genero}")
+        return True
     
-    except Exception as e:  # Errores imprevistos
-        print(f"\nSe produjo un error al intentar eliminar el género literario: {e}\n")
+    def actualizar_genero(self, genero_id, nuevos_datos):
+        """
+        Actualiza los datos de un autor buscando por su ID.
+        Parámetros:
+            - id_autor: ID del Género Literario a actualizar.
+            - nuevos_datos: Diccionario con los nuevos valores.
+        """
+        for genero in self.datos["autores"]:
+            if genero["genero_id"] == genero_id:
+                genero.update({clave: valor.strip() for clave, valor in nuevos_datos.items() if valor is not None})
+                self.guardar_datos()
+                print(f"✅ Género Literario actualizado con éxito: {genero}")
+                return True
+        print(f"⚠️ No se encontró un autor con ID {genero_id}.")
+        return False
+    
+    def eliminar_genero(self, genero_id):
+        """
+        Elimina un autor por su ID.
+        Parámetros:
+            - genero_id: ID del Género Literario a eliminar.
+        """
+        for genero in self.datos["generos"]:
+            if genero["genero_id"] == genero_id:
+                self.datos["generos"].remove(genero)
+                self.guardar_datos()
+                print(f"✅ Genero Literario eliminado con éxito: {genero}")
+                return True
+        print(f"⚠️ No se encontró un Genero Literario con ID {genero_id}.")
+        return False
+
+    def mostrar_generos(self):
+        """
+        Muestra todos los Géneros Literarios registrados.
+        """
+        if not self.datos["generos"]:
+            print("\nNo hay Géneros Literarios registrados.")
+            return
+        print("\n=== Lista de Géneros Literarios ===")
+        for genero in self.datos["generos"]:
+            print(f"ID: {genero['genero_id']}", 
+                  f"Nombre: {genero['nombre_genero']}")
