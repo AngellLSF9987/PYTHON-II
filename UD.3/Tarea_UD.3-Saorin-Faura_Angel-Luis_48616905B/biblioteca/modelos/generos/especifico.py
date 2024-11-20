@@ -13,18 +13,18 @@ class Especifico(Genero):
         
         super().__init__(nombre_genero)
 
-        self.__id = Especifico.__id_counter  # Asigna el ID actual
+        self.__especifico_id = Especifico.__id_counter  # Asigna el ID actual
         Especifico.__id_counter += 1         # Contador autoincremental
 
         # Asignar nombre_especifico y tipo, con validación si tipo es None
         self.__nombre_especifico = nombre_especifico.strip() if nombre_especifico else "Desconocido"
         self.__tipo = tipo.strip() if tipo else "Tipo no definido"
 
-    def get_id(self):
-        return self.__id
+    def get_especifico_id(self):
+        return self.__especifico_id
     
-    def set_id(self, nuevo_id):
-        self.__id = nuevo_id    # Método para actualizar el ID
+    def set_especifico_id(self, nuevo_especifico_id):
+        self.__especifico_id = nuevo_especifico_id    # Método para actualizar el ID
     
     def get_nombre_especifico(self):
         return self.__nombre_especifico
@@ -46,7 +46,7 @@ class Especifico(Genero):
 
     def __str__(self):
         """Método __str__. Muestra todos los datos de modelo Subgénero"""
-        return f"Id: {self.get_id()}.\nGénero Literario:{super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}."
+        return f"Id: {self.get_especifico_id()}.\nGénero Literario:{super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}."
 
     def mostrar_datos_especifico(self):
         """Muestra los datos específicos del Género Literario."""

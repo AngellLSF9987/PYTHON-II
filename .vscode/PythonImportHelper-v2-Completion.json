@@ -346,14 +346,6 @@
         "documentation": {}
     },
     {
-        "label": "Autor",
-        "importPath": "biblioteca.modelos.autor",
-        "description": "biblioteca.modelos.autor",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.autor",
-        "documentation": {}
-    },
-    {
         "label": "validar_fecha",
         "importPath": "biblioteca.utilidades.validaciones",
         "description": "biblioteca.utilidades.validaciones",
@@ -455,22 +447,6 @@
         "description": "biblioteca.modelos.generos.especifico",
         "isExtraImport": true,
         "detail": "biblioteca.modelos.generos.especifico",
-        "documentation": {}
-    },
-    {
-        "label": "Especifico",
-        "importPath": "biblioteca.modelos.generos.especifico",
-        "description": "biblioteca.modelos.generos.especifico",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.generos.especifico",
-        "documentation": {}
-    },
-    {
-        "label": "Genero",
-        "importPath": "biblioteca.modelos.generos.genero",
-        "description": "biblioteca.modelos.generos.genero",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.generos.genero",
         "documentation": {}
     },
     {
@@ -735,14 +711,6 @@
         "description": "biblioteca.crud.crud_libro",
         "isExtraImport": true,
         "detail": "biblioteca.crud.crud_libro",
-        "documentation": {}
-    },
-    {
-        "label": "leer_autor",
-        "importPath": "biblioteca.crud.crud_autor",
-        "description": "biblioteca.crud.crud_autor",
-        "isExtraImport": true,
-        "detail": "biblioteca.crud.crud_autor",
         "documentation": {}
     },
     {
@@ -815,38 +783,6 @@
         "description": "biblioteca.repositorios.repositorio_libro",
         "isExtraImport": true,
         "detail": "biblioteca.repositorios.repositorio_libro",
-        "documentation": {}
-    },
-    {
-        "label": "cargar_datos_json",
-        "importPath": "biblioteca.utilidades.lector_json",
-        "description": "biblioteca.utilidades.lector_json",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.lector_json",
-        "documentation": {}
-    },
-    {
-        "label": "cargar_datos_json",
-        "importPath": "biblioteca.utilidades.lector_json",
-        "description": "biblioteca.utilidades.lector_json",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.lector_json",
-        "documentation": {}
-    },
-    {
-        "label": "cargar_datos_json",
-        "importPath": "biblioteca.utilidades.lector_json",
-        "description": "biblioteca.utilidades.lector_json",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.lector_json",
-        "documentation": {}
-    },
-    {
-        "label": "cargar_datos_json",
-        "importPath": "biblioteca.utilidades.lector_json",
-        "description": "biblioteca.utilidades.lector_json",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.lector_json",
         "documentation": {}
     },
     {
@@ -3441,7 +3377,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.generos.especifico",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.generos.especifico",
-        "peekOfCode": "class Especifico(Genero):\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre_genero, nombre_especifico, tipo=None):\n        # Validar que nombre_genero y nombre_especifico no sean None o vacíos\n        if not nombre_genero or not nombre_especifico:\n            raise ValueError(\"El nombre del género y del subgénero son obligatorios.\")\n        super().__init__(nombre_genero)\n        self.__id = Especifico.__id_counter  # Asigna el ID actual\n        Especifico.__id_counter += 1         # Contador autoincremental\n        # Asignar nombre_especifico y tipo, con validación si tipo es None",
+        "peekOfCode": "class Especifico(Genero):\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre_genero, nombre_especifico, tipo=None):\n        # Validar que nombre_genero y nombre_especifico no sean None o vacíos\n        if not nombre_genero or not nombre_especifico:\n            raise ValueError(\"El nombre del género y del subgénero son obligatorios.\")\n        super().__init__(nombre_genero)\n        self.__especifico_id = Especifico.__id_counter  # Asigna el ID actual\n        Especifico.__id_counter += 1         # Contador autoincremental\n        # Asignar nombre_especifico y tipo, con validación si tipo es None",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.generos.especifico",
         "documentation": {}
     },
@@ -3450,7 +3386,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.generos.genero",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.generos.genero",
-        "peekOfCode": "class Genero:\n    __id_counter = 1  # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre_genero):\n        \"\"\"Inicializa el género literario con un nombre y un ID único.\"\"\"\n        if isinstance(nombre_genero, str):\n            self.nombre_genero = nombre_genero.strip()\n        else:\n            raise ValueError(f\"nombre_genero debe ser un string, pero se recibió {type(nombre_genero)}.\")\n        self.__id = Genero.__id_counter  # Asigna el ID actual\n        Genero.__id_counter += 1         # Incrementa el contador autoincremental",
+        "peekOfCode": "class Genero:\n    __id_counter = 1  # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre_genero):\n        \"\"\"Inicializa el género literario con un nombre y un ID único.\"\"\"\n        if isinstance(nombre_genero, str):\n            self.nombre_genero = nombre_genero.strip()\n        else:\n            raise ValueError(f\"nombre_genero debe ser un string, pero se recibió {type(nombre_genero)}.\")\n        self.__genero_id = Genero.__id_counter  # Asigna el ID actual\n        Genero.__id_counter += 1         # Incrementa el contador autoincremental",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.generos.genero",
         "documentation": {}
     },
@@ -3459,7 +3395,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.autor",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.autor",
-        "peekOfCode": "class Autor:\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre, apellido1, apellido2, pseudonimo, nacido, fallecido, nacionalidad):\n        self.__id = Autor.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Autor.__id_counter += 1         # Contador autoincremental\n        self.__nombre = nombre\n        self.__apellido1 = apellido1\n        self.__apellido2 = apellido2\n        self.__pseudonimo = pseudonimo\n        self.__nacido = nacido",
+        "peekOfCode": "class Autor:\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n    def __init__(self, nombre, apellido1, apellido2, pseudonimo, nacido, fallecido, nacionalidad):\n        self.__autor_id = Autor.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Autor.__id_counter += 1         # Contador autoincremental\n        self.__nombre = nombre\n        self.__apellido1 = apellido1\n        self.__apellido2 = apellido2\n        self.__pseudonimo = pseudonimo\n        self.__nacido = nacido",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.autor",
         "documentation": {}
     },
@@ -3477,7 +3413,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.libro",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.libro",
-        "peekOfCode": "class Libro():\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n#genero_id=None, subgenero_id=None, genero\n    def __init__(self, titulo, especifico, fecha_publicacion, num_paginas, autor):\n        if not isinstance(especifico, Especifico):\n            raise TypeError(\"El parámetro 'especifico' debe ser una instancia de la clase 'Especifico'\")\n        if not isinstance(autor, Autor):\n            raise TypeError(\"El parámetro 'autor' debe ser una instancia de la clase 'Autor'\")\n        self.__id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Libro.__id_counter += 1         # Contador autoincremental",
+        "peekOfCode": "class Libro():\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n#genero_id=None, subgenero_id=None, genero\n    def __init__(self, titulo, especifico, fecha_publicacion, num_paginas, autor):\n        if not isinstance(especifico, Especifico):\n            raise TypeError(\"El parámetro 'especifico' debe ser una instancia de la clase 'Especifico'\")\n        if not isinstance(autor, Autor):\n            raise TypeError(\"El parámetro 'autor' debe ser una instancia de la clase 'Autor'\")\n        self.__libro_id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Libro.__id_counter += 1         # Contador autoincremental",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.libro",
         "documentation": {}
     },
@@ -3486,7 +3422,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_autor",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_autor",
-        "peekOfCode": "class RepositorioAutor:\n    def __init__(self):\n        self.autores = []\n    def cargar_autores(self, datos_autores):\n        \"\"\"Carga los autores desde el JSON en la memoria del repositorio.\"\"\"\n        self.autores = [\n            {\n                \"id\": autor_id,\n                \"nombre\": autor.get(\"nombre\", \"Desconocido\"),\n                \"apellido1\": autor.get(\"apellido1\", \"Desconocido\"),",
+        "peekOfCode": "class RepositorioAutor:\n    def __init__(self):\n        \"\"\"Constructor del repositorio de géneros.\"\"\"\n        self.autores = []  # Lista para almacenar instancias de Autor\n    def cargar_autores(self, datos_autores):\n        \"\"\"Carga los datos de los Autores desde el JSON en la memoria del repositorio.\"\"\"\n        try:\n            self.autores = [\n                {\n                    \"autor_id\": autor.get(\"autor_id\"),",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_autor",
         "documentation": {}
     },
@@ -3495,7 +3431,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_especifico",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_especifico",
-        "peekOfCode": "class RepositorioEspecifico:\n    def __init__(self, repositorio_genero):\n        \"\"\"\n        Constructor del repositorio de específicos.\n        :param repositorio_genero: Instancia de RepositorioGenero.\n        \"\"\"\n        self.repositorio_genero = repositorio_genero\n        self.especificos = []  # Lista para almacenar instancias de Especifico\n    def cargar_especificos(self, datos_especificos):\n        \"\"\"",
+        "peekOfCode": "class RepositorioEspecifico:\n    def __init__(self, repositorio_genero):\n        \"\"\"\n        Constructor del repositorio de específicos.\n        :param repositorio_genero: Instancia de RepositorioGenero.\n        \"\"\"\n        self.repositorio_genero = repositorio_genero\n        self.especificos = []  # Lista para almacenar instancias de Especifico\n    def cargar_especificos(self, datos_especificos):\n        \"\"\"Carga los datos de los Subgéneros Literarios específicos desde el JSON en la memoria del repositorio.\"\"\"",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_especifico",
         "documentation": {}
     },
@@ -3504,7 +3440,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_genero",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_genero",
-        "peekOfCode": "class RepositorioGenero:\n    def __init__(self):\n        \"\"\"Constructor del repositorio de géneros.\"\"\"\n        self.generos = []  # Lista para almacenar instancias de Genero\n    def cargar_generos(self, datos_generos):\n        \"\"\"\n        Carga los datos de géneros en el repositorio.\n        :param generos: Lista de diccionarios con los datos de géneros.\n        \"\"\"\n        # Cargar los datos desde el archivo JSON",
+        "peekOfCode": "class RepositorioGenero:\n    def __init__(self):\n        \"\"\"Constructor del repositorio de géneros.\"\"\"\n        self.generos = []  # Lista para almacenar instancias de Genero\n    def cargar_generos(self, datos_generos):\n        \"\"\"Carga los datos de los Géneros Literarios desde el JSON en la memoria del repositorio.\"\"\"\n        try:\n            self.generos = [\n                {\n                    \"genero_id\": genero.get(\"genero_id\"),",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_genero",
         "documentation": {}
     },
@@ -3513,7 +3449,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_libro",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_libro",
-        "peekOfCode": "class RepositorioLibro:\n    def __init__(self, repositorio_autor, repositorio_especifico):\n        self.libros = []  # Lista donde se almacenarán los libros\n        #self.diccionario_libros = {}  # Diccionario con libros indexados por su título\n        self.repositorio_autor = repositorio_autor  # Repositorio de autores\n        self.repositorio_genero = repositorio_especifico  # Repositorio de géneros\n    def cargar_libros(self, datos_libros):\n        \"\"\"\n        Carga los libros desde un archivo JSON utilizando la función cargar_datos_json.\n        \"\"\"",
+        "peekOfCode": "class RepositorioLibro:\n    def __init__(self, repositorio_autor, repositorio_especifico):\n        \"\"\"\n        Constructor del repositorio de específicos.\n        :param repositorio_especifico: Instancia de RepositorioEspecifico.\n        :param repositorio_autor: Instancia de RepositorioAutor.\n        \"\"\"\n        self.repositorio_autor = repositorio_autor  # Repositorio de autores\n        self.repositorio_especifico = repositorio_especifico  # Repositorio de géneros\n        self.libros = []  # Lista donde se almacenarán los libros",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_libro",
         "documentation": {}
     },
@@ -3531,7 +3467,7 @@
         "kind": 5,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.ruta_datos_json",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.ruta_datos_json",
-        "peekOfCode": "RUTA_DATOS_BIBLIOTECA = r\"Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B\\data\\datos_biblioteca.json\"\n# Reemplazar las barras invertidas (\\) por barras normales (/)\nRUTA_DATOS_BIBLIOTECA = RUTA_DATOS_BIBLIOTECA.replace(\"\\\\\", \"/\")\nprint(f\"Ruta calculada: {RUTA_DATOS_BIBLIOTECA}\")\n# import os\n# # Calcula la ruta absoluta basada en el archivo actual\n# RUTA_DATOS_BIBLIOTECA = os.path.join(\n#     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),\n#     \"data\",\n#     \"datos_biblioteca.json\"",
+        "peekOfCode": "RUTA_DATOS_BIBLIOTECA = r\"UD.3\\Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B\\datos_biblioteca.json\"\n# Reemplazar las barras invertidas (\\) por barras normales (/)\nRUTA_DATOS_BIBLIOTECA = RUTA_DATOS_BIBLIOTECA.replace(\"\\\\\", \"/\")\nprint(f\"Ruta calculada: {RUTA_DATOS_BIBLIOTECA}\")\n# import os\n# # Calcula la ruta absoluta basada en el archivo actual\n# RUTA_DATOS_BIBLIOTECA = os.path.join(\n#     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),\n#     \"data\",\n#     \"datos_biblioteca.json\"",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.ruta_datos_json",
         "documentation": {}
     },

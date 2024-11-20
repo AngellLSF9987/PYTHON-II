@@ -9,17 +9,17 @@ class Genero:
         else:
             raise ValueError(f"nombre_genero debe ser un string, pero se recibió {type(nombre_genero)}.")
         
-        self.__id = Genero.__id_counter  # Asigna el ID actual
+        self.__genero_id = Genero.__id_counter  # Asigna el ID actual
         Genero.__id_counter += 1         # Incrementa el contador autoincremental
         self.__nombre_genero = nombre_genero.strip()  # Asegurar que el nombre no tenga espacios extras
         
-    def get_id(self):
+    def get_genero_id(self):
         """Obtiene el ID del género."""
-        return self.__id
+        return self.__genero_id
     
     def set_id(self, nuevo_id):
         """Actualiza el ID del género."""
-        self.__id = nuevo_id
+        self.__genero_id = nuevo_id
     
     def get_nombre_genero(self):
         """Obtiene el nombre del género."""
@@ -34,7 +34,7 @@ class Genero:
 
     def __str__(self):
         """Devuelve una representación en cadena de la clase Genero."""
-        return f"Id: {self.get_id()}.\nNombre Género Literario: {self.get_nombre_genero()}."
+        return f"Id: {self.get_genero_id()}.\nNombre Género Literario: {self.get_nombre_genero()}."
 
     def mostrar_datos_genero(self):
         """Muestra los datos del género literario."""

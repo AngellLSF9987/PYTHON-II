@@ -1,6 +1,7 @@
 {
     "autores" : [
         {
+            "autor_id": 1,
             "nombre": "Gabriel", 
             "apellido1": "García", 
             "apellido2": "Márquez", 
@@ -10,6 +11,7 @@
             "nacionalidad": "Colombia"
         },
         {
+            "autor_id": 2,
             "nombre": "Jhon Ronald", 
             "apellido1": "Reuel", 
             "apellido2": "Tolkien",
@@ -19,6 +21,7 @@
             "nacionalidad": "Reino Unido"
         },
         {
+            "autor_id": 3,
             "nombre": "Eric", 
             "apellido1": "Arthur", 
             "apellido2": "Blair",
@@ -28,6 +31,7 @@
             "nacionalidad": "Reino Unido"
         },
         {
+            "autor_id": 4,
             "nombre": "Stephen",
             "apellido1": "Edwing",
             "apellido2": "King",
@@ -37,6 +41,7 @@
             "nacionalidad": "EE.UU"
         },
         {
+            "autor_id": 5,
             "nombre": "Nelle", 
             "apellido1": "Harper",
             "apellido2": "Lee",
@@ -48,96 +53,89 @@
     ],
 
     "generos" : [
-    {
-        "nombre_genero":"Narrativo"
-    },
-    {
-        "nombre_genero":"Lirico"
-    },
-    {
-        "nombre_genero":"Dramatico"
-    }
+        {
+            "genero_id": 1,
+            "nombre_genero":"Narrativo"
+        },
+        {
+            "genero_id" : 2,
+            "nombre_genero":"Lirico"
+        },
+        {
+            "genero_id": 3,
+            "nombre_genero":"Dramatico"
+        }
     ],
 
     "especificos" : [
-    {
-        "nombre_genero":"Narrativo",
-        "nombre_especifico":"Novela", 
-        "tipo":"Terror"
-    },
-    {
-        "nombre_genero":"Narrativo",
-        "nombre_especifico":"Novela", 
-        "tipo":"Suspense"},
-    {
-        "nombre_genero":"Narrativo",
-        "nombre_especifico":"Novela",
-        "tipo":"Distópica"},
-    {
-        "nombre_genero":"Narrativo",
-        "nombre_especifico":"Novela",
-        "tipo":"Realismo Mágico"},
-    {
-        "nombre_genero":"Narrativo",
-        "nombre_especifico":"Novela", 
-        "tipo":"Fantasía"}
+        {
+            "especifico_id": 1,
+            "genero_id": 1,
+            "nombre_especifico":"Novela", 
+            "tipo":"Terror"
+        },
+        {
+            "especifico_id": 2,
+            "genero_id": 1,
+            "nombre_especifico":"Novela", 
+            "tipo":"Suspense"},
+        {
+            "especifico_id": 3,
+            "genero_id": 1,
+            "nombre_especifico":"Novela",
+            "tipo":"Distópica"},
+        {
+            "especifico_id": 4,
+            "genero_id": 1,
+            "nombre_especifico":"Novela",
+            "tipo":"Realismo Mágico"},
+        {
+            "especifico_id": 5,
+            "genero_id": 1,
+            "nombre_especifico":"Novela", 
+            "tipo":"Fantasía"}
     ],
 
     "libros" : [
         {
+            "libro_id" : 1,
             "titulo": "Cien años de soledad",
-            "especifico": {
-                "nombre_genero" : "Narrativo", 
-                "nombre_especifico" : "Novela", 
-                "tipo" : "Realismo Mágico"
-            },
+            "especifico_id": 4,
             "fecha_publicacion": "05-06-1967",
             "num_paginas": 417,
-            "autor" : "Gabriel García Márquez"
+            "autor_id" : 1
         },
         {
+            "libro_id" : 2,
             "titulo": "El hobbit",
-            "especifico": {
-                "nombre_genero" : "Narrativo", 
-                "nombre_especifico" : "Novela", 
-                "tipo" : "Fantasía"
-            },
+            "especifico_id": 5,
             "fecha_publicacion": "21-09-1937",
             "num_paginas": 310,
-            "autor" : "J.R.R. Tolkien"
+            "autor_id" : 2
         },
         {
+            "libro_id" : 3,
             "titulo": "1984",
-            "especifico": {
-                "nombre_genero" : "Narrativo", 
-                "nombre_especifico" : "Novela", 
-                "tipo" : "Distópica"
-            },
+            "especifico_id": 3,
             "fecha_publicacion": "08-06-1949",
             "num_paginas": 328,
-            "autor" : "George Orwell"
+            "autor_id" : 3
         },
         {
+            "libro_id" : 4,
             "titulo": "Matar a un ruiseñor",
-            "especifico": {
-                "nombre_genero" : "Narrativo", 
-                "nombre_especifico" : "Novela", 
-                "tipo" : "Suspense"
-            },
+            "especifico_id": 2,
             "fecha_publicacion": "11-07-1960",
             "num_paginas": 281,
-            "autor" : "Harper Lee"
+            "autor_id" : 5
         },
         {
+            "libro_id" : 5,
             "titulo": "El Resplandor",
-            "especifico": {
-                "nombre_genero" : "Narrativo", 
-                "nombre_especifico" : "Novela", 
-                "tipo" : "Terror"
-            },
+            "especifico_id": 1,
             "fecha_publicacion": "28-01-1977",
             "num_paginas": 688,
-            "autor" : "Stephen King"
+            "autor_id" : 4
         }
     ]
 }

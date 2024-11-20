@@ -7,7 +7,7 @@ class Autor:
     
     def __init__(self, nombre, apellido1, apellido2, pseudonimo, nacido, fallecido, nacionalidad):
         
-        self.__id = Autor.__id_counter  # Asigna el ID actual, es decir, el ID = 1
+        self.__autor_id = Autor.__id_counter  # Asigna el ID actual, es decir, el ID = 1
         Autor.__id_counter += 1         # Contador autoincremental
         
         self.__nombre = nombre
@@ -18,11 +18,11 @@ class Autor:
         self.__fallecido = fallecido
         self.__nacionalidad = nacionalidad
 
-    def get_id(self):
-        return self.__id
+    def get_autor_id(self):
+        return self.__autor_id
     
-    def set_id(self, nuevo_id):
-        self.__id = nuevo_id    # Método para actualizar el ID
+    def set_autor_id(self, nuevo_id):
+        self.__autor_id = nuevo_id    # Método para actualizar el ID
         
     def get_nombre(self):
         return self.__nombre
@@ -68,7 +68,7 @@ class Autor:
 
     def __str__(self):
         """Método __str__. Muestra todos los datos de modelo Autor"""
-        return f"Id: {self.get_id()}.\nNombre: {self.get_nombre()}.\nApellidos: {self.get_apellido1()} {self.get_apellido2()}.\nConocido/a como: {self.get_pseudonimo()}\nNacido/a: {self.get_nacido()}.\nFallecido/a: {self.get_fallecido()}.\nNacionalidad: {self.get_nacionalidad()}.\n"
+        return f"Id: {self.get_autor_id()}.\nNombre: {self.get_nombre()}.\nApellidos: {self.get_apellido1()} {self.get_apellido2()}.\nConocido/a como: {self.get_pseudonimo()}\nNacido/a: {self.get_nacido()}.\nFallecido/a: {self.get_fallecido()}.\nNacionalidad: {self.get_nacionalidad()}.\n"
     
     def mostrar_datos_autor(self):
         """Muestra todos los datos específicos del libro."""

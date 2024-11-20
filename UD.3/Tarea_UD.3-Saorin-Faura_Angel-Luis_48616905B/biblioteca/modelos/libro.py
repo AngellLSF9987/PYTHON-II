@@ -13,7 +13,7 @@ class Libro():
         if not isinstance(autor, Autor):
             raise TypeError("El parámetro 'autor' debe ser una instancia de la clase 'Autor'")
 
-        self.__id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1
+        self.__libro_id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1
         Libro.__id_counter += 1         # Contador autoincremental
 
         self.__titulo = titulo
@@ -22,11 +22,11 @@ class Libro():
         self.__num_paginas = num_paginas
         self.__autor = autor
 
-    def get_id(self):
-        return self.__id
+    def get_libro_id(self):
+        return self.__libro_id
 
-    def set_id(self, nuevo_id):
-        self.__id = nuevo_id    # Método para actualizar el ID
+    def set_libro_id(self, nuevo_libro_id):
+        self.__libro_id = nuevo_libro_id    # Método para actualizar el ID
 
     def get_titulo(self):
         return self.__titulo
@@ -70,6 +70,6 @@ class Libro():
         autor = self.get_autor()
         datos_autor = autor.mostrar_datos_autor()
         
-        return f"Id: {self.get_id()}.\nTítulo: {self.get_titulo()}.\n{datos_especifico}.\nFecha Publicación: {self.get_fecha_publicacion()}.\nNº Páginas: {self.get_num_paginas()}.\n- Autor -\n{datos_autor}.\n" 
+        return f"Id: {self.get_libro_id()}.\nTítulo: {self.get_titulo()}.\n{datos_especifico}.\nFecha Publicación: {self.get_fecha_publicacion()}.\nNº Páginas: {self.get_num_paginas()}.\n- Autor -\n{datos_autor}.\n" 
     
     
