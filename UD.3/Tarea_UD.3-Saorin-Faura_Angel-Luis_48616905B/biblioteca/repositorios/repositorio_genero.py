@@ -29,9 +29,9 @@ class RepositorioGenero:
 
     def obtener_genero_por_id(self, genero_id):
         """Busca un género por su ID."""
-        print(f"Buscando género con ID {genero_id}...")  # Depuración
+        #print(f"Buscando género con ID {genero_id}...")  # Depuración
         for genero in self.generos:
-            print(f"Comparando con género: {genero}")  # Depuración
+            #print(f"Comparando con género: {genero}")  # Depuración
             if genero["genero_id"] == genero_id:
                 return genero
         print(f"No se encontró un género con ID {genero_id}.")  # Depuración

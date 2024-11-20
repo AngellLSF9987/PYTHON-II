@@ -1,6 +1,6 @@
 # biblioteca/menus/menu.py
 
-from biblioteca.crud.crud_libro import leer_libro
+#from biblioteca.crud.crud_libro import leer_libro
 from biblioteca.modelos.biblioteca import Biblioteca
 from biblioteca.menus.submenus import submenu_tareas
 
@@ -27,8 +27,8 @@ def menu():
            # LLama al submenu y le pasa la instancia de Biblioteca
            submenu_tareas.submenu_tareas(biblioteca)
         
-        elif opcion == "2":
-            leer_libro(biblioteca)
+        # elif opcion == "2":
+        #     #leer_libro(biblioteca)
         
         elif opcion == "3":
             
@@ -58,7 +58,7 @@ def menu():
 
             datos_generos = biblioteca.obtener_datos_seccion("generos")
             biblioteca.repositorio_genero.cargar_generos(datos_generos)
-
+            
             print("\n- Registro Completo de Géneros Literarios existentes en la Biblioteca -\n")
             print(biblioteca.repositorio_genero.mostrar_generos())
 
