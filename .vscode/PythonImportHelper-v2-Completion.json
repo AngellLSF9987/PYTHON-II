@@ -418,14 +418,6 @@
         "documentation": {}
     },
     {
-        "label": "Especifico",
-        "importPath": "biblioteca.modelos.generos.especifico",
-        "description": "biblioteca.modelos.generos.especifico",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.generos.especifico",
-        "documentation": {}
-    },
-    {
         "label": "Genero",
         "importPath": "biblioteca.modelos.generos.genero",
         "description": "biblioteca.modelos.generos.genero",
@@ -479,14 +471,6 @@
         "description": "biblioteca.modelos.generos.genero",
         "isExtraImport": true,
         "detail": "biblioteca.modelos.generos.genero",
-        "documentation": {}
-    },
-    {
-        "label": "Libro",
-        "importPath": "biblioteca.modelos.libro",
-        "description": "biblioteca.modelos.libro",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.libro",
         "documentation": {}
     },
     {
@@ -547,14 +531,6 @@
     },
     {
         "label": "crud_genero",
-        "importPath": "biblioteca.crud",
-        "description": "biblioteca.crud",
-        "isExtraImport": true,
-        "detail": "biblioteca.crud",
-        "documentation": {}
-    },
-    {
-        "label": "crud_autor",
         "importPath": "biblioteca.crud",
         "description": "biblioteca.crud",
         "isExtraImport": true,
@@ -663,14 +639,6 @@
         "description": "biblioteca.menus.submenus",
         "isExtraImport": true,
         "detail": "biblioteca.menus.submenus",
-        "documentation": {}
-    },
-    {
-        "label": "leer_libro",
-        "importPath": "biblioteca.crud.crud_libro",
-        "description": "biblioteca.crud.crud_libro",
-        "isExtraImport": true,
-        "detail": "biblioteca.crud.crud_libro",
         "documentation": {}
     },
     {
@@ -683,6 +651,14 @@
     },
     {
         "label": "leer_autor",
+        "importPath": "biblioteca.crud.crud_autor",
+        "description": "biblioteca.crud.crud_autor",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud.crud_autor",
+        "documentation": {}
+    },
+    {
+        "label": "CRUDAutor",
         "importPath": "biblioteca.crud.crud_autor",
         "description": "biblioteca.crud.crud_autor",
         "isExtraImport": true,
@@ -728,6 +704,15 @@
         "importPath": "json",
         "description": "json",
         "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
         "documentation": {}
     },
     {
@@ -3093,7 +3078,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "peekOfCode": "class CRUDAutor:\n    def __init__(self, ruta_json):\n        self.ruta_json = ruta_json\n        self.datos = self.cargar_datos()\n    def cargar_datos(self):\n        # Cargar los datos desde el archivo JSON\n        try:\n            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:\n                return json.load(archivo)\n        except FileNotFoundError:",
+        "peekOfCode": "class CRUDAutor:\n    def __init__(self, ruta_json):\n        self.ruta_json = ruta_json\n        self.datos = self.cargar_datos()\n        self.autor_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental\n    def cargar_datos(self):\n        \"\"\"Carga los datos desde el archivo JSON.\"\"\"\n        try:\n            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:\n                return json.load(archivo)",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
         "documentation": {}
     },
@@ -3228,7 +3213,7 @@
         "kind": 2,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.submenus.submenu_autor",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.submenus.submenu_autor",
-        "peekOfCode": "def submenu_autor(biblioteca):\n    while True:\n        print(\"\\n- Tareas de Autores -\\n\")\n        print(\"1. Mostrar Autores.\")\n        print(\"2. Añadir Autor.\")\n        print(\"3. Buscar Autor por Nombre Completo o por Pseudónimo Atribuido.\")\n        print(\"4. Modificar Datos Autor.\")\n        print(\"5. Eliminar Autor.\")\n        print(\"0. Menú Tareas de Biblioteca.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")",
+        "peekOfCode": "def submenu_autor(crud_autor):\n    while True:\n        print(\"\\n- Tareas de Autores -\\n\")\n        print(\"1. Mostrar Autores.\")\n        print(\"2. Añadir Autor.\")\n        print(\"3. Buscar Autor por Nombre Completo o Pseudónimo.\")\n        print(\"4. Modificar Datos de un Autor.\")\n        print(\"5. Eliminar Autor.\")\n        print(\"0. Volver al Menú Principal.\")\n        opcion = input(\"\\nSelecciona una opción:\\n\")",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.submenus.submenu_autor",
         "documentation": {}
     },
@@ -3264,7 +3249,61 @@
         "kind": 2,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
-        "peekOfCode": "def menu():\n    # Inicializa de manera Global la Biblioteca\n    biblioteca = Biblioteca()\n    while True:\n        print(\"\\n- Bienvenid@ a Biblioteca AVANZA! -\\n\")\n        print(\"1. Menú Tareas de Biblioteca.\")\n        print(\"2. Buscar libro por Título.\")\n        print(\"3. Buscar Autor por Nombre Completo o por Pseudónimo Atribuido.\")\n        print(\"4. Mostrar todos los Libros.\")\n        print(\"5. Mostrar todos los Autores.\")",
+        "peekOfCode": "def menu():\n    \"\"\"\n    Función principal del menú de la Biblioteca.\n    Permite interactuar con las funcionalidades principales del sistema.\n    \"\"\"\n    # Inicializa la Biblioteca\n    biblioteca = Biblioteca()\n    while True:\n        print(\"\\n- Bienvenid@ a Biblioteca AVANZA! -\\n\")\n        print(\"1. Menú Tareas de Biblioteca.\")",
+        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_libro_por_titulo",
+        "kind": 2,
+        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "peekOfCode": "def buscar_libro_por_titulo(biblioteca):\n    \"\"\"\n    Permite buscar un libro por su título y muestra detalles relevantes.\n    \"\"\"\n    titulo = input(\"\\nIngrese el título del libro que desea buscar:\\n\").strip()\n    if not titulo:\n        print(\"\\n⚠️ No ingresó un título. Inténtelo de nuevo.\")\n        return\n    try:\n        libros = biblioteca.repositorio_libro.libros",
+        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_autor_por_nombre_o_pseudonimo",
+        "kind": 2,
+        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "peekOfCode": "def buscar_autor_por_nombre_o_pseudonimo(biblioteca):\n    \"\"\"\n    Permite buscar un autor por su nombre completo o pseudónimo.\n    \"\"\"\n    criterio = input(\"\\nIngrese el nombre completo o pseudónimo del autor que desea buscar:\\n\").strip()\n    if not criterio:\n        print(\"\\n⚠️ No ingresó un criterio de búsqueda. Inténtelo de nuevo.\")\n        return\n    try:\n        autores = biblioteca.repositorio_autor.autores",
+        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_todos_los_libros",
+        "kind": 2,
+        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "peekOfCode": "def mostrar_todos_los_libros(biblioteca):\n    \"\"\"\n    Muestra todos los libros registrados en la biblioteca.\n    \"\"\"\n    try:\n        print(\"\\n=== Todos los Libros ===\")\n        print(biblioteca.repositorio_libro.mostrar_libros())\n    except Exception as e:\n        print(f\"\\n⚠️ Error al mostrar los libros: {e}\")\ndef mostrar_todos_los_autores(biblioteca):",
+        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_todos_los_autores",
+        "kind": 2,
+        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "peekOfCode": "def mostrar_todos_los_autores(biblioteca):\n    \"\"\"\n    Muestra todos los autores registrados en la biblioteca.\n    \"\"\"\n    try:\n        print(\"\\n=== Todos los Autores ===\")\n        print(biblioteca.repositorio_autor.mostrar_autores())\n    except Exception as e:\n        print(f\"\\n⚠️ Error al mostrar los autores: {e}\")\ndef mostrar_todos_los_generos(biblioteca):",
+        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_todos_los_generos",
+        "kind": 2,
+        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "peekOfCode": "def mostrar_todos_los_generos(biblioteca):\n    \"\"\"\n    Muestra todos los géneros literarios registrados en la biblioteca.\n    \"\"\"\n    try:\n        print(\"\\n=== Todos los Géneros Literarios ===\")\n        print(biblioteca.repositorio_genero.mostrar_generos())\n    except Exception as e:\n        print(f\"\\n⚠️ Error al mostrar los géneros: {e}\")\ndef mostrar_todos_los_subgeneros(biblioteca):",
+        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_todos_los_subgeneros",
+        "kind": 2,
+        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
+        "peekOfCode": "def mostrar_todos_los_subgeneros(biblioteca):\n    \"\"\"\n    Muestra todos los subgéneros literarios específicos registrados en la biblioteca.\n    \"\"\"\n    try:\n        print(\"\\n=== Todos los Subgéneros Literarios ===\")\n        print(biblioteca.repositorio_especifico.mostrar_especificos())\n    except Exception as e:\n        print(f\"\\n⚠️ Error al mostrar los subgéneros: {e}\")",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.menu",
         "documentation": {}
     },
@@ -3300,7 +3339,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.biblioteca",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.biblioteca",
-        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"\n        Constructor de la clase Biblioteca.\n        Inicializa repositorios para almacenar libros, autores, géneros y específicos.\n        \"\"\"\n        self.datos_biblioteca = {}  # Diccionario para almacenar los datos JSON cargados\n        self.repositorio_autor = RepositorioAutor()\n        self.repositorio_genero = RepositorioGenero()\n        self.repositorio_especifico = RepositorioEspecifico(self.repositorio_genero)",
+        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"\n        Inicializa la biblioteca cargando todos los repositorios y los datos desde el JSON.\n        \"\"\"\n        self.datos_biblioteca = {}\n        self.repositorio_autor = RepositorioAutor()\n        self.repositorio_genero = RepositorioGenero()\n        self.repositorio_especifico = RepositorioEspecifico(self.repositorio_genero)\n        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico)",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.biblioteca",
         "documentation": {}
     },
@@ -3318,7 +3357,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_autor",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_autor",
-        "peekOfCode": "class RepositorioAutor:\n    def __init__(self):\n        \"\"\"Constructor del repositorio de géneros.\"\"\"\n        self.autores = []  # Lista para almacenar instancias de Autor\n    def cargar_autores(self, datos_autores):\n        \"\"\"Carga los datos de los Autores desde el JSON en la memoria del repositorio.\"\"\"\n        try:\n            self.autores = [\n                {\n                    \"autor_id\": autor.get(\"autor_id\"),",
+        "peekOfCode": "class RepositorioAutor:\n    def __init__(self):\n        \"\"\"Constructor del repositorio de autores.\"\"\"\n        self.autores = []  # Lista para almacenar autores como diccionarios\n    def agregar_autores(self, datos_autores):\n        \"\"\"Carga una lista completa de autores en el repositorio.\"\"\"\n        try:\n            for autor in datos_autores:\n                self.agregar_autor(autor)\n            print(\"Carga de datos de Autores correcta.\")",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_autor",
         "documentation": {}
     },
@@ -3327,7 +3366,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_especifico",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_especifico",
-        "peekOfCode": "class RepositorioEspecifico:\n    def __init__(self, repositorio_genero):\n        \"\"\"\n        Constructor del repositorio de específicos.\n        :param repositorio_genero: Instancia de RepositorioGenero.\n        \"\"\"\n        self.repositorio_genero = repositorio_genero\n        self.especificos = []  # Lista para almacenar instancias de Especifico\n    def cargar_especificos(self, datos_especificos):\n        \"\"\"Carga los datos de los Subgéneros Literarios específicos desde el JSON en la memoria del repositorio.\"\"\"",
+        "peekOfCode": "class RepositorioEspecifico:\n    def __init__(self, repositorio_genero):\n        \"\"\"\n        Constructor del repositorio de subgéneros específicos.\n        :param repositorio_genero: Instancia de RepositorioGenero.\n        \"\"\"\n        self.repositorio_genero = repositorio_genero\n        self.especificos = []  # Lista para almacenar subgéneros específicos como diccionarios\n    def agregar_especificos(self, datos_especificos):\n        \"\"\"Carga una lista completa de subgéneros específicos en el repositorio.\"\"\"",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_especifico",
         "documentation": {}
     },
@@ -3336,7 +3375,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_genero",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_genero",
-        "peekOfCode": "class RepositorioGenero:\n    def __init__(self):\n        \"\"\"Constructor del repositorio de géneros.\"\"\"\n        self.generos = []  # Lista para almacenar instancias de Genero\n    def cargar_generos(self, datos_generos):\n        \"\"\"Carga los datos de los Géneros Literarios desde el JSON en la memoria del repositorio.\"\"\"\n        try:\n            self.generos = [\n                {\n                    \"genero_id\": genero.get(\"genero_id\"),",
+        "peekOfCode": "class RepositorioGenero:\n    def __init__(self):\n        \"\"\"Constructor del repositorio de géneros.\"\"\"\n        self.generos = []  # Lista para almacenar instancias de Genero\n    def agregar_generos(self, datos_generos):\n        \"\"\"Carga una lista completa de géneros en el repositorio.\"\"\"\n        try:\n            for genero in datos_generos:\n                self.agregar_genero(genero)\n            print(\"Carga de datos de Géneros Literarios correcta.\")",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_genero",
         "documentation": {}
     },
@@ -3345,7 +3384,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_libro",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_libro",
-        "peekOfCode": "class RepositorioLibro:\n    def __init__(self, repositorio_autor, repositorio_especifico):\n        \"\"\"\n        Constructor del repositorio de específicos.\n        :param repositorio_especifico: Instancia de RepositorioEspecifico.\n        :param repositorio_autor: Instancia de RepositorioAutor.\n        \"\"\"\n        self.repositorio_autor = repositorio_autor  # Repositorio de autores\n        self.repositorio_especifico = repositorio_especifico  # Repositorio de géneros\n        self.libros = []  # Lista donde se almacenarán los libros",
+        "peekOfCode": "class RepositorioLibro:\n    def __init__(self, repositorio_autor, repositorio_especifico):\n        \"\"\"\n        Constructor del repositorio de libros.\n        :param repositorio_autor: Instancia de RepositorioAutor.\n        :param repositorio_especifico: Instancia de RepositorioEspecifico.\n        \"\"\"\n        self.repositorio_autor = repositorio_autor  # Repositorio de autores\n        self.repositorio_especifico = repositorio_especifico  # Repositorio de géneros específicos\n        self.libros = []  # Lista para almacenar los libros como diccionarios",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_libro",
         "documentation": {}
     },
