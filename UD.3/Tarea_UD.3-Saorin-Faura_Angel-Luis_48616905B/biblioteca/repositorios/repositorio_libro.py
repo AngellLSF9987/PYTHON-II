@@ -1,69 +1,96 @@
-# biblioteca/repositorios/repositorio_libro.py
-
-from biblioteca.modelos.libro import Libro
-from biblioteca.modelos.generos.especifico import Especifico
-
 class RepositorioLibro:
-    
     def __init__(self, repositorio_autor, repositorio_especifico):
         """
-        Constructor del repositorio de específicos.
-        :param repositorio_especifico: Instancia de RepositorioEspecifico.
+        Constructor del repositorio de libros.
         :param repositorio_autor: Instancia de RepositorioAutor.
+        :param repositorio_especifico: Instancia de RepositorioEspecifico.
         """
-
         self.repositorio_autor = repositorio_autor  # Repositorio de autores
-        self.repositorio_especifico = repositorio_especifico  # Repositorio de géneros
-        self.libros = []  # Lista donde se almacenarán los libros
+        self.repositorio_especifico = repositorio_especifico  # Repositorio de géneros específicos
+        self.libros = []  # Lista para almacenar los libros como diccionarios
 
-    def cargar_libros(self, datos_libros):
-        """Carga los datos de los Subgéneros Literarios específicos desde el JSON en la memoria del repositorio."""
+    def agregar_libros(self, datos_libros):
+        """Carga una lista completa de libros en el repositorio."""
         try:
-            self.libros = []
             for libro in datos_libros:
-                especifico = self.repositorio_especifico.obtener_especifico_por_id(libro["especifico_id"])
+                self.agregar_libro(libro)
+            print("Carga de datos de libros correcta.")
+        except Exception as e:
+            print(f"Error al cargar libros: {e}")
+
+    def agregar_libro(self, libro):
+        """Agrega un único libro al repositorio."""
+        if isinstance(libro, dict) and "libro_id" in libro:
+            if not self.obtener_libro_por_id(libro["libro_id"]):
+                especifico = self.repositorio_especifico.obtener_especifico_por_id(libro.get("especifico_id"))
                 if especifico is None:
-                    print(f"Aviso: No se encontró ningún Género y Subgénero Específicos con ID {libro['especifico_id']}.")
+                    print(f"Aviso: No se encontró un subgénero con ID {libro.get('especifico_id')}. Asignando 'Género desconocido'.")
                     especifico_nombre = "Género desconocido"
                 else:
                     especifico_nombre = especifico["nombre_especifico"]
-                
-                autor = self.repositorio_autor.obtener_autor_por_id(libro["autor_id"])
+
+                autor = self.repositorio_autor.obtener_autor_por_id(libro.get("autor_id"))
                 if autor is None:
-                    print(f"Aviso: No se encontró ningún Autor con ID {libro['autor_id']}.")
+                    print(f"Aviso: No se encontró un autor con ID {libro.get('autor_id')}. Asignando 'Autor desconocido'.")
                     autor_nombre = "Autor desconocido"
                 else:
                     autor_nombre = autor["pseudonimo"]
-                
+
                 self.libros.append({
                     "libro_id": libro.get("libro_id"),
                     "titulo": libro.get("titulo", "Desconocido"),
-                    "especifico_id": especifico_nombre,
+                    "especifico_id": libro.get("especifico_id"),
+                    "nombre_especifico": especifico_nombre,
                     "fecha_publicacion": libro.get("fecha_publicacion", "Desconocido"),
                     "num_paginas": libro.get("num_paginas", "Desconocido"),
-                    "autor_id": autor_nombre
+                    "autor_id": libro.get("autor_id"),
+                    "nombre_autor": autor_nombre,
                 })
-            print("Carga de datos de Libro correcta.")
+            else:
+                print(f"El libro con ID {libro['libro_id']} ya existe.")
+        else:
+            print(f"Formato inválido para el libro: {libro}")
 
-        except KeyError as KeyEspecificoError:
-            print(f"{KeyEspecificoError}: Falta la clave o no coincide en los datos de un Libro.")
-        except FileExistsError as DictEspecificoError:
-            print(f"{DictEspecificoError}: La sección de datos pertenciente a Libro registrados no ha sido cargada correctamente.")
-        
     def mostrar_libros(self):
-        """Devuelve la lista de libros en el repositorio."""
+        """Devuelve una representación formateada de los libros en el repositorio."""
         if not self.libros:
-            return "No hay autores cargados en el repositorio."
-        return "\n".join(f"ID: {libro['libro_id']}\nTítulo del libro/a: {libro['titulo']}\nGénero y Subgénero Específico: {libro['especifico_id']}\n\
-Fecha de Publicación: {libro['fecha_publicacion']}\nNum. Páginas: {libro['num_paginas']}\nAutor: {libro['autor_id']}\n"\
-        for libro in self.libros)
+            return "No hay libros cargados en el repositorio."
+
+        return "\n".join(
+            f"ID: {libro['libro_id']}\nTítulo: {libro['titulo']}\n"
+            f"Género y Subgénero Específico: {libro['nombre_especifico']}\n"
+            f"Fecha de Publicación: {libro['fecha_publicacion']}\n"
+            f"Número de Páginas: {libro['num_paginas']}\n"
+            f"Autor: {libro['nombre_autor']}\n"
+            for libro in self.libros
+        )
 
     def obtener_libro_por_id(self, libro_id):
         """Busca un libro por su ID."""
-        print(f"Buscando libro con ID {libro_id}...")  # Depuración
         for libro in self.libros:
-            print(f"Comparando con libro: {libro_id}")  # Depuración
             if libro["libro_id"] == libro_id:
                 return libro
-        print(f"No se encontró un libro con ID {libro_id}.")  # Depuración
         return None
+
+    def obtener_libros_por_autor(self, autor_id):
+        """Obtiene todos los libros asociados a un autor dado."""
+        libros_autor = [libro for libro in self.libros if libro["autor_id"] == autor_id]
+        if not libros_autor:
+            print(f"No se encontraron libros para el autor con ID {autor_id}.")
+        return libros_autor
+
+    def obtener_libros_por_especifico(self, especifico_id):
+        """Obtiene todos los libros asociados a un subgénero específico dado."""
+        libros_especifico = [libro for libro in self.libros if libro["especifico_id"] == especifico_id]
+        if not libros_especifico:
+            print(f"No se encontraron libros para el subgénero específico con ID {especifico_id}.")
+        return libros_especifico
+
+    def eliminar_libro_por_id(self, libro_id):
+        """Elimina un libro del repositorio por su ID."""
+        libro = self.obtener_libro_por_id(libro_id)
+        if libro:
+            self.libros.remove(libro)
+            print(f"Libro con ID {libro_id} eliminado correctamente.")
+        else:
+            print(f"No se encontró un libro con ID {libro_id} para eliminar.")
