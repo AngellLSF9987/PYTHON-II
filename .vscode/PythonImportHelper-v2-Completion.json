@@ -338,14 +338,6 @@
         "documentation": {}
     },
     {
-        "label": "Autor",
-        "importPath": "biblioteca.modelos.autor",
-        "description": "biblioteca.modelos.autor",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.autor",
-        "documentation": {}
-    },
-    {
         "label": "validar_fecha",
         "importPath": "biblioteca.utilidades.validaciones",
         "description": "biblioteca.utilidades.validaciones",
@@ -370,22 +362,6 @@
         "documentation": {}
     },
     {
-        "label": "validar_fecha",
-        "importPath": "biblioteca.utilidades.validaciones",
-        "description": "biblioteca.utilidades.validaciones",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.validaciones",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "biblioteca.utilidades.validaciones",
-        "description": "biblioteca.utilidades.validaciones",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.validaciones",
-        "documentation": {}
-    },
-    {
         "label": "Especifico",
         "importPath": "biblioteca.modelos.generos.especifico",
         "description": "biblioteca.modelos.generos.especifico",
@@ -503,14 +479,6 @@
         "description": "biblioteca.modelos.generos.genero",
         "isExtraImport": true,
         "detail": "biblioteca.modelos.generos.genero",
-        "documentation": {}
-    },
-    {
-        "label": "Libro",
-        "importPath": "biblioteca.modelos.libro",
-        "description": "biblioteca.modelos.libro",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.libro",
         "documentation": {}
     },
     {
@@ -754,6 +722,15 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "RepositorioAutor",
         "importPath": "biblioteca.repositorios.repositorio_autor",
         "description": "biblioteca.repositorios.repositorio_autor",
@@ -791,15 +768,6 @@
         "description": "biblioteca.utilidades.lector_json",
         "isExtraImport": true,
         "detail": "biblioteca.utilidades.lector_json",
-        "documentation": {}
-    },
-    {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
         "documentation": {}
     },
     {
@@ -3121,47 +3089,11 @@
         "documentation": {}
     },
     {
-        "label": "crear_autor",
-        "kind": 2,
+        "label": "CRUDAutor",
+        "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "peekOfCode": "def crear_autor(biblioteca):\n    \"\"\"Crear un nuevo autor y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Autor -\\n\")\n        nombre = input(\"Introduce el nombre del autor:\\n\")\n        apellido1 = input(\"Introduce el primer apellido o segundo nombre del autor:\\n\")\n        apellido2 = input(\"Introduce el segundo apellido o el apellido único del autor:\\n\")\n        pseudonimo = input(\"Introduce el pseudónimo que se le atribuye al autor(si no existe, introduce el nombre completo):\\n\")\n        # Tratamiento de validación de la fecha de nacimiento como objeto date()\n        nacido_str = input(\"Introduce la fecha de nacimiento (DD-MM-AAAA):\\n\")",
-        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "documentation": {}
-    },
-    {
-        "label": "leer_autor",
-        "kind": 2,
-        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "peekOfCode": "def leer_autor(biblioteca):\n    \"\"\"Busca y muestra la información de un autor por nombre o pseudónimo.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        tipo_busqueda = input(\"¿Deseas buscar por pseudónimo (P) o por nombre completo (N)?\\n\").strip().lower()\n        if tipo_busqueda == \"p\":\n            pseudonimo = input(\"Introduce el pseudónimo del autor:\\n\").strip().lower()\n            autor = biblioteca.buscar_autor_nombre(pseudonimo)\n            if autor:\n                print(\"\\nRegistro encontrado.\\n\")",
-        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "documentation": {}
-    },
-    {
-        "label": "mostrar_autores",
-        "kind": 2,
-        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "peekOfCode": "def mostrar_autores(biblioteca):\n    \"\"\"Devuelve una lista completa de todos los autores existentes en la Biblioteca.\"\"\"\n    if not biblioteca.autores:\n        print(\"\\nNo hay autores registrados en la biblioteca\")\n        return \n    print(f\"\\n- Lista de Autores -\\n\")\n    for autor in biblioteca.autores:\n        print(autor.mostrar_datos_autor())\n        print()\ndef actualizar_autor(biblioteca):",
-        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "documentation": {}
-    },
-    {
-        "label": "actualizar_autor",
-        "kind": 2,
-        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "peekOfCode": "def actualizar_autor(biblioteca):\n    \"\"\"Actualiza la información de un autor existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        nombre = input(\"Introduce el nombre o pseudonimo del autor que deseas actualizar:\\n\")\n        autor = biblioteca.buscar_autor_nombre(nombre)\n        if autor:\n            print(\"\\nIntroduce los nuevos datos del autor (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_nombre = input(f\"Nombre del autor[{autor.get_nombre()}] o presione ENTER si no es el dato a modificar:\\n\") or autor.get_nombre()\n            nuevo_apellido1 = input(f\"Primer apellido o Segundo nombre del autor [{autor.get_apellido1()}] o presione ENTER si no es el dato a modificar:\\n\") or autor.get_apellido1()",
-        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "documentation": {}
-    },
-    {
-        "label": "eliminar_autor",
-        "kind": 2,
-        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
-        "peekOfCode": "def eliminar_autor(biblioteca):\n    \"\"\"Elimina un libro de la biblioteca búscado por título.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        nombre = input(\"Introduce el nombre o pseudonimo del autor que deseas borrar:\\n\")\n        autor_eliminado = None\n        for autor in biblioteca.autores:\n            if autor.get_nombre().lower() == nombre.lower():\n                autor_eliminado = autor\n                break # Sale del bucle una vez encontrado el titulo.",
+        "peekOfCode": "class CRUDAutor:\n    def __init__(self, ruta_json):\n        self.ruta_json = ruta_json\n        self.datos = self.cargar_datos()\n    def cargar_datos(self):\n        # Cargar los datos desde el archivo JSON\n        try:\n            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:\n                return json.load(archivo)\n        except FileNotFoundError:",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_autor",
         "documentation": {}
     },
@@ -3265,47 +3197,11 @@
         "documentation": {}
     },
     {
-        "label": "crear_libro",
-        "kind": 2,
+        "label": "CRUDLibro",
+        "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "peekOfCode": "def crear_libro(biblioteca):\n    \"\"\"Crear un nuevo libro y lo añade a la Biblioteca.\"\"\"\n    try:\n        print(\"\\n- Nuevo Registro de Libro -\\n\")\n        titulo = input(\"Introduce el título del libro:\\n\")\n        try:         \n            especifico = validar_genero_especifico(biblioteca)\n        except Exception as ErrorValidarEspecifico:\n            print(f\"Error: Método validar_especifico no funciona, {ErrorValidarEspecifico}\")\n        num_paginas = int(input(\"\\nIntroduce el numero de paginas:\\n\"))",
-        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "documentation": {}
-    },
-    {
-        "label": "mostrar_libros",
-        "kind": 2,
-        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "peekOfCode": "def mostrar_libros(biblioteca):\n    \"\"\"Devuelve una lista completa de todos los libros existentes en la Biblioteca.\"\"\"\n    libros = biblioteca.mostrar_libros()\n    if libros:\n        print(\"\\n- Registro Completo de Libros existentes en la Biblioteca -\\n\")\n        for libro in libros:\n            print(libro)\n    else:\n        print(\"\\nNo existe ningún registro aún en la Biblioteca.\\n\")\n    return",
-        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "documentation": {}
-    },
-    {
-        "label": "leer_libro",
-        "kind": 2,
-        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "peekOfCode": "def leer_libro(biblioteca):\n    \"\"\"Busca y muestra la información de un libro por título.\"\"\"\n    try:\n        print(\"\\n- Información del Registro deseado -\\n\")\n        titulo = input(\"Introduzca el título del libro a buscar:\\n\")\n        libro = biblioteca.buscar_libro_titulo(titulo)\n        if libro:\n            print(\"\\nRegistro encontrado.\\n\")\n            print(libro.mostrar_datos_libro())\n        else:",
-        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "documentation": {}
-    },
-    {
-        "label": "actualizar_libro",
-        "kind": 2,
-        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "peekOfCode": "def actualizar_libro(biblioteca):\n    \"\"\"Actualiza la información de un libro existente.\"\"\"\n    try:\n        print(\"\\n- Actualización del Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas actualizar:\\n\")\n        libro = biblioteca.buscar_libro_titulo(titulo)\n        if libro:\n            print(\"\\nIntroduce los nuevos datos del libro (deja en blanco para mantener la información actual:)\\n\")\n            nuevo_titulo = input(f\"Título [{libro.get_titulo()}] o presione ENTER si no es el dato a modificar:\\n\") or libro.get_titulo()\n            nuevo_autor = input(f\"Autor [{libro.get_autor()}] o presione ENTER si no es el dato a modificar:\\n\") or libro.get_autor()",
-        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "documentation": {}
-    },
-    {
-        "label": "eliminar_libro",
-        "kind": 2,
-        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "peekOfCode": "def eliminar_libro(biblioteca):\n    \"\"\"Elimina un libro de la biblioteca y reestructura los IDs.\"\"\"\n    try:\n        print(\"\\n- Borrado de Registro -\\n\")\n        titulo = input(\"Introduce el título del libro que deseas borrar:\\n\").strip().lower()\n        # Usar el método buscar_libro_titulo para encontrar el libro\n        libro_a_eliminar = biblioteca.buscar_libro_titulo(titulo)\n        print(f\"Título ingresado: '{titulo}'\")  # Para depuración\n        if libro_a_eliminar:\n            print(f\"Libro encontrado para eliminar: {libro_a_eliminar.get_titulo()}\")  # Depuración",
+        "peekOfCode": "class CRUDLibro:\n    def __init__(self, ruta_json):\n        self.ruta_json = ruta_json\n        self.datos = self.cargar_datos()\n    def cargar_datos(self):\n        # Cargar los datos desde el archivo JSON\n        try:\n            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:\n                return json.load(archivo)\n        except FileNotFoundError:",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
         "documentation": {}
     },
