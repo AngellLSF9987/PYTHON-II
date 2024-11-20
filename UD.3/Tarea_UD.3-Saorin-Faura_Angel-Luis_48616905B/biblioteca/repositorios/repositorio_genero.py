@@ -3,9 +3,10 @@
 import json
 class RepositorioGenero:
     
-    def __init__(self):
+    def __init__(self, ruta_json):
         """Constructor del repositorio de géneros."""
         self.generos = []  # Lista para almacenar instancias de Genero
+        self.ruta_json = ruta_json  # Ruta al archivo JSON
 
     def agregar_generos(self, datos_generos):
         """Carga una lista completa de géneros en el repositorio."""

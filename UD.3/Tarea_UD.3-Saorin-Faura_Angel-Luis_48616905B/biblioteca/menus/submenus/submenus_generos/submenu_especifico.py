@@ -1,8 +1,9 @@
 # biblioteca/menus/submenus/submenus_generos/submenu_genero.py
 
-from biblioteca.crud import crud_especifico
+from biblioteca.crud.crud_especifico import CRUDEspecifico
 
 def submenu_especifico(biblioteca):
+    crud_especifico = CRUDEspecifico(biblioteca.repositorio_especifico.ruta_json)
 
     while True:
         print("\n- Tareas de Subgéneros Literarios -\n")

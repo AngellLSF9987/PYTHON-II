@@ -3,7 +3,7 @@ from biblioteca.repositorios.repositorio_genero import RepositorioGenero
 from biblioteca.repositorios.repositorio_especifico import RepositorioEspecifico
 from biblioteca.repositorios.repositorio_libro import RepositorioLibro
 from biblioteca.utilidades.lector_json import cargar_datos_json
-
+from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
 
 class Biblioteca:
     def __init__(self):
@@ -11,8 +11,8 @@ class Biblioteca:
         Inicializa la biblioteca cargando todos los repositorios y los datos desde el JSON.
         """
         self.datos_biblioteca = {}
-        self.repositorio_autor = RepositorioAutor()
-        self.repositorio_genero = RepositorioGenero()
+        self.repositorio_autor = RepositorioAutor(RUTA_DATOS_BIBLIOTECA)
+        self.repositorio_genero = RepositorioGenero(RUTA_DATOS_BIBLIOTECA)
         self.repositorio_especifico = RepositorioEspecifico(self.repositorio_genero)
         self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico)
         self.cargar_datos_biblioteca()

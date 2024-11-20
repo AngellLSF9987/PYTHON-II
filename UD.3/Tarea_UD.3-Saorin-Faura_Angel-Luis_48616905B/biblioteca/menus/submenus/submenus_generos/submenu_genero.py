@@ -1,9 +1,10 @@
 # biblioteca/menus/submenus/submenus_generos/submenu_genero.py
 
-from biblioteca.crud import crud_genero
+from biblioteca.crud.crud_genero import CRUDGenero
 
 def submenu_genero(biblioteca):
-
+    crud_genero = CRUDGenero(biblioteca.repositorio_genero.ruta_json)
+    
     while True:
         print("\n- Tareas de Géneros Literarios -\n")
         print("1. Mostrar Géneros.")

@@ -1,7 +1,8 @@
 class RepositorioAutor:
-    def __init__(self):
+    def __init__(self, ruta_json):
         """Constructor del repositorio de autores."""
         self.autores = []  # Lista para almacenar autores como diccionarios
+        self.ruta_json = ruta_json  # Ruta al archivo JSON
 
     def agregar_autores(self, datos_autores):
         """Carga una lista completa de autores en el repositorio."""
