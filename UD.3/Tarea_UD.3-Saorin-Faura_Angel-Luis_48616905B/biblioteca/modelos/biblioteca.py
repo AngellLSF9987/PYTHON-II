@@ -25,6 +25,10 @@ class Biblioteca:
             print("Iniciando carga de datos...")
             self.datos_biblioteca = cargar_datos_json()
             
+            # Validar si los datos cargados están completos
+            if not isinstance(self.datos_biblioteca, dict):
+                raise ValueError("El archivo JSON no contiene un formato válido.")
+
             # Cargar secciones específicas
             self.cargar_generos(self.obtener_datos_seccion("generos"))
             self.cargar_especificos(self.obtener_datos_seccion("especificos"))
@@ -34,6 +38,8 @@ class Biblioteca:
             print("Todos los datos se cargaron correctamente.")
         except FileNotFoundError as e:
             print(f"Error: No se encontró el archivo JSON.\nDetalles: {e}")
+        except ValueError as e:
+            print(f"Error: Formato de datos inválido.\nDetalles: {e}")
         except Exception as e:
             print(f"Error inesperado al cargar los datos: {e}")
 
