@@ -1,3 +1,5 @@
+# biblioteca/menus/submenus/submenu_autor.py
+
 from biblioteca.crud.crud_autor import CRUDAutor
 
 def submenu_autor(biblioteca):
@@ -19,9 +21,11 @@ def submenu_autor(biblioteca):
             if autores:
                 print("\n=== Lista de Autores ===")
                 for autor in autores:
+                    nombre_completo = f"{autor['nombre']} {autor['apellido1']} {autor.get('apellido2', '')}".strip()
                     print(
-                        f"ID: {autor['autor_id']} | Nombre: {autor['nombre']} | "
-                        f"Pseudónimo: {autor['pseudonimo']} | Nacionalidad: {autor.get('nacionalidad', 'Desconocida')}"
+                        f"ID: {autor['autor_id']} | Nombre: {nombre_completo} | "
+                        f"Pseudónimo: {autor.get('pseudonimo', 'No disponible')} | "
+                        f"Nacionalidad: {autor.get('nacionalidad', 'Desconocida')}"
                     )
             else:
                 print("\n⚠️ No hay autores registrados.")
@@ -42,39 +46,54 @@ def submenu_autor(biblioteca):
                 print("\n⚠️ No se pudo añadir al autor. Revisa los datos e inténtalo de nuevo.")
 
         elif opcion == "3":
-            criterio = input("Introduce Nombre Completo o Pseudónimo: ").strip()
+            criterio = input("Introduce Nombre Completo o Pseudónimo: \n").strip()
             autor = crud_autor.buscar_autor_por_nombre_o_pseudonimo(criterio)
             if autor:
                 print("\n=== Autor Encontrado ===")
+                nombre_completo = f"{autor['nombre']} {autor['apellido1']} {autor.get('apellido2', '')}".strip()
                 print(
-                    f"ID: {autor['autor_id']} | Nombre: {autor['nombre']} | "
-                    f"Pseudónimo: {autor['pseudonimo']} | Nacionalidad: {autor.get('nacionalidad', 'Desconocida')}"
+                    f"ID: {autor['autor_id']} | Nombre: {nombre_completo} | "
+                    f"Pseudónimo: {autor.get('pseudonimo', 'No disponible')} | "
+                    f"Nacionalidad: {autor.get('nacionalidad', 'Desconocida')}"
                 )
             else:
                 print("\n⚠️ No se encontró ningún autor con ese criterio.")
 
         elif opcion == "4":
-            id_autor = input("ID del Autor a Modificar: ").strip()
-            nuevos_datos = {
-                "nombre": input("Nuevo Nombre (opcional): ").strip(),
-                "apellido1": input("Nuevo Primer Apellido (opcional): ").strip(),
-                "apellido2": input("Nuevo Segundo Apellido (opcional): ").strip(),
-                "pseudonimo": input("Nuevo Pseudónimo (opcional): ").strip(),
-                "nacido": input("Nuevo Año de Nacimiento (opcional): ").strip(),
-                "fallecido": input("Nuevo Año de Fallecimiento (opcional): ").strip(),
-                "nacionalidad": input("Nueva Nacionalidad (opcional): ").strip(),
-            }
-            if crud_autor.actualizar_autor(id_autor, nuevos_datos):
-                print("\n✅ Autor actualizado correctamente.")
+            criterio = input("Introduce Nombre Completo o Pseudónimo del autor a modificar: ").strip()
+            autor = crud_autor.buscar_autor_por_nombre_o_pseudonimo(criterio)
+            if autor:
+                print("\n=== Datos Actuales ===")
+                print(autor)
+                print("\nIntroduce los nuevos datos. Deja vacío para mantener los actuales.")
+                actualizado = {
+                    "nombre": input(f"Nombre [{autor['nombre']}]: ").strip() or autor['nombre'],
+                    "apellido1": input(f"Primer Apellido [{autor['apellido1']}]: ").strip() or autor['apellido1'],
+                    "apellido2": input(f"Segundo Apellido [{autor.get('apellido2', '')}]: ").strip() or autor.get('apellido2', ''),
+                    "pseudonimo": input(f"Pseudónimo [{autor.get('pseudonimo', 'No disponible')}]: ").strip() or autor.get('pseudonimo', ''),
+                    "nacido": input(f"Año de Nacimiento [{autor['nacido']}]: ").strip() or autor['nacido'],
+                    "fallecido": input(f"Año de Fallecimiento [{autor.get('fallecido', 'No disponible')}]: ").strip() or autor.get('fallecido', ''),
+                    "nacionalidad": input(f"Nacionalidad [{autor.get('nacionalidad', 'Desconocida')}]: ").strip() or autor.get('nacionalidad', ''),
+                }
+                if crud_autor.actualizar_autor(autor['autor_id'], actualizado):
+                    print("\n✅ Autor actualizado correctamente.")
+                else:
+                    print("\n⚠️ No se pudo actualizar al autor.")
             else:
-                print("\n⚠️ No se encontró un autor con ese ID o los datos no son válidos.")
+                print("\n⚠️ Autor no encontrado.")
 
         elif opcion == "5":
-            id_autor = input("ID del Autor a Eliminar: ").strip()
-            if crud_autor.eliminar_autor(id_autor):
-                print("\n✅ Autor eliminado correctamente.")
+            criterio = input("Introduce Nombre Completo o Pseudónimo del autor a eliminar: ").strip()
+            autor = crud_autor.buscar_autor_por_nombre_o_pseudonimo(criterio)
+            if autor:
+                confirmacion = input(f"¿Estás seguro de eliminar al autor {autor['nombre']} {autor['apellido1']}? (s/n): ").strip().lower()
+                if confirmacion == 's':
+                    if crud_autor.eliminar_autor(autor['autor_id']):
+                        print("\n✅ Autor eliminado correctamente.")
+                    else:
+                        print("\n⚠️ No se pudo eliminar al autor.")
             else:
-                print("\n⚠️ No se encontró un autor con ese ID o no se pudo eliminar.")
+                print("\n⚠️ Autor no encontrado.")
 
         elif opcion == "0":
             break

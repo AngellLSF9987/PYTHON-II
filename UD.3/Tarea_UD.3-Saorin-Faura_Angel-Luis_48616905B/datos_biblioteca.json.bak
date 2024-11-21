@@ -64,15 +64,19 @@
     "generos": [
         {
             "genero_id": "1",
+            "nombre_genero": "Lirico"
+        },
+        {
+            "genero_id": "2",
             "nombre_genero": "Dramático"
         },
         {
             "nombre_genero": "Didáctico",
-            "genero_id": "2"
+            "genero_id": "3"
         },
         {
             "nombre_genero": "Sin nombre",
-            "genero_id": "3"
+            "genero_id": "4"
         }
     ],
     "especificos": [

@@ -6,7 +6,7 @@ class CRUDGenero:
     def __init__(self, ruta_json):
         self.ruta_json = ruta_json
         self.datos = self.cargar_datos()
-        self.autor_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental
+        self.genero_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental
 
     def cargar_datos(self):
         """Carga los datos desde el archivo JSON."""
@@ -15,10 +15,10 @@ class CRUDGenero:
                 return json.load(archivo)
         except FileNotFoundError:
             print("Archivo JSON no encontrado. Se creará un nuevo archivo.")
-            return {"autores": []}  # Inicializa con lista vacía si no existe
+            return {"genero": []}  # Inicializa con lista vacía si no existe
         except json.JSONDecodeError:
             print("Error al leer el archivo JSON. Archivo vacío o malformado.")
-            return {"autores": []}
+            return {"genero": []}
 
     def guardar_datos(self):
         """Guarda los datos en el archivo JSON y realiza un respaldo previo."""
@@ -36,56 +36,56 @@ class CRUDGenero:
             return 0  # Si no hay géneros, inicia en 0
         return max(int(genero["genero_id"]) for genero in self.datos["generos"])
 
-    def agregar_genero(self, nombre_genero):
+    def agregar_genero(self, nuevo_genero):
         """
-        Agrega un nuevo Género Literario con ID autoincremental.
-        Parámetros:
-            - nombre: Nombre completo del Género Literario (obligatorio).
+        Agrega un nuevo género con ID autoincremental.
         """
-        if not nombre_genero.strip():
-            print("⚠️ El nombre del autor no puede estar vacío.")
-            return False
-
-        genero = {
-            "genero_id": str(self.genero_id_actual),
-            "nombre_genero": nombre_genero.strip(),
-        }
-        self.datos["generos"].append(genero)
+        nuevo_genero["genero_id"] = str(self.genero_id_actual)
+        self.datos["generos"].append(nuevo_genero)
         self.genero_id_actual += 1
         self.guardar_datos()
-        print(f"✅ Género Literario agregado con éxito: {genero}")
+        print(f"✅ Género Literario agregado con éxito: {nuevo_genero}")
         return True
-    
-    def actualizar_genero(self, genero_id, nuevos_datos):
-        """
-        Actualiza los datos de un autor buscando por su ID.
-        Parámetros:
-            - id_autor: ID del Género Literario a actualizar.
-            - nuevos_datos: Diccionario con los nuevos valores.
-        """
-        for genero in self.datos["autores"]:
+
+    def actualizar_genero(self, genero_id, datos_actualizados):
+        for genero in self.datos["generos"]:
             if genero["genero_id"] == genero_id:
-                genero.update({clave: valor.strip() for clave, valor in nuevos_datos.items() if valor is not None})
+                genero.update(datos_actualizados)
                 self.guardar_datos()
-                print(f"✅ Género Literario actualizado con éxito: {genero}")
                 return True
-        print(f"⚠️ No se encontró un autor con ID {genero_id}.")
         return False
     
     def eliminar_genero(self, genero_id):
         """
-        Elimina un autor por su ID.
-        Parámetros:
-            - genero_id: ID del Género Literario a eliminar.
+        Elimina un Género Literario por su ID y reestructura los IDs restantes.
         """
         for genero in self.datos["generos"]:
             if genero["genero_id"] == genero_id:
                 self.datos["generos"].remove(genero)
-                self.guardar_datos()
-                print(f"✅ Genero Literario eliminado con éxito: {genero}")
+                self.reestructurar_ids_genero()  # Llamada para reestructurar IDs
                 return True
-        print(f"⚠️ No se encontró un Genero Literario con ID {genero_id}.")
         return False
+    
+    def reestructurar_ids_genero(self):
+        """
+        Reestructura los IDs de los Géneros Literarios para que sean consecutivos después de una eliminación.
+        """
+        for index, genero in enumerate(self.datos["generos"]):
+            genero["genero_id"] = str(index + 1)  # Asigna IDs consecutivos como cadenas
+        self.genero_id_actual = len(self.datos["generos"]) + 1  # Ajusta el ID siguiente
+        self.guardar_datos()
+
+
+    def buscar_genero_por_nombre_genero(self, nombre_genero):
+        """
+        Busca un Género Literario por nombre completo o pseudónimo.
+        """
+        for genero in self.datos["generos"]:
+            nombre_genero = f"{genero['nombre_genero']}".strip()
+            if (nombre_genero.lower() == nombre_genero.lower() or
+                    genero.get("nombre_genero", "").lower() == nombre_genero.lower()):
+                return genero
+        return None
 
     def mostrar_generos(self):
         """
