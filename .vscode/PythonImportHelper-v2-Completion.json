@@ -3084,11 +3084,11 @@
         "documentation": {}
     },
     {
-        "label": "CRUDAutor",
+        "label": "CRUDGenero",
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_genero",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_genero",
-        "peekOfCode": "class CRUDAutor:\n    def __init__(self, ruta_json):\n        self.ruta_json = ruta_json\n        self.datos = self.cargar_datos()\n        self.autor_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental\n    def cargar_datos(self):\n        \"\"\"Carga los datos desde el archivo JSON.\"\"\"\n        try:\n            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:\n                return json.load(archivo)",
+        "peekOfCode": "class CRUDGenero:\n    def __init__(self, ruta_json):\n        self.ruta_json = ruta_json\n        self.datos = self.cargar_datos()\n        self.autor_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental\n    def cargar_datos(self):\n        \"\"\"Carga los datos desde el archivo JSON.\"\"\"\n        try:\n            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:\n                return json.load(archivo)",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_genero",
         "documentation": {}
     },

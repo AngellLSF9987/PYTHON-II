@@ -1,7 +1,7 @@
 import json
 import shutil  # Para respaldar datos antes de guardar
 
-class CRUDAutor:
+class CRUDGenero:
 
     def __init__(self, ruta_json):
         self.ruta_json = ruta_json
