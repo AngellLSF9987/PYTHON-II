@@ -86,7 +86,7 @@ def submenu_autor(biblioteca):
             criterio = input("Introduce Nombre Completo o Pseudónimo del autor a eliminar: ").strip()
             autor = crud_autor.buscar_autor_por_nombre_o_pseudonimo(criterio)
             if autor:
-                confirmacion = input(f"¿Estás seguro de eliminar al autor {autor['nombre']} {autor['apellido1']}? (s/n): ").strip().lower()
+                confirmacion = input(f"¿Estás seguro de eliminar al Autor {autor['nombre']} {autor['apellido1']}? (s/n): ").strip().lower()
                 if confirmacion == 's':
                     if crud_autor.eliminar_autor(autor['autor_id']):
                         print("\n✅ Autor eliminado correctamente.")

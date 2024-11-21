@@ -20,6 +20,10 @@ class CRUDGenero:
             print("Error al leer el archivo JSON. Archivo vacío o malformado.")
             return {"genero": []}
 
+    def obtener_generos(self):
+        """Retorna la lista de géneros."""
+        return self.generos
+
     def guardar_datos(self):
         """Guarda los datos en el archivo JSON y realiza un respaldo previo."""
         try:

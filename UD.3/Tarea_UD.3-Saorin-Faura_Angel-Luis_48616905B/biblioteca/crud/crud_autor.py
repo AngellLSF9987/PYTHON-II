@@ -75,7 +75,6 @@ class CRUDAutor:
         self.autor_id_actual = len(self.datos["autores"]) + 1  # Ajusta el ID siguiente
         self.guardar_datos()
 
-
     def buscar_autor_por_nombre_o_pseudonimo(self, nombre_o_pseudonimo):
         """
         Busca un autor por nombre completo o pseudónimo.

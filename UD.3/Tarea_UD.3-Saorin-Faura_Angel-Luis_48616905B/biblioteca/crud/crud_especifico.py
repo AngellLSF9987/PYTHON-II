@@ -68,24 +68,27 @@ class CRUDEspecifico:
             print("⚠️ Formato inválido para subgénero específico. Se requiere un diccionario con 'especifico_id'.")
 
     def mostrar_especificos_crud(self, biblioteca):
-        """Muestra todos los subgéneros literarios específicos."""
-        especificos = self.datos["especificos"]
-        generos = biblioteca.repositorio_genero.obtener_generos()
-        
+        """
+        Muestra todos los subgéneros específicos almacenados en la biblioteca.
+        """
+        especificos = biblioteca.repositorio_especifico.obtener_especificos()
+
         if not especificos:
             print("⚠️ No hay subgéneros específicos registrados.")
             return
 
         print("\n=== Lista de Subgéneros ===")
         for especifico in especificos:
-            # Buscar el género asociado al genero_id
-            genero_asociado = next((genero for genero in generos if genero['genero_id'] == especifico['genero_id']), None)
-            nombre_genero = genero_asociado['nombre_genero'] if genero_asociado else 'Desconocido'
-            
-            print(
-                f"ID: {especifico['especifico_id']} | Subgénero: {especifico['nombre_especifico']} | "
-                f"Tipo: {especifico['tipo']} | Género Asociado: {nombre_genero}"
-            )
+            try:
+                genero_asociado = biblioteca.repositorio_genero.obtener_genero_por_id(str(especifico.get('genero_id', '')))
+                nombre_genero = genero_asociado['nombre_genero'] if genero_asociado else 'Género desconocido'
+                print(
+                    f"ID: {especifico.get('especifico_id', 'N/A')} | Subgénero: {especifico.get('nombre_especifico', 'Desconocido')} | "
+                    f"Tipo: {especifico.get('tipo', 'Sin especificar')} | Género Asociado: {nombre_genero}"
+                )
+            except Exception as e:
+                print(f"⚠️ Error al procesar el subgénero: {especifico}. Detalles: {e}")
+
 
     def actualizar_especifico(self, biblioteca):
         """Actualiza un subgénero literario específico."""

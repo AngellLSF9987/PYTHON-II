@@ -5,16 +5,23 @@ from biblioteca.repositorios.repositorio_libro import RepositorioLibro
 from biblioteca.utilidades.lector_json import cargar_datos_json
 from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
 
+import json
+
 class Biblioteca:
     def __init__(self):
         """
         Inicializa la biblioteca cargando todos los repositorios y los datos desde el JSON.
         """
-        self.datos_biblioteca = {}
+        # Inicialización de los repositorios
         self.repositorio_autor = RepositorioAutor(RUTA_DATOS_BIBLIOTECA)
         self.repositorio_genero = RepositorioGenero(RUTA_DATOS_BIBLIOTECA)
-        self.repositorio_especifico = RepositorioEspecifico(self.repositorio_genero)
+
+        # Crear el repositorio de subgéneros específicos, pasando correctamente el repositorio de géneros
+        self.repositorio_especifico = RepositorioEspecifico(RUTA_DATOS_BIBLIOTECA, self.repositorio_genero)
+
         self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico)
+
+        # Cargar los datos desde el archivo JSON
         self.cargar_datos_biblioteca()
 
     def cargar_datos_biblioteca(self):
@@ -22,26 +29,29 @@ class Biblioteca:
         Carga los datos desde el JSON y los distribuye en los repositorios correspondientes.
         """
         try:
-            print("Iniciando carga de datos...")
-            self.datos_biblioteca = cargar_datos_json()
-            
-            # Validar si los datos cargados están completos
-            if not isinstance(self.datos_biblioteca, dict):
-                raise ValueError("El archivo JSON no contiene un formato válido.")
-
-            # Cargar secciones específicas
-            self.cargar_generos(self.obtener_datos_seccion("generos"))
-            self.cargar_especificos(self.obtener_datos_seccion("especificos"))
-            self.cargar_autores(self.obtener_datos_seccion("autores"))
-            self.cargar_libros(self.obtener_datos_seccion("libros"))
-            
-            print("Todos los datos se cargaron correctamente.")
-        except FileNotFoundError as e:
-            print(f"Error: No se encontró el archivo JSON.\nDetalles: {e}")
-        except ValueError as e:
-            print(f"Error: Formato de datos inválido.\nDetalles: {e}")
+            self.datos_biblioteca = cargar_datos_json()  # Cargar datos desde JSON
+            self.cargar_generos(self.datos_biblioteca.get('generos', []))
+            self.cargar_especificos(self.datos_biblioteca.get('especificos', []))
+            self.cargar_autores(self.datos_biblioteca.get('autores', []))
+            self.cargar_libros(self.datos_biblioteca.get('libros', []))
         except Exception as e:
-            print(f"Error inesperado al cargar los datos: {e}")
+            print(f"Error al cargar los datos: {e}")
+
+    def guardar_datos_biblioteca(self):
+        """
+        Guarda todos los datos de la biblioteca en el archivo JSON.
+        """
+        try:
+            datos_a_guardar = {
+                "autores": self.repositorio_autor.obtener_autores(),
+                "generos": self.repositorio_genero.obtener_generos(),
+                "especificos": self.repositorio_especifico.obtener_especificos(),
+                "libros": self.repositorio_libro.obtener_libros(),
+            }
+            with open(RUTA_DATOS_BIBLIOTECA, 'w', encoding='utf-8') as archivo:
+                json.dump(datos_a_guardar, archivo, ensure_ascii=False, indent=4)
+        except Exception as e:
+            print(f"Error al guardar los datos en el archivo JSON: {e}")
 
     def obtener_datos_seccion(self, seccion):
         """

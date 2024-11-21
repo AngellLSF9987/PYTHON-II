@@ -1,3 +1,6 @@
+# biblioteca/repositorios/repositorio_libro.py
+
+import json
 class RepositorioLibro:
     def __init__(self, repositorio_autor, repositorio_especifico):
         """
@@ -8,6 +11,26 @@ class RepositorioLibro:
         self.repositorio_autor = repositorio_autor  # Repositorio de autores
         self.repositorio_especifico = repositorio_especifico  # Repositorio de géneros específicos
         self.libros = []  # Lista para almacenar los libros como diccionarios
+
+    def cargar_especificos(self, datos_libros):
+        """Carga una lista completa de Libros en el repositorio."""
+        try:
+            self.libros.extend(datos_libros)
+            print("Carga de datos de Libros correcta.")
+        except Exception as e:
+            print(f"Error al cargar subgéneros específicos: {e}")
+
+    def obtener_libros(self):
+        """Devuelve todos los Libros."""
+        return self.libros
+
+    def guardar_datos(self):
+        """Guarda los datos actuales en el archivo JSON."""
+        try:
+            with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
+                json.dump({"especificos": self.datos}, archivo, ensure_ascii=False, indent=4)
+        except Exception as e:
+            print(f"Error al guardar los datos: {e}")
 
     def agregar_libros(self, datos_libros):
         """Carga una lista completa de libros en el repositorio."""

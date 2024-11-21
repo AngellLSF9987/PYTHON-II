@@ -684,51 +684,11 @@
         "documentation": {}
     },
     {
-        "label": "CRUDEspecifico",
-        "importPath": "biblioteca.crud.crud_especifico",
-        "description": "biblioteca.crud.crud_especifico",
+        "label": "CRUDGenero",
+        "importPath": "biblioteca.crud.crud_genero",
+        "description": "biblioteca.crud.crud_genero",
         "isExtraImport": true,
-        "detail": "biblioteca.crud.crud_especifico",
-        "documentation": {}
-    },
-    {
-        "label": "RepositorioGenero",
-        "importPath": "biblioteca.repositorios.repositorio_genero",
-        "description": "biblioteca.repositorios.repositorio_genero",
-        "isExtraImport": true,
-        "detail": "biblioteca.repositorios.repositorio_genero",
-        "documentation": {}
-    },
-    {
-        "label": "RepositorioGenero",
-        "importPath": "biblioteca.repositorios.repositorio_genero",
-        "description": "biblioteca.repositorios.repositorio_genero",
-        "isExtraImport": true,
-        "detail": "biblioteca.repositorios.repositorio_genero",
-        "documentation": {}
-    },
-    {
-        "label": "RUTA_DATOS_BIBLIOTECA",
-        "importPath": "biblioteca.utilidades.ruta_datos_json",
-        "description": "biblioteca.utilidades.ruta_datos_json",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.ruta_datos_json",
-        "documentation": {}
-    },
-    {
-        "label": "RUTA_DATOS_BIBLIOTECA",
-        "importPath": "biblioteca.utilidades.ruta_datos_json",
-        "description": "biblioteca.utilidades.ruta_datos_json",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.ruta_datos_json",
-        "documentation": {}
-    },
-    {
-        "label": "RUTA_DATOS_BIBLIOTECA",
-        "importPath": "biblioteca.utilidades.ruta_datos_json",
-        "description": "biblioteca.utilidades.ruta_datos_json",
-        "isExtraImport": true,
-        "detail": "biblioteca.utilidades.ruta_datos_json",
+        "detail": "biblioteca.crud.crud_genero",
         "documentation": {}
     },
     {
@@ -737,6 +697,62 @@
         "description": "biblioteca.crud.crud_genero",
         "isExtraImport": true,
         "detail": "biblioteca.crud.crud_genero",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioGenero",
+        "importPath": "biblioteca.repositorios.repositorio_genero",
+        "description": "biblioteca.repositorios.repositorio_genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.repositorios.repositorio_genero",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioGenero",
+        "importPath": "biblioteca.repositorios.repositorio_genero",
+        "description": "biblioteca.repositorios.repositorio_genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.repositorios.repositorio_genero",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioGenero",
+        "importPath": "biblioteca.repositorios.repositorio_genero",
+        "description": "biblioteca.repositorios.repositorio_genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.repositorios.repositorio_genero",
+        "documentation": {}
+    },
+    {
+        "label": "CRUDEspecifico",
+        "importPath": "biblioteca.crud.crud_especifico",
+        "description": "biblioteca.crud.crud_especifico",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud.crud_especifico",
+        "documentation": {}
+    },
+    {
+        "label": "RUTA_DATOS_BIBLIOTECA",
+        "importPath": "biblioteca.utilidades.ruta_datos_json",
+        "description": "biblioteca.utilidades.ruta_datos_json",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.ruta_datos_json",
+        "documentation": {}
+    },
+    {
+        "label": "RUTA_DATOS_BIBLIOTECA",
+        "importPath": "biblioteca.utilidades.ruta_datos_json",
+        "description": "biblioteca.utilidades.ruta_datos_json",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.ruta_datos_json",
+        "documentation": {}
+    },
+    {
+        "label": "RUTA_DATOS_BIBLIOTECA",
+        "importPath": "biblioteca.utilidades.ruta_datos_json",
+        "description": "biblioteca.utilidades.ruta_datos_json",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.ruta_datos_json",
         "documentation": {}
     },
     {
@@ -3122,7 +3138,7 @@
         "kind": 2,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.submenus.submenus_generos.submenu_especifico",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.submenus.submenus_generos.submenu_especifico",
-        "peekOfCode": "def submenu_especifico(biblioteca):\n    ruta_json = RUTA_DATOS_BIBLIOTECA\n    # Inicializar el repositorio de géneros\n    repositorio_genero = RepositorioGenero(ruta_json)\n    # Inicializar CRUDEspecifico correctamente\n    crud_especifico = CRUDEspecifico(ruta_json, repositorio_genero)\n    while True:\n        print(\"\\n- Tareas de Subgéneros Literarios -\\n\")\n        print(\"1. Mostrar Subgéneros.\")\n        print(\"2. Añadir Subgénero.\")",
+        "peekOfCode": "def submenu_especifico(biblioteca):\n    \"\"\"\n    Submenú para gestionar tareas de subgéneros literarios específicos.\n    \"\"\"\n    ruta_json = RUTA_DATOS_BIBLIOTECA\n    # Inicializar el repositorio de géneros\n    repositorio_genero = RepositorioGenero(ruta_json)\n    # Inicializar CRUDEspecifico correctamente\n    crud_especifico = CRUDEspecifico(ruta_json, repositorio_genero)\n    while True:",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.submenus.submenus_generos.submenu_especifico",
         "documentation": {}
     },
@@ -3266,7 +3282,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.biblioteca",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.biblioteca",
-        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"\n        Inicializa la biblioteca cargando todos los repositorios y los datos desde el JSON.\n        \"\"\"\n        self.datos_biblioteca = {}\n        self.repositorio_autor = RepositorioAutor(RUTA_DATOS_BIBLIOTECA)\n        self.repositorio_genero = RepositorioGenero(RUTA_DATOS_BIBLIOTECA)\n        self.repositorio_especifico = RepositorioEspecifico(self.repositorio_genero)\n        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico)",
+        "peekOfCode": "class Biblioteca:\n    def __init__(self):\n        \"\"\"\n        Inicializa la biblioteca cargando todos los repositorios y los datos desde el JSON.\n        \"\"\"\n        # Inicialización de los repositorios\n        self.repositorio_autor = RepositorioAutor(RUTA_DATOS_BIBLIOTECA)\n        self.repositorio_genero = RepositorioGenero(RUTA_DATOS_BIBLIOTECA)\n        # Crear el repositorio de subgéneros específicos, pasando correctamente el repositorio de géneros\n        self.repositorio_especifico = RepositorioEspecifico(RUTA_DATOS_BIBLIOTECA, self.repositorio_genero)",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.biblioteca",
         "documentation": {}
     },
@@ -3284,7 +3300,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_autor",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_autor",
-        "peekOfCode": "class RepositorioAutor:\n    def __init__(self, ruta_json):\n        \"\"\"Constructor del repositorio de autores.\"\"\"\n        self.autores = []  # Lista para almacenar autores como diccionarios\n        self.ruta_json = ruta_json  # Ruta al archivo JSON\n    def agregar_autores(self, datos_autores):\n        \"\"\"Carga una lista completa de autores en el repositorio.\"\"\"\n        try:\n            for autor in datos_autores:\n                self.agregar_autor(autor)",
+        "peekOfCode": "class RepositorioAutor:\n    def __init__(self, ruta_json):\n        \"\"\"Constructor del repositorio de autores.\"\"\"\n        self.autores = []  # Lista para almacenar autores como diccionarios\n        self.ruta_json = ruta_json  # Ruta al archivo JSON\n    def cargar_autores(self, datos_autores):\n        \"\"\"Carga una lista completa de Autores en el repositorio.\"\"\"\n        try:\n            self.autores.extend(datos_autores)\n            print(\"Carga de datos de Autores correcta.\")",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_autor",
         "documentation": {}
     },
@@ -3293,7 +3309,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_especifico",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_especifico",
-        "peekOfCode": "class RepositorioEspecifico:\n    def __init__(self, repositorio_genero):\n        \"\"\"\n        Constructor del repositorio de subgéneros específicos.\n        :param repositorio_genero: Instancia de RepositorioGenero.\n        \"\"\"\n        self.repositorio_genero = repositorio_genero\n        self.especificos = []  # Lista para almacenar subgéneros específicos como diccionarios\n    def cargar_especificos(self, datos_especificos):\n        \"\"\"Carga una lista completa de subgéneros específicos en el repositorio.\"\"\"",
+        "peekOfCode": "class RepositorioEspecifico:\n    def __init__(self, ruta_json, repositorio_genero):\n        \"\"\"\n        Constructor del repositorio de Subgéneros Literarios específicos.\n        :param repositorio_genero: Instancia de RepositorioGenero.\n        :param ruta_json: Ruta al archivo JSON donde se almacenan los datos.\n        \"\"\"\n        self.repositorio_genero = repositorio_genero\n        self.ruta_json = ruta_json\n        self.datos = self.cargar_datos()",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_especifico",
         "documentation": {}
     },
@@ -3302,7 +3318,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_genero",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_genero",
-        "peekOfCode": "class RepositorioGenero:\n    def __init__(self, ruta_json):\n        \"\"\"Constructor del repositorio de géneros.\"\"\"\n        self.generos = []  # Lista para almacenar instancias de Genero\n        self.ruta_json = ruta_json  # Ruta al archivo JSON\n    def agregar_generos(self, datos_generos):\n        \"\"\"Carga una lista completa de géneros en el repositorio.\"\"\"\n        try:\n            for genero in datos_generos:\n                self.agregar_genero(genero)",
+        "peekOfCode": "class RepositorioGenero:\n    def __init__(self, ruta_json):\n        \"\"\"Constructor del repositorio de Géneros Literarios.\"\"\"\n        self.generos = []  # Lista para almacenar instancias de Genero\n        self.ruta_json = ruta_json  # Ruta al archivo JSON\n    def cargar_generos(self, datos_generos):\n        \"\"\"Carga una lista completa de Géneros Literarios en el repositorio.\"\"\"\n        try:\n            self.generos.extend(datos_generos)\n            print(\"Carga de datos de Géneros Literarios correcta.\")",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_genero",
         "documentation": {}
     },
