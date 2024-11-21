@@ -39,7 +39,9 @@ class RepositorioGenero:
 
     def obtener_genero_por_id(self, genero_id):
         """Busca un género por su ID."""
+        # Convertir el ID a string para garantizar coincidencia
+        genero_id = str(genero_id)
         for genero in self.generos:
-            if genero["genero_id"] == genero_id:
+            if str(genero["genero_id"]) == genero_id:
                 return genero
         return None

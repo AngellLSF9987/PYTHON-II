@@ -49,29 +49,19 @@
             "nacido": "28-04-1926",
             "fallecido": "19-02-2016",
             "nacionalidad": "EE.UU"
-        },
-        {
-            "nombre": "Edgar",
-            "apellido1": "Allan",
-            "apellido2": "Poe",
-            "pseudonimo": "Edgar Allan Poe",
-            "nacido": "01-01-1809",
-            "fallecido": "01-10-1849",
-            "nacionalidad": "EE.UU",
-            "autor_id": "6"
         }
-    ],
+    ], 
     "generos": [
         {
             "genero_id": "1",
-            "nombre_genero": "Dramático"
+            "nombre_genero": "Narraitvo"
         },
         {
-            "nombre_genero": "Didáctico",
+            "nombre_genero": "Dramático",
             "genero_id": "2"
         },
         {
-            "nombre_genero": "Sin nombre",
+            "nombre_genero": "Lírico",
             "genero_id": "3"
         }
     ],

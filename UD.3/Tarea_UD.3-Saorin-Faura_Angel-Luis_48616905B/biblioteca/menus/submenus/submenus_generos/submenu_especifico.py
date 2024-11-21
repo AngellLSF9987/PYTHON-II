@@ -1,7 +1,15 @@
 from biblioteca.crud.crud_especifico import CRUDEspecifico
+from biblioteca.repositorios.repositorio_genero import RepositorioGenero
+from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
 
 def submenu_especifico(biblioteca):
-    crud_especifico = CRUDEspecifico(biblioteca.repositorio_especifico.ruta_json)
+    
+    ruta_json = RUTA_DATOS_BIBLIOTECA
+    # Inicializar el repositorio de géneros
+    repositorio_genero = RepositorioGenero(ruta_json)
+    
+    # Inicializar CRUDEspecifico correctamente
+    crud_especifico = CRUDEspecifico(ruta_json, repositorio_genero)
 
     while True:
         print("\n- Tareas de Subgéneros Literarios -\n")
@@ -11,12 +19,12 @@ def submenu_especifico(biblioteca):
         print("4. Eliminar Subgénero.")
         print("0. Volver al Menú de Géneros.")
 
-        opcion = input("\nSelecciona una opción: ").strip()
+        opcion = input("\nSelecciona una opción: \n").strip()
 
         if opcion == "1":
             crud_especifico.mostrar_especificos_crud(biblioteca)
         elif opcion == "2":
-            crud_especifico.crear_especifico(biblioteca)
+            crud_especifico.agregar_especifico(biblioteca)
         elif opcion == "3":
             crud_especifico.actualizar_especifico(biblioteca)
         elif opcion == "4":

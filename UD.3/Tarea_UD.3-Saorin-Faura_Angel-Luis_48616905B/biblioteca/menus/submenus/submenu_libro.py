@@ -1,9 +1,9 @@
 # biblioteca/menu/submenus/submenu_libro.py
 
-from biblioteca.crud import crud_libro
+from biblioteca.crud.crud_libro import CRUDLibro
 
 def submenu_libro(biblioteca):
-
+    crud_libro = CRUDLibro(biblioteca.repositorio_libro.ruta_json)
     while True:
         print("\n- Tareas de Libros -\n")
         print("1. Mostrar Libros.")
@@ -17,7 +17,7 @@ def submenu_libro(biblioteca):
         opcion = input("\nSelecciona una opción:\n")
         
         if opcion == "1":
-            crud_libro.mostrar_libros(biblioteca)
+            crud_libro.mostrar_libros_crud(biblioteca)
         elif opcion == "2":
             crud_libro.crear_libro(biblioteca)
         elif opcion == "3":

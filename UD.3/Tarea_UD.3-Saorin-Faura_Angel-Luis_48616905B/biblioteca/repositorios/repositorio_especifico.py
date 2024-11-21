@@ -9,6 +9,14 @@ class RepositorioEspecifico:
         self.repositorio_genero = repositorio_genero
         self.especificos = []  # Lista para almacenar subgéneros específicos como diccionarios
 
+    def cargar_especificos(self, datos_especificos):
+        """Carga una lista completa de subgéneros específicos en el repositorio."""
+        try:
+            self.especificos.extend(datos_especificos)
+            print("Carga de datos de Subgéneros Literarios Específicos correcta.")
+        except Exception as e:
+            print(f"Error al cargar subgéneros específicos: {e}")
+
     def agregar_especificos(self, datos_especificos):
         """Carga una lista completa de subgéneros específicos en el repositorio."""
         try:
@@ -70,11 +78,25 @@ class RepositorioEspecifico:
             print(f"No se encontraron subgéneros específicos para el género con ID {genero_id}.")
         return subgeneros
 
-    def eliminar_especifico_por_id(self, especifico_id):
-        """Elimina un subgénero específico del repositorio por su ID."""
-        especifico = self.obtener_especifico_por_id(especifico_id)
-        if especifico:
-            self.especificos.remove(especifico)
-            print(f"Subgénero con ID {especifico_id} eliminado correctamente.")
+    def eliminar_especifico(self, biblioteca):
+        """Elimina un subgénero literario específico."""
+        especifico_id = input("Introduce el ID del subgénero a eliminar: ").strip()
+        especifico = next(
+            (e for e in self.datos["especificos"] if e["especifico_id"] == especifico_id), None
+        )
+
+        if not especifico:
+            print(f"⚠️ No existe un subgénero con ID {especifico_id}.")
+            return
+
+        # Confirmación antes de eliminar
+        confirmacion = input(
+            f"¿Estás seguro de que deseas eliminar el subgénero '{especifico['nombre_especifico']}'? (s/n): "
+        ).strip().lower()
+
+        if confirmacion == 's':
+            self.datos["especificos"].remove(especifico)
+            self.guardar_datos()
+            print(f"✅ Subgénero '{especifico['nombre_especifico']}' eliminado con éxito.")
         else:
-            print(f"No se encontró un subgénero con ID {especifico_id} para eliminar.")
+            print("❌ Eliminación cancelada.")

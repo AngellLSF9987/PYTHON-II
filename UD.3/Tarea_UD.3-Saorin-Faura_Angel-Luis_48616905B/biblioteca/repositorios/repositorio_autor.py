@@ -45,8 +45,10 @@ class RepositorioAutor:
 
     def obtener_autor_por_id(self, autor_id):
         """Busca un autor por su ID."""
+        # Convertir a string para asegurar la coincidencia
+        autor_id = str(autor_id)
         for autor in self.autores:
-            if autor["autor_id"] == autor_id:
+            if str(autor["autor_id"]) == autor_id:
                 return autor
         return None
 
