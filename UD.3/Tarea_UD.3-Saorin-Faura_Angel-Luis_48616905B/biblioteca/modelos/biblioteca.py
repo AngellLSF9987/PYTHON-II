@@ -8,18 +8,19 @@ from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
 import json
 
 class Biblioteca:
-    def __init__(self):
+    def __init__(self,ruta_json):
         """
         Inicializa la biblioteca cargando todos los repositorios y los datos desde el JSON.
         """
         # Inicialización de los repositorios
+        self.ruta_json = ruta_json
         self.repositorio_autor = RepositorioAutor(RUTA_DATOS_BIBLIOTECA)
         self.repositorio_genero = RepositorioGenero(RUTA_DATOS_BIBLIOTECA)
 
         # Crear el repositorio de subgéneros específicos, pasando correctamente el repositorio de géneros
         self.repositorio_especifico = RepositorioEspecifico(RUTA_DATOS_BIBLIOTECA, self.repositorio_genero)
 
-        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico)
+        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico, RUTA_DATOS_BIBLIOTECA)
 
         # Cargar los datos desde el archivo JSON
         self.cargar_datos_biblioteca()

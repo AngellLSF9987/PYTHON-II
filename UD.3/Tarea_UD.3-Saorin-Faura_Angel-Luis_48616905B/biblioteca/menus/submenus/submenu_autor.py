@@ -35,7 +35,7 @@ def submenu_autor(biblioteca):
                 "nombre": input("Nombre: ").strip(),
                 "apellido1": input("Primer Apellido: ").strip(),
                 "apellido2": input("Segundo Apellido (opcional): ").strip(),
-                "pseudonimo": input("Pseudónimo: ").strip(),
+                "pseudonimo": input("Pseudónimo (opcional): ").strip(),
                 "nacido": input("Año de Nacimiento: ").strip(),
                 "fallecido": input("Año de Fallecimiento (opcional): ").strip(),
                 "nacionalidad": input("Nacionalidad: ").strip(),
@@ -64,7 +64,12 @@ def submenu_autor(biblioteca):
             autor = crud_autor.buscar_autor_por_nombre_o_pseudonimo(criterio)
             if autor:
                 print("\n=== Datos Actuales ===")
-                print(autor)
+                nombre_completo = f"{autor['nombre']} {autor['apellido1']} {autor.get('apellido2', '')}".strip()
+                print(
+                    f"ID: {autor['autor_id']} | Nombre: {nombre_completo} | "
+                    f"Pseudónimo: {autor.get('pseudonimo', 'No disponible')} | "
+                    f"Nacionalidad: {autor.get('nacionalidad', 'Desconocida')}"
+                )
                 print("\nIntroduce los nuevos datos. Deja vacío para mantener los actuales.")
                 actualizado = {
                     "nombre": input(f"Nombre [{autor['nombre']}]: ").strip() or autor['nombre'],

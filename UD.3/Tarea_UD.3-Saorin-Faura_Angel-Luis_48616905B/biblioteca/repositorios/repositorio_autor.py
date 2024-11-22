@@ -1,19 +1,23 @@
 # biblioteca/repositorios/repositorio_autor.py
 
 import json
+
 class RepositorioAutor:
     def __init__(self, ruta_json):
         """Constructor del repositorio de autores."""
-        self.autores = []  # Lista para almacenar autores como diccionarios
         self.ruta_json = ruta_json  # Ruta al archivo JSON
+        self.autores = []  # Lista para almacenar autores como diccionarios
+        self.cargar_autores()
 
-    def cargar_autores(self, datos_autores):
-        """Carga una lista completa de Autores en el repositorio."""
+    def cargar_autores(self):
+        """Carga los libros desde el archivo JSON a la lista de libros."""
         try:
-            self.autores.extend(datos_autores)
-            print("Carga de datos de Autores correcta.")
+            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:
+                data = json.load(archivo)
+                self.libros = data.get("libros", [])
+            print("Carga de datos de libros correcta.")
         except Exception as e:
-            print(f"Error al cargar Autores: {e}")
+            print(f"Error al cargar libros: {e}")
 
     def obtener_autores(self):
         """Devuelve todos los Autores."""
@@ -23,10 +27,9 @@ class RepositorioAutor:
         """Guarda los datos actuales en el archivo JSON."""
         try:
             with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
-                json.dump({"autores": self.datos}, archivo, ensure_ascii=False, indent=4)
+                json.dump({"autores": self.autores}, archivo, ensure_ascii=False, indent=4)
         except Exception as e:
             print(f"Error al guardar los datos: {e}")
-
 
     def agregar_autores(self, datos_autores):
         """Carga una lista completa de autores en el repositorio."""
@@ -56,21 +59,9 @@ class RepositorioAutor:
         else:
             print(f"Formato inválido para autor: {autor}")
 
-    def mostrar_autores(self):
-        """Devuelve la lista de autores almacenados en el repositorio."""
-        if not self.autores:
-            return "No hay autores cargados en el repositorio."
-        return "\n".join(
-            f"ID: {autor['autor_id']}\nNombre: {autor['nombre']} {autor['apellido1']} {autor['apellido2']}\n"
-            f"Pseudónimo: {autor['pseudonimo']}\nNacionalidad: {autor['nacionalidad']}\n"
-            f"Nacido: {autor['nacido']}\nFallecido: {autor['fallecido']}\n"
-            for autor in self.autores
-        )
-
     def obtener_autor_por_id(self, autor_id):
         """Busca un autor por su ID."""
-        # Convertir a string para asegurar la coincidencia
-        autor_id = str(autor_id)
+        autor_id = str(autor_id)  # Asegura la coincidencia con el ID como cadena
         for autor in self.autores:
             if str(autor["autor_id"]) == autor_id:
                 return autor
@@ -91,6 +82,17 @@ class RepositorioAutor:
             if autor["pseudonimo"].lower() == pseudonimo.lower():
                 return autor
         return None
+    
+    def mostrar_autores(self):
+        """Devuelve la lista de autores almacenados en el repositorio."""
+        if self.autores:
+            print("=== Todos los Autores ===")
+            for autor in self.autores:
+                print(f"ID: {autor['autor_id']}\nNombre: {autor['nombre']} {autor['apellido1']} {autor['apellido2']}\n"
+                    f"Pseudónimo: {autor['pseudonimo']}\nNacionalidad: {autor['nacionalidad']}\n"
+                    f"Nacido: {autor['nacido']}\nFallecido: {autor['fallecido']}")
+        else:
+            print("No hay autores cargados en el repositorio.")
 
     def eliminar_autor_por_id(self, autor_id):
         """Elimina un autor del repositorio por su ID."""

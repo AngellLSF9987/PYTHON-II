@@ -1,134 +1,60 @@
 import json
-import shutil  # Para realizar respaldos de los datos
-
 class CRUDEspecifico:
     def __init__(self, ruta_json, repositorio_genero):
-        """
-        Inicializa la clase CRUDEspecifico con la ruta del archivo JSON y un repositorio de géneros.
-        :param ruta_json: Ruta del archivo JSON donde se almacenan los subgéneros.
-        :param repositorio_genero: Instancia del repositorio de géneros (se usa para obtener géneros asociados).
-        """
         self.ruta_json = ruta_json
-        self.repositorio_genero = repositorio_genero  # Agregamos el repositorio de géneros
-        self.datos = self.cargar_datos()
-        self.especifico_id_actual = self.obtener_max_id() + 1  # Inicializa el ID autoincremental
+        self.repositorio_genero = repositorio_genero
 
-    def cargar_datos(self):
-        """Carga los datos desde el archivo JSON."""
-        try:
-            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:
-                return json.load(archivo)
-        except FileNotFoundError:
-            print("Archivo JSON no encontrado. Se creará un nuevo archivo.")
-            return {"especificos": []}  # Inicializa con lista vacía si no existe
-        except json.JSONDecodeError:
-            print("Error al leer el archivo JSON. Archivo vacío o malformado.")
-            return {"especificos": []}
+    def agregar_especifico(self, genero_nombre, nombre_especifico, tipo=None):
+        """Agrega un nuevo subgénero, asociado a un género."""
+        # Verificar si el género existe
+        genero = self.repositorio_genero.obtener_genero_por_nombre(genero_nombre)
+        if genero is None:
+            raise ValueError(f"No se encontró el género '{genero_nombre}'. Primero, debes crear el género.")
 
-    def guardar_datos(self):
-        """Guarda los datos en el archivo JSON y realiza un respaldo previo."""
-        try:
-            shutil.copy(self.ruta_json, self.ruta_json + ".bak")  # Respaldo
-            with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
-                json.dump(self.datos, archivo, ensure_ascii=False, indent=4)
-        except Exception as e:
-            print(f"Error al guardar los datos: {e}")
+        # Verificar que el subgénero no exista
+        if self.obtener_especifico_por_nombre(nombre_especifico):
+            raise ValueError(f"El subgénero '{nombre_especifico}' ya existe.")
 
-    def obtener_max_id(self):
-        """Obtiene el máximo ID existente de los subgéneros específicos."""
-        if not self.datos["especificos"]:
-            return 0
-        return max(int(especifico["especifico_id"]) for especifico in self.datos["especificos"])
+        # Crear un nuevo subgénero y agregarlo
+        especifico_id = str(len(self.obtener_especificos()) + 1)  # ID autoincremental
+        subgenero = {
+            "especifico_id": especifico_id,
+            "nombre_especifico": nombre_especifico,
+            "tipo": tipo or "Sin especificar",
+            "genero_id": genero["genero_id"],
+            "nombre_genero": genero_nombre,
+        }
 
-    def agregar_especifico(self, especifico):
-        """Agrega un único subgénero específico al repositorio."""
-        if isinstance(especifico, dict) and "especifico_id" in especifico:
-            genero_id = str(especifico["genero_id"])  # Convertimos a str para coherencia
-            genero = self.repositorio_genero.obtener_genero_por_id(genero_id)
-            
-            if genero is None:
-                print(f"Aviso: No se encontró un género con ID {genero_id}. Asignando 'Género desconocido'.")
-                nombre_genero = "Género desconocido"
-            else:
-                nombre_genero = genero["nombre_genero"]
-
-            if not self.obtener_especifico_por_id(especifico["especifico_id"]):
-                self.datos["especificos"].append({
-                    "especifico_id": especifico["especifico_id"],
-                    "genero_id": genero_id,
-                    "nombre_genero": nombre_genero,
-                    "nombre_especifico": especifico.get("nombre_especifico", "Desconocido"),
-                    "tipo": especifico.get("tipo", "Sin especificar"),
-                })
-                self.guardar_datos()  # Guardamos los datos después de la adición
-                print(f"✅ Subgénero '{especifico['nombre_especifico']}' agregado con éxito.")
-            else:
-                print(f"⚠️ El subgénero con ID {especifico['especifico_id']} ya existe.")
-        else:
-            print("⚠️ Formato inválido para subgénero específico. Se requiere un diccionario con 'especifico_id'.")
-
-    def mostrar_especificos_crud(self, biblioteca):
-        """
-        Muestra todos los subgéneros específicos almacenados en la biblioteca.
-        """
-        especificos = biblioteca.repositorio_especifico.obtener_especificos()
-
-        if not especificos:
-            print("⚠️ No hay subgéneros específicos registrados.")
-            return
-
-        print("\n=== Lista de Subgéneros ===")
-        for especifico in especificos:
-            try:
-                genero_asociado = biblioteca.repositorio_genero.obtener_genero_por_id(str(especifico.get('genero_id', '')))
-                nombre_genero = genero_asociado['nombre_genero'] if genero_asociado else 'Género desconocido'
-                print(
-                    f"ID: {especifico.get('especifico_id', 'N/A')} | Subgénero: {especifico.get('nombre_especifico', 'Desconocido')} | "
-                    f"Tipo: {especifico.get('tipo', 'Sin especificar')} | Género Asociado: {nombre_genero}"
-                )
-            except Exception as e:
-                print(f"⚠️ Error al procesar el subgénero: {especifico}. Detalles: {e}")
-
-
-    def actualizar_especifico(self, biblioteca):
-        """Actualiza un subgénero literario específico."""
-        especifico_id = input("Introduce el ID del subgénero a modificar: ").strip()
-        especifico = next(
-            (e for e in self.datos["especificos"] if e["especifico_id"] == especifico_id), None
-        )
-
-        if not especifico:
-            print(f"⚠️ No existe un subgénero con ID {especifico_id}.")
-            return
-
-        print("\n=== Modificando Subgénero ===")
-        especifico["nombre_especifico"] = input(
-            f"Nuevo nombre del subgénero ({especifico['nombre_especifico']}): "
-        ).strip() or especifico["nombre_especifico"]
-        especifico["tipo"] = input(
-            f"Nuevo tipo ({especifico['tipo']}): "
-        ).strip() or especifico["tipo"]
+        self.agregar_especifico_a_lista(subgenero)
         self.guardar_datos()
-        print(f"✅ Subgénero '{especifico['nombre_especifico']}' actualizado con éxito.")
 
-    def eliminar_especifico(self, biblioteca):
-        """Elimina un subgénero literario específico."""
-        especifico_id = input("Introduce el ID del subgénero a eliminar: ").strip()
-        especifico = next(
-            (e for e in self.datos["especificos"] if e["especifico_id"] == especifico_id), None
-        )
+    def agregar_especifico_a_lista(self, subgenero):
+        """Agrega un subgénero a la lista interna."""
+        self.especificos.append(subgenero)
 
-        if not especifico:
-            print(f"⚠️ No existe un subgénero con ID {especifico_id}.")
-            return
+    def obtener_especificos(self):
+        """Obtiene todos los subgéneros."""
+        return self.especificos
 
-        self.datos["especificos"].remove(especifico)
-        self.guardar_datos()
-        print(f"✅ Subgénero '{especifico['nombre_especifico']}' eliminado con éxito.")
-        
+    def obtener_especifico_por_nombre(self, nombre_especifico):
+        """Obtiene un subgénero por su nombre."""
+        for especifico in self.especificos:
+            if especifico["nombre_especifico"] == nombre_especifico:
+                return especifico
+        return None
+
     def obtener_especifico_por_id(self, especifico_id):
-        """Busca un subgénero específico por su ID."""
-        for especifico in self.datos["especificos"]:
+        """Obtiene un subgénero por su ID."""
+        for especifico in self.especificos:
             if especifico["especifico_id"] == especifico_id:
                 return especifico
         return None
+
+    def guardar_datos(self):
+        """Guarda los datos de los subgéneros en el archivo JSON."""
+        try:
+            with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
+                json.dump({"subgeneros": self.especificos}, archivo, ensure_ascii=False, indent=4)
+            print("Subgéneros guardados correctamente.")
+        except Exception as e:
+            print(f"Error al guardar los subgéneros: {e}")

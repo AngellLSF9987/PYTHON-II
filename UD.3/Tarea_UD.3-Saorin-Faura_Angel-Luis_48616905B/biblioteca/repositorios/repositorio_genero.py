@@ -62,7 +62,7 @@ class RepositorioGenero:
         """Devuelve la lista de géneros literarios en el repositorio."""
         if not self.generos:
             return "No hay géneros literarios cargados en el repositorio."
-        print("Géneros cargados:", self.generos)  # Verifica los géneros cargados
+        # print("Géneros cargados:", self.generos)  # Verifica los géneros cargados
         return "\n".join(f"ID: {genero['genero_id']}\nNombre del Género Literario: {genero['nombre_genero']}" for genero in self.generos)
     
     def obtener_genero_por_id(self, genero_id):

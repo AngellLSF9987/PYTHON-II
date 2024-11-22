@@ -1,6 +1,6 @@
 from biblioteca.modelos.biblioteca import Biblioteca
 from biblioteca.menus.submenus import submenu_tareas
-
+from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
 
 def menu():
     """
@@ -8,7 +8,7 @@ def menu():
     Permite interactuar con las funcionalidades principales del sistema.
     """
     # Inicializa la Biblioteca
-    biblioteca = Biblioteca()
+    biblioteca = Biblioteca(RUTA_DATOS_BIBLIOTECA)
 
     while True:
         print("\n- Bienvenid@ a Biblioteca AVANZA! -\n")
@@ -117,13 +117,21 @@ def buscar_autor_por_nombre_o_pseudonimo(biblioteca):
     except Exception as e:
         print(f"\n⚠️ Error inesperado al buscar autores: {e}")
 
+
 def mostrar_todos_los_libros(biblioteca):
     """
     Muestra todos los libros registrados en la biblioteca.
     """
     try:
         print("\n=== Todos los Libros ===")
-        print(biblioteca.repositorio_libro.mostrar_libros())
+        libros = biblioteca.repositorio_libro.mostrar_libros()  # Devuelve una lista de libros
+        if libros:
+            for libro in libros:
+                print(f"ID: {libro['libro_id']} | Título: {libro['titulo']} | Autor: {libro['autor_id']} | "
+                      f"Género y Subgénero Literario: {libro['especifico_id']} | "
+                      f"Fecha de Publicación: {libro['fecha_publicacion']} | Núm. Páginas: {libro['num_paginas']}")
+        else:
+            print("No hay libros registrados.")
     except Exception as e:
         print(f"\n⚠️ Error al mostrar los libros: {e}")
 

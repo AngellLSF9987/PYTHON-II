@@ -23,13 +23,17 @@ class RepositorioEspecifico:
     def guardar_datos(self):
         """Guarda los datos modificados en el archivo JSON."""
         with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
-            json.dump({"especificos": self.datos}, archivo, ensure_ascii=False, indent=4)
+            json.dump({"especificos": self.datos["especificos"], "generos": self.datos["generos"]}, archivo, ensure_ascii=False, indent=4)
 
     def obtener_especificos(self):
         """Obtiene todos los subgéneros específicos."""
         return self.datos.get("especificos", [])
 
     def agregar_especifico(self, genero_nombre, nombre_especifico, tipo):
+        """
+        Agrega un nuevo subgénero a la lista de subgéneros.
+        Si el género no existe, se crea uno nuevo.
+        """
         # Verificar si el género ya existe
         genero_id = None
         for genero in self.datos["generos"]:
@@ -41,24 +45,14 @@ class RepositorioEspecifico:
         if not genero_id:
             print(f"No se encontró el género '{genero_nombre}'")
             respuesta = input(f"No se encontró el género '{genero_nombre}'. ¿Deseas crearlo? (s/n): ").strip().lower()
-        if respuesta == 's':
-            genero_id = str(len(self.datos["generos"]) + 1)  # Asigna un ID nuevo al género
-            nueva_entrada_genero = {
-                "genero_id": genero_id,
-                "nombre_genero": genero_nombre
-            }
-            self.datos["generos"].append(nueva_entrada_genero)
-            print(f"Género '{genero_nombre}' agregado con éxito.")
-
-            # Asegurar de que el subgénero se asocie con el nuevo género
-            especifico = {
-                "especifico_id": len(self.datos["especificos"]) + 1,  # ID autoincremental
-                "genero_id": genero_id,
-                "nombre_especifico": nombre_especifico,
-                "tipo": tipo
-            }
-            self.datos["especificos"].append(especifico)
-            print(f"✅ Subgénero '{nombre_especifico}' agregado con éxito.")
+            if respuesta == 's':
+                genero_id = str(len(self.datos["generos"]) + 1)  # Asigna un ID nuevo al género
+                nueva_entrada_genero = {
+                    "genero_id": genero_id,
+                    "nombre_genero": genero_nombre
+                }
+                self.datos["generos"].append(nueva_entrada_genero)
+                print(f"Género '{genero_nombre}' agregado con éxito.")
 
         # Crear el específico (subgénero) solo si el genero_id es válido
         if genero_id:
@@ -71,20 +65,15 @@ class RepositorioEspecifico:
                 "tipo": tipo if tipo else "Sin especificar"  # Usamos "Sin especificar" si no se proporciona un tipo
             }
             self.datos["especificos"].append(nuevo_especifico)
+            self.guardar_datos()
             print(f"✅ Específico (subgénero) '{nombre_especifico}' agregado con éxito.")
 
-
-
     def mostrar_especificos(self):
-        """Devuelve la lista de subgéneros específicos en el repositorio."""
-        if not self.datos["especificos"]:
-            return "No hay subgéneros específicos cargados en el repositorio."
-        
-        return "\n".join(
-            f"ID: {especifico['especifico_id']}\nNombre del Subgénero: {especifico['nombre_especifico']}\n"
-            f"Tipo: {especifico['tipo']}\nGénero Asociado: {especifico['nombre_genero']}\n"
-            for especifico in self.datos["especificos"]
-        )
+        """Muestra todos los subgéneros y su información asociada."""
+        for especifico in self.datos["especificos"]:
+            genero = self.repositorio_genero.obtener_genero_por_id(especifico["genero_id"])
+            nombre_genero = genero["nombre_genero"] if genero else "Desconocido"
+            print(f"ID: {especifico['especifico_id']} | Subgénero: {especifico['nombre_especifico']} | Género: {nombre_genero}")
 
     def obtener_especifico_por_id(self, especifico_id):
         """Busca un subgénero específico por su ID."""

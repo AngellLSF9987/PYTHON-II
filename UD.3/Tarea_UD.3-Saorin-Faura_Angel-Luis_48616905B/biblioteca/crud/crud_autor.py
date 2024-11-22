@@ -27,6 +27,7 @@ class CRUDAutor:
             shutil.copy(self.ruta_json, self.ruta_json + ".bak")
             with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
                 json.dump(self.datos, archivo, ensure_ascii=False, indent=4)
+            print("Datos guardados correctamente.")
         except Exception as e:
             print(f"Error al guardar los datos: {e}")
 
@@ -44,15 +45,18 @@ class CRUDAutor:
         self.datos["autores"].append(nuevo_autor)
         self.autor_id_actual += 1
         self.guardar_datos()
-        print(f"✅ Autor agregado con éxito: {nuevo_autor}")
+        print(f"✅ Autor agregado con éxito: {nuevo_autor['nombre']} {nuevo_autor['apellido1']}")
         return True
 
     def actualizar_autor(self, autor_id, datos_actualizados):
+        """Actualiza los datos de un autor existente."""
         for autor in self.datos["autores"]:
             if autor["autor_id"] == autor_id:
                 autor.update(datos_actualizados)
                 self.guardar_datos()
+                print(f"✅ Autor con ID {autor_id} actualizado.")
                 return True
+        print(f"No se encontró un autor con ID {autor_id}.")
         return False
 
     def eliminar_autor(self, autor_id):
@@ -63,7 +67,9 @@ class CRUDAutor:
             if autor["autor_id"] == autor_id:
                 self.datos["autores"].remove(autor)
                 self.reestructurar_ids_autores()  # Llamada para reestructurar IDs
+                print(f"✅ Autor con ID {autor_id} eliminado.")
                 return True
+        print(f"No se encontró un autor con ID {autor_id}.")
         return False
     
     def reestructurar_ids_autores(self):
@@ -84,6 +90,7 @@ class CRUDAutor:
             if (nombre_completo.lower() == nombre_o_pseudonimo.lower() or
                     autor.get("pseudonimo", "").lower() == nombre_o_pseudonimo.lower()):
                 return autor
+        print(f"No se encontró un autor con nombre o pseudónimo: {nombre_o_pseudonimo}")
         return None
 
     def mostrar_autores(self):
@@ -91,5 +98,9 @@ class CRUDAutor:
         Muestra todos los autores registrados.
         """
         if not self.datos["autores"]:
+            print("No hay autores registrados.")
             return []
+        print("=== Todos los Autores ===")
+        for autor in self.datos["autores"]:
+            print(f"ID: {autor['autor_id']} | {autor['nombre']} {autor['apellido1']} {autor.get('apellido2', '')}")
         return self.datos["autores"]
