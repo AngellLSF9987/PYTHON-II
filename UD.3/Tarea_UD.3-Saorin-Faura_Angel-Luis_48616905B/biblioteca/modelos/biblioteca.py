@@ -4,23 +4,19 @@ from biblioteca.repositorios.repositorio_especifico import RepositorioEspecifico
 from biblioteca.repositorios.repositorio_libro import RepositorioLibro
 from biblioteca.utilidades.lector_json import cargar_datos_json
 from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
-
 import json
 
 class Biblioteca:
-    def __init__(self,ruta_json):
+    def __init__(self, ruta_json):
         """
         Inicializa la biblioteca cargando todos los repositorios y los datos desde el JSON.
         """
         # Inicialización de los repositorios
         self.ruta_json = ruta_json
-        self.repositorio_autor = RepositorioAutor(RUTA_DATOS_BIBLIOTECA)
-        self.repositorio_genero = RepositorioGenero(RUTA_DATOS_BIBLIOTECA)
-
-        # Crear el repositorio de subgéneros específicos, pasando correctamente el repositorio de géneros
-        self.repositorio_especifico = RepositorioEspecifico(RUTA_DATOS_BIBLIOTECA, self.repositorio_genero)
-
-        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico, RUTA_DATOS_BIBLIOTECA)
+        self.repositorio_autor = RepositorioAutor(ruta_json)
+        self.repositorio_genero = RepositorioGenero(ruta_json)
+        self.repositorio_especifico = RepositorioEspecifico(self.ruta_json)
+        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico, ruta_json)
 
         # Cargar los datos desde el archivo JSON
         self.cargar_datos_biblioteca()
@@ -30,7 +26,7 @@ class Biblioteca:
         Carga los datos desde el JSON y los distribuye en los repositorios correspondientes.
         """
         try:
-            self.datos_biblioteca = cargar_datos_json()  # Cargar datos desde JSON
+            self.datos_biblioteca = cargar_datos_json(self.ruta_json)  # Cargar datos desde JSON
             self.cargar_generos(self.datos_biblioteca.get('generos', []))
             self.cargar_especificos(self.datos_biblioteca.get('especificos', []))
             self.cargar_autores(self.datos_biblioteca.get('autores', []))
@@ -49,7 +45,7 @@ class Biblioteca:
                 "especificos": self.repositorio_especifico.obtener_especificos(),
                 "libros": self.repositorio_libro.obtener_libros(),
             }
-            with open(RUTA_DATOS_BIBLIOTECA, 'w', encoding='utf-8') as archivo:
+            with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
                 json.dump(datos_a_guardar, archivo, ensure_ascii=False, indent=4)
         except Exception as e:
             print(f"Error al guardar los datos en el archivo JSON: {e}")

@@ -1,71 +1,65 @@
-# biblioteca/repositorios/repositorio_genero.py
-
 import json
 class RepositorioGenero:
-    
     def __init__(self, ruta_json):
-        """Constructor del repositorio de Géneros Literarios."""
-        self.generos = []  # Lista para almacenar instancias de Genero
-        self.ruta_json = ruta_json  # Ruta al archivo JSON
+        self.ruta_json = ruta_json
+        self.datos = self._cargar_generos()
+        self.generos = self.datos.get("generos", [])
 
-    def cargar_generos(self, datos_generos):
-        """Carga una lista completa de Géneros Literarios en el repositorio."""
+    def _cargar_generos(self):
         try:
-            self.generos.extend(datos_generos)
-            print("Carga de datos de Géneros Literarios correcta.")
-        except Exception as e:
-            print(f"Error al cargar Géneros Literarios: {e}")
+            with open(self.ruta_json, 'r', encoding='utf-8') as archivo:
+                return json.load(archivo)
+        except FileNotFoundError:
+            return {"generos": []}
 
-    def obtener_generos(self):
-        """Retorna la lista de géneros."""
-        return self.generos
-
-    def buscar_genero_por_nombre(self, nombre_genero):
-        """Busca un género por su nombre."""
-        generos = self.obtener_generos()  # Obtener la lista de géneros
-        for genero in generos:
-            if genero['nombre_genero'].lower() == nombre_genero.lower():
-                return genero
-        return None  # Retorna None si no se encuentra el género
-
-    def guardar_datos(self):
-        """Guarda los datos actuales en el archivo JSON."""
+    def _guardar_datos(self):
         try:
             with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
-                json.dump({"generos": self.datos}, archivo, ensure_ascii=False, indent=4)
+                json.dump(self.datos, archivo, ensure_ascii=False, indent=4)
         except Exception as e:
             print(f"Error al guardar los datos: {e}")
 
-    def agregar_generos(self, datos_generos):
-        """Carga una lista completa de géneros en el repositorio."""
-        try:
-            for genero in datos_generos:
-                self.agregar_genero(genero)
-            print("Carga de datos de Géneros Literarios correcta.")
-        except Exception as e:
-            print(f"Error al cargar géneros: {e}")
+    def obtener_generos(self):
+        return self.generos
+
+    def buscar_genero_por_nombre(generos, nombre_buscar):
+        for genero in generos:
+            nombre = genero.get('nombre_genero', '')
+            if isinstance(nombre, str) and nombre.lower() == nombre_buscar.lower():
+                return genero
+        return None
+
 
     def agregar_genero(self, genero):
-        """Agrega un único género al repositorio."""
-        if isinstance(genero, dict) and "genero_id" in genero:
-            if not self.obtener_genero_por_id(genero["genero_id"]):
-                self.generos.append({
-                    "genero_id": genero["genero_id"],
-                    "nombre_genero": genero.get("nombre_genero", "Desconocido")
-                })
-            else:
-                print(f"El género con ID {genero['genero_id']} ya existe.")
-        else:
-            print(f"Formato inválido para género: {genero}")
+        if self.buscar_genero_por_nombre(genero["nombre_genero"]):
+            print(f"El género '{genero['nombre_genero']}' ya existe.")
+            return
+        self.generos.append(genero)
+        self.datos["generos"] = self.generos
+        self._guardar_datos()
+        print(f"Género '{genero['nombre_genero']}' agregado correctamente.")
 
     def mostrar_generos(self):
-        """Devuelve la lista de géneros literarios en el repositorio."""
-        if not self.generos:
-            return "No hay géneros literarios cargados en el repositorio."
-        # print("Géneros cargados:", self.generos)  # Verifica los géneros cargados
-        return "\n".join(f"ID: {genero['genero_id']}\nNombre del Género Literario: {genero['nombre_genero']}" for genero in self.generos)
-    
+        """
+        Muestra todos los géneros literarios almacenados.
+        """
+        if self.generos:
+            print("\n=== Lista de Géneros Literarios ===")
+            for genero in self.generos:
+                print(f"ID: {genero['genero_id']} | Nombre: {genero['nombre_genero']}")
+        else:
+            print("No hay géneros registrados.")
+
+
+    def eliminar_genero(self, genero_id):
+        genero = self.obtener_genero_por_id(genero_id)
+        if genero:
+            self.generos.remove(genero)
+            self.datos["generos"] = self.generos
+            self._guardar_datos()
+            print(f"Género eliminado: {genero}")
+        else:
+            print(f"No se encontró el género con ID {genero_id}")
+
     def obtener_genero_por_id(self, genero_id):
-        """Devuelve un género dado su ID.
-        Convertir el ID a string para garantizar coincidencia."""
-        return next((genero for genero in self.generos if str(genero['genero_id']) == str(genero_id)), None)
+        return next((g for g in self.generos if g["genero_id"] == genero_id), None)

@@ -7,8 +7,20 @@ def menu():
     Función principal del menú de la Biblioteca.
     Permite interactuar con las funcionalidades principales del sistema.
     """
-    # Inicializa la Biblioteca
     biblioteca = Biblioteca(RUTA_DATOS_BIBLIOTECA)
+    """=== FUNCIONES LAMBDA ===
+    Las expresiones lambda pueden ser utilizadas para contener funcionalidades que no necesitan ser nombradas y normalmente se utilizan en un tiempo corto.
+    """
+    opciones = {
+        "1": lambda: submenu_tareas.submenu_tareas(biblioteca),
+        "2": lambda: buscar_libro_por_titulo(biblioteca),
+        "3": lambda: buscar_autor_por_nombre_o_pseudonimo(biblioteca),
+        "4": lambda: mostrar_todos_los_libros(biblioteca),
+        "5": lambda: mostrar_todos_los_autores(biblioteca),
+        "6": lambda: mostrar_todos_los_generos(biblioteca),
+        "7": lambda: mostrar_todos_los_subgeneros(biblioteca),
+        "0": salir
+    }
 
     while True:
         print("\n- Bienvenid@ a Biblioteca AVANZA! -\n")
@@ -22,42 +34,22 @@ def menu():
         print("0. Salir")
 
         opcion = input("\nElija una opción:\n")
+        accion = opciones.get(opcion, opcion_no_valida)
+        accion()
 
-        if opcion == "1":
-            # Llama al submenu de tareas y le pasa la instancia de Biblioteca
-            submenu_tareas.submenu_tareas(biblioteca)
+def opcion_no_valida():
+    print("\n⚠️ Opción no válida. Por favor, elija una opción válida.\n")
 
-        elif opcion == "2":
-            buscar_libro_por_titulo(biblioteca)
-
-        elif opcion == "3":
-            buscar_autor_por_nombre_o_pseudonimo(biblioteca)
-
-        elif opcion == "4":
-            mostrar_todos_los_libros(biblioteca)
-
-        elif opcion == "5":
-            mostrar_todos_los_autores(biblioteca)
-
-        elif opcion == "6":
-            mostrar_todos_los_generos(biblioteca)
-
-        elif opcion == "7":
-            mostrar_todos_los_subgeneros(biblioteca)
-
-        elif opcion == "0":
-            print("\n¡Hasta luego! Gracias por usar Biblioteca AVANZA.\n")
-            break
-
-        else:
-            print("\n⚠️ Opción no válida. Por favor, elija una opción válida.\n")
+def salir():
+    print("\n¡Hasta luego! Gracias por usar Biblioteca AVANZA.\n")
+    exit()
 
 def buscar_libro_por_titulo(biblioteca):
     """
     Permite buscar un libro por su título y muestra detalles relevantes.
     """
     titulo = input("\nIngrese el título del libro que desea buscar:\n").strip()
-    
+
     if not titulo:
         print("\n⚠️ No ingresó un título. Inténtelo de nuevo.")
         return
@@ -91,7 +83,7 @@ def buscar_autor_por_nombre_o_pseudonimo(biblioteca):
     Permite buscar un autor por su nombre completo o pseudónimo.
     """
     criterio = input("\nIngrese el nombre completo o pseudónimo del autor que desea buscar:\n").strip()
-    
+
     if not criterio:
         print("\n⚠️ No ingresó un criterio de búsqueda. Inténtelo de nuevo.")
         return
@@ -117,14 +109,13 @@ def buscar_autor_por_nombre_o_pseudonimo(biblioteca):
     except Exception as e:
         print(f"\n⚠️ Error inesperado al buscar autores: {e}")
 
-
 def mostrar_todos_los_libros(biblioteca):
     """
     Muestra todos los libros registrados en la biblioteca.
     """
     try:
         print("\n=== Todos los Libros ===")
-        libros = biblioteca.repositorio_libro.mostrar_libros()  # Devuelve una lista de libros
+        libros = biblioteca.repositorio_libro.mostrar_libros()
         if libros:
             for libro in libros:
                 print(f"ID: {libro['libro_id']} | Título: {libro['titulo']} | Autor: {libro['autor_id']} | "
@@ -140,8 +131,9 @@ def mostrar_todos_los_autores(biblioteca):
     Muestra todos los autores registrados en la biblioteca.
     """
     try:
-        print("\n=== Todos los Autores ===")
-        print(biblioteca.repositorio_autor.mostrar_autores())
+        autores = biblioteca.repositorio_autor.mostrar_autores()
+        for autor in autores:
+            print(autor)
     except Exception as e:
         print(f"\n⚠️ Error al mostrar los autores: {e}")
 
@@ -151,7 +143,9 @@ def mostrar_todos_los_generos(biblioteca):
     """
     try:
         print("\n=== Todos los Géneros Literarios ===")
-        print(biblioteca.repositorio_genero.mostrar_generos())
+        generos = biblioteca.repositorio_genero.mostrar_generos()
+        for genero in generos:
+            print(genero)
     except Exception as e:
         print(f"\n⚠️ Error al mostrar los géneros: {e}")
 
@@ -161,6 +155,8 @@ def mostrar_todos_los_subgeneros(biblioteca):
     """
     try:
         print("\n=== Todos los Subgéneros Literarios ===")
-        print(biblioteca.repositorio_especifico.mostrar_especificos())
+        subgeneros = biblioteca.repositorio_especifico.mostrar_especificos()
+        for subgenero in subgeneros:
+            print(subgenero)
     except Exception as e:
         print(f"\n⚠️ Error al mostrar los subgéneros: {e}")

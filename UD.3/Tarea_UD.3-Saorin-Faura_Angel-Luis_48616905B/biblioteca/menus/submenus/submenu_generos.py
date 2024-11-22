@@ -18,7 +18,7 @@ def submenu_generos(biblioteca):
            submenu_genero.submenu_genero(biblioteca)
         elif opcion == "2":
             # LLama al submenu de tareas de subgéneros literarios y le pasa la instancia de Biblioteca
-           submenu_especifico.submenu_especifico(biblioteca)
+           submenu_especifico.submenu_especifico()
         elif opcion == "0":
             return          # Volver SubMenú Tareas de Biblioteca
         else:
