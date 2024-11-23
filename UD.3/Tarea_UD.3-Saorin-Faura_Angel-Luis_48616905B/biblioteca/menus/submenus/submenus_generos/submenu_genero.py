@@ -20,14 +20,7 @@ def submenu_genero(biblioteca):
 
         if opcion == "1":
             # Mostrar todos los géneros literarios
-            generos = crud_genero.mostrar_generos()
-            if generos:
-                print("\n=== Lista de Géneros Literarios ===")
-                for genero in generos:
-                    print(f"ID: {genero['genero_id']} | Género Literario: {genero['nombre_genero']}")
-            else:
-                print("\n⚠️ No hay géneros literarios registrados.")
-
+            crud_genero.mostrar_generos()
         elif opcion == "2":
             # Añadir un nuevo género literario
             nombre_genero = input("Introduce el nombre del Género Literario: ").strip()

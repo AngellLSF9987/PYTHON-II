@@ -57,63 +57,37 @@
             "nombre_genero": "Narrativo"
         },
         {
-            "nombre_genero": "Dramático",
-            "genero_id": 2
+            "genero_id": 2,
+            "nombre_genero": "Dramático"
         },
         {
-            "nombre_genero": "Lírico",
-            "genero_id": 3
-        },
-        {
-            "genero_id": 4,
-            "nombre_genero": {
-                "genero_id": 1,
-                "nombre_genero": "Narrativo"
-            }
-        },
-        {
-            "genero_id": 5,
-            "nombre_genero": {
-                "nombre_genero": "Dramático",
-                "genero_id": 2
-            }
-        },
-        {
-            "genero_id": 6,
-            "nombre_genero": {
-                "nombre_genero": "Lírico",
-                "genero_id": 3
-            }
+            "genero_id": 3,
+            "nombre_genero": "Lírico"
         }
     ],
     "especificos": [
         {
             "especifico_id": 1,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Terror"
         },
         {
             "especifico_id": 2,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Suspense"
         },
         {
             "especifico_id": 3,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Distópica"
         },
         {
             "especifico_id": 4,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Realismo Mágico"
         },
         {
             "especifico_id": 5,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Fantasía"
         }
@@ -122,42 +96,47 @@
         {
             "libro_id": 1,
             "titulo": "Cien años de soledad",
+            "autor_id": 1,
+            "genero_id": 1,
             "especifico_id": 4,
             "fecha_publicacion": "05-06-1967",
-            "num_paginas": 417,
-            "autor_id": 1
+            "num_paginas": 417
         },
         {
             "libro_id": 2,
             "titulo": "El hobbit",
+            "autor_id": 2,
+            "genero_id": 1,
             "especifico_id": 5,
             "fecha_publicacion": "21-09-1937",
-            "num_paginas": 310,
-            "autor_id": 2
+            "num_paginas": 310
         },
         {
             "libro_id": 3,
             "titulo": "1984",
+            "autor_id": 3,
+            "genero_id": 1,
             "especifico_id": 3,
             "fecha_publicacion": "08-06-1949",
-            "num_paginas": 328,
-            "autor_id": 3
+            "num_paginas": 328
         },
         {
             "libro_id": 4,
             "titulo": "Matar a un ruiseñor",
+            "autor_id": 5,
+            "genero_id": 1,
             "especifico_id": 2,
             "fecha_publicacion": "11-07-1960",
-            "num_paginas": 281,
-            "autor_id": 5
+            "num_paginas": 281
         },
         {
             "libro_id": 5,
             "titulo": "El Resplandor",
+            "autor_id": 4,
+            "genero_id": 1,
             "especifico_id": 1,
             "fecha_publicacion": "28-01-1977",
-            "num_paginas": 688,
-            "autor_id": 4
+            "num_paginas": 688
         }
     ]
 }

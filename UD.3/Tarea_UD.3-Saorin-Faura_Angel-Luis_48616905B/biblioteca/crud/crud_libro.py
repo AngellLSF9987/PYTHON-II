@@ -3,7 +3,7 @@ import json
 class CRUDLibro:
     def __init__(self, ruta_json, repositorio_autor, repositorio_especifico, repositorio_genero):
         self.ruta_json = ruta_json
-        self.repositorio_autor = repositorio_autor  # Asegúrate de inicializarlo
+        self.repositorio_autor = repositorio_autor
         self.repositorio_especifico = repositorio_especifico
         self.repositorio_genero = repositorio_genero
         self.datos = self.cargar_datos()  # Carga los datos al inicializar
@@ -55,19 +55,18 @@ class CRUDLibro:
             autor = self.repositorio_autor.obtener_autor_por_id(libro['autor_id'])
             autor_nombre_completo = f"{autor['nombre']} {autor['apellido1']} {autor['apellido2']}" if autor else "Autor desconocido"
             
-            # Obtener subgénero y género por especifico_id
+            # Obtener subgénero y tipo por especifico_id
             especifico = self.repositorio_especifico.obtener_especifico_por_id(libro['especifico_id'])
-            if especifico:
-                genero = self.repositorio_genero.obtener_genero_por_id(especifico['genero_id'])
-                genero_nombre = genero["nombre_genero"] if genero else "Género desconocido"
-                subgenero_nombre = especifico["nombre_especifico"]
-                subgenero_tipo = especifico["tipo"]
-            else:
-                genero_nombre = subgenero_nombre = subgenero_tipo = "Subgénero desconocido"
+            nombre_especifico = f"{especifico['nombre_especifico']}" if especifico else "Subgénero desconocido"
+            tipo = f"{especifico['tipo']}" if especifico else "Tipo desconocido"
+            
+            # Obtener género y tipo por genero_id
+            genero = self.repositorio_genero.obtener_genero_por_id(libro['genero_id'])
+            nombre_genero = f"{genero['nombre_genero']}"
 
             print(
                 f"ID: {libro['libro_id']} | Título del Libro: {libro['titulo']} | "
-                f"Género: {genero_nombre} | Subgénero: {subgenero_nombre} | Tipo: {subgenero_tipo} | "
+                f"Género Literario: {nombre_genero} | Subgénero Literario: {nombre_especifico} | Tipo: {tipo} | "
                 f"Fecha de Publicación: {libro['fecha_publicacion']} | Núm. Páginas: {libro['num_paginas']} | "
                 f"Autor: {autor_nombre_completo}"
             )

@@ -19,13 +19,14 @@ def submenu_autor(biblioteca):
         if opcion == "1":
             autores = crud_autor.mostrar_autores()
             if autores:
-                print("\n=== Lista de Autores ===")
+                print("\n=== Lista de Autores ===\n")
                 for autor in autores:
                     nombre_completo = f"{autor['nombre']} {autor['apellido1']} {autor.get('apellido2', '')}".strip()
                     print(
-                        f"ID: {autor['autor_id']} | Nombre: {nombre_completo} | "
-                        f"Pseudónimo: {autor.get('pseudonimo', 'No disponible')} | "
-                        f"Nacionalidad: {autor.get('nacionalidad', 'Desconocida')}"
+                        f"> ID: {autor['autor_id']} | Nombre: {nombre_completo} | "
+                        f"  Pseudónimo: {autor.get('pseudonimo', 'No disponible')} |\n"
+                        f"  Fecha de Nacimiento: {autor.get('nacido', 'No disponible')} | Fecha de Fallecimiento: {autor.get('fallecido', 'No fallecido')} |\n"
+                        f"  Nacionalidad: {autor.get('nacionalidad', 'Desconocida')}\n"
                     )
             else:
                 print("\n⚠️ No hay autores registrados.")

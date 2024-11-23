@@ -94,9 +94,7 @@ class CRUDAutor:
         return None
 
     def mostrar_autores(self):
-        """
-        Muestra todos los autores registrados.
-        """
+        """Muestra todos los autores registrados."""
         if not self.datos["autores"]:
             print("No hay autores registrados.")
             return []

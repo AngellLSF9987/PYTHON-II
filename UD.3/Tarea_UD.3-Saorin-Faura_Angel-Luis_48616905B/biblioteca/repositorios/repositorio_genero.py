@@ -8,9 +8,12 @@ class RepositorioGenero:
     def _cargar_generos(self):
         try:
             with open(self.ruta_json, 'r', encoding='utf-8') as archivo:
-                return json.load(archivo)
-        except FileNotFoundError:
-            return {"generos": []}
+                data = json.load(archivo)
+                print("Géneros cargados correctamente.")
+                return data  # Retorna directamente el contenido del archivo
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("Archivo de géneros no encontrado o vacío. Se iniciará con una lista vacía.")
+            return {"generos": []}  # Retorna un diccionario vacío en caso de error
 
     def _guardar_datos(self):
         try:
@@ -19,47 +22,37 @@ class RepositorioGenero:
         except Exception as e:
             print(f"Error al guardar los datos: {e}")
 
-    def obtener_generos(self):
-        return self.generos
+    def agregar_genero(self, genero):
+        if any(g["genero_id"] == genero["genero_id"] for g in self.generos):
+            print(f"El genero con ID {genero['genero_id']} ya existe.")
+            return
+        self.generos.append(genero)
+        self._guardar_datos()
+        print(f"Género Literario: '{genero['nombre_genero']}")
 
-    def buscar_genero_por_nombre(generos, nombre_buscar):
-        for genero in generos:
-            nombre = genero.get('nombre_genero', '')
-            if isinstance(nombre, str) and nombre.lower() == nombre_buscar.lower():
+    def buscar_genero_por_nombre(self, nombre_buscar):
+        """Busca un género por nombre."""
+        for genero in self.generos:
+            nombre_genero = genero.get('nombre_genero', '')
+            if isinstance(nombre_genero, str) and nombre_genero.lower() == nombre_buscar.lower():
                 return genero
         return None
 
-
-    def agregar_genero(self, genero):
-        if self.buscar_genero_por_nombre(genero["nombre_genero"]):
-            print(f"El género '{genero['nombre_genero']}' ya existe.")
-            return
-        self.generos.append(genero)
-        self.datos["generos"] = self.generos
-        self._guardar_datos()
-        print(f"Género '{genero['nombre_genero']}' agregado correctamente.")
-
     def mostrar_generos(self):
-        """
-        Muestra todos los géneros literarios almacenados.
-        """
+        """Muestra todos los géneros literarios almacenados."""
         if self.generos:
-            print("\n=== Lista de Géneros Literarios ===")
+            print("\n=== Lista de Géneros Literarios ===\n")
             for genero in self.generos:
-                print(f"ID: {genero['genero_id']} | Nombre: {genero['nombre_genero']}")
+                print(f"> ID: {genero['genero_id']} | Nombre: {genero['nombre_genero']}")
         else:
             print("No hay géneros registrados.")
 
-
-    def eliminar_genero(self, genero_id):
-        genero = self.obtener_genero_por_id(genero_id)
-        if genero:
-            self.generos.remove(genero)
-            self.datos["generos"] = self.generos
-            self._guardar_datos()
-            print(f"Género eliminado: {genero}")
-        else:
-            print(f"No se encontró el género con ID {genero_id}")
-
     def obtener_genero_por_id(self, genero_id):
-        return next((g for g in self.generos if g["genero_id"] == genero_id), None)
+        for genero in self.generos:
+            if genero['genero_id'] == (genero_id):
+                return genero
+        return None
+    
+    def obtener_generos(self):
+        """Devuelve la lista de autores."""
+        return self.generos

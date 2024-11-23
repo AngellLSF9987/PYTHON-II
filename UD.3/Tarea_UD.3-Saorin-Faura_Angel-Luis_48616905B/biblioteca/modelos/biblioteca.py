@@ -13,10 +13,10 @@ class Biblioteca:
         """
         # Inicialización de los repositorios
         self.ruta_json = ruta_json
-        self.repositorio_autor = RepositorioAutor(ruta_json)
-        self.repositorio_genero = RepositorioGenero(ruta_json)
+        self.repositorio_autor = RepositorioAutor(self.ruta_json)
+        self.repositorio_genero = RepositorioGenero(self.ruta_json)
         self.repositorio_especifico = RepositorioEspecifico(self.ruta_json)
-        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_especifico, ruta_json)
+        self.repositorio_libro = RepositorioLibro(self.repositorio_autor, self.repositorio_genero, self.repositorio_especifico, ruta_json)
 
         # Cargar los datos desde el archivo JSON
         self.cargar_datos_biblioteca()
@@ -40,10 +40,10 @@ class Biblioteca:
         """
         try:
             datos_a_guardar = {
-                "autores": self.repositorio_autor.obtener_autores(),
-                "generos": self.repositorio_genero.obtener_generos(),
-                "especificos": self.repositorio_especifico.obtener_especificos(),
-                "libros": self.repositorio_libro.obtener_libros(),
+                "autores": self.repositorio_autor.mostrar_autores(),
+                "generos": self.repositorio_genero.mostrar_generos(),
+                "especificos": self.repositorio_especifico.mostrar_especificos(),
+                "libros": self.repositorio_libro.mostrar_libros(),
             }
             with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
                 json.dump(datos_a_guardar, archivo, ensure_ascii=False, indent=4)

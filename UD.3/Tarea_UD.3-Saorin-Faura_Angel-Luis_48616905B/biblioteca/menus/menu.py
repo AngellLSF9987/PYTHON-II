@@ -6,11 +6,13 @@ def menu():
     """
     Función principal del menú de la Biblioteca.
     Permite interactuar con las funcionalidades principales del sistema.
+    
+    - FUNCIONES LAMBDA:
+       - Las expresiones lambda pueden ser utilizadas para contener funcionalidades que no necesitan ser 
+         nombradas y normalmente se utilizan en un tiempo corto.
     """
     biblioteca = Biblioteca(RUTA_DATOS_BIBLIOTECA)
-    """=== FUNCIONES LAMBDA ===
-    Las expresiones lambda pueden ser utilizadas para contener funcionalidades que no necesitan ser nombradas y normalmente se utilizan en un tiempo corto.
-    """
+
     opciones = {
         "1": lambda: submenu_tareas.submenu_tareas(biblioteca),
         "2": lambda: buscar_libro_por_titulo(biblioteca),
@@ -45,9 +47,7 @@ def salir():
     exit()
 
 def buscar_libro_por_titulo(biblioteca):
-    """
-    Permite buscar un libro por su título y muestra detalles relevantes.
-    """
+    """Permite buscar un libro por su título y muestra detalles relevantes."""
     titulo = input("\nIngrese el título del libro que desea buscar:\n").strip()
 
     if not titulo:
@@ -59,17 +59,18 @@ def buscar_libro_por_titulo(biblioteca):
         resultados = [libro for libro in libros if titulo.lower() in libro["titulo"].lower()]
 
         if resultados:
-            print("\n=== Resultados de la búsqueda ===")
+            print("\n=== Resultados de la búsqueda ===\n")
             for libro in resultados:
                 autor = biblioteca.repositorio_autor.obtener_autor_por_id(libro["autor_id"])
                 especifico = biblioteca.repositorio_especifico.obtener_especifico_por_id(libro["especifico_id"])
-                genero_nombre = especifico["nombre_especifico"] if especifico else "Desconocido"
+                genero = biblioteca.repositorio_genero.obtener_genero_por_id(libro["genero_id"])
                 autor_nombre = autor["nombre"] if autor else "Desconocido"
+                nombre_genero = genero["nombre_genero"] if genero else "Desconocido"
 
                 print(
                     f"ID: {libro['libro_id']}\n"
                     f"Título: {libro['titulo']}\n"
-                    f"Género: {genero_nombre}\n"
+                    f"Género Literario: {nombre_genero} | Subgénero Literario: {especifico['nombre_especifico']} - 'Tipo:' {especifico['tipo']}\n"
                     f"Fecha de Publicación: {libro['fecha_publicacion']}\n"
                     f"Autor: {autor_nombre}\n"
                 )
@@ -79,9 +80,7 @@ def buscar_libro_por_titulo(biblioteca):
         print(f"\n⚠️ Error inesperado al buscar libros: {e}")
 
 def buscar_autor_por_nombre_o_pseudonimo(biblioteca):
-    """
-    Permite buscar un autor por su nombre completo o pseudónimo.
-    """
+    """Permite buscar un autor por su nombre completo o pseudónimo."""
     criterio = input("\nIngrese el nombre completo o pseudónimo del autor que desea buscar:\n").strip()
 
     if not criterio:
@@ -89,20 +88,22 @@ def buscar_autor_por_nombre_o_pseudonimo(biblioteca):
         return
 
     try:
-        autores = biblioteca.repositorio_autor.autores
+        autores = biblioteca.repositorio_autor.obtener_autores()
         resultados = [
-            autor for autor in autores if 
-            criterio.lower() in autor["nombre"].lower() or
-            criterio.lower() in autor["pseudonimo"].lower()
+            autor for autor in autores
+            if criterio.lower() in autor["nombre"].lower() or
+               criterio.lower() in autor["pseudonimo"].lower()
         ]
 
         if resultados:
-            print("\n=== Resultados de la búsqueda ===")
+            print("\n=== Resultados de la búsqueda ===\n")
             for autor in resultados:
                 print(
-                    f"ID: {autor['autor_id']}\nNombre: {autor['nombre']}\n"
+                    f"\nID: {autor['autor_id']}\n"
+                    f"Nombre Completo: {autor['nombre']} {autor['apellido1']} {autor['apellido2']}\n"
                     f"Pseudónimo: {autor['pseudonimo']}\n"
                     f"Nacionalidad: {autor.get('nacionalidad', 'Desconocida')}\n"
+                    f"Fechas: {autor['nacido']} - {autor.get('fallecido', 'Presente')}\n"
                 )
         else:
             print("\n⚠️ No se encontraron autores con ese criterio.")
@@ -110,53 +111,66 @@ def buscar_autor_por_nombre_o_pseudonimo(biblioteca):
         print(f"\n⚠️ Error inesperado al buscar autores: {e}")
 
 def mostrar_todos_los_libros(biblioteca):
-    """
-    Muestra todos los libros registrados en la biblioteca.
-    """
+    """Muestra todos los libros registrados en la biblioteca con detalles completos."""
     try:
-        print("\n=== Todos los Libros ===")
-        libros = biblioteca.repositorio_libro.mostrar_libros()
+        libros = biblioteca.repositorio_libro.mostrar_libros()  # Obtiene todos los libros
+        
         if libros:
             for libro in libros:
-                print(f"ID: {libro['libro_id']} | Título: {libro['titulo']} | Autor: {libro['autor_id']} | "
-                      f"Género y Subgénero Literario: {libro['especifico_id']} | "
-                      f"Fecha de Publicación: {libro['fecha_publicacion']} | Núm. Páginas: {libro['num_paginas']}")
-        else:
-            print("No hay libros registrados.")
+                # Manejo seguro para obtener autor, género y subgénero
+                autor = biblioteca.repositorio_autor.obtener_autor_por_id(libro["autor_id"])
+                genero = biblioteca.repositorio_genero.obtener_genero_por_id(libro.get("genero_id"))
+                especifico = biblioteca.repositorio_especifico.obtener_especifico_por_id(libro.get("especifico_id"))
+                
+                # Preparar datos del autor
+                if autor:
+                    nombre_autor = f"{autor['nombre']} {autor['apellido1']} {autor['apellido2']}"
+                    pseudonimo = f"({autor['pseudonimo']})" if autor.get("pseudonimo") else ""
+                    autor_info = f"{nombre_autor} {pseudonimo}"
+                else:
+                    autor_info = "Desconocido"
+
+                # Preparar datos del género
+                nombre_genero = genero["nombre_genero"] if genero else "Desconocido"
+
+                # Preparar datos del subgénero
+                if especifico:
+                    nombre_especifico = especifico.get("nombre_especifico", "Desconocido")
+                    tipo_especifico = especifico.get("tipo", "Desconocido")
+                else:
+                    nombre_especifico = "Desconocido"
+                    tipo_especifico = "Desconocido"
+
+                # Mostrar información del libro
+                print(
+                    f"ID: {libro['libro_id']}\n"
+                    f"Título: {libro['titulo']}\n"
+                    f"Autor: {autor_info}\n"
+                    f"Género Literario: {nombre_genero}\n"
+                    f"Subgénero: {nombre_especifico} ({tipo_especifico})\n"
+                    f"Fecha de Publicación: {libro['fecha_publicacion']}\n"
+                    f"Número de Páginas: {libro['num_paginas']}\n"
+                )
     except Exception as e:
-        print(f"\n⚠️ Error al mostrar los libros: {e}")
+        print(f"\n⚠️ Error inesperado al mostrar los libros: {e}")
 
 def mostrar_todos_los_autores(biblioteca):
-    """
-    Muestra todos los autores registrados en la biblioteca.
-    """
+    """Muestra todos los autores registrados en la biblioteca."""
     try:
-        autores = biblioteca.repositorio_autor.mostrar_autores()
-        for autor in autores:
-            print(autor)
+        biblioteca.repositorio_autor.mostrar_autores()
     except Exception as e:
         print(f"\n⚠️ Error al mostrar los autores: {e}")
 
 def mostrar_todos_los_generos(biblioteca):
-    """
-    Muestra todos los géneros literarios registrados en la biblioteca.
-    """
+    """Muestra todos los géneros literarios registrados en la biblioteca."""
     try:
-        print("\n=== Todos los Géneros Literarios ===")
-        generos = biblioteca.repositorio_genero.mostrar_generos()
-        for genero in generos:
-            print(genero)
+        biblioteca.repositorio_genero.mostrar_generos()
     except Exception as e:
         print(f"\n⚠️ Error al mostrar los géneros: {e}")
 
 def mostrar_todos_los_subgeneros(biblioteca):
-    """
-    Muestra todos los subgéneros literarios específicos registrados en la biblioteca.
-    """
+    """Muestra todos los subgéneros literarios específicos registrados en la biblioteca."""
     try:
-        print("\n=== Todos los Subgéneros Literarios ===")
-        subgeneros = biblioteca.repositorio_especifico.mostrar_especificos()
-        for subgenero in subgeneros:
-            print(subgenero)
+        biblioteca.repositorio_especifico.mostrar_especificos()
     except Exception as e:
         print(f"\n⚠️ Error al mostrar los subgéneros: {e}")
