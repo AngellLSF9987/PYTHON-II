@@ -25,24 +25,23 @@ def validar_fecha(fecha_str):
     
 def validar_autor(biblioteca):
     """
-    Valida si un Autor con el pseudónimo ingresado ya existe en la biblioteca.
-    Si no existe, permite crear uno nuevo.
+    Valida si un autor existe en la biblioteca por su pseudónimo. Si no existe, lo crea.
     """
-    autores = biblioteca.repositorio_autor.obtener_autores()
-    if autores is None:
-        print("Error: No se pudieron cargar los Autores.\n")
-        return None
+    pseudonimo = input("Introduce el pseudónimo del autor: ").strip()
+    
+    # Buscar el autor por pseudónimo
+    autor = biblioteca.repositorio_autor.obtener_autor_por_pseudonimo(pseudonimo)
 
-    pseudonimo = input("Introduce el pseudónimo del Autor:\n").strip()
+    if autor:
+        print(f"Autor '{pseudonimo}' encontrado.")
+        return autor
 
-    # Buscar el pseudónimo en la lista de autores
-    for autor in autores:
-        if autor.get("pseudonimo", "").lower() == pseudonimo.lower():
-            print(f"El pseudónimo '{pseudonimo}' ya existe.\n")
-            return autor  # Devuelve el autor encontrado
+    # Si el autor no existe, preguntar si se desea crear uno nuevo
+    print(f"El autor '{pseudonimo}' no existe en la base de datos.")
+    crear_nuevo = input("¿Deseas crear este autor? (s/n): ").strip().lower()
 
     # Si no se encuentra, crearlo
-    if nuevo_autor is None:
+    if crear_nuevo == 's':
         print(f"\nEl autor '{pseudonimo}' no ha sido encontrado. Creando nuevo autor.")
         nombre = input("Introduce el nombre del autor:\n").strip()
         apellido1 = input("Introduce el primer apellido del autor:\n").strip()

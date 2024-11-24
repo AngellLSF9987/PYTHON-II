@@ -35,10 +35,10 @@ def submenu_autor(biblioteca):
             nuevo_autor = {
                 "nombre": input("Nombre: ").strip(),
                 "apellido1": input("Primer Apellido: ").strip(),
-                "apellido2": input("Segundo Apellido (opcional): ").strip(),
-                "pseudonimo": input("Pseudónimo (opcional): ").strip(),
+                "apellido2": input("Segundo Apellido (opcional): ").strip() or None,
+                "pseudonimo": input("Pseudónimo (opcional): ").strip() or None,
                 "nacido": input("Año de Nacimiento: ").strip(),
-                "fallecido": input("Año de Fallecimiento (opcional): ").strip(),
+                "fallecido": input("Año de Fallecimiento (opcional): ").strip() or None,
                 "nacionalidad": input("Nacionalidad: ").strip(),
             }
             if crud_autor.agregar_autor(nuevo_autor):

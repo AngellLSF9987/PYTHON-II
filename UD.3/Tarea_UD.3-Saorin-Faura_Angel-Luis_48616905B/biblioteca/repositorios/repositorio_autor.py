@@ -24,6 +24,10 @@ class RepositorioAutor:
             print(f"Error al guardar los datos: {e}")
 
     def agregar_autor(self, autor):
+        # Verifica si el autor tiene el campo autor_id
+        if "autor_id" not in autor:
+            autor["autor_id"] = len(self.autores) + 1  # Asigna un ID único, autoincremental
+
         if any(a["autor_id"] == autor["autor_id"] for a in self.autores):
             print(f"El autor con ID {autor['autor_id']} ya existe.")
             return
@@ -50,3 +54,10 @@ Fecha Nacimiento: {autor['nacido']} | Fecha Fallecimiento: {autor['fallecido'] o
     def obtener_autores(self):
         """Devuelve la lista de autores."""
         return self.autores
+
+    def obtener_autor_por_pseudonimo(self, pseudonimo):
+        """Devuelve un autor por su pseudónimo si existe, sino devuelve None."""
+        for autor in self.autores:
+            if autor.get("pseudonimo") == pseudonimo:
+                return autor  # Si encuentra el autor con el pseudónimo, lo devuelve
+        return None  # Si no se encuentra, devuelve None

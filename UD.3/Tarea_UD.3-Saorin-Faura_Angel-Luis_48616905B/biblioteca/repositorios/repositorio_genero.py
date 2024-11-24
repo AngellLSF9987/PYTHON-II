@@ -23,8 +23,12 @@ class RepositorioGenero:
             print(f"Error al guardar los datos: {e}")
 
     def agregar_genero(self, genero):
+        # Verifica si el autor tiene el campo genero_id
+        if "genero_id" not in genero:
+            genero["genero_id"] = len(self.generos) + 1   # Asigna un ID único, autoincremental
+        
         if any(g["genero_id"] == genero["genero_id"] for g in self.generos):
-            print(f"El genero con ID {genero['genero_id']} ya existe.")
+            print(f"El Género Literario con ID {genero['genero_id']} ya existe.")
             return
         self.generos.append(genero)
         self._guardar_datos()

@@ -25,12 +25,16 @@ class RepositorioEspecifico:
             print(f"Error al guardar los datos: {e}")
 
     def agregar_especifico(self, especifico):
+        # Verifica si el autor tiene el campo especifico_id
+        if "especifico_id" not in especifico:
+            especifico["especifico_id"] = len(self.especificos) + 1 # Asigna un ID único, autoincremental
+        
         if any(a["especifico_id"] == especifico["especifico_id"] for a in self.especificos):
-            print(f"El especifico con ID {especifico['especifico_id']} ya existe.")
+            print(f"El Subgénero Literario con ID {especifico['especifico_id']} ya existe.")
             return
         self.especificos.append(especifico)
         self._guardar_datos()
-        print(f"especifico '{especifico['nombre']} {especifico['tipo']}' agregado correctamente.")
+        print(f"Subgénero Literario: '{especifico['nombre_especifico']} - Tipo de Subgénero Literario: {especifico['tipo']}' agregado correctamente.")
 
     def mostrar_especificos(self):
         """Muestra todos los géneros literarios almacenados."""

@@ -42,6 +42,9 @@ class CRUDAutor:
         Agrega un nuevo autor con ID autoincremental.
         """
         nuevo_autor["autor_id"] = str(self.autor_id_actual)
+        if any(a["autor_id"] == nuevo_autor["autor_id"] for a in self.datos["autores"]):
+            print("⚠️ El ID del autor ya existe.")
+            return False
         self.datos["autores"].append(nuevo_autor)
         self.autor_id_actual += 1
         self.guardar_datos()

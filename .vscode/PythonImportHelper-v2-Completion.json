@@ -3422,7 +3422,7 @@
         "kind": 2,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
-        "peekOfCode": "def validar_autor(biblioteca):\n    \"\"\"\n    Valida si un Autor con el pseudónimo ingresado ya existe en la biblioteca.\n    Si no existe, permite crear uno nuevo.\n    \"\"\"\n    autores = biblioteca.repositorio_autor.obtener_autores()\n    if autores is None:\n        print(\"Error: No se pudieron cargar los Autores.\\n\")\n        return None\n    pseudonimo = input(\"Introduce el pseudónimo del Autor:\\n\").strip()",
+        "peekOfCode": "def validar_autor(biblioteca):\n    \"\"\"\n    Valida si un autor existe en la biblioteca por su pseudónimo. Si no existe, lo crea.\n    \"\"\"\n    pseudonimo = input(\"Introduce el pseudónimo del autor: \").strip()\n    # Buscar el autor por pseudónimo\n    autor = biblioteca.repositorio_autor.obtener_autor_por_pseudonimo(pseudonimo)\n    if autor:\n        print(f\"Autor '{pseudonimo}' encontrado.\")\n        return autor",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "documentation": {}
     },
