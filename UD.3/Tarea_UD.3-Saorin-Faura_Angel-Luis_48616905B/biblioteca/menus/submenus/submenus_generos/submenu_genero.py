@@ -21,6 +21,7 @@ def submenu_genero(biblioteca):
         if opcion == "1":
             # Mostrar todos los géneros literarios
             crud_genero.mostrar_generos()
+        
         elif opcion == "2":
             # Añadir un nuevo género literario
             nombre_genero = input("Introduce el nombre del Género Literario: ").strip()
@@ -34,46 +35,11 @@ def submenu_genero(biblioteca):
                 print("\n⚠️ El nombre del Género Literario no puede estar vacío.")
 
         elif opcion == "3":
-            # Modificar los datos de un género existente
-            try:
-                genero_id = int(input("Introduce el ID del Género Literario a modificar: ").strip())
-                genero = crud_genero.buscar_genero_por_id(genero_id)
-                if genero:
-                    print("\n=== Datos Actuales ===")
-                    print(f"ID: {genero['genero_id']} | Nombre: {genero['nombre_genero']}")
-                    nuevo_nombre = input(f"Introduce el nuevo nombre (o deja vacío para mantener '{genero['nombre_genero']}'): ").strip()
-                    if nuevo_nombre:
-                        genero_actualizado = {"nombre_genero": nuevo_nombre}
-                        if crud_genero.actualizar_genero(genero_id, genero_actualizado):
-                            print("\n✅ Género Literario actualizado correctamente.")
-                        else:
-                            print("\n⚠️ Error al actualizar el Género Literario.")
-                    else:
-                        print("\n⚠️ No se realizaron cambios.")
-                else:
-                    print("\n⚠️ Género Literario no encontrado.")
-            except ValueError:
-                print("\n⚠️ El ID debe ser un número entero.")
-
+                # Actualizar Género Literario
+                crud_genero.actualizar_genero()
         elif opcion == "4":
-            # Eliminar un género literario
-            try:
-                genero_id = int(input("Introduce el ID del Género Literario a eliminar: ").strip())
-                genero = crud_genero.buscar_genero_por_id(genero_id)
-                if genero:
-                    confirmacion = input(f"¿Estás seguro de eliminar el género '{genero['nombre_genero']}'? (s/n): ").strip().lower()
-                    if confirmacion == 's':
-                        if crud_genero.eliminar_genero(genero_id):
-                            print("\n✅ Género Literario eliminado correctamente.")
-                        else:
-                            print("\n⚠️ Error al eliminar el Género Literario.")
-                    else:
-                        print("\nOperación cancelada.")
-                else:
-                    print("\n⚠️ Género Literario no encontrado.")
-            except ValueError:
-                print("\n⚠️ El ID debe ser un número entero.")
-
+            # Eliminar un Género Literario
+                crud_genero.eliminar_genero()
         elif opcion == "0":
             # Volver al menú anterior
             print("\nRegresando al menú principal...")

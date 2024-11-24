@@ -38,34 +38,74 @@ class CRUDEspecifico:
 
     def agregar_especifico(self, nuevo_especifico):
         """Agrega un nuevo Subgénero Literario con ID autoincremental."""
-        nuevo_especifico["especifico_id"] = str(self.especifico_id_actual)
+        nuevo_especifico["especifico_id"] = str(self.genero_id_actual)
         self.datos["especificos"].append(nuevo_especifico)
-        self.especifico_id_actual += 1
+        self.genero_id_actual += 1  # Incrementa el ID para el siguiente registro
         self.guardar_datos()
-        print(f"✅Subgénero Literario agregado con éxito: {nuevo_especifico['nombre_especifico']}")
+        print(f"✅ Subgénero Literario agregado con éxito: {nuevo_especifico['nombre_especifico']}")
         return True
 
-    def actualizar_especifico(self, especifico_id, datos_actualizados):
-        """Actualiza los datos de un Subgénero Literario existente."""
-        for especifico in self.datos["especificos"]:
-            if especifico["especifico_id"] == especifico_id:
-                especifico.update(datos_actualizados)
-                self.guardar_datos()
-                print(f"✅ Subgénero Literario con ID {especifico_id} actualizado.")
-                return True
-        print(f"No se encontró ningún Subgénero Literario con ID {especifico_id}.")
-        return False
+    def actualizar_especifico(self):
+        """Permite actualizar un subgénero literario existente por nombre_especifico y tipo."""
+        print("\n- Actualizar Subgénero Literario -\n")
 
-    def eliminar_especifico(self, especifico_id):
-        """Elimina un Subgénero Literario por su ID y reestructura los IDs restantes."""
-        for especifico in self.datos["especificos"]:
-            if especifico["especifico_id"] == especifico_id:
-                self.datos["especificos"].remove(especifico)
-                self.reestructurar_ids_especificos()  # Llamada para reestructurar IDs
-                print(f"✅ Subgénero Literarios con ID {especifico_id} eliminado.")
-                return True
-        print(f"No se encontró ningún Subgénero Literario con ID {especifico_id}.")
-        return False
+        # Solicitar atributos del subgénero
+        nombre_especifico = input("Introduce el nombre exacto del Subgénero Literario a actualizar:\n").strip()
+        tipo = input("Introduce el Tipo exacto del Subgénero Literario:\n").strip()
+
+        # Buscar subgéneros que coincidan con los atributos
+        especificos_encontrados = [e for e in self.datos["especificos"] 
+                                if e["nombre_especifico"] == nombre_especifico and e["tipo"] == tipo]
+
+        if not especificos_encontrados:
+            print(f"❌ No se encontró ningún Subgénero Literario con nombre '{nombre_especifico}' y tipo '{tipo}'.")
+            return False
+
+        if len(especificos_encontrados) > 1:
+            print("⚠️ Se encontraron varios registros con estos atributos:")
+            for e in especificos_encontrados:
+                print(f"> ID: {e['especifico_id']} | Subgénero Literario: {e['nombre_especifico']} | Tipo: {e['tipo']}")
+            especifico_id = input("Introduce el ID del registro que deseas actualizar:\n").strip()
+            especifico_actual = next((e for e in especificos_encontrados if e["especifico_id"] == especifico_id), None)
+            if not especifico_actual:
+                print("❌ ID no válido.")
+                return False
+        else:
+            especifico_actual = especificos_encontrados[0]
+
+        # Mostrar datos actuales y solicitar nuevas entradas
+        nuevo_nombre_especifico = input(f"Introduce el nuevo nombre del subgénero [{especifico_actual['nombre_especifico']}] o presiona ENTER para no modificar:\n").strip() or especifico_actual['nombre_especifico']
+        nuevo_tipo = input(f"Introduce el nuevo tipo del subgénero [{especifico_actual['tipo']}] o presiona ENTER para no modificar:\n").strip() or especifico_actual['tipo']
+
+        # Actualizar los datos
+        especifico_actual["nombre_especifico"] = nuevo_nombre_especifico
+        especifico_actual["tipo"] = nuevo_tipo
+
+        # Guardar cambios
+        self.guardar_datos()
+        print(f"✅ Subgénero Literario actualizado correctamente.")
+        return True
+
+    def eliminar_especifico(self):
+        """Elimina un Subgénero Literario por su nombre y tipo y reestructura los IDs restantes."""
+        # Solicitar al usuario el nombre y tipo del subgénero a eliminar
+        nombre_especifico = input("Introduce el nombre del subgénero a eliminar: ")
+        tipo = input("Introduce el tipo del subgénero a eliminar: ")
+        
+        # Buscar el subgénero por nombre y tipo
+        especifico = next(
+            (e for e in self.datos["especificos"] if e["nombre_especifico"] == nombre_especifico and e["tipo"] == tipo), 
+            None
+        )
+        
+        if especifico:
+            self.datos["especificos"].remove(especifico)  # Elimina el subgénero
+            self.reestructurar_ids_especificos()  # Reestructura los IDs si se eliminó algo
+            print(f"✅ Subgénero Literario '{nombre_especifico}' eliminado correctamente.")
+            return True
+        else:
+            print(f"❌ No se encontró ningún Subgénero Literario con nombre '{nombre_especifico}' y tipo '{tipo}'.")
+            return False
 
     def reestructurar_ids_especificos(self):
         """Reestructura los IDs de los Subgéneros Literarios para que sean consecutivos 

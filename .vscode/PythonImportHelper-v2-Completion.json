@@ -330,14 +330,6 @@
         "documentation": {}
     },
     {
-        "label": "Autor",
-        "importPath": "biblioteca.modelos.autor",
-        "description": "biblioteca.modelos.autor",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.autor",
-        "documentation": {}
-    },
-    {
         "label": "validar_fecha",
         "importPath": "biblioteca.utilidades.validaciones",
         "description": "biblioteca.utilidades.validaciones",
@@ -362,11 +354,27 @@
         "documentation": {}
     },
     {
-        "label": "Especifico",
-        "importPath": "biblioteca.modelos.generos.especifico",
-        "description": "biblioteca.modelos.generos.especifico",
+        "label": "validar_autor",
+        "importPath": "biblioteca.utilidades.validaciones",
+        "description": "biblioteca.utilidades.validaciones",
         "isExtraImport": true,
-        "detail": "biblioteca.modelos.generos.especifico",
+        "detail": "biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_genero",
+        "importPath": "biblioteca.utilidades.validaciones",
+        "description": "biblioteca.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_especifico",
+        "importPath": "biblioteca.utilidades.validaciones",
+        "description": "biblioteca.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "biblioteca.utilidades.validaciones",
         "documentation": {}
     },
     {
@@ -407,6 +415,14 @@
         "description": "biblioteca.modelos.generos.especifico",
         "isExtraImport": true,
         "detail": "biblioteca.modelos.generos.especifico",
+        "documentation": {}
+    },
+    {
+        "label": "Genero",
+        "importPath": "biblioteca.modelos.generos.genero",
+        "description": "biblioteca.modelos.generos.genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.modelos.generos.genero",
         "documentation": {}
     },
     {
@@ -3145,7 +3161,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "peekOfCode": "class CRUDLibro:\n    def __init__(self, ruta_json, repositorio_autor, repositorio_especifico, repositorio_genero):\n        self.ruta_json = ruta_json\n        self.repositorio_autor = repositorio_autor\n        self.repositorio_especifico = repositorio_especifico\n        self.repositorio_genero = repositorio_genero\n        self.datos = self.cargar_datos()  # Carga los datos al inicializar\n    def cargar_datos(self):\n        \"\"\"Carga los datos desde el archivo JSON y los asigna a self.datos.\"\"\"\n        try:",
+        "peekOfCode": "class CRUDLibro:\n    def __init__(self, ruta_json, repositorio_autor, repositorio_especifico, repositorio_genero):\n        self.ruta_json = ruta_json\n        self.repositorio_autor = repositorio_autor\n        self.repositorio_especifico = repositorio_especifico\n        self.repositorio_genero = repositorio_genero\n        self.datos = self.cargar_datos()  # Carga los datos al inicializar\n        self.libro_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental\n    def cargar_datos(self):\n        \"\"\"Carga los datos desde el archivo JSON.\"\"\"",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
         "documentation": {}
     },
@@ -3190,7 +3206,7 @@
         "kind": 2,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.submenus.submenu_libro",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.submenus.submenu_libro",
-        "peekOfCode": "def submenu_libro(biblioteca):\n    # Inicializar los repositorios necesarios\n    ruta_json = RUTA_DATOS_BIBLIOTECA\n    repositorio_autor = RepositorioAutor(ruta_json)\n    repositorio_especifico = RepositorioEspecifico(ruta_json)\n    repositorio_genero = RepositorioGenero(ruta_json)\n    # Crea la instancia de CRUDLibro pasando todos los repositorios\n    crud_libro = CRUDLibro(\n        biblioteca.ruta_json,\n        repositorio_autor,",
+        "peekOfCode": "def submenu_libro(biblioteca):\n    # Inicializar los repositorios necesarios\n    ruta_json = RUTA_DATOS_BIBLIOTECA\n    repositorio_autor = RepositorioAutor(ruta_json)\n    repositorio_especifico = RepositorioEspecifico(ruta_json)\n    repositorio_genero = RepositorioGenero(ruta_json)\n    # Crear instancia de CRUDLibro pasando los repositorios\n    crud_libro = CRUDLibro(\n        biblioteca.ruta_json,\n        repositorio_autor,",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.menus.submenus.submenu_libro",
         "documentation": {}
     },
@@ -3325,7 +3341,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.libro",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.libro",
-        "peekOfCode": "class Libro():\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n#genero_id=None, subgenero_id=None, genero\n    def __init__(self, titulo, especifico, fecha_publicacion, num_paginas, autor):\n        if not isinstance(especifico, Especifico):\n            raise TypeError(\"El parámetro 'especifico' debe ser una instancia de la clase 'Especifico'\")\n        if not isinstance(autor, Autor):\n            raise TypeError(\"El parámetro 'autor' debe ser una instancia de la clase 'Autor'\")\n        self.__libro_id = Libro.__id_counter  # Asigna el ID actual, es decir, el ID = 1\n        Libro.__id_counter += 1         # Contador autoincremental",
+        "peekOfCode": "class Libro():\n    __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan\n#genero_id=None, subgenero_id=None, genero\n    def __init__(self, titulo, genero, especifico, fecha_publicacion, num_paginas, autor):\n        if not isinstance(genero, Genero):\n            raise TypeError(\"El parámetro 'genero' debe ser una instancia de la clase 'Genero'\")\n        if not isinstance(especifico, Especifico):\n            raise TypeError(\"El parámetro 'especifico' debe ser una instancia de la clase 'Especifico'\")\n        if not isinstance(autor, Autor):\n            raise TypeError(\"El parámetro 'autor' debe ser una instancia de la clase 'Autor'\")",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.modelos.libro",
         "documentation": {}
     },
@@ -3402,20 +3418,29 @@
         "documentation": {}
     },
     {
-        "label": "validar_genero_especifico",
-        "kind": 2,
-        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
-        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
-        "peekOfCode": "def validar_genero_especifico(biblioteca):\n    # Asegurar de que se está usando un string en la entrada\n    nombre_genero = input(\"Introduce el Género Literario:\\n\").strip().lower()\n    genero_encontrado = None\n    for genero in biblioteca.generos:\n        # Asegurar de que get_nombre_genero() devuelve un string\n        if genero.get_nombre_genero().strip().lower() == nombre_genero:\n            genero_encontrado = genero\n            print(f\"\\nGénero '{nombre_genero}' encontrado.\\n\")\n            break",
-        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
-        "documentation": {}
-    },
-    {
         "label": "validar_autor",
         "kind": 2,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
-        "peekOfCode": "def validar_autor(biblioteca):\n        # Verificar o crear autor\n        nombre = input(\"Introduce el nombre de pila del autor: \")\n        pseudonimo = None # Valor por defecto\n        # Comprobar psseudonimo\n        tiene_pseudonimo = input(\"Introduce el pseudonimo del autor(si se le atribuye) - (s = [sí] / n = [no]):\\n\").strip().lower()\n        if tiene_pseudonimo == \"s\":\n                pseudonimo = input(\"Introduce el pseudónimo del autor: \").strip().lower()\n        autor_encontrado = None\n        for autor in biblioteca.autores:",
+        "peekOfCode": "def validar_autor(biblioteca):\n    \"\"\"\n    Valida si un Autor con el pseudónimo ingresado ya existe en la biblioteca.\n    Si no existe, permite crear uno nuevo.\n    \"\"\"\n    autores = biblioteca.repositorio_autor.obtener_autores()\n    if autores is None:\n        print(\"Error: No se pudieron cargar los Autores.\\n\")\n        return None\n    pseudonimo = input(\"Introduce el pseudónimo del Autor:\\n\").strip()",
+        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_genero",
+        "kind": 2,
+        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
+        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
+        "peekOfCode": "def validar_genero(biblioteca):\n    \"\"\"\n    Valida si un Género Literario con el nombre ingresado ya existe en la biblioteca.\n    Si no existe, permite crear uno nuevo.\n    \"\"\" \n    generos = biblioteca.repositorio_genero.obtener_generos()\n    if generos is None:\n        print(\"Error: No se pudieron cargar los Géneros Literarios.\\n\")\n        return None    \n    nombre_genero = input(\"Introduce el Género Literario:\\n\").strip().lower()",
+        "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_especifico",
+        "kind": 2,
+        "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
+        "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
+        "peekOfCode": "def validar_especifico(biblioteca):\n    \"\"\"\n    Valida si un Subgénero Literario y el Tipo de Subgenero Literario con el nombre_especifico y el tipo ingresados ya existen en la biblioteca.\n    Si no existen, permite crearan un nuevo dato.\n    \"\"\" \n    # Verificar si el subgénero y el tipo de subgénero ya existen\n    especificos = biblioteca.repositorio_especifico.obtener_especificos()\n    if especificos is None:\n        print(\"Error: No se pudieron cargar los Subgéneros y Tipos Literarios.\\n\")\n        return None",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "documentation": {}
     },

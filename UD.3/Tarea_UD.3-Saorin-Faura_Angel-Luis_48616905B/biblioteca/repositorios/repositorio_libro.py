@@ -62,17 +62,17 @@ class RepositorioLibro:
                 genero = self.repositorio_genero.obtener_genero_por_id(libro["genero_id"])
 
                 # Validar datos obtenidos
-                nombre_autor = (
-                    f"{autor['nombre']} {autor['apellido1']} {autor['apellido2']}" if autor else "Autor desconocido"
+                nombre_autor_completo = (
+                    f"{autor['nombre']} {autor['apellido1']} {autor['apellido2']} | Pseudónimo: {autor['pseudonimo']}" if autor else "Autor desconocido"
                 )
                 nombre_genero = genero["nombre_genero"] if genero else "Género desconocido"
                 nombre_especifico = especifico["nombre_especifico"] if especifico else "Subgénero desconocido"
                 tipo_especifico = especifico["tipo"] if especifico else "Desconocido"
 
                 # Imprimir información del libro
-                print(f"ID: {libro['libro_id']} | Título: {libro['titulo']}")
-                print(f"Autor: {nombre_autor}")
-                print(f"Género: {nombre_genero} | Subgénero: {nombre_especifico} ({tipo_especifico})")
+                print(f"ID: {libro['libro_id']} | Título del Libro: {libro['titulo']}")
+                print(f"Autor: {nombre_autor_completo}")
+                print(f"Género Literario: {nombre_genero} | Subgénero Literario: {nombre_especifico} - Tipo de Subgénero Literario: {tipo_especifico}")
                 print(f"Fecha de publicación: {libro['fecha_publicacion']} | Número de páginas: {libro['num_paginas']}")
                 print("-----")
 
@@ -81,5 +81,6 @@ class RepositorioLibro:
             except Exception as e:
                 print(f"⚠️ Error al procesar el libro con ID {libro['libro_id']}: {e}")
 
-
-
+    def obtener_libros(self):
+        """Devuelve la lista de libros."""
+        return self.libros

@@ -3,6 +3,7 @@ from biblioteca.repositorios.repositorio_especifico import RepositorioEspecifico
 from biblioteca.repositorios.repositorio_genero import RepositorioGenero
 from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
 from biblioteca.crud.crud_libro import CRUDLibro
+from biblioteca.utilidades.validaciones import validar_autor, validar_genero, validar_especifico
 
 def submenu_libro(biblioteca):
     # Inicializar los repositorios necesarios
@@ -11,14 +12,14 @@ def submenu_libro(biblioteca):
     repositorio_especifico = RepositorioEspecifico(ruta_json)
     repositorio_genero = RepositorioGenero(ruta_json)
 
-    # Crea la instancia de CRUDLibro pasando todos los repositorios
+    # Crear instancia de CRUDLibro pasando los repositorios
     crud_libro = CRUDLibro(
         biblioteca.ruta_json,
         repositorio_autor,
         repositorio_especifico,
         repositorio_genero
     )
-    
+
     while True:
         print("\n- Tareas de Libros -\n")
         print("1. Mostrar Libros.")
@@ -28,95 +29,94 @@ def submenu_libro(biblioteca):
         print("5. Eliminar Libro.")
         print("0. Menú Tareas de Biblioteca.")
 
-        opcion = input("\nSelecciona una opción:\n")
-        
+        opcion = input("\nSelecciona una opción:\n").strip()
+
         if opcion == "1":
-            crud_libro.mostrar_libros_crud(biblioteca)
+            crud_libro.mostrar_libros()
 
         elif opcion == "2":
-            # Añadir un libro
+            # Validar la existencia del autor
+            autor = validar_autor(biblioteca)
+            if not autor:
+                print("⚠️ Error al validar el autor. Intenta nuevamente.")
+                continue
+
+            # Validar la existencia del género
+            genero = validar_genero(biblioteca)
+            if not genero:
+                print("⚠️ Error al validar el género. Intenta nuevamente.")
+                continue
+
+            # Validar la existencia del subgénero
+            especifico = validar_especifico(biblioteca)
+            if not especifico:
+                print("⚠️ Error al validar el subgénero. Intenta nuevamente.")
+                continue
+
+            # Recopilar otros datos del libro
             titulo = input("Introduce el título del libro: ").strip()
-            autor_id = input("Introduce el ID del autor: ").strip()
-            especifico_id = input("Introduce el ID del subgénero: ").strip()
             fecha_publicacion = input("Introduce la fecha de publicación (AAAA-MM-DD): ").strip()
             num_paginas = input("Introduce el número de páginas: ").strip()
 
-            libro = {
+            # Crear el libro
+            nuevo_libro = {
+                "libro_id": len(biblioteca.repositorio_libro.obtener_libros()) + 1,  # Generar ID automáticamente
                 "titulo": titulo,
-                "autor_id": autor_id,
-                "especifico_id": especifico_id,
+                "genero_id": genero["genero_id"], # Utiliza el ID del subgénero validado
+                "especifico_id": especifico["especifico_id"],  # Utiliza el ID del subgénero validado
                 "fecha_publicacion": fecha_publicacion,
                 "num_paginas": num_paginas,
-                "nombre_genero": "Desconocido",  # Esto podría ser más dinámico según la relación con géneros
+                "autor_id": autor['autor_id']  # Utiliza el ID del autor validado
             }
-
-            crud_libro.agregar_libro(libro)
-            print(f"Libro '{titulo}' agregado exitosamente.")
+            biblioteca.repositorio_libro.agregar_libro(nuevo_libro)
+            print(f"Libro '{titulo}' añadido exitosamente.")
 
         elif opcion == "3":
-            # Buscar un libro por título
-            titulo_buscar = input("Introduce el título del libro a buscar: ").strip()
-            libro_encontrado = None
-
-            # Buscar libro por título
-            for libro in crud_libro.datos["libros"]:
-                if libro["titulo"].lower() == titulo_buscar.lower():
-                    libro_encontrado = libro
-                    break
-
-            if libro_encontrado:
-                print("\n=== Libro Encontrado ===")
-                print(
-                    f"ID: {libro_encontrado['libro_id']} | Título: {libro_encontrado['titulo']} | "
-                    f"Autor: {libro_encontrado['autor_id']} | Género: {libro_encontrado['nombre_genero']} | "
-                    f"Subgénero: {libro_encontrado['especifico_id']} | Fecha de Publicación: {libro_encontrado['fecha_publicacion']} | "
-                    f"Núm. Páginas: {libro_encontrado['num_paginas']}"
-                )
-            else:
-                print(f"No se encontró ningún libro con el título '{titulo_buscar}'.")
+            crud_libro.buscar_libro_por_titulo(biblioteca)
 
         elif opcion == "4":
-            # Modificar los datos de un libro
             libro_id = input("Introduce el ID del libro a modificar: ").strip()
             nuevos_datos = {}
 
-            # Buscar el libro por ID
             libro = crud_libro.buscar_libro_por_id(libro_id)
             if libro:
                 print(f"Libro encontrado: {libro['titulo']}")
                 titulo = input(f"Nuevo título (actual: {libro['titulo']}): ").strip()
                 if titulo:
                     nuevos_datos["titulo"] = titulo
-                autor_id = input(f"Nuevo ID del autor (actual: {libro['autor_id']}): ").strip()
-                if autor_id:
-                    nuevos_datos["autor_id"] = autor_id
-                especifico_id = input(f"Nuevo ID del subgénero (actual: {libro['especifico_id']}): ").strip()
-                if especifico_id:
-                    nuevos_datos["especifico_id"] = especifico_id
+
+                autor = validar_autor(biblioteca)
+                if autor:
+                    nuevos_datos["autor_id"] = autor.get_id()
+
+                subgenero = validar_especifico(biblioteca)
+                if subgenero:
+                    nuevos_datos["especifico_id"] = subgenero.get_id()
+
                 fecha_publicacion = input(f"Nueva fecha de publicación (actual: {libro['fecha_publicacion']}): ").strip()
                 if fecha_publicacion:
                     nuevos_datos["fecha_publicacion"] = fecha_publicacion
+
                 num_paginas = input(f"Nuevo número de páginas (actual: {libro['num_paginas']}): ").strip()
                 if num_paginas:
                     nuevos_datos["num_paginas"] = num_paginas
 
                 if crud_libro.actualizar_libro(libro_id, nuevos_datos):
-                    print(f"Libro con ID {libro_id} actualizado exitosamente.")
+                    print(f"✅ Libro con ID {libro_id} actualizado exitosamente.")
                 else:
-                    print("No se pudo actualizar el libro.")
+                    print("⚠️ No se pudo actualizar el libro.")
             else:
-                print(f"No se encontró un libro con ID {libro_id}.")
+                print(f"⚠️ No se encontró un libro con ID {libro_id}.")
 
         elif opcion == "5":
-            # Eliminar un libro
             libro_id = input("Introduce el ID del libro a eliminar: ").strip()
             if crud_libro.eliminar_libro(libro_id):
-                print(f"Libro con ID {libro_id} eliminado exitosamente.")
+                print(f"✅ Libro con ID {libro_id} eliminado exitosamente.")
             else:
-                print(f"No se encontró un libro con ID {libro_id}.")
+                print(f"⚠️ No se encontró un libro con ID {libro_id}.")
 
         elif opcion == "0":
-            return  # Volver SubMenú Tareas de Biblioteca
+            return  # Volver al Menú de Biblioteca
 
         else:
-            print("\nOpción no válida.\n")
+            print("\n⚠️ Opción no válida. Intenta de nuevo.\n")

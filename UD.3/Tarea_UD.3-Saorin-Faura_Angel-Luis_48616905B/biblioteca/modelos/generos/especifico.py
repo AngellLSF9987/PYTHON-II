@@ -46,12 +46,12 @@ class Especifico(Genero):
 
     def __str__(self):
         """Método __str__. Muestra todos los datos de modelo Subgénero"""
-        return f"Id: {self.get_especifico_id()}.\nGénero Literario:{super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}."
+        return f"Id: {self.get_especifico_id()}.\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}."
 
     def mostrar_datos_especifico(self):
         """Muestra los datos específicos del Género Literario."""
-        return f"Género Literario: {super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}"
+        return f"Subgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}"
 
-    def mostrar_datos_especifico_crud(self):
-        """Muestra los datos específicos del Género Literario."""
-        return f"Subgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}."
+    # def mostrar_datos_especifico_crud(self):
+    #     """Muestra los datos específicos del Género Literario."""
+    #     return f"Subgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}."

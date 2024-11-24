@@ -2,8 +2,6 @@
 
 from datetime import datetime
 from biblioteca.modelos.generos.genero import Genero
-from biblioteca.modelos.autor import Autor
-from biblioteca.modelos.generos.especifico import Especifico
 
 def validar_fecha(fecha_str):
 
@@ -24,83 +22,113 @@ def validar_fecha(fecha_str):
         errorDate = "Error: La fecha no tiene el formato correcto (DD-MM-AAAA)."
         print(f"{errorDate}. Valor retornado: None")
         return None
+    
+def validar_autor(biblioteca):
+    """
+    Valida si un Autor con el pseudónimo ingresado ya existe en la biblioteca.
+    Si no existe, permite crear uno nuevo.
+    """
+    autores = biblioteca.repositorio_autor.obtener_autores()
+    if autores is None:
+        print("Error: No se pudieron cargar los Autores.\n")
+        return None
 
-def validar_genero_especifico(biblioteca):
-    # Asegurar de que se está usando un string en la entrada
+    pseudonimo = input("Introduce el pseudónimo del Autor:\n").strip()
+
+    # Buscar el pseudónimo en la lista de autores
+    for autor in autores:
+        if autor.get("pseudonimo", "").lower() == pseudonimo.lower():
+            print(f"El pseudónimo '{pseudonimo}' ya existe.\n")
+            return autor  # Devuelve el autor encontrado
+
+    # Si no se encuentra, crearlo
+    if nuevo_autor is None:
+        print(f"\nEl autor '{pseudonimo}' no ha sido encontrado. Creando nuevo autor.")
+        nombre = input("Introduce el nombre del autor:\n").strip()
+        apellido1 = input("Introduce el primer apellido del autor:\n").strip()
+        apellido2 = input("Introduce el segundo apellido del autor:\n").strip()
+        nacido = input("Introduce la fecha de nacimiento del autor (DD-MM-AAAA):\n").strip()
+        fallecido = input("Introduce la fecha de fallecimiento del autor (si aplica, DD-MM-AAAA) - ENTER para valor 'Null':\n").strip()
+        nacionalidad = input("Introduce la nacionalidad del autor:\n").strip()
+        
+        nuevo_autor = {
+            "id": len(biblioteca.repositorio_autor.obtener_autores()) + 1,  # Asignar un ID incremental
+            "nombre": nombre,
+            "apellido1": apellido1,
+            "apellido2": apellido2,
+            "pseudonimo": pseudonimo or None,
+            "nacido": nacido,
+            "fallecido": fallecido or None,
+            "nacionalidad": nacionalidad
+        }
+        biblioteca.repositorio_autor.agregar_autor(nuevo_autor)
+    print(f"El Autor '{pseudonimo}' ha sido creado exitosamente.\n")
+    
+    return nuevo_autor
+
+
+def validar_genero(biblioteca):
+    """
+    Valida si un Género Literario con el nombre ingresado ya existe en la biblioteca.
+    Si no existe, permite crear uno nuevo.
+    """ 
+    generos = biblioteca.repositorio_genero.obtener_generos()
+    if generos is None:
+        print("Error: No se pudieron cargar los Géneros Literarios.\n")
+        return None    
+
     nombre_genero = input("Introduce el Género Literario:\n").strip().lower()
-    genero_encontrado = None
-    
-    for genero in biblioteca.generos:
+
+    for genero in generos:
         # Asegurar de que get_nombre_genero() devuelve un string
-        if genero.get_nombre_genero().strip().lower() == nombre_genero:
-            genero_encontrado = genero
-            print(f"\nGénero '{nombre_genero}' encontrado.\n")
-            break
-    
-    # Si el género no existe, crear y añadir a la biblioteca
-    if genero_encontrado is None:
-        print(f"\nGénero '{nombre_genero}' no encontrado. Creando nuevo género.\n")
-        genero_encontrado = Genero(nombre_genero)
-        biblioteca.generos.append(genero_encontrado)
-    
+        if genero.get("nombre_genero").strip().lower() == nombre_genero.lower():
+            print(f"Género Literario {nombre_genero} ha sido encontrado.\n")
+            return genero           
+
+    if nuevo_genero is None:
+        # Crear si no se encontró el género
+        print(f"\nSubgénero Literario '{nombre_genero}' no encontrado. Creando nuevo Género Literario.\n")
+        nombre_genero = input("Introduce el Género Literario del libro:\n").strip()
+            
+        nuevo_genero = {
+            "id": len(biblioteca.repositorio_genero.obtener_generos()) + 1, # Asignar un ID incremental
+            "nombre_genero": nombre_genero
+        }
+        biblioteca.repositorio_genero.agregar_genero(nuevo_genero)
+    print(f"El Género Literario'{nombre_genero}' ha sido creado exitosamente.\n")
+    return nuevo_genero
+
+def validar_especifico(biblioteca):
+    """
+    Valida si un Subgénero Literario y el Tipo de Subgenero Literario con el nombre_especifico y el tipo ingresados ya existen en la biblioteca.
+    Si no existen, permite crearan un nuevo dato.
+    """ 
     # Verificar si el subgénero y el tipo de subgénero ya existen
+    especificos = biblioteca.repositorio_especifico.obtener_especificos()
+    if especificos is None:
+        print("Error: No se pudieron cargar los Subgéneros y Tipos Literarios.\n")
+        return None
+              
     nombre_especifico = input("Introduce el Subgénero Literario:\n").strip().lower()
     tipo = input("Introduce el Tipo Específico de Subgénero:\n").strip().lower()
     
-    especifico_encontrado = None
+    for especifico in especificos:
+        if (especifico.get('nombre_especifico').strip().lower() == nombre_especifico and
+            especifico.get('tipo').strip().lower() == tipo):
+            print(f"Subgénero Literario {nombre_especifico} y Tipo de Subgénero Literario {tipo} encontrados.\n")
+            return especifico
     
-    for especifico in biblioteca.especificos:
-        if (especifico.get_nombre_genero().strip().lower() == genero_encontrado.get_nombre_genero().strip().lower() and
-            especifico.get_nombre_especifico().strip().lower() == nombre_especifico and
-            especifico.get_tipo().strip().lower() == tipo):
-            especifico_encontrado = especifico
-            break
-    
-    if especifico_encontrado is None:
+    if nuevo_especifico is None:
         # Crear si no se encontró el subgénero
-        print(f"\nSubgénero '{nombre_especifico}' y Tipo '{tipo}' no encontrado. Creando nuevo subgénero.\n")
-        especifico_encontrado = Especifico(genero_encontrado.get_nombre_genero(), nombre_especifico, tipo)
-        biblioteca.especificos.append(especifico_encontrado)
-    
-    return especifico_encontrado
-    
-def validar_autor(biblioteca):
-    
-        # Verificar o crear autor
-        nombre = input("Introduce el nombre de pila del autor: ")
-        pseudonimo = None # Valor por defecto
-        
-        # Comprobar psseudonimo
-        tiene_pseudonimo = input("Introduce el pseudonimo del autor(si se le atribuye) - (s = [sí] / n = [no]):\n").strip().lower()
-        
-        if tiene_pseudonimo == "s":
-                pseudonimo = input("Introduce el pseudónimo del autor: ").strip().lower()
-            
-        
-        autor_encontrado = None
+        print(f"\nSubgénero Literario '{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' no encontrado. Creando nuevo Subgénero y Tipo Literarios.\n")
+        nombre_especifico = input("Introduce el Subgénero Literario del libro:\n").strip()
+        tipo = input("Introduce el Tipo de Subgénero Literario del libro:\n").strip()
 
-        for autor in biblioteca.autores:
-            # Coincide el pseudonimo con autor y pseudonimo
-            if (autor.get_nombre().lower() == nombre and autor.get_pseudonimo() and 
-                autor.get_pseudonimo().lower() == pseudonimo):
-                autor_encontrado = autor
-                print(f"\nEl Autor con nombre '{nombre}' o pseudonimo '{pseudonimo}' ha sido encontrado.\n")
-                break
-            # No coincide pseudónimo: coincidencia de solo el nombre
-            else:
-                if autor.get_nombre().lower() == nombre and not autor.get_pseudonimo():
-                    autor_encontrado = autor
-                    print(f"\nEl Autor '{nombre}' (sin pseudónimo) ha sido encontrado.\n")
-                    break
-        if autor_encontrado is None:
-            print(f"\n\nEl Autor con nombre '{nombre}' o pseudonimo '{pseudonimo}' no ha sido encontrado. Creando nuevo autor.\n")
-            apellido1 = input("Introduce el primer apellido del autor: ")
-            apellido2 = input("Introduce el segundo apellido del autor: ")
-            nacido = input("Introduce la fecha de nacimiento del autor (DD-MM-AAAA): ")
-            fallecido = input("Introduce la fecha de fallecimiento del autor (si aplica, DD-MM-AAAA): ")
-            nacionalidad = input("Introduce la nacionalidad del autor: ") 
-            
-            autor_encontrado = Autor(nombre, apellido1, apellido2, pseudonimo, nacido, fallecido, nacionalidad)
-            biblioteca.autores.append(autor_encontrado)
-        
-        return autor_encontrado
+        nuevo_especifico = {
+            "id": len(biblioteca.repositorio_especifico.obtener_especificos()) + 1,
+            "nombre_especifico": nombre_especifico,
+            "tipo": tipo
+        }
+        biblioteca.repositorio_especificos.agregar_especifico(nuevo_especifico)
+    print(f"El Subgénero Literario'{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' ha sido creado exitosamente.\n")
+    return nuevo_especifico

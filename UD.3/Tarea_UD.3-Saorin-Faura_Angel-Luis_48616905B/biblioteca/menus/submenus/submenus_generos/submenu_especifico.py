@@ -37,9 +37,9 @@ def submenu_especifico(biblioteca):
                 print("\n⚠️ El nombre del Subgénero Literario y Tipo no puede estar vacío.")
 
         elif opcion == "3":
-            crud_especifico.actualizar_especifico(biblioteca)
+            crud_especifico.actualizar_especifico()
         elif opcion == "4":
-            crud_especifico.eliminar_especifico(biblioteca)
+            crud_especifico.eliminar_especifico()
         elif opcion == "0":
             print("Regresando al Menú Principal...")
             break

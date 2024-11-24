@@ -54,5 +54,5 @@ class RepositorioGenero:
         return None
     
     def obtener_generos(self):
-        """Devuelve la lista de autores."""
+        """Devuelve la lista de géneros."""
         return self.generos

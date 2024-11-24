@@ -44,27 +44,63 @@ class CRUDGenero:
         print(f"✅ Género Literario agregado con éxito: {nuevo_genero['nombre_genero']}")
         return True
 
-    def actualizar_genero(self, genero_id, datos_actualizados):
-        """Actualiza los datos de un genero existente."""
-        for genero in self.datos["generos"]:
-            if genero["genero_id"] == genero_id:
-                genero.update(datos_actualizados)
-                self.guardar_datos()
-                print(f"✅ genero con ID {genero_id} actualizado.")
-                return True
-        print(f"No se encontró ningún Género Literario con ID {genero_id}.")
-        return False
+    def actualizar_genero(self):
+        """Permite actualizar un género literario existente por nombre_genero."""
+        print("\n- Actualizar Subgénero Literario -\n")
 
-    def eliminar_genero(self, genero_id):
-        """Elimina un Género Literario por su ID y reestructura los IDs restantes."""
-        for genero in self.datos["generos"]:
-            if genero["genero_id"] == genero_id:
-                self.datos["generos"].remove(genero)
-                self.reestructurar_ids_generos()  # Llamada para reestructurar IDs
-                print(f"✅ genero con ID {genero_id} eliminado.")
-                return True
-        print(f"No se encontró un genero con ID {genero_id}.")
-        return False
+        # Solicitar atributos del género
+        nombre_genero = input("Introduce el nombre exacto del Género Literario a actualizar:\n").strip()
+
+        # Buscar subgéneros que coincidan con los atributos
+        generos_encontrados = [g for g in self.datos["generos"] 
+                                if g["nombre_genero"] == nombre_genero]
+        
+        if not generos_encontrados:
+            print(f"❌ No se encontró ningún Género Literario con nombre '{nombre_genero}'.")
+            return False
+
+        if len(generos_encontrados) > 1:
+            print("⚠️ Se encontraron varios registros con estos atributos:")
+            for g in generos_encontrados:
+                print(f"> ID: {g['genero_id']} | Género Literario: {g['nombre_genero']} |")
+            genero_id = input("Introduce el ID del registro que deseas actualizar:\n").strip()
+            genero_actual = next((g for g in generos_encontrados if g["genero_id"] == genero_id), None)
+            if not genero_actual:
+                print("❌ ID no válido.")
+                return False
+        else:
+            genero_actual = generos_encontrados[0]
+
+        # Mostrar datos actuales y solicitar nuevas entradas
+        nuevo_nombre_genero = input(f"Introduce el nuevo nombre del Género [{genero_actual['nombre_genero']}] o presiona ENTER para no modificar:\n").strip() or genero_actual['nombre_genero']
+
+        # Actualizar los datos
+        genero_actual["nombre_genero"] = nuevo_nombre_genero
+
+        # Guardar cambios
+        self.guardar_datos()
+        print(f"✅ Género Literario actualizado correctamente.")
+        return True
+
+    def eliminar_genero(self):
+        """Elimina un Género Literario por su nombre y reestructura los IDs restantes."""
+        # Solicitar al usuario el nombre del Género a eliminar
+        nombre_genero = input("Introduce el nombre del Género Literario a eliminar: ")
+
+        # Buscar el subgénero por nombre y tipo
+        genero = next(
+            (g for g in self.datos["generos"] if g["nombre_genero"] == nombre_genero), 
+            None
+        )
+        
+        if genero:
+            self.datos["generos"].remove(genero)  # Elimina el género
+            self.reestructurar_ids_generos()  # Reestructura los IDs si se eliminó algo
+            print(f"✅ Género Literario '{nombre_genero}' eliminado correctamente.")
+            return True
+        else:
+            print(f"❌ No se encontró ningún Género Literario con nombre '{nombre_genero}'.")
+            return False
 
     def reestructurar_ids_generos(self):
         """Reestructura los IDs de los Géneros Literarios para que sean consecutivos 

@@ -22,9 +22,7 @@ class Biblioteca:
         self.cargar_datos_biblioteca()
 
     def cargar_datos_biblioteca(self):
-        """
-        Carga los datos desde el JSON y los distribuye en los repositorios correspondientes.
-        """
+        """Carga los datos desde el JSON y los distribuye en los repositorios correspondientes."""
         try:
             self.datos_biblioteca = cargar_datos_json(self.ruta_json)  # Cargar datos desde JSON
             self.cargar_generos(self.datos_biblioteca.get('generos', []))

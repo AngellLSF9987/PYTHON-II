@@ -61,16 +61,19 @@ def buscar_libro_por_titulo(biblioteca):
         if resultados:
             print("\n=== Resultados de la búsqueda ===\n")
             for libro in resultados:
-                autor = biblioteca.repositorio_autor.obtener_autor_por_id(libro["autor_id"])
-                especifico = biblioteca.repositorio_especifico.obtener_especifico_por_id(libro["especifico_id"])
                 genero = biblioteca.repositorio_genero.obtener_genero_por_id(libro["genero_id"])
-                autor_nombre = autor["nombre"] if autor else "Desconocido"
-                nombre_genero = genero["nombre_genero"] if genero else "Desconocido"
+                nombre_genero = genero["nombre_genero"] if genero else "Género Literario Desconocido"
+                especifico = biblioteca.repositorio_especifico.obtener_especifico_por_id(libro["especifico_id"])                
+                nombre_especifico = especifico["nombre_especifico"] if especifico else "Subgénero Literario Desconocido"
+                tipo = especifico['tipo'] if especifico else "Tipo Desconocido"
+                autor = biblioteca.repositorio_autor.obtener_autor_por_id(libro["autor_id"])
+                autor_nombre = autor["nombre"] if autor else " Autor Desconocido"
+
 
                 print(
                     f"ID: {libro['libro_id']}\n"
                     f"Título: {libro['titulo']}\n"
-                    f"Género Literario: {nombre_genero} | Subgénero Literario: {especifico['nombre_especifico']} - 'Tipo:' {especifico['tipo']}\n"
+                    f"Género Literario: {nombre_genero} | Subgénero Literario: {nombre_especifico} - Tipo: {tipo}\n"
                     f"Fecha de Publicación: {libro['fecha_publicacion']}\n"
                     f"Autor: {autor_nombre}\n"
                 )
@@ -128,17 +131,18 @@ def mostrar_todos_los_libros(biblioteca):
                     pseudonimo = f"({autor['pseudonimo']})" if autor.get("pseudonimo") else ""
                     autor_info = f"{nombre_autor} {pseudonimo}"
                 else:
-                    autor_info = "Desconocido"
+                    autor_info = "Autor Desconocido"
 
                 # Preparar datos del género
-                nombre_genero = genero["nombre_genero"] if genero else "Desconocido"
+                if genero:
+                    nombre_genero = f"{genero["nombre_genero"]}" if genero else "Género Literario Desconocido"
 
                 # Preparar datos del subgénero
                 if especifico:
-                    nombre_especifico = especifico.get("nombre_especifico", "Desconocido")
-                    tipo_especifico = especifico.get("tipo", "Desconocido")
+                    nombre_especifico = f"{especifico["nombre_especifico"]}"
+                    tipo_especifico = f"{especifico["tipo"]}"
                 else:
-                    nombre_especifico = "Desconocido"
+                    nombre_especifico = "Subgénero Literario Desconocido"
                     tipo_especifico = "Desconocido"
 
                 # Mostrar información del libro
@@ -147,7 +151,7 @@ def mostrar_todos_los_libros(biblioteca):
                     f"Título: {libro['titulo']}\n"
                     f"Autor: {autor_info}\n"
                     f"Género Literario: {nombre_genero}\n"
-                    f"Subgénero: {nombre_especifico} ({tipo_especifico})\n"
+                    f"Subgénero Literario: {nombre_especifico} - Tipo: ({tipo_especifico})\n"
                     f"Fecha de Publicación: {libro['fecha_publicacion']}\n"
                     f"Número de Páginas: {libro['num_paginas']}\n"
                 )

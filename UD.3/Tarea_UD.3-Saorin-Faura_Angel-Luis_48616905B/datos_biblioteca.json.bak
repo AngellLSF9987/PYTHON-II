@@ -1,17 +1,17 @@
 {
     "autores": [
         {
-            "autor_id": "1",
+            "autor_id": 1,
             "nombre": "Gabriel",
             "apellido1": "García",
             "apellido2": "Márquez",
             "pseudonimo": "Gabriel García Márquez",
-            "nacido": "06-03-1927",
-            "fallecido": "17-04-2014",
+            "nacido": "1927-03-06",
+            "fallecido": "2014-04-17",
             "nacionalidad": "Colombia"
         },
         {
-            "autor_id": "2",
+            "autor_id": 2,
             "nombre": "Jhon Ronald",
             "apellido1": "Reuel",
             "apellido2": "Tolkien",
@@ -21,7 +21,7 @@
             "nacionalidad": "Reino Unido"
         },
         {
-            "autor_id": "3",
+            "autor_id": 3,
             "nombre": "Eric",
             "apellido1": "Arthur",
             "apellido2": "Blair",
@@ -31,76 +31,77 @@
             "nacionalidad": "Reino Unido"
         },
         {
-            "autor_id": "4",
+            "autor_id": 4,
             "nombre": "Stephen",
-            "apellido1": "Edwing",
+            "apellido1": "Edwin",
             "apellido2": "King",
             "pseudonimo": "Stephen King",
             "nacido": "21-09-1947",
-            "fallecido": "No fallecido",
-            "nacionalidad": "EE.UU"
+            "fallecido": null,
+            "nacionalidad": "Estados Unidos"
         },
         {
-            "autor_id": "5",
+            "autor_id": 5,
             "nombre": "Nelle",
             "apellido1": "Harper",
             "apellido2": "Lee",
             "pseudonimo": "Harper Lee",
             "nacido": "28-04-1926",
             "fallecido": "19-02-2016",
-            "nacionalidad": "EE.UU"
+            "nacionalidad": "Estados Unidos"
         }
     ],
     "generos": [
         {
-            "genero_id": "1",
+            "genero_id": 1,
             "nombre_genero": "Narrativo"
         },
         {
-            "nombre_genero": "Dramático",
-            "genero_id": "2"
+            "genero_id": 2,
+            "nombre_genero": "Dramático"
         },
         {
-            "nombre_genero": "Lírico",
-            "genero_id": "3"
+            "genero_id": 3,
+            "nombre_genero": "Lírico"
         }
     ],
     "especificos": [
         {
             "especifico_id": 1,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Terror"
         },
         {
             "especifico_id": 2,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Suspense"
         },
         {
             "especifico_id": 3,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Distópica"
         },
         {
             "especifico_id": 4,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Realismo Mágico"
         },
         {
             "especifico_id": 5,
-            "genero_id": 1,
             "nombre_especifico": "Novela",
             "tipo": "Fantasía"
+        },
+        {
+            "nombre_especifico": "Cuento",
+            "tipo": "Terror",
+            "especifico_id": "6"
         }
     ],
     "libros": [
         {
             "libro_id": 1,
             "titulo": "Cien años de soledad",
+            "genero_id": 1,
             "especifico_id": 4,
             "fecha_publicacion": "05-06-1967",
             "num_paginas": 417,
@@ -108,7 +109,8 @@
         },
         {
             "libro_id": 2,
-            "titulo": "El hobbit",
+            "titulo": "El Hobbit",
+            "genero_id": 1,
             "especifico_id": 5,
             "fecha_publicacion": "21-09-1937",
             "num_paginas": 310,
@@ -117,6 +119,7 @@
         {
             "libro_id": 3,
             "titulo": "1984",
+            "genero_id": 1,
             "especifico_id": 3,
             "fecha_publicacion": "08-06-1949",
             "num_paginas": 328,
@@ -125,6 +128,7 @@
         {
             "libro_id": 4,
             "titulo": "Matar a un ruiseñor",
+            "genero_id": 1,
             "especifico_id": 2,
             "fecha_publicacion": "11-07-1960",
             "num_paginas": 281,
@@ -133,6 +137,7 @@
         {
             "libro_id": 5,
             "titulo": "El Resplandor",
+            "genero_id": 1,
             "especifico_id": 1,
             "fecha_publicacion": "28-01-1977",
             "num_paginas": 688,
