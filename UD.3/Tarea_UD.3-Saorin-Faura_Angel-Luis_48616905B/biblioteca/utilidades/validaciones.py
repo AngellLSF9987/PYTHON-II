@@ -1,7 +1,6 @@
 # biblioteca/utilidades/validaciones.py
 
 from datetime import datetime
-from biblioteca.modelos.generos.genero import Genero
 
 def validar_fecha(fecha_str):
 
@@ -27,23 +26,32 @@ def validar_autor(biblioteca):
     """
     Valida si un autor existe en la biblioteca por su pseudónimo. Si no existe, lo crea.
     """
-    pseudonimo = input("Introduce el pseudónimo del autor: ").strip().lower()
+    autores = biblioteca.repositorio_autor.obtener_autores()
+    print(f"DEBUG: Autores disponibles: {biblioteca.repositorio_autor.obtener_autores()}")
     
+    if autores is None:
+        print("Error: No se pudieron cargar los Géneros Literarios.\n")
+        return None
+    
+    pseudonimo = input("Introduce el pseudónimo del autor: \n").strip().lower()    
     # Buscar el autor por pseudónimo
     autor = biblioteca.repositorio_autor.obtener_autor_por_pseudonimo(pseudonimo)
 
-    if autor:
-        print(f"Autor '{pseudonimo}' encontrado.")
-        return autor
-
+    for autor in autores:
+        # Asegurar de que get_nombre_genero() devuelve un string
+        if autor.get("pseudonimo").strip().lower() == pseudonimo.lower():
+            print(f"Autor '{pseudonimo}' encontrado.")
+            return pseudonimo
+    
     # Si el autor no existe, preguntar si se desea crear uno nuevo
-    print(f"El autor '{pseudonimo}' no existe en la base de datos.")
+    print(f"El autor '{pseudonimo}' no existe en la base de datos.")           
+
     crear_nuevo = input("¿Deseas crear este autor? (s/n): ").strip().lower()
 
     # Si no se encuentra, crearlo
     if crear_nuevo == 's':
         print(f"\nEl autor '{pseudonimo}' no ha sido encontrado. Creando nuevo autor.")
-        nombre = input("Introduce el nombre del autor:\n").strip().lower()
+        nombre = input("Introduce el nombre del autor:\n").strip()
         apellido1 = input("Introduce el primer apellido del autor:\n").strip()
         apellido2 = input("Introduce el segundo apellido del autor:\n").strip()
         nacido = input("Introduce la fecha de nacimiento del autor (DD-MM-AAAA):\n").strip()
@@ -61,10 +69,9 @@ def validar_autor(biblioteca):
             "nacionalidad": nacionalidad
         }
         biblioteca.repositorio_autor.agregar_autor(nuevo_autor)
-    print(f"El Autor '{pseudonimo}' ha sido creado exitosamente.\n")
-    
+        print(f"El Autor '{pseudonimo}' ha sido creado exitosamente.\n")
+        print("DEBUG: Autores después de agregar:", biblioteca.repositorio_autor.obtener_autores())
     return nuevo_autor
-
 
 def validar_genero(biblioteca):
     """
@@ -72,6 +79,7 @@ def validar_genero(biblioteca):
     Si no existe, permite crear uno nuevo.
     """ 
     generos = biblioteca.repositorio_genero.obtener_generos()
+    print(f"DEBUG: Autores disponibles: {biblioteca.repositorio_genero.obtener_generos()}")
     if generos is None:
         print("Error: No se pudieron cargar los Géneros Literarios.\n")
         return None    
@@ -94,7 +102,8 @@ def validar_genero(biblioteca):
             "nombre_genero": nombre_genero
         }
         biblioteca.repositorio_genero.agregar_genero(nuevo_genero)
-    print(f"El Género Literario'{nombre_genero}' ha sido creado exitosamente.\n")
+        print(f"El Género Literario'{nombre_genero}' ha sido creado exitosamente.\n")
+        print("DEBUG: Géneros Literarios después de agregar:", biblioteca.repositorio_genero.obtener_generos())
     return nuevo_genero
 
 def validar_especifico(biblioteca):
@@ -104,6 +113,7 @@ def validar_especifico(biblioteca):
     """ 
     # Verificar si el subgénero y el tipo de subgénero ya existen
     especificos = biblioteca.repositorio_especifico.obtener_especificos()
+    print(f"DEBUG: Subgéneros Literarios disponibles: {biblioteca.repositorio_especifico.obtener_especificos()}")
     if especificos is None:
         print("Error: No se pudieron cargar los Subgéneros y Tipos Literarios.\n")
         return None
@@ -129,5 +139,6 @@ def validar_especifico(biblioteca):
             "tipo": tipo
         }
         biblioteca.repositorio_especificos.agregar_especifico(nuevo_especifico)
-    print(f"El Subgénero Literario'{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' ha sido creado exitosamente.\n")
+        print(f"El Subgénero Literario'{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' ha sido creado exitosamente.\n")
+        print("DEBUG: Subgénero Literario después de agregar:", biblioteca.repositorio_especifico.obtener_especificos())
     return nuevo_especifico
