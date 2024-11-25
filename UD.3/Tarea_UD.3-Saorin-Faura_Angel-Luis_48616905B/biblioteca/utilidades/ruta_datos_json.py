@@ -13,6 +13,5 @@ print(f"Ruta calculada: {RUTA_DATOS_BIBLIOTECA}")
 # # Calcula la ruta absoluta basada en el archivo actual
 # RUTA_DATOS_BIBLIOTECA = os.path.join(
 #     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-#     "data",
 #     "datos_biblioteca.json"
 # )
