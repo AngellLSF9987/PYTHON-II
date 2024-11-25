@@ -1,4 +1,102 @@
 {
+    "autores": [
+        {
+            "autor_id": 1,
+            "nombre": "Gabriel",
+            "apellido1": "García",
+            "apellido2": "Márquez",
+            "pseudonimo": "Gabriel García Márquez",
+            "nacido": "1927-03-06",
+            "fallecido": "2014-04-17",
+            "nacionalidad": "Colombia"
+        },
+        {
+            "autor_id": 2,
+            "nombre": "Jhon Ronald",
+            "apellido1": "Reuel",
+            "apellido2": "Tolkien",
+            "pseudonimo": "J.R.R. Tolkien",
+            "nacido": "03-01-1892",
+            "fallecido": "02-09-1973",
+            "nacionalidad": "Reino Unido"
+        },
+        {
+            "autor_id": 3,
+            "nombre": "Eric",
+            "apellido1": "Arthur",
+            "apellido2": "Blair",
+            "pseudonimo": "George Orwell",
+            "nacido": "25-06-1903",
+            "fallecido": "21-01-1950",
+            "nacionalidad": "Reino Unido"
+        },
+        {
+            "autor_id": 4,
+            "nombre": "Stephen",
+            "apellido1": "Edwin",
+            "apellido2": "King",
+            "pseudonimo": "Stephen King",
+            "nacido": "21-09-1947",
+            "fallecido": null,
+            "nacionalidad": "Estados Unidos"
+        },
+        {
+            "autor_id": 5,
+            "nombre": "Nelle",
+            "apellido1": "Harper",
+            "apellido2": "Lee",
+            "pseudonimo": "Harper Lee",
+            "nacido": "28-04-1926",
+            "fallecido": "19-02-2016",
+            "nacionalidad": "Estados Unidos"
+        }
+    ],
+    "generos": [
+        {
+            "genero_id": 1,
+            "nombre_genero": "Narrativo"
+        },
+        {
+            "genero_id": 2,
+            "nombre_genero": "Dramático"
+        },
+        {
+            "genero_id": 3,
+            "nombre_genero": "Lírico"
+        }
+    ],
+    "especificos": [
+        {
+            "especifico_id": 1,
+            "nombre_especifico": "Novela",
+            "tipo": "Terror"
+        },
+        {
+            "especifico_id": 2,
+            "nombre_especifico": "Novela",
+            "tipo": "Suspense"
+        },
+        {
+            "especifico_id": 3,
+            "nombre_especifico": "Novela",
+            "tipo": "Distópica"
+        },
+        {
+            "especifico_id": 4,
+            "nombre_especifico": "Novela",
+            "tipo": "Realismo Mágico"
+        },
+        {
+            "especifico_id": 5,
+            "nombre_especifico": "Novela",
+            "tipo": "Fantasía"
+        },
+        {
+            "nombre_especifico": "Cuento",
+            "tipo": "Terror",
+            "especifico_id": "6"
+        }
+    ],
     "libros": [
         {
             "libro_id": 1,
@@ -44,18 +142,6 @@
             "fecha_publicacion": "28-01-1977",
             "num_paginas": 688,
             "autor_id": 4
-        },
-        {
-            "libro_id": 6,
-            "titulo": "Perico de los Palotes",
-            "genero_id": 1,
-            "especifico_id": 1,
-            "fecha_publicacion": "1829-10-10",
-            "num_paginas": 200,
-            "autor_id": 3,
-            "nombre_autor": "George Orwell",
-            "nombre_genero": "Narrativo",
-            "nombre_especifico": "Novela"
         }
     ]
 }
