@@ -1,5 +1,5 @@
 import json
-from biblioteca.modelos.generos.genero import Genero
+
 class RepositorioEspecifico:
     def __init__(self, ruta_json):
         
@@ -54,3 +54,16 @@ class RepositorioEspecifico:
     def obtener_especificos(self):
         """Devuelve la lista de autores."""
         return self.especificos
+    
+    def buscar_especifico_por_nombre_y_tipo(self, nombre_especifico, tipo):
+        """
+        Busca un subgénero literario por su nombre y tipo.
+        
+        :param nombre: El nombre del subgénero a buscar.
+        :param tipo: El tipo del subgénero a buscar.
+        :return: El subgénero encontrado (diccionario) o None si no se encuentra.
+        """
+        for especifico in self.especificos:
+            if especifico['nombre_especifico'].lower() == nombre_especifico.lower() and especifico['tipo'].lower() == tipo.lower():
+                return especifico
+        return None

@@ -39,12 +39,16 @@ def validar_autor(biblioteca):
 
     for autor in autores:
         # Asegurar de que get_nombre_genero() devuelve un string
+        if autor.get("pseudonimo").strip().lower() == pseudonimo.lower() is None:
+            print(f"El autor '{pseudonimo}' no existe en la base de datos.")
+        
         if autor.get("pseudonimo").strip().lower() == pseudonimo.lower():
             print(f"Autor '{pseudonimo}' encontrado.")
-            return pseudonimo
+        return pseudonimo
     
+        
     # Si el autor no existe, preguntar si se desea crear uno nuevo
-    print(f"El autor '{pseudonimo}' no existe en la base de datos.")           
+    # print(f"El autor '{pseudonimo}' no existe en la base de datos.")           
 
     crear_nuevo = input("¿Deseas crear este autor? (s/n): ").strip().lower()
 
@@ -71,30 +75,41 @@ def validar_autor(biblioteca):
         biblioteca.repositorio_autor.agregar_autor(nuevo_autor)
         print(f"El Autor '{pseudonimo}' ha sido creado exitosamente.\n")
         print("DEBUG: Autores después de agregar:", biblioteca.repositorio_autor.obtener_autores())
-    return nuevo_autor
+        return nuevo_autor
+    else:
+        print("No se realizó ningún cambio.")
+        return None
 
 def validar_genero(biblioteca):
     """
     Valida si un Género Literario con el nombre ingresado ya existe en la biblioteca.
     Si no existe, permite crear uno nuevo.
     """ 
+    # Verificar si el género ya existe
     generos = biblioteca.repositorio_genero.obtener_generos()
-    print(f"DEBUG: Autores disponibles: {biblioteca.repositorio_genero.obtener_generos()}")
+    print(f"DEBUG: Géneros Literarios disponibles: {biblioteca.repositorio_genero.obtener_generos()}")
+    
     if generos is None:
         print("Error: No se pudieron cargar los Géneros Literarios.\n")
         return None    
 
     nombre_genero = input("Introduce el Género Literario:\n").strip().lower()
-
+    # Buscar el género por nombre
+    genero = biblioteca.repositorio_genero.buscar_genero_por_nombre(nombre_genero)
+    
     for genero in generos:
         # Asegurar de que get_nombre_genero() devuelve un string
+        if genero.get("nombre_genero").strip().lower() == nombre_genero.lower() is None:
+            print(f"El Género Literario '{nombre_genero}' no existe en la base de datos.")
+        
         if genero.get("nombre_genero").strip().lower() == nombre_genero.lower():
-            print(f"Género Literario {nombre_genero} ha sido encontrado.\n")
+            print(f"El Género Literario {nombre_genero} ha sido encontrado.\n")
             return genero           
 
-    if nuevo_genero is None:
-        # Crear si no se encontró el género
-        print(f"\nSubgénero Literario '{nombre_genero}' no encontrado. Creando nuevo Género Literario.\n")
+    crear_nuevo = input("¿Deseas crear este Género Literario? (s/n): ").strip().lower()
+
+
+    if crear_nuevo == 's':
         nombre_genero = input("Introduce el Género Literario del libro:\n").strip()
             
         nuevo_genero = {
@@ -104,41 +119,50 @@ def validar_genero(biblioteca):
         biblioteca.repositorio_genero.agregar_genero(nuevo_genero)
         print(f"El Género Literario'{nombre_genero}' ha sido creado exitosamente.\n")
         print("DEBUG: Géneros Literarios después de agregar:", biblioteca.repositorio_genero.obtener_generos())
-    return nuevo_genero
+        return nuevo_genero
+    else:
+        print("No se realizó ningún cambio.")
+        return None
 
 def validar_especifico(biblioteca):
     """
-    Valida si un Subgénero Literario y el Tipo de Subgenero Literario con el nombre_especifico y el tipo ingresados ya existen en la biblioteca.
-    Si no existen, permite crearan un nuevo dato.
-    """ 
-    # Verificar si el subgénero y el tipo de subgénero ya existen
+    Valida si un Subgénero Literario y el Tipo de Subgénero Literario con el nombre_especifico y el tipo ingresados ya existen en la biblioteca.
+    Si no existen, permite crear un nuevo dato.
+    """
+    # Verificar si los subgéneros ya están cargados
     especificos = biblioteca.repositorio_especifico.obtener_especificos()
-    print(f"DEBUG: Subgéneros Literarios disponibles: {biblioteca.repositorio_especifico.obtener_especificos()}")
+    print(f"DEBUG: Subgéneros Literarios disponibles: {especificos}")
+    
     if especificos is None:
         print("Error: No se pudieron cargar los Subgéneros y Tipos Literarios.\n")
         return None
-              
-    nombre_especifico = input("Introduce el Subgénero Literario:\n").strip().lower()
-    tipo = input("Introduce el Tipo Específico de Subgénero:\n").strip().lower()
-    
-    for especifico in especificos:
-        if (especifico.get('nombre_especifico').strip().lower() == nombre_especifico and
-            especifico.get('tipo').strip().lower() == tipo):
-            print(f"Subgénero Literario {nombre_especifico} y Tipo de Subgénero Literario {tipo} encontrados.\n")
-            return especifico
-    
-    if nuevo_especifico is None:
-        # Crear si no se encontró el subgénero
-        print(f"\nSubgénero Literario '{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' no encontrado. Creando nuevo Subgénero y Tipo Literarios.\n")
-        nombre_especifico = input("Introduce el Subgénero Literario del libro:\n").strip()
-        tipo = input("Introduce el Tipo de Subgénero Literario del libro:\n").strip()
 
+    # Solicitar datos al usuario
+    nombre_especifico = input("Introduce el Subgénero Literario:\n").strip()
+    tipo = input("Introduce el Tipo Específico de Subgénero:\n").strip()
+
+    # Buscar el subgénero literario por nombre y tipo
+    especifico_existente = biblioteca.repositorio_especifico.buscar_especifico_por_nombre_y_tipo(nombre_especifico, tipo)
+    
+    if especifico_existente:
+        print(f"El Subgénero Literario '{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' ya existen.\n")
+        return especifico_existente
+    else:
+        print(f"El Subgénero Literario '{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' no existen en la base de datos.")
+
+    # Crear un nuevo subgénero si el usuario lo desea
+    crear_nuevo = input("¿Deseas crear este Subgénero y Tipo Literario? (s/n): ").strip().lower()
+    if crear_nuevo == 's':
         nuevo_especifico = {
-            "id": len(biblioteca.repositorio_especifico.obtener_especificos()) + 1,
+            "especifico_id": len(especificos) + 1,  # ID único
             "nombre_especifico": nombre_especifico,
             "tipo": tipo
         }
-        biblioteca.repositorio_especificos.agregar_especifico(nuevo_especifico)
-        print(f"El Subgénero Literario'{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' ha sido creado exitosamente.\n")
-        print("DEBUG: Subgénero Literario después de agregar:", biblioteca.repositorio_especifico.obtener_especificos())
-    return nuevo_especifico
+        biblioteca.repositorio_especifico.agregar_especifico(nuevo_especifico)
+        print(f"El Subgénero Literario '{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' ha sido creado exitosamente.\n")
+        print("DEBUG: Subgéneros Literarios después de agregar:", biblioteca.repositorio_especifico.obtener_especificos())
+        return nuevo_especifico
+    else:
+        print("No se realizó ningún cambio.")
+        return None
+

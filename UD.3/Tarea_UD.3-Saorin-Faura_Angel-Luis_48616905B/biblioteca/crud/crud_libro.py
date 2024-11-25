@@ -6,29 +6,23 @@ class CRUDLibro:
         self.repositorio_autor = repositorio_autor
         self.repositorio_especifico = repositorio_especifico
         self.repositorio_genero = repositorio_genero
-        self.datos = self.cargar_datos()  # Carga los datos al inicializar
+        self.datos = self._cargar_libros()  # Carga los datos al inicializar
         self.libro_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental
 
-    def cargar_datos(self):
-        """Carga los datos desde el archivo JSON."""
+    def _cargar_libros(self):
         try:
             with open(self.ruta_json, 'r', encoding='utf-8') as archivo:
-                return json.load(archivo)
-        except FileNotFoundError:
-            print("Archivo JSON no encontrado. Se creará un nuevo archivo.")
-            return {"libros": []}  # Inicializa con lista vacía si no existe
-        except json.JSONDecodeError:
-            print("Error al leer el archivo JSON. Archivo vacío o malformado.")
-            return {"libros": []}
+                data = json.load(archivo)
+                print("Libros cargados correctamente.")
+                return data
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("Archivo de Libros no encontrado o vacío. Se iniciará con una lista vacía.")
+            return {"libros": []}  # Retorna un diccionario vacío en caso de error
 
-    def guardar_datos(self):
-        """Guarda los datos en el archivo JSON y realiza un respaldo previo."""
+    def _guardar_libros(self):
         try:
-            # Crear respaldo del archivo
-            shutil.copy(self.ruta_json, self.ruta_json + ".bak")
             with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
                 json.dump(self.datos, archivo, ensure_ascii=False, indent=4)
-            print("Datos guardados correctamente.")
         except Exception as e:
             print(f"Error al guardar los datos: {e}")
 
@@ -43,7 +37,7 @@ class CRUDLibro:
         nuevo_libro["libro_id"] = str(self.libro_id_actual)
         self.datos["libros"].append(nuevo_libro)
         self.libro_id_actual += 1  # Incrementa el ID para el siguiente registro
-        self.guardar_datos()
+        self._guardar_libros()
         print(f"✅ Libro agregado con éxito: {nuevo_libro['titulo']}")
         return True
 
@@ -52,7 +46,7 @@ class CRUDLibro:
         for libro in self.datos["libros"]:
             if libro["libro_id"] == id_libro:
                 libro.update(nuevos_datos)  # Actualiza los datos del libro
-                self.guardar_datos()  # Guarda después de actualizar
+                self._guardar_libros()  # Guarda después de actualizar
                 return True
         return False  # Si no se encuentra el libro, devuelve False
 
@@ -141,6 +135,6 @@ class CRUDLibro:
         for libro in self.datos["libros"]:
             if libro["libro_id"] == id_libro:
                 self.datos["libros"].remove(libro)
-                self.guardar_datos()  # Guarda después de eliminar
+                self._guardar_libros()  # Guarda después de eliminar
                 return True
         return False  # Si no se encuentra el libro, devuelve False

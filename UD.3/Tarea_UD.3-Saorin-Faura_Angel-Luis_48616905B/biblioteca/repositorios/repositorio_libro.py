@@ -5,23 +5,23 @@ class RepositorioLibro:
         self.repositorio_genero = repositorio_genero
         self.repositorio_especifico = repositorio_especifico
         self.ruta_json = ruta_json
-        self.libros = []
-        self.cargar_libros()
+        self.datos = self._cargar_libros()
+        self.libros = self.datos.get("libros", [])
 
-    def cargar_libros(self):
+    def _cargar_libros(self):
         try:
             with open(self.ruta_json, 'r', encoding='utf-8') as archivo:
                 data = json.load(archivo)
-                self.libros = data.get("libros", [])
-            print("Libros cargados correctamente.")
-        except Exception as e:
-            print(f"Error al cargar libros: {e}")
+                print("Libros cargados correctamente.")
+                return data
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("Archivo de Libros no encontrado o vacío. Se iniciará con una lista vacía.")
+            return {"libros": []}  # Retorna un diccionario vacío en caso de error
 
-    def guardar_datos(self):
+    def _guardar_libros(self):
         try:
             with open(self.ruta_json, 'w', encoding='utf-8') as archivo:
-                json.dump({"libros": self.libros}, archivo, ensure_ascii=False, indent=4)
-            print("Datos de libros guardados correctamente.")
+                json.dump(self.datos, archivo, ensure_ascii=False, indent=4)
         except Exception as e:
             print(f"Error al guardar los datos: {e}")
 
@@ -40,7 +40,7 @@ class RepositorioLibro:
         libro["nombre_especifico"] = especifico["nombre_especifico"]
 
         self.libros.append(libro)
-        self.guardar_datos()
+        self._guardar_libros()
         print(f"Libro '{libro['titulo']}' agregado correctamente.")
 
     def obtener_libro_por_id(self, libro_id):

@@ -66,7 +66,7 @@ def submenu_libro(biblioteca):
                 "especifico_id": especifico["especifico_id"],  # Utiliza el ID del subgénero validado
                 "fecha_publicacion": fecha_publicacion,
                 "num_paginas": num_paginas,
-                "autor_id": autor['autor_id']  # Utiliza el ID del autor validado
+                "autor_id": autor  # Utiliza el ID del autor validado
             }
             biblioteca.repositorio_libro.agregar_libro(nuevo_libro)
             print(f"Libro '{titulo}' añadido exitosamente.")

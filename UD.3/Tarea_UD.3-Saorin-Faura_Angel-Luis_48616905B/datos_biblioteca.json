@@ -92,9 +92,9 @@
             "tipo": "Fantasía"
         },
         {
-            "nombre_especifico": "Cuento",
-            "tipo": "Terror",
-            "especifico_id": "6"
+            "especifico_id": 6,
+            "nombre_especifico": "Fábula",
+            "tipo": "Satírica"
         }
     ],
     "libros": [
@@ -142,6 +142,18 @@
             "fecha_publicacion": "28-01-1977",
             "num_paginas": 688,
             "autor_id": 4
+        },
+        {
+            "libro_id": 6,
+            "titulo": "Rebelión de Granja",
+            "genero_id": 1,
+            "especifico_id": 6,
+            "fecha_publicacion": "1945-10-17",
+            "num_paginas": 92,
+            "autor_id": "orwell",
+            "nombre_autor": "Autor desconocido",
+            "nombre_genero": "Narrativo",
+            "nombre_especifico": "Fábula"
         }
     ]
 }
