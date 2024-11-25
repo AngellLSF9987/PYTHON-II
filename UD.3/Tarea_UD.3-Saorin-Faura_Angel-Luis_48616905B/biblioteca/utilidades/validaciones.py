@@ -27,7 +27,7 @@ def validar_autor(biblioteca):
     """
     Valida si un autor existe en la biblioteca por su pseudónimo. Si no existe, lo crea.
     """
-    pseudonimo = input("Introduce el pseudónimo del autor: ").strip()
+    pseudonimo = input("Introduce el pseudónimo del autor: ").strip().lower()
     
     # Buscar el autor por pseudónimo
     autor = biblioteca.repositorio_autor.obtener_autor_por_pseudonimo(pseudonimo)
@@ -43,7 +43,7 @@ def validar_autor(biblioteca):
     # Si no se encuentra, crearlo
     if crear_nuevo == 's':
         print(f"\nEl autor '{pseudonimo}' no ha sido encontrado. Creando nuevo autor.")
-        nombre = input("Introduce el nombre del autor:\n").strip()
+        nombre = input("Introduce el nombre del autor:\n").strip().lower()
         apellido1 = input("Introduce el primer apellido del autor:\n").strip()
         apellido2 = input("Introduce el segundo apellido del autor:\n").strip()
         nacido = input("Introduce la fecha de nacimiento del autor (DD-MM-AAAA):\n").strip()
