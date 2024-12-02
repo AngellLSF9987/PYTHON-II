@@ -6,3 +6,6 @@ app = Flask(__name__)
 
 def hola():
  return "Hola Mundo"
+
+if __name__ == "__main__":
+    app.run()
