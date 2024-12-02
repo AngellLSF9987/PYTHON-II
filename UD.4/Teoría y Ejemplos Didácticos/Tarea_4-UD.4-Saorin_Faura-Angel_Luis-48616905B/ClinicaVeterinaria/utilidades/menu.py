@@ -2,7 +2,7 @@ from biblioteca.modelos.biblioteca import Biblioteca
 from biblioteca.menus.submenus import submenu_tareas
 from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
 
-def menu():
+def mostrar_menu_principal():
     """
     Función principal del menú de la Biblioteca.
     Permite interactuar con las funcionalidades principales del sistema.

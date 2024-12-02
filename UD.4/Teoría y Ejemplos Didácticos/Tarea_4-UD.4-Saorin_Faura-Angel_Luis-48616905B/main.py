@@ -1,7 +1,8 @@
 # biblioteca/main.py
 
-from biblioteca.menus.menu import menu
+from ClinicaVeterinaria.utilidades.menu import mostrar_menu_principal
 
-# Ejecutar el programa principal
 if __name__ == "__main__":
-     menu()
+    print("=== Bienvenid@ a la Clínica Veterinaria ===")
+    while True:
+        mostrar_menu_principal()
