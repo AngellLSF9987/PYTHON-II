@@ -8,7 +8,7 @@ def submenu_autor(biblioteca):
         print("\n- Tareas de Autores -\n")
         print("1. Mostrar Autores.")
         print("2. Añadir Autor.")
-        print("3. Buscar Autor por nombre.")
+        print("3. Buscar Autor por Nombre Completo o por Pseudónimo Atribuido.")
         print("4. Modificar Datos Autor.")
         print("5. Eliminar Autor.")
         print("0. Menú Tareas de Biblioteca.")

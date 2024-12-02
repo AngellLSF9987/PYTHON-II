@@ -7,40 +7,51 @@ class Especifico(Genero):
     __id_counter = 1 # Contador para los registros existentes y los nuevos que se añadan
 
     def __init__(self, nombre_genero, nombre_especifico, tipo=None):
+        # Validar que nombre_genero y nombre_especifico no sean None o vacíos
+        if not nombre_genero or not nombre_especifico:
+            raise ValueError("El nombre del género y del subgénero son obligatorios.")
+        
         super().__init__(nombre_genero)
 
-        self.__id = Especifico.__id_counter  # Asigna el ID actual, es decir, el ID = 1
+        self.__id = Especifico.__id_counter  # Asigna el ID actual
         Especifico.__id_counter += 1         # Contador autoincremental
 
-        self.__nombre_especifico = nombre_especifico
-        self.__tipo = tipo
+        # Asignar nombre_especifico y tipo, con validación si tipo es None
+        self.__nombre_especifico = nombre_especifico.strip() if nombre_especifico else "Desconocido"
+        self.__tipo = tipo.strip() if tipo else "Tipo no definido"
 
     def get_id(self):
         return self.__id
     
     def set_id(self, nuevo_id):
         self.__id = nuevo_id    # Método para actualizar el ID
-
+    
     def get_nombre_especifico(self):
         return self.__nombre_especifico
 
     def set_nombre_especifico(self, value):
-        self.__nombre_especifico = value
+        if value:
+            self.__nombre_especifico = value.strip()
+        else:
+            raise ValueError("El nombre del subgénero no puede estar vacío.")
 
     def get_tipo(self):
         return self.__tipo
 
     def set_tipo(self, value):
-        self.__tipo = value
+        if value:
+            self.__tipo = value.strip()
+        else:
+            raise ValueError("El tipo del subgénero no puede estar vacío.")
 
     def __str__(self):
         """Método __str__. Muestra todos los datos de modelo Subgénero"""
-        return f"Id: {self.get_id()}.\nGénero Literario:{super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo() if self.get_tipo() else "Tipo no definido"}."
+        return f"Id: {self.get_id()}.\nGénero Literario:{super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}."
 
     def mostrar_datos_especifico(self):
-        """Muestra los datos especificos del Género Literario."""
-        return f"Género Literario: {super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo() if self.get_tipo() else "Tipo no definido"}"
+        """Muestra los datos específicos del Género Literario."""
+        return f"Género Literario: {super().get_nombre_genero()}\nSubgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}"
 
     def mostrar_datos_especifico_crud(self):
-        """Muestra los datos especificos del Género Literario."""
-        return f"Subgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo() if self.get_tipo() else "Tipo no definido"}."
+        """Muestra los datos específicos del Género Literario."""
+        return f"Subgénero Literario: {self.get_nombre_especifico()} - Tipo Subgénero: {self.get_tipo()}."

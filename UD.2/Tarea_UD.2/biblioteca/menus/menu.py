@@ -15,13 +15,10 @@ def menu():
         print("\n- Bienvenid@ a Biblioteca AVANZA! -\n")
         print("1. Menú Tareas de Biblioteca.")
         print("2. Buscar libro por Título.")
-        print("3. Buscar Autor por Pseudónimo.")
-        print("4. Mostrar libros por Autor.")
-        print("5. Mostrar libros por Género.")
-        print("6. Mostrar libros por Subgénero.")
-        print("7. Mostrar todos los Libros.")
-        print("8. Mostrar todos los Autores.")
-        print("9. Mostrar todos los Géneros Literarios.")
+        print("3. Buscar Autor por Nombre Completo o por Pseudónimo Atribuido.")
+        print("4. Mostrar todos los Libros.")
+        print("5. Mostrar todos los Autores.")
+        print("6. Mostrar todos los Géneros Literarios.")
         print("0. Salir")
 
         opcion = input("\nElija una de las opciones:\n")
@@ -33,33 +30,8 @@ def menu():
             leer_libro(biblioteca)
         elif opcion == "3":
             leer_autor(biblioteca)
+
         elif opcion == "4":
-            autor = input("\nIntroduzca el nombre del autor deseado:\n")
-            libros = biblioteca.mostrar_libros_por_autor(autor)
-
-            if libros:
-                print(f"\n- Libros de {autor} -\n")
-                for libro in libros:
-                    print(libro.mostrar_datos_libro())
-            else:
-                print(f"\nNo se encontraron registros de {autor}.\n")
-        elif opcion == "5":
-            nombre_genero = input("\nIntroduzca el nombre del Género Literario buscado:\n")
-            libros = biblioteca.mostrar_libros_por_genero(nombre_genero)
-
-            if libros:
-                print(f"\n - Libros por {nombre_genero} -\n")
-                for libro in libros:
-                    print(libro.mostrar_datos_libro())
-        elif opcion == "6":
-            nombre_especifico = input("\nIntroduzca el nombre del Subgénero Literario buscado:\n")
-            libros = biblioteca.mostrar_libros_especifico(nombre_especifico)
-
-            if libros:
-                print(f"\n - Libros por {nombre_especifico} -\n")
-                for libro in libros:
-                    print(libro.mostrar_datos_libro())
-        elif opcion == "7":
             libros = biblioteca.mostrar_libros()
 
             if libros:
@@ -69,7 +41,7 @@ def menu():
             else:
                 print("\nNo existe ningún registro aún en la Biblioteca.\n")
                 return
-        elif opcion == "8":
+        elif opcion == "5":
             autores = biblioteca.mostrar_autores()
 
             if autores:
@@ -79,7 +51,7 @@ def menu():
             else:
                 print("\nNo existe ningún registro aún en la Biblioteca.\n")
                 return
-        elif opcion == "9":
+        elif opcion == "6":
             especificos = biblioteca.mostrar_especificos()
 
             if especificos:

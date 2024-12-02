@@ -7,19 +7,39 @@ def crear_especifico(biblioteca):
 
     try:
         print("\n- Nuevo Registro de SubGénero Literario -\n")
-        nombre_especifico = input("Introduce el nombre subgénero específico:\n")
-        tipo = input("Introduzca el tipo de subgénero específico:\n")
+        # Obtener el género del usuario
+        genero = input("Introduce el nombre del género literario:\n").strip()
 
-        # Creación y registro del nuevo objeto subgenero
-        especifico = Especifico(nombre_especifico, tipo)
+        # Validar que el género no esté vacío
+        if not genero:
+            raise ValueError("El nombre del género no puede estar vacío.")
+
+        # Validar si el género existe en la biblioteca
+        if genero.lower() not in biblioteca.diccionario_generos:
+            raise ValueError(f"El género '{genero}' no existe en la biblioteca. Por favor, asegúrese de que el género esté registrado.")
+
+        # Obtener el nombre y tipo del subgénero
+        nombre_especifico = input("Introduce el nombre subgénero específico:\n").strip()
+        tipo = input("Introduzca el tipo de subgénero específico:\n").strip()
+
+        # Validar que los campos no estén vacíos
+        if not nombre_especifico or not tipo:
+            raise ValueError("El nombre del subgénero y el tipo no pueden estar vacíos.")
+
+        # Creación y registro del nuevo objeto subgénero
+        especifico = Especifico(genero, nombre_especifico, tipo)
+
+        # Agregar el subgénero a la biblioteca
         biblioteca.agregar_especifico(especifico)  # Usar la instancia de biblioteca
 
         print("\nSubgénero Literario registrado correctamente.\n")
 
-    except ValueError as e:                              # Valores incorrectos al ingresar datos
+    except ValueError as e:  # Valores incorrectos al ingresar datos
         print(f"\nError: Entrada inválida. {e}\n")
-    except Exception as e2:                               # Errores imprevistos
-        print(f"\nSe produjo un error inesperado: {e}\n")
+    except Exception as e2:  # Errores imprevistos
+        print(f"\nSe produjo un error inesperado: {e2}\n")
+
+
 
 def leer_especifico(biblioteca):
     """Busca y muestra la información de un subgenero por nombre."""
@@ -59,31 +79,44 @@ def mostrar_especificos_crud(biblioteca):
         print(especifico.mostrar_datos_especifico_crud())
         print()
 
+
 def actualizar_especifico(biblioteca):
-    """Actualiza la información de un subgénero literario existente."""
+        """Permite actualizar un subgénero literario existente."""
 
-    try:
-        print("\n- Actualización del Registro -\n")
-        nombre_especifico = input("Introduce el nombre del subgénero literario que deseas actualizar:\n")
-        especifico = biblioteca.buscar_especifico_nombre(nombre_especifico)
+        try:
+            print("\n- Actualizar Subgénero Literario -\n")
 
-        if especifico:
-            print("\nIntroduce los nuevos datos del subgénero literario (deja en blanco para mantener la información actual:)\n")
+            genero = input("Introduce el nombre del género literario:\n").strip()
+            nombre_especifico = input("Introduce el nombre del subgénero literario a actualizar:\n").strip()
+            tipo = input("Introduce el tipo de subgénero literario:\n").strip()
 
-            nuevo_nombre_especifico = input(f"Nombre [{especifico.get_nombre_especifico()}]: ") or especifico.get_nombre_especifico()
+            # Verificación de existencia del subgénero
+            clave = (genero.lower(), nombre_especifico.lower(), tipo.lower())
+            if clave not in biblioteca.diccionario_especificos:
+                raise ValueError("El subgénero no existe en la biblioteca con ese género y tipo.")
 
-            especifico.set_nombre_especifico(nuevo_nombre_especifico)
+            # Obtener el subgénero desde el diccionario
+            especifico = biblioteca.diccionario_especificos[clave]
 
-            print("\nSubgénero Literario actualizado correctamente.\n")
+            # Solo se permiten modificaciones en subgénero y tipo, no en género
+            nuevo_nombre_genero = input(f"Introduce el nuevo nombre del género [{especifico.get_nombre_genero()}] o presione ENTER si no lo deseas modificar:\n").strip() or especifico.get_nombre_genero()
+            if nuevo_nombre_genero:
+                especifico.set_nombre_genero(nuevo_nombre_genero)
 
-        else:
-            print("\nSubgénero Literario no encontrado.\n")
+            nuevo_nombre_especifico = input(f"Introduce el nuevo nombre del subgénero [{especifico.get_nombre_especifico()}] o presione ENTER si no lo deseas modificar:\n").strip() or especifico.get_nombre_especifico()
+            if nuevo_nombre_especifico:
+                especifico.set_nombre_especifico(nuevo_nombre_especifico)
 
-    except ValueError as e:                                                    # Valores incorrectos al ingresar datos
-        print(f"Error: Entrada inválida. {e}")
+            nuevo_tipo = input(f"Introduce el nuevo tipo del subgénero [{especifico.get_tipo()}] o presione ENTER si no lo deseas modificar:\n").strip() or especifico.get_tipo()
+            if nuevo_tipo:
+                especifico.set_tipo(nuevo_tipo)
 
-    except Exception as e:                                                     # Errores imprevistos
-        print(f"Se produjo un error inesperado. {e}")
+            print("\nSubgénero actualizado correctamente.")
+
+        except ValueError as e:
+            print(f"\nError: {e}\n")
+        except Exception as e2:
+            print(f"\nSe produjo un error inesperado: {e2}\n")
 
 def eliminar_especifico(biblioteca):
     """Elimina un subgénero literario de la biblioteca búscado por nombre."""
