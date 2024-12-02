@@ -1,5 +1,3 @@
-# biblioteca/main.py
-
 from ClinicaVeterinaria.utilidades.menu import mostrar_menu_principal
 
 if __name__ == "__main__":

@@ -1,180 +1,168 @@
-from biblioteca.modelos.biblioteca import Biblioteca
-from biblioteca.menus.submenus import submenu_tareas
-from biblioteca.utilidades.ruta_datos_json import RUTA_DATOS_BIBLIOTECA
+from ClinicaVeterinaria.utilidades.validaciones import opcion_no_valida, salir
+from ClinicaVeterinaria.repositorios.repositorio_propietario import RepositorioPropietario
+from ClinicaVeterinaria.repositorios.repositorio_mascota import RepositorioMascota
+from ClinicaVeterinaria.repositorios.repositorio_visita import RepositorioVisita
+from ClinicaVeterinaria.repositorios.repositorio_factura import RepositorioFactura
+from ClinicaVeterinaria.database.db_connection import ConexionDB
 
 def mostrar_menu_principal():
     """
-    Función principal del menú de la Biblioteca.
-    Permite interactuar con las funcionalidades principales del sistema.
-    
-    - FUNCIONES LAMBDA:
-       - Las expresiones lambda pueden ser utilizadas para contener funcionalidades que no necesitan ser 
-         nombradas y normalmente se utilizan en un tiempo corto.
+    Muestra el menú principal de la Clínica Veterinaria y gestiona las opciones.
     """
-    biblioteca = Biblioteca(RUTA_DATOS_BIBLIOTECA)
+    # Crear la conexión a la base de datos
+    conexion = ConexionDB()
 
+    # Instanciar los repositorios
+    repo_propietario = RepositorioPropietario(conexion)
+    repo_mascota = RepositorioMascota(conexion)
+    repo_visita = RepositorioVisita(conexion)
+    repo_factura = RepositorioFactura(conexion)
+
+    # Opciones del menú principal
     opciones = {
-        "1": lambda: submenu_tareas.submenu_tareas(biblioteca),
-        "2": lambda: buscar_libro_por_titulo(biblioteca),
-        "3": lambda: buscar_autor_por_nombre_o_pseudonimo(biblioteca),
-        "4": lambda: mostrar_todos_los_libros(biblioteca),
-        "5": lambda: mostrar_todos_los_autores(biblioteca),
-        "6": lambda: mostrar_todos_los_generos(biblioteca),
-        "7": lambda: mostrar_todos_los_subgeneros(biblioteca),
+        "1": lambda: menu_propietarios(repo_propietario),
+        "2": lambda: menu_mascotas(repo_mascota, repo_propietario),
+        "3": lambda: menu_visitas(repo_visita, repo_mascota),
+        "4": lambda: menu_facturas(repo_factura, repo_visita),
         "0": salir
     }
 
     while True:
-        print("\n- Bienvenid@ a Biblioteca AVANZA! -\n")
-        print("1. Menú Tareas de Biblioteca.")
-        print("2. Buscar Libro por Título.")
-        print("3. Buscar Autor por Nombre Completo o Pseudónimo.")
-        print("4. Mostrar Todos los Libros.")
-        print("5. Mostrar Todos los Autores.")
-        print("6. Mostrar Todos los Géneros Literarios.")
-        print("7. Mostrar Todos los Subgéneros Literarios Específicos.")
-        print("0. Salir")
+        print("\n- Clínica Veterinaria -\n")
+        print("1. Gestión de Propietarios.")
+        print("2. Gestión de Mascotas.")
+        print("3. Gestión de Visitas.")
+        print("4. Gestión de Facturas.")
+        print("0. Salir.")
 
-        opcion = input("\nElija una opción:\n")
+        opcion = input("\nSeleccione una opción:\n").strip()
         accion = opciones.get(opcion, opcion_no_valida)
         accion()
 
-def opcion_no_valida():
-    print("\n⚠️ Opción no válida. Por favor, elija una opción válida.\n")
+def menu_propietarios(repo_propietario):
+    """
+    Submenú para la gestión de propietarios.
+    """
+    while True:
+        print("\n- Gestión de Propietarios -\n")
+        print("1. Mostrar todos los propietarios.")
+        print("2. Buscar propietario por DNI.")
+        print("3. Añadir nuevo propietario.")
+        print("4. Modificar datos de un propietario.")
+        print("5. Eliminar un propietario.")
+        print("0. Volver al menú principal.")
 
-def salir():
-    print("\n¡Hasta luego! Gracias por usar Biblioteca AVANZA.\n")
-    exit()
-
-def buscar_libro_por_titulo(biblioteca):
-    """Permite buscar un libro por su título y muestra detalles relevantes."""
-    titulo = input("\nIngrese el título del libro que desea buscar:\n").strip()
-
-    if not titulo:
-        print("\n⚠️ No ingresó un título. Inténtelo de nuevo.")
-        return
-
-    try:
-        libros = biblioteca.repositorio_libro.libros
-        resultados = [libro for libro in libros if titulo.lower() in libro["titulo"].lower()]
-
-        if resultados:
-            print("\n=== Resultados de la búsqueda ===\n")
-            for libro in resultados:
-                genero = biblioteca.repositorio_genero.obtener_genero_por_id(libro["genero_id"])
-                nombre_genero = genero["nombre_genero"] if genero else "Género Literario Desconocido"
-                especifico = biblioteca.repositorio_especifico.obtener_especifico_por_id(libro["especifico_id"])                
-                nombre_especifico = especifico["nombre_especifico"] if especifico else "Subgénero Literario Desconocido"
-                tipo = especifico['tipo'] if especifico else "Tipo Desconocido"
-                autor = biblioteca.repositorio_autor.obtener_autor_por_id(libro["autor_id"])
-                autor_nombre = autor["nombre"] if autor else " Autor Desconocido"
-
-
-                print(
-                    f"ID: {libro['libro_id']}\n"
-                    f"Título: {libro['titulo']}\n"
-                    f"Género Literario: {nombre_genero} | Subgénero Literario: {nombre_especifico} - Tipo: {tipo}\n"
-                    f"Fecha de Publicación: {libro['fecha_publicacion']}\n"
-                    f"Autor: {autor_nombre}\n"
-                )
+        opcion = input("\nSeleccione una opción:\n").strip()
+        if opcion == "1":
+            repo_propietario.mostrar_propietarios()
+        elif opcion == "2":
+            dni = input("Ingrese el DNI del propietario:\n").strip()
+            repo_propietario.buscar_por_dni(dni)
+        elif opcion == "3":
+            repo_propietario.agregar_propietario()
+        elif opcion == "4":
+            dni = input("Ingrese el DNI del propietario a modificar:\n").strip()
+            repo_propietario.modificar_propietario(dni)
+        elif opcion == "5":
+            dni = input("Ingrese el DNI del propietario a eliminar:\n").strip()
+            repo_propietario.eliminar_propietario(dni)
+        elif opcion == "0":
+            break
         else:
-            print("\n⚠️ No se encontraron libros con ese título.")
-    except Exception as e:
-        print(f"\n⚠️ Error inesperado al buscar libros: {e}")
+            opcion_no_valida()
 
-def buscar_autor_por_nombre_o_pseudonimo(biblioteca):
-    """Permite buscar un autor por su nombre completo o pseudónimo."""
-    criterio = input("\nIngrese el nombre completo o pseudónimo del autor que desea buscar:\n").strip()
+def menu_mascotas(repo_mascota, repo_propietario):
+    """
+    Submenú para la gestión de mascotas.
+    """
+    while True:
+        print("\n- Gestión de Mascotas -\n")
+        print("1. Mostrar todas las mascotas.")
+        print("2. Buscar mascota por nombre.")
+        print("3. Añadir nueva mascota.")
+        print("4. Modificar datos de una mascota.")
+        print("5. Eliminar una mascota.")
+        print("0. Volver al menú principal.")
 
-    if not criterio:
-        print("\n⚠️ No ingresó un criterio de búsqueda. Inténtelo de nuevo.")
-        return
-
-    try:
-        autores = biblioteca.repositorio_autor.obtener_autores()
-        resultados = [
-            autor for autor in autores
-            if criterio.lower() in autor["nombre"].lower() or
-               criterio.lower() in autor["pseudonimo"].lower()
-        ]
-
-        if resultados:
-            print("\n=== Resultados de la búsqueda ===\n")
-            for autor in resultados:
-                print(
-                    f"\nID: {autor['autor_id']}\n"
-                    f"Nombre Completo: {autor['nombre']} {autor['apellido1']} {autor['apellido2']}\n"
-                    f"Pseudónimo: {autor['pseudonimo']}\n"
-                    f"Nacionalidad: {autor.get('nacionalidad', 'Desconocida')}\n"
-                    f"Fechas: {autor['nacido']} - {autor.get('fallecido', 'Presente')}\n"
-                )
+        opcion = input("\nSeleccione una opción:\n").strip()
+        if opcion == "1":
+            repo_mascota.mostrar_mascotas()
+        elif opcion == "2":
+            nombre = input("Ingrese el nombre de la mascota:\n").strip()
+            repo_mascota.buscar_por_nombre(nombre)
+        elif opcion == "3":
+            repo_mascota.agregar_mascota(repo_propietario)
+        elif opcion == "4":
+            id_mascota = input("Ingrese el ID de la mascota a modificar:\n").strip()
+            repo_mascota.modificar_mascota(id_mascota)
+        elif opcion == "5":
+            id_mascota = input("Ingrese el ID de la mascota a eliminar:\n").strip()
+            repo_mascota.eliminar_mascota(id_mascota)
+        elif opcion == "0":
+            break
         else:
-            print("\n⚠️ No se encontraron autores con ese criterio.")
-    except Exception as e:
-        print(f"\n⚠️ Error inesperado al buscar autores: {e}")
+            opcion_no_valida()
 
-def mostrar_todos_los_libros(biblioteca):
-    """Muestra todos los libros registrados en la biblioteca con detalles completos."""
-    try:
-        libros = biblioteca.repositorio_libro.mostrar_libros()  # Obtiene todos los libros
-        
-        if libros:
-            for libro in libros:
-                # Manejo seguro para obtener autor, género y subgénero
-                autor = biblioteca.repositorio_autor.obtener_autor_por_id(libro["autor_id"])
-                genero = biblioteca.repositorio_genero.obtener_genero_por_id(libro.get("genero_id"))
-                especifico = biblioteca.repositorio_especifico.obtener_especifico_por_id(libro.get("especifico_id"))
-                
-                # Preparar datos del autor
-                if autor:
-                    nombre_autor = f"{autor['nombre']} {autor['apellido1']} {autor['apellido2']}"
-                    pseudonimo = f"({autor['pseudonimo']})" if autor.get("pseudonimo") else ""
-                    autor_info = f"{nombre_autor} {pseudonimo}"
-                else:
-                    autor_info = "Autor Desconocido"
+def menu_visitas(repo_visita, repo_mascota):
+    """
+    Submenú para la gestión de visitas.
+    """
+    while True:
+        print("\n- Gestión de Visitas -\n")
+        print("1. Mostrar todas las visitas.")
+        print("2. Buscar visitas por mascota.")
+        print("3. Registrar nueva visita.")
+        print("4. Modificar datos de una visita.")
+        print("5. Eliminar una visita.")
+        print("0. Volver al menú principal.")
 
-                # Preparar datos del género
-                if genero:
-                    nombre_genero = f"{genero["nombre_genero"]}" if genero else "Género Literario Desconocido"
+        opcion = input("\nSeleccione una opción:\n").strip()
+        if opcion == "1":
+            repo_visita.mostrar_visitas()
+        elif opcion == "2":
+            id_mascota = input("Ingrese el ID de la mascota:\n").strip()
+            repo_visita.buscar_por_mascota(id_mascota)
+        elif opcion == "3":
+            repo_visita.registrar_visita(repo_mascota)
+        elif opcion == "4":
+            id_visita = input("Ingrese el ID de la visita a modificar:\n").strip()
+            repo_visita.modificar_visita(id_visita)
+        elif opcion == "5":
+            id_visita = input("Ingrese el ID de la visita a eliminar:\n").strip()
+            repo_visita.eliminar_visita(id_visita)
+        elif opcion == "0":
+            break
+        else:
+            opcion_no_valida()
 
-                # Preparar datos del subgénero
-                if especifico:
-                    nombre_especifico = f"{especifico["nombre_especifico"]}"
-                    tipo_especifico = f"{especifico["tipo"]}"
-                else:
-                    nombre_especifico = "Subgénero Literario Desconocido"
-                    tipo_especifico = "Desconocido"
+def menu_facturas(repo_factura, repo_visita):
+    """
+    Submenú para la gestión de facturas.
+    """
+    while True:
+        print("\n- Gestión de Facturas -\n")
+        print("1. Mostrar todas las facturas.")
+        print("2. Buscar factura por número.")
+        print("3. Generar nueva factura.")
+        print("4. Modificar datos de una factura.")
+        print("5. Eliminar una factura.")
+        print("0. Volver al menú principal.")
 
-                # Mostrar información del libro
-                print(
-                    f"ID: {libro['libro_id']}\n"
-                    f"Título: {libro['titulo']}\n"
-                    f"Autor: {autor_info}\n"
-                    f"Género Literario: {nombre_genero}\n"
-                    f"Subgénero Literario: {nombre_especifico} - Tipo: ({tipo_especifico})\n"
-                    f"Fecha de Publicación: {libro['fecha_publicacion']}\n"
-                    f"Número de Páginas: {libro['num_paginas']}\n"
-                )
-    except Exception as e:
-        print(f"\n⚠️ Error inesperado al mostrar los libros: {e}")
-
-def mostrar_todos_los_autores(biblioteca):
-    """Muestra todos los autores registrados en la biblioteca."""
-    try:
-        biblioteca.repositorio_autor.mostrar_autores()
-    except Exception as e:
-        print(f"\n⚠️ Error al mostrar los autores: {e}")
-
-def mostrar_todos_los_generos(biblioteca):
-    """Muestra todos los géneros literarios registrados en la biblioteca."""
-    try:
-        biblioteca.repositorio_genero.mostrar_generos()
-    except Exception as e:
-        print(f"\n⚠️ Error al mostrar los géneros: {e}")
-
-def mostrar_todos_los_subgeneros(biblioteca):
-    """Muestra todos los subgéneros literarios específicos registrados en la biblioteca."""
-    try:
-        biblioteca.repositorio_especifico.mostrar_especificos()
-    except Exception as e:
-        print(f"\n⚠️ Error al mostrar los subgéneros: {e}")
+        opcion = input("\nSeleccione una opción:\n").strip()
+        if opcion == "1":
+            repo_factura.mostrar_facturas()
+        elif opcion == "2":
+            numero = input("Ingrese el número de factura:\n").strip()
+            repo_factura.buscar_por_numero(numero)
+        elif opcion == "3":
+            repo_factura.generar_factura(repo_visita)
+        elif opcion == "4":
+            id_factura = input("Ingrese el ID de la factura a modificar:\n").strip()
+            repo_factura.modificar_factura(id_factura)
+        elif opcion == "5":
+            id_factura = input("Ingrese el ID de la factura a eliminar:\n").strip()
+            repo_factura.eliminar_factura(id_factura)
+        elif opcion == "0":
+            break
+        else:
+            opcion_no_valida()

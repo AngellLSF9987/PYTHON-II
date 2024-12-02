@@ -1,168 +1,89 @@
-# biblioteca/utilidades/validaciones.py
+# ClinicaVeterinaria/utilidades/validaciones.py
 
+import re
 from datetime import datetime
 
+# Valida fechas en formato DD-MM-AAAA
 def validar_fecha(fecha_str):
-
-    """
-    Valida y convierte una fecha en formato DD-MM-AAA como string a un objeto date.
-
-    Args:
-        fecha_str(str): La fecha como cadena en formato DD-MM-AAAA.
-
-    Returns:
-        date: La fecha como objeto de tipo date, o None si el formato dado es incorrecto.
-    """
-
     try:
-        return datetime.strptime(fecha_str, "%d-%m-%Y").date()
-    
+        fecha = datetime.strptime(fecha_str, "%d-%m-%Y")
+        return fecha.date()
     except ValueError:
-        errorDate = "Error: La fecha no tiene el formato correcto (DD-MM-AAAA)."
-        print(f"{errorDate}. Valor retornado: None")
+        print("Fecha inválida. Introduce la fecha en formato DD-MM-AAAA.")
         return None
-    
-def validar_autor(biblioteca):
+
+# Valida nombres (mascotas, propietarios)
+def validar_nombre(nombre):
+    if nombre and nombre.isalpha() and len(nombre) <= 50:
+        return nombre.capitalize()
+    print("Nombre inválido. Asegúrate de usar solo letras y no superar 50 caracteres.")
+    return None
+
+# Valida DNI para propietarios
+def validar_dni(dni):
+    if re.match(r'^\d{8}[A-Z]$', dni):
+        return dni
+    print("DNI inválido. Asegúrate de usar el formato correcto (8 dígitos seguidos de una letra mayúscula).")
+    return None
+
+# Valida direcciones (opcionalmente puedes definir un máximo de caracteres)
+def validar_direccion(direccion):
+    if direccion and len(direccion) <= 100:
+        return direccion
+    print("Dirección inválida. Asegúrate de no superar los 100 caracteres.")
+    return None
+
+# Valida correos electrónicos
+def validar_correo(correo):
+    if re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', correo):
+        return correo
+    print("Correo electrónico inválido. Introduce un formato válido.")
+    return None
+
+# Valida ID de mascota (números enteros positivos)
+def validar_id_mascota(id_mascota):
+    if isinstance(id_mascota, int) and id_mascota > 0:
+        return id_mascota
+    print("ID de mascota inválido. Introduce un número entero positivo.")
+    return None
+
+# Valida visitas (motivo y observaciones)
+def validar_visita(motivo, observaciones):
+    if not motivo or len(motivo) > 100:
+        print("Motivo de visita inválido. Asegúrate de no superar 100 caracteres.")
+        return None
+    if observaciones and len(observaciones) > 250:
+        print("Observaciones inválidas. Asegúrate de no superar 250 caracteres.")
+        return None
+    return motivo, observaciones
+
+# Valida montos de facturas
+def validar_monto(monto):
+    try:
+        monto = float(monto)
+        if monto > 0:
+            return round(monto, 2)
+        else:
+            print("El monto debe ser un número positivo.")
+    except ValueError:
+        print("Monto inválido. Asegúrate de introducir un número.")
+    return None
+
+# Validación general para IDs
+def validar_id(id_value, entity_name="elemento"):
+    if isinstance(id_value, int) and id_value > 0:
+        return id_value
+    print(f"ID de {entity_name} inválido. Debe ser un número entero positivo.")
+    return None
+
+def opcion_no_valida():
     """
-    Valida si un autor existe en la biblioteca por su pseudónimo. Si no existe, lo crea.
+    Función que muestra un mensaje indicando que la opción seleccionada no es válida.
     """
-    autores = biblioteca.repositorio_autor.obtener_autores()
-    print(f"DEBUG: Autores disponibles: {biblioteca.repositorio_autor.obtener_autores()}")
-    
-    if autores is None:
-        print("Error: No se pudieron cargar los Géneros Literarios.\n")
-        return None
-    
-    pseudonimo = input("Introduce el pseudónimo del autor: \n").strip().lower()    
-    # Buscar el autor por pseudónimo
-    autor = biblioteca.repositorio_autor.obtener_autor_por_pseudonimo(pseudonimo)
+    print("Opción no válida. Por favor, intenta de nuevo.")
 
-    for autor in autores:
-        # Asegurar de que get_nombre_genero() devuelve un string
-        if autor.get("pseudonimo").strip().lower() == pseudonimo.lower() is None:
-            print(f"El autor '{pseudonimo}' no existe en la base de datos.")
-        
-        if autor.get("pseudonimo").strip().lower() == pseudonimo.lower():
-            print(f"Autor '{pseudonimo}' encontrado.")
-        return pseudonimo
-    
-        
-    # Si el autor no existe, preguntar si se desea crear uno nuevo
-    # print(f"El autor '{pseudonimo}' no existe en la base de datos.")           
-
-    crear_nuevo = input("¿Deseas crear este autor? (s/n): ").strip().lower()
-
-    # Si no se encuentra, crearlo
-    if crear_nuevo == 's':
-        print(f"\nEl autor '{pseudonimo}' no ha sido encontrado. Creando nuevo autor.")
-        nombre = input("Introduce el nombre del autor:\n").strip()
-        apellido1 = input("Introduce el primer apellido del autor:\n").strip()
-        apellido2 = input("Introduce el segundo apellido del autor:\n").strip()
-        nacido = input("Introduce la fecha de nacimiento del autor (DD-MM-AAAA):\n").strip()
-        fallecido = input("Introduce la fecha de fallecimiento del autor (si aplica, DD-MM-AAAA) - ENTER para valor 'Null':\n").strip()
-        nacionalidad = input("Introduce la nacionalidad del autor:\n").strip()
-        
-        nuevo_autor = {
-            "id": len(biblioteca.repositorio_autor.obtener_autores()) + 1,  # Asignar un ID incremental
-            "nombre": nombre,
-            "apellido1": apellido1,
-            "apellido2": apellido2,
-            "pseudonimo": pseudonimo or None,
-            "nacido": nacido,
-            "fallecido": fallecido or None,
-            "nacionalidad": nacionalidad
-        }
-        biblioteca.repositorio_autor.agregar_autor(nuevo_autor)
-        print(f"El Autor '{pseudonimo}' ha sido creado exitosamente.\n")
-        print("DEBUG: Autores después de agregar:", biblioteca.repositorio_autor.obtener_autores())
-        return nuevo_autor
-    else:
-        print("No se realizó ningún cambio.")
-        return None
-
-def validar_genero(biblioteca):
+def salir():
     """
-    Valida si un Género Literario con el nombre ingresado ya existe en la biblioteca.
-    Si no existe, permite crear uno nuevo.
-    """ 
-    # Verificar si el género ya existe
-    generos = biblioteca.repositorio_genero.obtener_generos()
-    print(f"DEBUG: Géneros Literarios disponibles: {biblioteca.repositorio_genero.obtener_generos()}")
-    
-    if generos is None:
-        print("Error: No se pudieron cargar los Géneros Literarios.\n")
-        return None    
-
-    nombre_genero = input("Introduce el Género Literario:\n").strip().lower()
-    # Buscar el género por nombre
-    genero = biblioteca.repositorio_genero.buscar_genero_por_nombre(nombre_genero)
-    
-    for genero in generos:
-        # Asegurar de que get_nombre_genero() devuelve un string
-        if genero.get("nombre_genero").strip().lower() == nombre_genero.lower() is None:
-            print(f"El Género Literario '{nombre_genero}' no existe en la base de datos.")
-        
-        if genero.get("nombre_genero").strip().lower() == nombre_genero.lower():
-            print(f"El Género Literario {nombre_genero} ha sido encontrado.\n")
-            return genero           
-
-    crear_nuevo = input("¿Deseas crear este Género Literario? (s/n): ").strip().lower()
-
-
-    if crear_nuevo == 's':
-        nombre_genero = input("Introduce el Género Literario del libro:\n").strip()
-            
-        nuevo_genero = {
-            "id": len(biblioteca.repositorio_genero.obtener_generos()) + 1, # Asignar un ID incremental
-            "nombre_genero": nombre_genero
-        }
-        biblioteca.repositorio_genero.agregar_genero(nuevo_genero)
-        print(f"El Género Literario'{nombre_genero}' ha sido creado exitosamente.\n")
-        print("DEBUG: Géneros Literarios después de agregar:", biblioteca.repositorio_genero.obtener_generos())
-        return nuevo_genero
-    else:
-        print("No se realizó ningún cambio.")
-        return None
-
-def validar_especifico(biblioteca):
+    Función para salir del sistema o cerrar el menú de manera segura.
     """
-    Valida si un Subgénero Literario y el Tipo de Subgénero Literario con el nombre_especifico y el tipo ingresados ya existen en la biblioteca.
-    Si no existen, permite crear un nuevo dato.
-    """
-    # Verificar si los subgéneros ya están cargados
-    especificos = biblioteca.repositorio_especifico.obtener_especificos()
-    print(f"DEBUG: Subgéneros Literarios disponibles: {especificos}")
-    
-    if especificos is None:
-        print("Error: No se pudieron cargar los Subgéneros y Tipos Literarios.\n")
-        return None
-
-    # Solicitar datos al usuario
-    nombre_especifico = input("Introduce el Subgénero Literario:\n").strip()
-    tipo = input("Introduce el Tipo Específico de Subgénero:\n").strip()
-
-    # Buscar el subgénero literario por nombre y tipo
-    especifico_existente = biblioteca.repositorio_especifico.buscar_especifico_por_nombre_y_tipo(nombre_especifico, tipo)
-    
-    if especifico_existente:
-        print(f"El Subgénero Literario '{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' ya existen.\n")
-        return especifico_existente
-    else:
-        print(f"El Subgénero Literario '{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' no existen en la base de datos.")
-
-    # Crear un nuevo subgénero si el usuario lo desea
-    crear_nuevo = input("¿Deseas crear este Subgénero y Tipo Literario? (s/n): ").strip().lower()
-    if crear_nuevo == 's':
-        nuevo_especifico = {
-            "especifico_id": len(especificos) + 1,  # ID único
-            "nombre_especifico": nombre_especifico,
-            "tipo": tipo
-        }
-        biblioteca.repositorio_especifico.agregar_especifico(nuevo_especifico)
-        print(f"El Subgénero Literario '{nombre_especifico}' y Tipo de Subgénero Literario '{tipo}' ha sido creado exitosamente.\n")
-        print("DEBUG: Subgéneros Literarios después de agregar:", biblioteca.repositorio_especifico.obtener_especificos())
-        return nuevo_especifico
-    else:
-        print("No se realizó ningún cambio.")
-        return None
-
+    print("Saliendo... ¡Hasta luego!")
