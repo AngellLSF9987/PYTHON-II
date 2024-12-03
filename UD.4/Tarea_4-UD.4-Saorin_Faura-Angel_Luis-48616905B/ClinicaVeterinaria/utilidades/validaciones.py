@@ -2,6 +2,7 @@
 
 import re
 from datetime import datetime
+import sys
 
 # Valida fechas en formato DD-MM-AAAA
 def validar_fecha(fecha_str):
@@ -87,3 +88,4 @@ def salir():
     Función para salir del sistema o cerrar el menú de manera segura.
     """
     print("Saliendo... ¡Hasta luego!")
+    sys.exit()  # Finaliza el programa

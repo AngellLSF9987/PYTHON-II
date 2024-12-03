@@ -86,13 +86,13 @@ def insertar_datos_ejemplo():
 
         # Insertar datos en T_Propietario
         propietarios = [
-            ("Juan", "Pérez", "López", "12345678A", "600123456", "Calle Luna, 15"),
-            ("Ana", "García", "Fernández", "87654321B", "650987654", "Avenida Sol, 10"),
-            ("Luis", "Martínez", "Ruiz", "11223344C", "620765432", "Calle Estrella, 8"),
-            ("María", "Martínez", "Soler", "11223556J", "623365432", "Calle Sebastopol, 8")
+            ("Juan", "Pérez", "López", "12345678A", "600123456", "Calle Luna, 15", "juan@perezlopez.com"),
+            ("Ana", "García", "Fernández", "87654321B", "650987654", "Avenida Sol, 10", "ana@garciafernandez"),
+            ("Luis", "Martínez", "Ruiz", "11223344C", "620765432", "Calle Estrella, 8", "luis@martinezruiz.com"),
+            ("María", "Martínez", "Soler", "11223556J", "623365432", "Calle Sebastopol, 8", "maria@martinezsoler.com")
         ]
         cursor.executemany("""
-        INSERT OR IGNORE INTO T_Propietarios (Nombre, Apellido1, Apellido2, DNI, Telefono, Direccion)
+        INSERT OR IGNORE INTO T_Propietarios (Nombre, Apellido1, Apellido2, DNI, Telefono, Direccion, Email)
         VALUES (?, ?, ?, ?, ?, ?, ?);
         """, propietarios)
 

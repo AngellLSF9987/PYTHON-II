@@ -59,9 +59,17 @@ def menu_propietarios(repo_propietario):
             dni = input("Ingrese el DNI del propietario:\n").strip()
             repo_propietario.buscar_por_dni(dni)
         elif opcion == "3":
-            repo_propietario.agregar_propietario()
+            # Pedir los datos para agregar un nuevo propietario
+            nombre = input("Ingrese el nombre del propietario: ")
+            apellido1 = input("Ingrese el primer apellido: ")
+            apellido2 = input("Ingrese el segundo apellido: ")
+            dni = input("Ingrese el DNI del propietario: ")
+            telefono = input("Ingrese el teléfono de contacto: ")
+            direccion = input("Ingrese la dirección del propietario: ")
+            email = input("Ingrese el email del propietario: ")
+            repo_propietario.agregar_propietario(nombre, apellido1, apellido2, dni, telefono, direccion, email)
         elif opcion == "4":
-            dni = input("Ingrese el DNI del propietario a modificar:\n").strip()
+            dni = input("Ingrese el DNI del propietario a modificar: ").strip()
             repo_propietario.actualizar_propietario(dni)
         elif opcion == "5":
             dni = input("Ingrese el DNI del propietario a eliminar:\n").strip()
