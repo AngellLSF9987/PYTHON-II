@@ -82,3 +82,22 @@ class RepositorioPropietario:
                     print("Propietario eliminado con éxito.")
         except sqlite3.Error as e:
             print(f"Error al eliminar propietario: {e}")
+
+    def mostrar_propietarios(self):
+        """
+        Muestra todos los propietarios en la base de datos.
+        """
+        query = "SELECT * FROM T_Propietarios;"
+        try:
+            with self.db.conectar() as conn:
+                cursor = conn.cursor()
+                cursor.execute(query)
+                propietarios = cursor.fetchall()
+                if propietarios:
+                    print("\n=== Lista de Propietarios ===")
+                    for propietario in propietarios:
+                        print(f"ID: {propietario[0]}, Nombre: {propietario[1]}, DNI: {propietario[2]}, Dirección: {propietario[3]}")
+                else:
+                    print("No hay propietarios registrados.")
+        except sqlite3.Error as e:
+            print(f"Error al mostrar propietarios: {e}")

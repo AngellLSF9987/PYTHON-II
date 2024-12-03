@@ -62,7 +62,7 @@ def menu_propietarios(repo_propietario):
             repo_propietario.agregar_propietario()
         elif opcion == "4":
             dni = input("Ingrese el DNI del propietario a modificar:\n").strip()
-            repo_propietario.modificar_propietario(dni)
+            repo_propietario.actualizar_propietario(dni)
         elif opcion == "5":
             dni = input("Ingrese el DNI del propietario a eliminar:\n").strip()
             repo_propietario.eliminar_propietario(dni)
