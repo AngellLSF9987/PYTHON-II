@@ -1,0 +1,23 @@
+
+Hola. Tenemos el siguiente proyecto:
+
+ClinicaVeterinaria/
+├── database/
+│   ├── db_connection.py       	# Manejo de la conexión a SQLite.
+│   └── db_setup.py            	# Creación y configuración inicial de la base de datos.
+│   └── clinica_veterinaria.db     # Base de datos (creada pero aún vacía).
+├── modelos/
+│   ├── propietario.py         # Clase modelo para propietarios.
+│   ├── mascota.py             # Clase modelo para mascotas.
+│   ├── visita.py              # Clase modelo para visitas.
+│   ├── factura.py             # Clase modelo para facturas.
+├── repositorios/
+│   ├── repositorio_propietario.py # Gestión CRUD para propietarios.
+│   ├── repositorio_mascota.py     # Gestión CRUD para mascotas.
+│   ├── repositorio_visita.py      # Gestión CRUD para visitas.
+│   ├── repositorio_factura.py     # Gestión CRUD para facturas.
+├── utilidades/
+│   ├── validaciones.py        # Validaciones específicas del proyecto.
+│   └── menu.py                # Funciones para generar menús interactivos.
+├── main.py                    # Entrada principal del programa.
+└── README.md                  # Documentación del proyecto.

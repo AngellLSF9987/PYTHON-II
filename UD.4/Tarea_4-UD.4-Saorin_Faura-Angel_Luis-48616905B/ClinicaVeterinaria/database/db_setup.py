@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from db_connection import ConexionDB
+from ClinicaVeterinaria.database.db_connection import ConexionDB
 
 # Ruta de la base de datos
 db_path = os.path.join(
@@ -8,6 +8,7 @@ db_path = os.path.join(
     "Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B",
     "clinica_veterinaria.db"
 )
+print(f"Conectando a la base de datos en: {db_path}")
 
 def crear_tablas():
     """
@@ -23,10 +24,12 @@ def crear_tablas():
         CREATE TABLE IF NOT EXISTS T_Propietarios (
             IdPropietario INTEGER PRIMARY KEY AUTOINCREMENT,
             Nombre TEXT NOT NULL,
-            Apellido TEXT NOT NULL,
+            Apellido1 TEXT NOT NULL,
+            Apellido2 TEXT NOT NULL,
             DNI TEXT UNIQUE NOT NULL,
             Telefono TEXT NOT NULL,
-            Direccion TEXT NOT NULL
+            Direccion TEXT NOT NULL,
+            Email TEXT NOT NULL
         );
         """)
 
@@ -83,13 +86,14 @@ def insertar_datos_ejemplo():
 
         # Insertar datos en T_Propietario
         propietarios = [
-            ("Juan", "Pérez López", "12345678A", "600123456", "Calle Luna, 15"),
-            ("Ana", "García Fernández", "87654321B", "650987654", "Avenida Sol, 10"),
-            ("Luis", "Martínez Ruiz", "11223344C", "620765432", "Calle Estrella, 8")
+            ("Juan", "Pérez", "López", "12345678A", "600123456", "Calle Luna, 15"),
+            ("Ana", "García", "Fernández", "87654321B", "650987654", "Avenida Sol, 10"),
+            ("Luis", "Martínez", "Ruiz", "11223344C", "620765432", "Calle Estrella, 8"),
+            ("María", "Martínez", "Soler", "11223556J", "623365432", "Calle Sebastopol, 8")
         ]
         cursor.executemany("""
-        INSERT OR IGNORE INTO T_Propietario (Nombre, Apellido, DNI, Telefono, Direccion)
-        VALUES (?, ?, ?, ?, ?);
+        INSERT OR IGNORE INTO T_Propietarios (Nombre, Apellido1, Apellido2, DNI, Telefono, Direccion)
+        VALUES (?, ?, ?, ?, ?, ?, ?);
         """, propietarios)
 
         # Insertar datos en T_Mascotas

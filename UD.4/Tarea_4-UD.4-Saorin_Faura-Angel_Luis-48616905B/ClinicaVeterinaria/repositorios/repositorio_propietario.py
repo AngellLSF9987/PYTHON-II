@@ -5,18 +5,18 @@ class RepositorioPropietario:
     def __init__(self, conexion: ConexionDB):
         self.db = conexion  
 
-    def agregar_propietario(self, nombre, dni, fecha_nacimiento, direccion, correo):
+    def agregar_propietario(self, nombre, apellido1, apellido2, dni, telefono, direccion, email):
         """
         Agrega un nuevo propietario a la base de datos.
         """
         query = """
-        INSERT INTO T_Propietarios (Nombre, DNI, FechaNacimiento, Direccion, CorreoElectronico)
-        VALUES (?, ?, ?, ?, ?);
+        INSERT INTO T_Propietarios (Nombre, Apellido1, Apellido2, DNI, Telefono, Direccion, Email)
+        VALUES (?, ?, ?, ?, ?, ?, ?);
         """
         try:
             with self.db.conectar() as conn:
                 cursor = conn.cursor()
-                cursor.execute(query, (nombre, dni, fecha_nacimiento, direccion, correo))
+                cursor.execute(query, (nombre, apellido1, apellido2, dni, telefono, direccion, email))
                 conn.commit()
                 print(f"Propietario agregado con éxito. ID generado: {cursor.lastrowid}")
                 return cursor.lastrowid
@@ -43,19 +43,19 @@ class RepositorioPropietario:
             print(f"Error al obtener propietario: {e}")
         return None
 
-    def actualizar_propietario(self, id_propietario, nombre, dni, fecha_nacimiento, direccion, correo):
+    def actualizar_propietario(self, id_propietario, nombre, apellido1, apellido2, dni, telefono, direccion, email):
         """
         Actualiza los datos de un propietario en la base de datos.
         """
         query = """
         UPDATE T_Propietarios
-        SET Nombre = ?, DNI = ?, FechaNacimiento = ?, Direccion = ?, CorreoElectronico = ?
+        SET Nombre = ?, Apellido1 = ?, Apellido2 = ?, DNI = ?, Telefono = ?, Direccion = ?, Email = ?
         WHERE ID = ?;
         """
         try:
             with self.db.conectar() as conn:
                 cursor = conn.cursor()
-                cursor.execute(query, (nombre, dni, fecha_nacimiento, direccion, correo, id_propietario))
+                cursor.execute(query, (nombre, apellido1, apellido2, dni, telefono, direccion, email, id_propietario))
                 if cursor.rowcount == 0:
                     print(f"No se encontró un propietario con el ID {id_propietario}.")
                 else:
@@ -96,7 +96,8 @@ class RepositorioPropietario:
                 if propietarios:
                     print("\n=== Lista de Propietarios ===")
                     for propietario in propietarios:
-                        print(f"ID: {propietario[0]}, Nombre: {propietario[1]}, DNI: {propietario[2]}, Dirección: {propietario[3]}")
+                        print(f"ID: {propietario[0]}, Nombre: {propietario[1]}, Apellido1: {propietario[2]}, Apellido1: {propietario[3]}, DNI: {propietario[4]}, \
+                            Teléfono de Contacto: {propietario[5]}, Dirección: {propietario[6]}, Email: {propietario[7]}")
                 else:
                     print("No hay propietarios registrados.")
         except sqlite3.Error as e:

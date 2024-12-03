@@ -35,7 +35,7 @@ def mostrar_menu_principal():
         print("4. Gestión de Facturas.")
         print("0. Salir.")
 
-        opcion = input("\nSeleccione una opción:\n").strip()
+        opcion = input("\nSeleccione una opción:\n")
         accion = opciones.get(opcion, opcion_no_valida)
         accion()
 
