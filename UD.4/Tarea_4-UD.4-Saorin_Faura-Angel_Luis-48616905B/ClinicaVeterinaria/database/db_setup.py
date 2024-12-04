@@ -10,7 +10,7 @@ db_path = os.path.join(
 )
 print(f"Conectando a la base de datos en: {db_path}")
 
-def crear_tablas():
+def crear_tablas(conexion):
     """
     Crea las tablas necesarias en la base de datos si no existen.
     """
@@ -37,12 +37,13 @@ def crear_tablas():
         cursor.execute("""
         CREATE TABLE IF NOT EXISTS T_Mascotas (
             IdMascota INTEGER PRIMARY KEY AUTOINCREMENT,
-            IdPropietario INTEGER NOT NULL,
+            DNIPropietario TEXT NOT NULL,
             Nombre TEXT NOT NULL,
             Especie TEXT NOT NULL,
-            Raza TEXT,
-            Edad INTEGER,
-            FOREIGN KEY (IdPropietario) REFERENCES T_Propietario(IdPropietario)
+            Raza TEXT NOT NULL,
+            Edad INTEGER NOT NULL,
+            Peso REAL NOT NULL,
+            FOREIGN KEY (DNIPropietario) REFERENCES T_Propietarios(DNI)
         );
         """)
 
@@ -75,7 +76,7 @@ def crear_tablas():
     finally:
         conexion.close()
 
-def insertar_datos_ejemplo():
+def insertar_datos_ejemplo(conexion):
     """
     Inserta datos de ejemplo en la base de datos.
     """
@@ -98,15 +99,16 @@ def insertar_datos_ejemplo():
 
         # Insertar datos en T_Mascotas
         mascotas = [
-            (1, "Rex", "Perro", "Labrador", 5),
-            (1, "Miau", "Gato", "Siamés", 3),
-            (2, "Bunny", "Conejo", "Angora", 2),
-            (3, "Toby", "Perro", "Chihuahua", 4)
+            ("12345678A", "Rex", "Perro", "Labrador", 5, 40.00),
+            ("87654321B", "Miau", "Gato", "Siamés", 3, 8.50),
+            ("11223344C", "Bunny", "Conejo", "Angora", 2, 2.10),
+            ("11223556J", "Toby", "Perro", "Chihuahua", 1, 2.95)
         ]
         cursor.executemany("""
-        INSERT OR IGNORE INTO T_Mascotas (IdPropietario, Nombre, Especie, Raza, Edad)
-        VALUES (?, ?, ?, ?, ?);
+        INSERT OR IGNORE INTO T_Mascotas (DNIPropietario, Nombre, Especie, Raza, Edad, Peso)
+        VALUES (?, ?, ?, ?, ?, ?);
         """, mascotas)
+
 
         # Insertar datos en T_Visitas
         visitas = [
@@ -139,8 +141,8 @@ def insertar_datos_ejemplo():
     finally:
         conexion.close()
 
-if __name__ == "__main__":
-    print("Inicializando base de datos...")
-    crear_tablas()
-    insertar_datos_ejemplo()
-    print("Base de datos lista con datos de ejemplo.")
+def obtener_conexion():
+    """
+    Devuelve una conexión a la base de datos SQLite.
+    """
+    return sqlite3.connect("clinica_veterinaria.db")

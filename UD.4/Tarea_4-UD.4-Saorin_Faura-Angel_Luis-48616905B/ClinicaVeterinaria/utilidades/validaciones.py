@@ -1,8 +1,7 @@
-# ClinicaVeterinaria/utilidades/validaciones.py
-
 import re
 from datetime import datetime
 import sys
+import sqlite3
 
 # Valida fechas en formato DD-MM-AAAA
 def validar_fecha(fecha_str):
@@ -89,3 +88,48 @@ def salir():
     """
     print("Saliendo... ¡Hasta luego!")
     sys.exit()  # Finaliza el programa
+
+def listar_tablas(conexion):
+    cursor = conexion.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tablas = cursor.fetchall()
+    print("Tablas existentes:", tablas)
+
+def verificar_tablas(conexion):
+    cursor = conexion.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tablas = cursor.fetchall()
+    print("Tablas existentes:", tablas)
+
+# def mostrar_datos(conexion, tabla):
+#     cursor = conexion.cursor()
+#     cursor.execute(f"SELECT * FROM {tabla};")
+#     rows = cursor.fetchall()
+#     for row in rows:
+#         print(row)
+
+# Función para eliminar duplicados en tablas
+def eliminar_duplicados(conexion, tabla, columna_unica):
+    """
+    Elimina registros duplicados en una tabla basada en una columna única.
+
+    :param conexion: Conexión a la base de datos SQLite.
+    :param tabla: Nombre de la tabla en la que buscar duplicados.
+    :param columna_unica: Nombre de la columna por la que identificar duplicados.
+    """
+    cursor = conexion.cursor()
+    consulta_eliminar = f"""
+        DELETE FROM {tabla}
+        WHERE rowid NOT IN (
+            SELECT MIN(rowid)
+            FROM {tabla}
+            GROUP BY {columna_unica}
+        );
+    """
+    try:
+        cursor.execute(consulta_eliminar)
+        conexion.commit()
+        print(f"🔧 Duplicados eliminados en la tabla '{tabla}' según '{columna_unica}'.")
+    except sqlite3.Error as e:
+        print(f"⚠️ Error eliminando duplicados: {e}")
+
