@@ -1,5 +1,4 @@
 import os
-import sqlite3
 from ClinicaVeterinaria.database.db_connection import ConexionDB
 
 # Ruta de la base de datos
@@ -16,7 +15,7 @@ def crear_tablas(conexion):
     Crea las tablas necesarias en la base de datos si no existen.
     """
     try:
-        db = ConexionDB()
+        db = ConexionDB(ruta_bd=db_path)
         conexion = db.conectar()
         cursor = conexion.cursor()
 
@@ -110,7 +109,6 @@ def insertar_datos_ejemplo(conexion):
         VALUES (?, ?, ?, ?, ?, ?);
         """, mascotas)
 
-
         # Insertar datos en T_Visitas
         visitas = [
             (1, "2024-12-01", "Vacunación anual"),
@@ -141,9 +139,3 @@ def insertar_datos_ejemplo(conexion):
         print(f"Error al insertar datos de ejemplo: {e}")
     finally:
         conexion.close()
-
-def obtener_conexion():
-    """
-    Devuelve una conexión a la base de datos SQLite.
-    """
-    return sqlite3.connect("clinica_veterinaria.db")
