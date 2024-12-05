@@ -124,6 +124,34 @@ class RepositorioMascota:
         except sqlite3.Error as e:
             print(f"⚠️ Error al eliminar mascota: {e}")
 
+    def eliminar_mascota(conexion, dni_propietario):
+        """
+        Elimina todas las mascotas asociadas a un propietario dado el DNI.
+        """
+        cursor = conexion.cursor()
+        
+        # Buscar todas las mascotas asociadas al DNI
+        cursor.execute("""
+            SELECT IdMascota FROM T_Mascotas WHERE DNIPropietario = ?
+        """, (dni_propietario,))
+        
+        mascotas = cursor.fetchall()
+        
+        if mascotas:
+            print("\n=== Mascotas del Propietario ===")
+            for mascota in mascotas:
+                print(f"ID Mascota: {mascota[0]}")
+            
+            # Eliminar las mascotas
+            cursor.execute("""
+                DELETE FROM T_Mascotas WHERE DNIPropietario = ?
+            """, (dni_propietario,))
+            conexion.commit()
+            print(f"✅ Mascotas del propietario {dni_propietario} eliminadas correctamente.")
+        else:
+            print(f"⚠️ No se encontraron mascotas para el propietario con DNI: {dni_propietario}")
+
+
     def mostrar_mascotas(self):
         """
         Muestra todas las mascotas junto con el DNI de sus propietarios.
@@ -156,10 +184,10 @@ class RepositorioMascota:
                 for mascota in resultados:
                     print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]} | Fecha de Nacimiento: {mascota[4]} | Peso: {mascota[5]} kg | DNI Propietario: {mascota[6]}")
             else:
-                print("No hay mascotas registradas en la base de datos.")
+                print("⚠️ No hay mascotas registradas en la base de datos.")
 
         except sqlite3.Error as e:
-            print(f"Error al mostrar las mascotas: {e}")
+            print(f"⚠️ Error al mostrar las mascotas: {e}")
         finally:
             conexion.close()
 

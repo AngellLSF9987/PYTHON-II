@@ -4,7 +4,9 @@ from ClinicaVeterinaria.database.db_connection import ConexionDB
 # Ruta de la base de datos
 db_path = os.path.join(
     os.getcwd(),
+    "UD.4",
     "Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B",
+    "ClinicaVeterinaria",
     "database",
     "clinica_veterinaria.db"
 )
@@ -71,21 +73,22 @@ def crear_tablas(conexion):
 
         conexion.commit()
         print("Tablas creadas correctamente.")
-    except sqlite3.Error as e:
-        print(f"Error al crear tablas: {e}")
+    except Exception as e:
+        print(f"Error al crear las tablas: {e}")
     finally:
-        conexion.close()
+        if conexion:
+            conexion.close()
 
 def insertar_datos_ejemplo(conexion):
     """
-    Inserta datos de ejemplo en la base de datos.
+    Inserta datos de ejemplo en las tablas de la base de datos.
     """
     try:
-        db = ConexionDB()
+        db = ConexionDB(ruta_bd=db_path)
         conexion = db.conectar()
         cursor = conexion.cursor()
 
-        # Insertar datos en T_Propietario
+        # Insertar datos en T_Propietarios
         propietarios = [
             ("Juan", "Pérez", "López", "12345678A", "600123456", "Calle Luna, 15", "juan@perezlopez.com"),
             ("Ana", "García", "Fernández", "87654321B", "650987654", "Avenida Sol, 10", "ana@garciafernandez"),
@@ -135,7 +138,8 @@ def insertar_datos_ejemplo(conexion):
 
         conexion.commit()
         print("Datos de ejemplo insertados correctamente.")
-    except sqlite3.Error as e:
+    except Exception as e:
         print(f"Error al insertar datos de ejemplo: {e}")
     finally:
-        conexion.close()
+        if conexion:
+            conexion.close()

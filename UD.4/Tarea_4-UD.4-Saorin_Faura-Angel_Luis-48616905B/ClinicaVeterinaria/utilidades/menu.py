@@ -9,8 +9,11 @@ def mostrar_menu_principal():
     """
     Muestra el menú principal de la Clínica Veterinaria y gestiona las opciones.
     """
+    # Asegúrate de pasar la ruta de la base de datos
+    db_path = r"UD.4\Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B\ClinicaVeterinaria\database\clinica_veterinaria.db"
+    
     # Crear la conexión a la base de datos
-    conexion = ConexionDB()
+    conexion = ConexionDB(db_path)
 
     # Instanciar los repositorios
     repo_propietario = RepositorioPropietario(conexion)
@@ -115,7 +118,7 @@ def menu_mascotas(repo_mascota, repo_propietario):
             dni_propietario = input("Ingrese el DNI del propietario: ").strip()
             
             # Buscar las mascotas del propietario
-            mascotas = repo_mascota.buscar_por_dni_propietario(dni_propietario)
+            mascotas = repo_mascota.buscar_por_dni_de_propietario(dni_propietario)
             
             if not mascotas:
                 print(f"⚠️ No se encontraron mascotas para el propietario con DNI: {dni_propietario}")
@@ -155,7 +158,7 @@ def menu_mascotas(repo_mascota, repo_propietario):
         elif opcion == "5":
             dni_propietario = input("Ingrese el DNI del propietario: ").strip()
             # Buscar las mascotas del propietario
-            mascotas = repo_mascota.buscar_por_dni_propietario(dni_propietario)
+            mascotas = repo_mascota.buscar_por_dni_de_propietario(dni_propietario)
             
             if mascotas:
                 print("\n=== Mascotas del Propietario ===")

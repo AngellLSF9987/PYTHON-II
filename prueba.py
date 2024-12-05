@@ -1,37 +1,36 @@
-class Figura:
-    def __init__(self, nombre, color):
-        self.__nombre = nombre
-        self.color = color
+# Modificar datos de una mascota
+if opcion == "4":
+    # Solicitar el DNI del propietario para obtener las mascotas
+    dni = input("Ingrese el DNI del propietario: ").strip()
+    
+    # Buscar las mascotas asociadas a ese DNI
+    mascotas = self.buscar_mascotas_por_dni(dni)
+    
+    if mascotas:
+        print("\n=== Mascotas del Propietario ===")
+        for mascota in mascotas:
+            print(f"ID Mascota: {mascota['IdMascota']} | Nombre: {mascota['Nombre']} | "
+                  f"Especie: {mascota['Especie']} | Raza: {mascota['Raza']} | "
+                  f"Fecha de Nacimiento: {mascota['FechaNacimiento']} | Peso: {mascota['Peso']} kg")
         
+        # Seleccionar una mascota para modificar
+        id_mascota = input("Seleccione el ID de la mascota que desea modificar: ").strip()
         
-    def get_nombre(self):
-        return self.__nombre
-    
-    def calcular_area(self):
-        pass
-    
-    def describir(self):
-        return f"Soy una figura de nombre {self.get_nombre()} y color {self.color}"
-    
-    
-class Cuadrado(Figura):
-    
-    def __init__(self, lado, nombre="Cuadrado", color="Azul"):
+        # Buscar la mascota específica
+        mascota_seleccionada = self.buscar_mascota_por_id(id_mascota)
         
-        super().__init__(nombre,color)
-        self.__lado = lado
-    
-    def get_lado(self):
-        return self.__lado
-    
-    def calcular_area(self):
-        return self.get_lado() ** 2
-    
-    def describir(self):
-        print(f"{super().describir()} y con lado {self.get_lado()}")
-        
-cuadrado = Cuadrado(5)
-
-print(cuadrado.calcular_area())
-
-cuadrado.describir()
+        if mascota_seleccionada:
+            print("\n=== Modificar Mascota ===")
+            nombre = input(f"Nombre (actual: {mascota_seleccionada['Nombre']}): ").strip()
+            especie = input(f"Especie (actual: {mascota_seleccionada['Especie']}): ").strip()
+            raza = input(f"Raza (actual: {mascota_seleccionada['Raza']}): ").strip()
+            fecha_nacimiento = input(f"Fecha de Nacimiento (actual: {mascota_seleccionada['FechaNacimiento']}): ").strip()
+            peso = input(f"Peso (actual: {mascota_seleccionada['Peso']} kg): ").strip()
+            
+            # Actualizar la mascota
+            self.modificar_mascota(id_mascota, nombre, especie, raza, fecha_nacimiento, peso)
+            print(f"✅ Datos de la mascota actualizados con éxito.")
+        else:
+            print("⚠️ No se encontró la mascota seleccionada.")
+    else:
+        print(f"⚠️ No se encontraron mascotas para el propietario con DNI: {dni}.")

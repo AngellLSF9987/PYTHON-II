@@ -2,27 +2,18 @@ import os
 import sqlite3
 
 class ConexionDB:
-    def __init__(self, ruta_bd=None):
-        if ruta_bd is None:
-            # Ruta base del proyecto
-            ruta_base = os.path.join(
-                os.path.dirname(os.path.abspath(__file__)),  # Directorio actual del archivo
-                "database"  # Subcarpeta para la base de datos
-            )
-            # Crear la carpeta `database` si no existe
-            os.makedirs(ruta_base, exist_ok=True)
-            # Ruta del archivo de la base de datos
-            ruta_bd = os.path.join(ruta_base, "clinica_veterinaria.db")
+    def __init__(self, ruta_bd):
         self.ruta_bd = ruta_bd
-
+        # Verificar si la carpeta de la base de datos existe; si no, crearla
+        directorio = os.path.dirname(self.ruta_bd)
+        if not os.path.exists(directorio):
+            os.makedirs(directorio)  # Crear el directorio si no existe
+    
     def conectar(self):
-        """
-        Establece una conexión a la base de datos SQLite.
-        """
         try:
-            conn = sqlite3.connect(self.ruta_bd)
-            print(f"Conectado a la base de datos en: {self.ruta_bd}")
-            return conn
-        except sqlite3.Error as e:
-            print(f"⚠️ Error al conectar con la base de datos: {e}")
-            return None
+            print(f"Conectando a la base de datos en: {self.ruta_bd}")
+            conexion = sqlite3.connect(self.ruta_bd)
+            return conexion
+        except sqlite3.OperationalError as e:
+            print(f"Error al conectar con la base de datos: {e}")
+            raise
