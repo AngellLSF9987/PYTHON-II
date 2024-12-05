@@ -6,6 +6,7 @@ from ClinicaVeterinaria.database.db_connection import ConexionDB
 db_path = os.path.join(
     os.getcwd(),
     "Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B",
+    "database",
     "clinica_veterinaria.db"
 )
 print(f"Conectando a la base de datos en: {db_path}")
@@ -41,7 +42,7 @@ def crear_tablas(conexion):
             Nombre TEXT NOT NULL,
             Especie TEXT NOT NULL,
             Raza TEXT NOT NULL,
-            Edad INTEGER NOT NULL,
+            FecNac DATE NOT NULL,
             Peso REAL NOT NULL,
             FOREIGN KEY (DNIPropietario) REFERENCES T_Propietarios(DNI)
         );
@@ -99,13 +100,13 @@ def insertar_datos_ejemplo(conexion):
 
         # Insertar datos en T_Mascotas
         mascotas = [
-            ("12345678A", "Rex", "Perro", "Labrador", 5, 40.00),
-            ("87654321B", "Miau", "Gato", "Siamés", 3, 8.50),
-            ("11223344C", "Bunny", "Conejo", "Angora", 2, 2.10),
-            ("11223556J", "Toby", "Perro", "Chihuahua", 1, 2.95)
+            ("12345678A", "Rex", "Perro", "Labrador", "2020-01-01", 40.00),
+            ("87654321B", "Miau", "Gato", "Siamés", "2021-12-20", 8.50),
+            ("11223344C", "Bunny", "Conejo", "Angora", "2022-10-31", 2.10),
+            ("11223556J", "Toby", "Perro", "Chihuahua", "2019-08-29", 2.95)
         ]
         cursor.executemany("""
-        INSERT OR IGNORE INTO T_Mascotas (DNIPropietario, Nombre, Especie, Raza, Edad, Peso)
+        INSERT OR IGNORE INTO T_Mascotas (DNIPropietario, Nombre, Especie, Raza, FecNac, Peso)
         VALUES (?, ?, ?, ?, ?, ?);
         """, mascotas)
 

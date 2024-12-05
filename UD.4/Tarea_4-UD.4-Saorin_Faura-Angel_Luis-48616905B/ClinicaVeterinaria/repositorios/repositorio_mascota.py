@@ -5,7 +5,7 @@ class RepositorioMascota:
     def __init__(self, conexion: ConexionDB):
         self.db = conexion
 
-    def agregar_mascota(self, dni_propietario, nombre, especie, raza, edad, peso):
+    def agregar_mascota(self, dni_propietario, nombre, especie, raza, fecnac, peso):
         """
         Agrega una nueva mascota a la base de datos.
         Si el propietario con el DNI proporcionado no existe, lo agrega.
@@ -47,10 +47,10 @@ class RepositorioMascota:
 
                 # Paso 2: Insertar la nueva mascota en la base de datos
                 query_mascota = """
-                INSERT INTO T_Mascotas (DNIPropietario, Nombre, Especie, Raza, Edad, Peso)
+                INSERT INTO T_Mascotas (DNIPropietario, Nombre, Especie, Raza, FecNac, Peso)
                 VALUES (?, ?, ?, ?, ?, ?);
                 """
-                cursor.execute(query_mascota, (dni_propietario, nombre, especie, raza, edad, peso))
+                cursor.execute(query_mascota, (dni_propietario, nombre, especie, raza, fecnac, peso))
                 conn.commit()
 
                 print(f"✅ Mascota agregada con éxito. ID generado: {cursor.lastrowid}")
@@ -79,49 +79,33 @@ class RepositorioMascota:
             print(f"⚠️ Error al obtener mascota: {e}")
         return None
 
-    def actualizar_mascota(self, dni_propietario, nombre, especie, raza, fecha_nacimiento):
+    def actualizar_mascota(self, id_mascota, nombre, especie, raza, fecnac, peso):
         """
         Actualiza la información de una mascota en la base de datos.
-        Si el propietario tiene varias mascotas, muestra un listado para seleccionar la mascota a actualizar.
+
+        :param id_mascota: ID de la mascota a actualizar.
+        :param nombre: Nuevo nombre (o actual si no cambia).
+        :param especie: Nueva especie (o actual si no cambia).
+        :param raza: Nueva raza (o actual si no cambia).
+        :param fecnac: Nueva fecha de nacimiento (o actual si no cambia).
+        :param peso: Nuevo peso (o actual si no cambia).
         """
-        # Buscar todas las mascotas del propietario
-        mascotas = self.buscar_por_dni_propietario(dni_propietario)
-
-        if mascotas:
-            print("\n=== Mascotas del Propietario ===")
-            for mascota in mascotas:
-                print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]}")
-
-            # Preguntar al usuario por el ID de la mascota a actualizar
-            try:
-                id_mascota = int(input("\nSelecciona el ID de la mascota a actualizar: "))
-                # Verificar si la mascota existe
-                if id_mascota not in [mascota[0] for mascota in mascotas]:
-                    print(f"⚠️ No se encontró una mascota con ID {id_mascota}.")
-                    return
-            except ValueError:
-                print("⚠️ Por favor, ingresa un número válido como ID de mascota.")
-                return
-            
-            # Actualizar la mascota seleccionada
-            query = """
-            UPDATE T_Mascotas
-            SET Nombre = ?, Especie = ?, Raza = ?, FechaNacimiento = ?
-            WHERE IdMascota = ?;
-            """
-            try:
-                with self.db.conectar() as conn:
-                    cursor = conn.cursor()
-                    cursor.execute(query, (nombre, especie, raza, fecha_nacimiento, id_mascota))
-                    if cursor.rowcount > 0:
-                        conn.commit()
-                        print(f"✅ Mascota con ID {id_mascota} actualizada con éxito.")
-                    else:
-                        print(f"⚠️ No se encontró una mascota con el ID {id_mascota}.")
-            except sqlite3.Error as e:
-                print(f"⚠️ Error al actualizar mascota: {e}")
-        else:
-            print("⚠️ No se encontraron mascotas para el propietario con DNI:", dni_propietario)
+        query = """
+        UPDATE T_Mascotas
+        SET Nombre = ?, Especie = ?, Raza = ?, FecNac = ?, Peso = ?
+        WHERE IdMascota = ?;
+        """
+        try:
+            with self.db.conectar() as conn:
+                cursor = conn.cursor()
+                cursor.execute(query, (nombre, especie, raza, fecnac, peso, id_mascota))
+                if cursor.rowcount > 0:
+                    conn.commit()
+                    print(f"✅ Mascota con ID {id_mascota} actualizada con éxito.")
+                else:
+                    print(f"⚠️ No se encontró una mascota con el ID {id_mascota}.")
+        except sqlite3.Error as e:
+            print(f"⚠️ Error al actualizar la mascota: {e}")
 
     def eliminar_mascota(self, id_mascota):
         """
@@ -153,7 +137,7 @@ class RepositorioMascota:
                     m.Nombre AS NombreMascota,
                     m.Especie,
                     m.Raza,
-                    m.Edad,
+                    m.FecNac,
                     m.Peso,
                     p.DNI AS DNIPropietario
                 FROM 
@@ -170,7 +154,7 @@ class RepositorioMascota:
             if resultados:
                 print("\n=== Listado de Mascotas ===")
                 for mascota in resultados:
-                    print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]} | Edad: {mascota[4]} años | Peso: {mascota[5]} kg | DNI Propietario: {mascota[6]}")
+                    print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]} | Fecha de Nacimiento: {mascota[4]} | Peso: {mascota[5]} kg | DNI Propietario: {mascota[6]}")
             else:
                 print("No hay mascotas registradas en la base de datos.")
 
@@ -192,7 +176,7 @@ class RepositorioMascota:
                     m.Nombre AS NombreMascota,
                     m.Especie,
                     m.Raza,
-                    m.Edad,
+                    m.FecNac,
                     m.Peso
                 FROM 
                     T_Mascotas AS m
@@ -208,7 +192,7 @@ class RepositorioMascota:
             if resultados:
                 print("\n=== Mascotas del Propietario ===")
                 for mascota in resultados:
-                    print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]} | Edad: {mascota[4]} años | Peso: {mascota[5]} kg")
+                    print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]} | Fecha de Nacimiento: {mascota[4]} | Peso: {mascota[5]} kg")
             else:
                 print(f"⚠️ No se encontraron mascotas para el propietario con DNI {dni}.")
 

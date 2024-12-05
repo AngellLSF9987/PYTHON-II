@@ -106,37 +106,51 @@ def menu_mascotas(repo_mascota, repo_propietario):
             nombre = input("Ingrese el nombre de la mascota: ").strip()
             especie = input("Ingrese la especie de animal: ").strip()
             raza = input("Ingrese la raza: ").strip()
-            edad = int(input("Ingrese la edad: "))
+            fecnac = input("Ingrese la fecha de nacimiento: ")
             peso = float(input("Ingrese el peso: "))
-            repo_mascota.agregar_mascota(dni_propietario, nombre, especie, raza, edad, peso)
+            repo_mascota.agregar_mascota(dni_propietario, nombre, especie, raza, fecnac, peso)
+
         # Opción 4: Actualizar una mascota
         elif opcion == "4":
             dni_propietario = input("Ingrese el DNI del propietario: ").strip()
-            # Buscar las mascotas del propietario
-            mascotas = repo_mascota.buscar_por_dni_de_propietario(dni_propietario)
             
-            if mascotas:
-                print("\n=== Mascotas del Propietario ===")
-                for mascota in mascotas:
-                    print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]}")
+            # Buscar las mascotas del propietario
+            mascotas = repo_mascota.buscar_por_dni_propietario(dni_propietario)
+            
+            if not mascotas:
+                print(f"⚠️ No se encontraron mascotas para el propietario con DNI: {dni_propietario}")
+                continue  # Volver al menú principal del submenú
+            
+            print("\n=== Mascotas del Propietario ===")
+            for mascota in mascotas:
+                print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]} "
+                    f"| Fecha de Nacimiento: {mascota[4]} | Peso: {mascota[5]} kg")
 
-                # Preguntar al usuario por el ID de la mascota a actualizar
-                try:
-                    id_mascota = int(input("\nSelecciona el ID de la mascota a actualizar: "))
-                    # Verificar si la mascota existe
-                    if id_mascota not in [mascota[0] for mascota in mascotas]:
-                        print(f"⚠️ No se encontró una mascota con ID {id_mascota}.")
-                        return
-                    # Llamar a la función para actualizar la mascota
-                    nombre = input("Nuevo nombre de la mascota: ").strip()
-                    especie = input("Nueva especie de la mascota: ").strip()
-                    raza = input("Nueva raza de la mascota: ").strip()
-                    fecha_nacimiento = input("Nueva fecha de nacimiento de la mascota (YYYY-MM-DD): ").strip()
+            try:
+                id_mascota = int(input("\nSelecciona el ID de la mascota a actualizar: ").strip())
+                if id_mascota not in [mascota[0] for mascota in mascotas]:
+                    print(f"⚠️ No se encontró una mascota con ID {id_mascota}.")
+                    continue
 
-                    repo_mascota.actualizar_mascota(id_mascota, nombre, especie, raza, fecha_nacimiento, dni_propietario)
-                except ValueError:
-                    print("⚠️ Por favor, ingresa un número válido como ID de mascota.")
-                    
+                # Obtener datos actuales de la mascota seleccionada
+                mascota_actual = next(m for m in mascotas if m[0] == id_mascota)
+
+                # Solicitar los nuevos datos
+                print("\nIntroduce los nuevos datos. Deja vacío y pulsa la tecla 'ENTER' para mantener los actuales.\n")
+                nombre = input(f"Nuevo nombre de la mascota ({mascota_actual[1]}): ").strip() or mascota_actual[1]
+                especie = input(f"Nueva especie de la mascota ({mascota_actual[2]}): ").strip() or mascota_actual[2]
+                raza = input(f"Nueva raza de la mascota ({mascota_actual[3]}): ").strip() or mascota_actual[3]
+                fecnac = input(f"Nueva fecha de nacimiento (YYYY-MM-DD) ({mascota_actual[4]}): ").strip() or mascota_actual[4]
+                peso = input(f"Nuevo peso de la mascota ({mascota_actual[5]} kg): ").strip() or mascota_actual[5]
+
+                # Llamar al repositorio para realizar la actualización
+                repo_mascota.actualizar_mascota(id_mascota, nombre, especie, raza, fecnac, peso)
+                print(f"✅ La mascota con ID {id_mascota} ha sido actualizada correctamente.")
+            
+            except ValueError:
+                print("⚠️ Por favor, ingresa un número válido como ID de mascota.")
+                continue
+                              
         # Opción 5: Eliminar una mascota
         elif opcion == "5":
             dni_propietario = input("Ingrese el DNI del propietario: ").strip()
@@ -146,7 +160,7 @@ def menu_mascotas(repo_mascota, repo_propietario):
             if mascotas:
                 print("\n=== Mascotas del Propietario ===")
                 for mascota in mascotas:
-                    print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]}")
+                    print(f"ID Mascota: {mascota[0]} | Nombre: {mascota[1]} | Especie: {mascota[2]} | Raza: {mascota[3]} | Fecha de Nacimiento: {mascota[4]} | Peso: {mascota[5]}")
 
                 # Preguntar al usuario por el ID de la mascota a eliminar
                 try:
