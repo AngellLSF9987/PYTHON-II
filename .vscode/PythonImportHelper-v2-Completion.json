@@ -120,6 +120,14 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "Bebida",
         "importPath": "modelos.bebida",
         "description": "modelos.bebida",
@@ -415,22 +423,6 @@
         "description": "biblioteca.modelos.generos.especifico",
         "isExtraImport": true,
         "detail": "biblioteca.modelos.generos.especifico",
-        "documentation": {}
-    },
-    {
-        "label": "Genero",
-        "importPath": "biblioteca.modelos.generos.genero",
-        "description": "biblioteca.modelos.generos.genero",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.generos.genero",
-        "documentation": {}
-    },
-    {
-        "label": "Genero",
-        "importPath": "biblioteca.modelos.generos.genero",
-        "description": "biblioteca.modelos.generos.genero",
-        "isExtraImport": true,
-        "detail": "biblioteca.modelos.generos.genero",
         "documentation": {}
     },
     {
@@ -850,6 +842,217 @@
         "importPath": "csv",
         "description": "csv",
         "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "ClinicaVeterinaria.database.db_connection",
+        "description": "ClinicaVeterinaria.database.db_connection",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "ClinicaVeterinaria.database.db_connection",
+        "description": "ClinicaVeterinaria.database.db_connection",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "ClinicaVeterinaria.database.db_connection",
+        "description": "ClinicaVeterinaria.database.db_connection",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "ClinicaVeterinaria.database.db_connection",
+        "description": "ClinicaVeterinaria.database.db_connection",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "ClinicaVeterinaria.database.db_connection",
+        "description": "ClinicaVeterinaria.database.db_connection",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "ClinicaVeterinaria.database.db_connection",
+        "description": "ClinicaVeterinaria.database.db_connection",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "ClinicaVeterinaria.database.db_connection",
+        "description": "ClinicaVeterinaria.database.db_connection",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "opcion_no_valida",
+        "importPath": "ClinicaVeterinaria.utilidades.validaciones",
+        "description": "ClinicaVeterinaria.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "salir",
+        "importPath": "ClinicaVeterinaria.utilidades.validaciones",
+        "description": "ClinicaVeterinaria.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "verificar_tablas",
+        "importPath": "ClinicaVeterinaria.utilidades.validaciones",
+        "description": "ClinicaVeterinaria.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "listar_tablas",
+        "importPath": "ClinicaVeterinaria.utilidades.validaciones",
+        "description": "ClinicaVeterinaria.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_duplicados_mascotas",
+        "importPath": "ClinicaVeterinaria.utilidades.validaciones",
+        "description": "ClinicaVeterinaria.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_duplicados_propietarios",
+        "importPath": "ClinicaVeterinaria.utilidades.validaciones",
+        "description": "ClinicaVeterinaria.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_duplicados_visitas",
+        "importPath": "ClinicaVeterinaria.utilidades.validaciones",
+        "description": "ClinicaVeterinaria.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_duplicados_facturas",
+        "importPath": "ClinicaVeterinaria.utilidades.validaciones",
+        "description": "ClinicaVeterinaria.utilidades.validaciones",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioPropietario",
+        "importPath": "ClinicaVeterinaria.repositorios.repositorio_propietario",
+        "description": "ClinicaVeterinaria.repositorios.repositorio_propietario",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.repositorios.repositorio_propietario",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioMascota",
+        "importPath": "ClinicaVeterinaria.repositorios.repositorio_mascota",
+        "description": "ClinicaVeterinaria.repositorios.repositorio_mascota",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.repositorios.repositorio_mascota",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioVisita",
+        "importPath": "ClinicaVeterinaria.repositorios.repositorio_visita",
+        "description": "ClinicaVeterinaria.repositorios.repositorio_visita",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.repositorios.repositorio_visita",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioFactura",
+        "importPath": "ClinicaVeterinaria.repositorios.repositorio_factura",
+        "description": "ClinicaVeterinaria.repositorios.repositorio_factura",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.repositorios.repositorio_factura",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_menu_principal",
+        "importPath": "ClinicaVeterinaria.utilidades.menu",
+        "description": "ClinicaVeterinaria.utilidades.menu",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.utilidades.menu",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tablas",
+        "importPath": "ClinicaVeterinaria.database.db_setup",
+        "description": "ClinicaVeterinaria.database.db_setup",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_datos_ejemplo",
+        "importPath": "ClinicaVeterinaria.database.db_setup",
+        "description": "ClinicaVeterinaria.database.db_setup",
+        "isExtraImport": true,
+        "detail": "ClinicaVeterinaria.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
         "documentation": {}
     },
     {
@@ -3161,7 +3364,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
-        "peekOfCode": "class CRUDLibro:\n    def __init__(self, ruta_json, repositorio_autor, repositorio_especifico, repositorio_genero):\n        self.ruta_json = ruta_json\n        self.repositorio_autor = repositorio_autor\n        self.repositorio_especifico = repositorio_especifico\n        self.repositorio_genero = repositorio_genero\n        self.datos = self.cargar_datos()  # Carga los datos al inicializar\n        self.libro_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental\n    def cargar_datos(self):\n        \"\"\"Carga los datos desde el archivo JSON.\"\"\"",
+        "peekOfCode": "class CRUDLibro:\n    def __init__(self, ruta_json, repositorio_autor, repositorio_especifico, repositorio_genero):\n        self.ruta_json = ruta_json\n        self.repositorio_autor = repositorio_autor\n        self.repositorio_especifico = repositorio_especifico\n        self.repositorio_genero = repositorio_genero\n        self.datos = self._cargar_libros()  # Carga los datos al inicializar\n        self.libro_id_actual = self.obtener_max_id() + 1  # Inicializar ID autoincremental\n    def _cargar_libros(self):\n        try:",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.crud.crud_libro",
         "documentation": {}
     },
@@ -3377,7 +3580,7 @@
         "kind": 6,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_libro",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_libro",
-        "peekOfCode": "class RepositorioLibro:\n    def __init__(self, repositorio_autor, repositorio_genero, repositorio_especifico, ruta_json):\n        self.repositorio_autor = repositorio_autor\n        self.repositorio_genero = repositorio_genero\n        self.repositorio_especifico = repositorio_especifico\n        self.ruta_json = ruta_json\n        self.libros = []\n        self.cargar_libros()\n    def cargar_libros(self):\n        try:",
+        "peekOfCode": "class RepositorioLibro:\n    def __init__(self, repositorio_autor, repositorio_genero, repositorio_especifico, ruta_json):\n        self.repositorio_autor = repositorio_autor\n        self.repositorio_genero = repositorio_genero\n        self.repositorio_especifico = repositorio_especifico\n        self.ruta_json = ruta_json\n        self.datos = self._cargar_libros()\n        self.libros = self.datos.get(\"libros\", [])\n    def _cargar_libros(self):\n        try:",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.repositorios.repositorio_libro",
         "documentation": {}
     },
@@ -3395,7 +3598,7 @@
         "kind": 5,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.ruta_datos_json",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.ruta_datos_json",
-        "peekOfCode": "RUTA_DATOS_BIBLIOTECA = r\"UD.3\\Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B\\datos_biblioteca.json\"\n# Reemplazar las barras invertidas (\\) por barras normales (/)\nRUTA_DATOS_BIBLIOTECA = RUTA_DATOS_BIBLIOTECA.replace(\"\\\\\", \"/\")\nprint(f\"Ruta calculada: {RUTA_DATOS_BIBLIOTECA}\")\n# import os\n# # Calcula la ruta absoluta basada en el archivo actual\n# RUTA_DATOS_BIBLIOTECA = os.path.join(\n#     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),\n#     \"data\",\n#     \"datos_biblioteca.json\"",
+        "peekOfCode": "RUTA_DATOS_BIBLIOTECA = r\"UD.3\\Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B\\datos_biblioteca.json\"\n# Reemplazar las barras invertidas (\\) por barras normales (/)\nRUTA_DATOS_BIBLIOTECA = RUTA_DATOS_BIBLIOTECA.replace(\"\\\\\", \"/\")\nprint(f\"Ruta calculada: {RUTA_DATOS_BIBLIOTECA}\")\n# import os\n# # Calcula la ruta absoluta basada en el archivo actual\n# RUTA_DATOS_BIBLIOTECA = os.path.join(\n#     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),\n#     \"datos_biblioteca.json\"\n# )",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.ruta_datos_json",
         "documentation": {}
     },
@@ -3404,7 +3607,7 @@
         "kind": 5,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.ruta_datos_json",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.ruta_datos_json",
-        "peekOfCode": "RUTA_DATOS_BIBLIOTECA = RUTA_DATOS_BIBLIOTECA.replace(\"\\\\\", \"/\")\nprint(f\"Ruta calculada: {RUTA_DATOS_BIBLIOTECA}\")\n# import os\n# # Calcula la ruta absoluta basada en el archivo actual\n# RUTA_DATOS_BIBLIOTECA = os.path.join(\n#     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),\n#     \"data\",\n#     \"datos_biblioteca.json\"\n# )",
+        "peekOfCode": "RUTA_DATOS_BIBLIOTECA = RUTA_DATOS_BIBLIOTECA.replace(\"\\\\\", \"/\")\nprint(f\"Ruta calculada: {RUTA_DATOS_BIBLIOTECA}\")\n# import os\n# # Calcula la ruta absoluta basada en el archivo actual\n# RUTA_DATOS_BIBLIOTECA = os.path.join(\n#     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),\n#     \"datos_biblioteca.json\"\n# )",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.ruta_datos_json",
         "documentation": {}
     },
@@ -3422,7 +3625,7 @@
         "kind": 2,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
-        "peekOfCode": "def validar_autor(biblioteca):\n    \"\"\"\n    Valida si un autor existe en la biblioteca por su pseudónimo. Si no existe, lo crea.\n    \"\"\"\n    pseudonimo = input(\"Introduce el pseudónimo del autor: \").strip()\n    # Buscar el autor por pseudónimo\n    autor = biblioteca.repositorio_autor.obtener_autor_por_pseudonimo(pseudonimo)\n    if autor:\n        print(f\"Autor '{pseudonimo}' encontrado.\")\n        return autor",
+        "peekOfCode": "def validar_autor(biblioteca):\n    \"\"\"\n    Valida si un autor existe en la biblioteca por su pseudónimo. Si no existe, lo crea.\n    \"\"\"\n    autores = biblioteca.repositorio_autor.obtener_autores()\n    print(f\"DEBUG: Autores disponibles: {biblioteca.repositorio_autor.obtener_autores()}\")\n    if autores is None:\n        print(\"Error: No se pudieron cargar los Géneros Literarios.\\n\")\n        return None\n    pseudonimo = input(\"Introduce el pseudónimo del autor: \\n\").strip().lower()    ",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "documentation": {}
     },
@@ -3431,7 +3634,7 @@
         "kind": 2,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
-        "peekOfCode": "def validar_genero(biblioteca):\n    \"\"\"\n    Valida si un Género Literario con el nombre ingresado ya existe en la biblioteca.\n    Si no existe, permite crear uno nuevo.\n    \"\"\" \n    generos = biblioteca.repositorio_genero.obtener_generos()\n    if generos is None:\n        print(\"Error: No se pudieron cargar los Géneros Literarios.\\n\")\n        return None    \n    nombre_genero = input(\"Introduce el Género Literario:\\n\").strip().lower()",
+        "peekOfCode": "def validar_genero(biblioteca):\n    \"\"\"\n    Valida si un Género Literario con el nombre ingresado ya existe en la biblioteca.\n    Si no existe, permite crear uno nuevo.\n    \"\"\" \n    # Verificar si el género ya existe\n    generos = biblioteca.repositorio_genero.obtener_generos()\n    print(f\"DEBUG: Géneros Literarios disponibles: {biblioteca.repositorio_genero.obtener_generos()}\")\n    if generos is None:\n        print(\"Error: No se pudieron cargar los Géneros Literarios.\\n\")",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "documentation": {}
     },
@@ -3440,7 +3643,7 @@
         "kind": 2,
         "importPath": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "description": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
-        "peekOfCode": "def validar_especifico(biblioteca):\n    \"\"\"\n    Valida si un Subgénero Literario y el Tipo de Subgenero Literario con el nombre_especifico y el tipo ingresados ya existen en la biblioteca.\n    Si no existen, permite crearan un nuevo dato.\n    \"\"\" \n    # Verificar si el subgénero y el tipo de subgénero ya existen\n    especificos = biblioteca.repositorio_especifico.obtener_especificos()\n    if especificos is None:\n        print(\"Error: No se pudieron cargar los Subgéneros y Tipos Literarios.\\n\")\n        return None",
+        "peekOfCode": "def validar_especifico(biblioteca):\n    \"\"\"\n    Valida si un Subgénero Literario y el Tipo de Subgénero Literario con el nombre_especifico y el tipo ingresados ya existen en la biblioteca.\n    Si no existen, permite crear un nuevo dato.\n    \"\"\"\n    # Verificar si los subgéneros ya están cargados\n    especificos = biblioteca.repositorio_especifico.obtener_especificos()\n    print(f\"DEBUG: Subgéneros Literarios disponibles: {especificos}\")\n    if especificos is None:\n        print(\"Error: No se pudieron cargar los Subgéneros y Tipos Literarios.\\n\")",
         "detail": "UD.3.Tarea_UD.3-Saorin-Faura_Angel-Luis_48616905B.biblioteca.utilidades.validaciones",
         "documentation": {}
     },
@@ -3544,30 +3747,327 @@
         "documentation": {}
     },
     {
-        "label": "Figura",
+        "label": "ConexionDB",
         "kind": 6,
-        "importPath": "prueba",
-        "description": "prueba",
-        "peekOfCode": "class Figura:\n    def __init__(self, nombre, color):\n        self.__nombre = nombre\n        self.color = color\n    def get_nombre(self):\n        return self.__nombre\n    def calcular_area(self):\n        pass\n    def describir(self):\n        return f\"Soy una figura de nombre {self.get_nombre()} y color {self.color}\"",
-        "detail": "prueba",
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_connection",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_connection",
+        "peekOfCode": "class ConexionDB:\n    def __init__(self, ruta_bd):\n        self.ruta_bd = ruta_bd\n        # Verificar si la carpeta de la base de datos existe; si no, crearla\n        directorio = os.path.dirname(self.ruta_bd)\n        if not os.path.exists(directorio):\n            os.makedirs(directorio)  # Crear el directorio si no existe\n    def conectar(self):\n        try:\n            print(f\"Conectando a la base de datos en: {self.ruta_bd}\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_connection",
         "documentation": {}
     },
     {
-        "label": "Cuadrado",
-        "kind": 6,
-        "importPath": "prueba",
-        "description": "prueba",
-        "peekOfCode": "class Cuadrado(Figura):\n    def __init__(self, lado, nombre=\"Cuadrado\", color=\"Azul\"):\n        super().__init__(nombre,color)\n        self.__lado = lado\n    def get_lado(self):\n        return self.__lado\n    def calcular_area(self):\n        return self.get_lado() ** 2\n    def describir(self):\n        print(f\"{super().describir()} y con lado {self.get_lado()}\")",
-        "detail": "prueba",
+        "label": "crear_tablas",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_setup",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_setup",
+        "peekOfCode": "def crear_tablas(conexion):\n    \"\"\"\n    Crea las tablas necesarias en la base de datos si no existen.\n    \"\"\"\n    try:\n        db = ConexionDB(ruta_bd=db_path)\n        conexion = db.conectar()\n        cursor = conexion.cursor()\n        # Crear tabla T_Propietarios\n        cursor.execute(\"\"\"",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_setup",
         "documentation": {}
     },
     {
-        "label": "cuadrado",
+        "label": "insertar_datos_ejemplo",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_setup",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_setup",
+        "peekOfCode": "def insertar_datos_ejemplo(conexion):\n    \"\"\"\n    Inserta datos de ejemplo en las tablas de la base de datos.\n    \"\"\"\n    try:\n        db = ConexionDB(ruta_bd=db_path)\n        conexion = db.conectar()\n        cursor = conexion.cursor()\n        # Insertar datos en T_Propietarios\n        propietarios = [",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "db_path",
         "kind": 5,
-        "importPath": "prueba",
-        "description": "prueba",
-        "peekOfCode": "cuadrado = Cuadrado(5)\nprint(cuadrado.calcular_area())\ncuadrado.describir()",
-        "detail": "prueba",
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_setup",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_setup",
+        "peekOfCode": "db_path = os.path.join(\n    os.getcwd(),\n    \"UD.4\",\n    \"Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B\",\n    \"ClinicaVeterinaria\",\n    \"database\",\n    \"clinica_veterinaria.db\"\n)\nprint(f\"Conectando a la base de datos en: {db_path}\")\ndef crear_tablas(conexion):",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "Factura",
+        "kind": 6,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.factura",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.factura",
+        "peekOfCode": "class Factura:\n    def __init__(self, id_factura, fecha_emision, total, id_visita):\n        self.__id_factura = id_factura\n        self.__fecha_emision = fecha_emision\n        self.__total = total\n        self.__id_visita = id_visita\n    # Getters\n    def get_id_factura(self):\n        return self.__id_factura\n    def get_fecha_emision(self):",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.factura",
+        "documentation": {}
+    },
+    {
+        "label": "Mascota",
+        "kind": 6,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.mascota",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.mascota",
+        "peekOfCode": "class Mascota:\n    def __init__(self, mascota_id, nombre, especie, raza, edad, id_propietario):\n        self.__mascota_id = mascota_id\n        self.__nombre = nombre\n        self.__especie = especie\n        self.__raza = raza\n        self.__edad = edad\n        self.__id_propietario = id_propietario\n    # Getters\n    def get_mascota_id(self):",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.mascota",
+        "documentation": {}
+    },
+    {
+        "label": "Propietario",
+        "kind": 6,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.propietario",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.propietario",
+        "peekOfCode": "class Propietario:\n    def __init__(self, id_propietario, nombre, apellido, dni, telefono, direccion):\n        self.__id_propietario = id_propietario\n        self.__nombre = nombre\n        self.__apellido = apellido\n        self.__dni = dni\n        self.__telefono = telefono\n        self.__direccion = direccion\n    # Getters\n    def get_id_propietario(self):",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.propietario",
+        "documentation": {}
+    },
+    {
+        "label": "Visita",
+        "kind": 6,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.visita",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.visita",
+        "peekOfCode": "class Visita:\n    def __init__(self, id_visita, fecha, motivo, id_mascota):\n        self.__id_visita = id_visita\n        self.__fecha = fecha\n        self.__motivo = motivo\n        self.__id_mascota = id_mascota\n    # Getters\n    def get_id_visita(self):\n        return self.__id_visita\n    def get_fecha(self):",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.modelos.visita",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioFactura",
+        "kind": 6,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_factura",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_factura",
+        "peekOfCode": "class RepositorioFactura:\n    def __init__(self, conexion: ConexionDB):\n        self.db = conexion\n    def agregar_factura(self, id_visita, fecha_emision, importe, descripcion):\n        \"\"\"\n        Agrega una nueva factura a la base de datos.\n        \"\"\"\n        query = \"\"\"\n        INSERT INTO T_Facturas (IdVisita, FechaEmision, Importe, Descripcion)\n        VALUES (?, ?, ?, ?);",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_factura",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioMascota",
+        "kind": 6,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_mascota",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_mascota",
+        "peekOfCode": "class RepositorioMascota:\n    def __init__(self, conexion: ConexionDB):\n        self.db = conexion\n    def agregar_mascota(self, dni_propietario, nombre, especie, raza, fecnac, peso):\n        \"\"\"\n        Agrega una nueva mascota a la base de datos.\n        Si el propietario con el DNI proporcionado no existe, lo agrega.\n        \"\"\"\n        # Paso 1: Verificar si el propietario existe utilizando el DNI\n        query_propietario = \"\"\"",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_mascota",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioPropietario",
+        "kind": 6,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_propietario",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_propietario",
+        "peekOfCode": "class RepositorioPropietario:\n    def __init__(self, conexion: ConexionDB):\n        self.db = conexion\n    def agregar_propietario(self, nombre, apellido1, apellido2, dni, telefono, direccion, email):\n        \"\"\"\n        Agrega un nuevo propietario a la base de datos.\n        \"\"\"\n        query = \"\"\"\n        INSERT INTO T_Propietarios (Nombre, Apellido1, Apellido2, DNI, Telefono, Direccion, Email)\n        VALUES (?, ?, ?, ?, ?, ?, ?);",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_propietario",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioVisita",
+        "kind": 6,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_visita",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_visita",
+        "peekOfCode": "class RepositorioVisita:\n    def __init__(self, conexion: ConexionDB):\n        self.db = conexion\n    def agregar_visita(self, id_mascota, fecha, motivo):\n        \"\"\"\n        Agrega una nueva visita a la base de datos.\n        \"\"\"\n        query = \"\"\"\n        INSERT INTO T_Visitas (IdMascota, Fecha, Motivo)\n        VALUES (?, ?, ?);",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.repositorios.repositorio_visita",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_menu_principal",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "peekOfCode": "def mostrar_menu_principal():\n    \"\"\"\n    Muestra el menú principal de la Clínica Veterinaria y gestiona las opciones.\n    \"\"\"\n    # Asegúrate de pasar la ruta de la base de datos\n    db_path = r\"UD.4\\Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B\\ClinicaVeterinaria\\database\\clinica_veterinaria.db\"\n    # Crear la conexión a la base de datos\n    conexion = ConexionDB(db_path)\n    # Instanciar los repositorios\n    repo_propietario = RepositorioPropietario(conexion)",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "documentation": {}
+    },
+    {
+        "label": "menu_propietarios",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "peekOfCode": "def menu_propietarios(repo_propietario):\n    \"\"\"\n    Submenú para la gestión de propietarios.\n    \"\"\"\n    while True:\n        print(\"\\n- Gestión de Propietarios -\\n\")\n        print(\"1. Mostrar todos los propietarios.\")\n        print(\"2. Buscar propietario por DNI.\")\n        print(\"3. Añadir nuevo propietario.\")\n        print(\"4. Modificar datos de un propietario.\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "documentation": {}
+    },
+    {
+        "label": "menu_mascotas",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "peekOfCode": "def menu_mascotas(repo_mascota, repo_propietario):\n    \"\"\"\n    Submenú para la gestión de mascotas.\n    \"\"\"\n    while True:\n        print(\"\\n- Gestión de Mascotas -\\n\")\n        print(\"1. Mostrar todas las mascotas.\")\n        print(\"2. Buscar mascota por DNI propietario.\")\n        print(\"3. Añadir nueva mascota.\")\n        print(\"4. Modificar datos de una mascota.\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "documentation": {}
+    },
+    {
+        "label": "menu_visitas",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "peekOfCode": "def menu_visitas(repo_visita, repo_mascota):\n    \"\"\"\n    Submenú para la gestión de visitas.\n    \"\"\"\n    while True:\n        print(\"\\n- Gestión de Visitas -\\n\")\n        print(\"1. Mostrar todas las visitas.\")\n        print(\"2. Buscar visitas por mascota.\")\n        print(\"3. Registrar nueva visita.\")\n        print(\"4. Modificar datos de una visita.\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "documentation": {}
+    },
+    {
+        "label": "menu_facturas",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "peekOfCode": "def menu_facturas(repo_factura, repo_visita):\n    \"\"\"\n    Submenú para la gestión de facturas.\n    \"\"\"\n    while True:\n        print(\"\\n- Gestión de Facturas -\\n\")\n        print(\"1. Mostrar todas las facturas.\")\n        print(\"2. Buscar factura por número.\")\n        print(\"3. Generar nueva factura.\")\n        print(\"4. Modificar datos de una factura.\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.menu",
+        "documentation": {}
+    },
+    {
+        "label": "validar_fecha",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def validar_fecha(fecha_str):\n    try:\n        fecha = datetime.strptime(fecha_str, \"%d-%m-%Y\")\n        return fecha.date()\n    except ValueError:\n        print(\"Fecha inválida. Introduce la fecha en formato DD-MM-AAAA.\")\n        return None\n# Valida nombres (mascotas, propietarios)\ndef validar_nombre(nombre):\n    if nombre and nombre.isalpha() and len(nombre) <= 50:",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_nombre",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def validar_nombre(nombre):\n    if nombre and nombre.isalpha() and len(nombre) <= 50:\n        return nombre.capitalize()\n    print(\"Nombre inválido. Asegúrate de usar solo letras y no superar 50 caracteres.\")\n    return None\n# Valida DNI para propietarios\ndef validar_dni(dni):\n    if re.match(r'^\\d{8}[A-Z]$', dni):\n        return dni\n    print(\"DNI inválido. Asegúrate de usar el formato correcto (8 dígitos seguidos de una letra mayúscula).\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_dni",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def validar_dni(dni):\n    if re.match(r'^\\d{8}[A-Z]$', dni):\n        return dni\n    print(\"DNI inválido. Asegúrate de usar el formato correcto (8 dígitos seguidos de una letra mayúscula).\")\n    return None\n# Valida direcciones (opcionalmente puedes definir un máximo de caracteres)\ndef validar_direccion(direccion):\n    if direccion and len(direccion) <= 100:\n        return direccion\n    print(\"Dirección inválida. Asegúrate de no superar los 100 caracteres.\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_direccion",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def validar_direccion(direccion):\n    if direccion and len(direccion) <= 100:\n        return direccion\n    print(\"Dirección inválida. Asegúrate de no superar los 100 caracteres.\")\n    return None\n# Valida correos electrónicos\ndef validar_correo(correo):\n    if re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$', correo):\n        return correo\n    print(\"Correo electrónico inválido. Introduce un formato válido.\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_correo",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def validar_correo(correo):\n    if re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$', correo):\n        return correo\n    print(\"Correo electrónico inválido. Introduce un formato válido.\")\n    return None\n# Valida ID de mascota (números enteros positivos)\ndef validar_id_mascota(id_mascota):\n    if isinstance(id_mascota, int) and id_mascota > 0:\n        return id_mascota\n    print(\"ID de mascota inválido. Introduce un número entero positivo.\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_id_mascota",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def validar_id_mascota(id_mascota):\n    if isinstance(id_mascota, int) and id_mascota > 0:\n        return id_mascota\n    print(\"ID de mascota inválido. Introduce un número entero positivo.\")\n    return None\n# Valida visitas (motivo y observaciones)\ndef validar_visita(motivo, observaciones):\n    if not motivo or len(motivo) > 100:\n        print(\"Motivo de visita inválido. Asegúrate de no superar 100 caracteres.\")\n        return None",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_visita",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def validar_visita(motivo, observaciones):\n    if not motivo or len(motivo) > 100:\n        print(\"Motivo de visita inválido. Asegúrate de no superar 100 caracteres.\")\n        return None\n    if observaciones and len(observaciones) > 250:\n        print(\"Observaciones inválidas. Asegúrate de no superar 250 caracteres.\")\n        return None\n    return motivo, observaciones\n# Valida montos de facturas\ndef validar_monto(monto):",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_monto",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def validar_monto(monto):\n    try:\n        monto = float(monto)\n        if monto > 0:\n            return round(monto, 2)\n        else:\n            print(\"El monto debe ser un número positivo.\")\n    except ValueError:\n        print(\"Monto inválido. Asegúrate de introducir un número.\")\n    return None",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_id",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def validar_id(id_value, entity_name=\"elemento\"):\n    if isinstance(id_value, int) and id_value > 0:\n        return id_value\n    print(f\"ID de {entity_name} inválido. Debe ser un número entero positivo.\")\n    return None\ndef opcion_no_valida():\n    \"\"\"\n    Función que muestra un mensaje indicando que la opción seleccionada no es válida.\n    \"\"\"\n    print(\"Opción no válida. Por favor, intenta de nuevo.\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "opcion_no_valida",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def opcion_no_valida():\n    \"\"\"\n    Función que muestra un mensaje indicando que la opción seleccionada no es válida.\n    \"\"\"\n    print(\"Opción no válida. Por favor, intenta de nuevo.\")\ndef salir():\n    \"\"\"\n    Función para salir del sistema o cerrar el menú de manera segura.\n    \"\"\"\n    print(\"Saliendo... ¡Hasta luego!\")",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "salir",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def salir():\n    \"\"\"\n    Función para salir del sistema o cerrar el menú de manera segura.\n    \"\"\"\n    print(\"Saliendo... ¡Hasta luego!\")\n    sys.exit()  # Finaliza el programa\ndef listar_tablas(conexion):\n    cursor = conexion.cursor()\n    cursor.execute(\"SELECT name FROM sqlite_master WHERE type='table';\")\n    tablas = cursor.fetchall()",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "listar_tablas",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def listar_tablas(conexion):\n    cursor = conexion.cursor()\n    cursor.execute(\"SELECT name FROM sqlite_master WHERE type='table';\")\n    tablas = cursor.fetchall()\n    print(\"Tablas existentes:\", tablas)\ndef verificar_tablas(conexion):\n    cursor = conexion.cursor()\n    cursor.execute(\"SELECT name FROM sqlite_master WHERE type='table';\")\n    tablas = cursor.fetchall()\n    print(\"Tablas existentes:\", tablas)",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "verificar_tablas",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def verificar_tablas(conexion):\n    cursor = conexion.cursor()\n    cursor.execute(\"SELECT name FROM sqlite_master WHERE type='table';\")\n    tablas = cursor.fetchall()\n    print(\"Tablas existentes:\", tablas)\n# Funciones para eliminar duplicados en tablas\ndef eliminar_duplicados_mascotas(conexion, tabla, campo):\n    \"\"\"\n    Elimina registros duplicados de la tabla 'tabla' basándose en el campo 'campo'.\n    Mantiene el registro con el ID más bajo.",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_duplicados_mascotas",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def eliminar_duplicados_mascotas(conexion, tabla, campo):\n    \"\"\"\n    Elimina registros duplicados de la tabla 'tabla' basándose en el campo 'campo'.\n    Mantiene el registro con el ID más bajo.\n    \"\"\"\n    cursor = conexion.cursor()\n    # Encuentra duplicados en la tabla\n    cursor.execute(f\"\"\"\n        SELECT MIN(IdMascota), Nombre, Especie, Raza, FecNac, Peso, DNIPropietario\n        FROM {tabla}",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_duplicados_propietarios",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def eliminar_duplicados_propietarios(conexion, tabla, campo):\n    try:\n        # Establecer el cursor usando la conexión pasada como parámetro\n        cursor = conexion.cursor()\n        # Consulta para eliminar duplicados basado en IdPropietario\n        query = f\"\"\"\n        DELETE FROM {tabla}\n        WHERE rowid NOT IN (\n            SELECT MIN(rowid)\n            FROM {tabla}",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_duplicados_visitas",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def eliminar_duplicados_visitas(conexion, tabla, campo):\n    try:\n        # Establecer el cursor usando la conexión pasada como parámetro\n        cursor = conexion.cursor()\n        # Consulta para eliminar duplicados basado en IdVisita\n        query = f\"\"\"\n        DELETE FROM {tabla}\n        WHERE rowid NOT IN (\n            SELECT MIN(rowid)\n            FROM {tabla}",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_duplicados_facturas",
+        "kind": 2,
+        "importPath": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "description": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "peekOfCode": "def eliminar_duplicados_facturas(conexion, tabla, campo):\n    try:\n        # Establecer el cursor usando la conexión pasada como parámetro\n        cursor = conexion.cursor()\n        # Consulta para eliminar duplicados basado en IdFactura\n        query = f\"\"\"\n        DELETE FROM {tabla}\n        WHERE rowid NOT IN (\n            SELECT MIN(rowid)\n            FROM {tabla}",
+        "detail": "UD.4.Tarea_4-UD.4-Saorin_Faura-Angel_Luis-48616905B.ClinicaVeterinaria.utilidades.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "hola",
+        "kind": 2,
+        "importPath": "UD.5.ejemplo2.main",
+        "description": "UD.5.ejemplo2.main",
+        "peekOfCode": "def hola():\n return \"Hola Mundo\"\nif __name__ == \"__main__\":\n    app.run()",
+        "detail": "UD.5.ejemplo2.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "UD.5.ejemplo2.main",
+        "description": "UD.5.ejemplo2.main",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef hola():\n return \"Hola Mundo\"\nif __name__ == \"__main__\":\n    app.run()",
+        "detail": "UD.5.ejemplo2.main",
         "documentation": {}
     }
 ]
