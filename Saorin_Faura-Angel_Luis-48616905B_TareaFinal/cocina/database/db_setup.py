@@ -5,7 +5,7 @@ import sqlite3
 
 def crear_tablas(conexion):
     """
-    Crea las tablas necesarias para la base de datos de ModaNova.
+    Crea las tablas necesarias para la base de datos de Cocina.
     """
     with ConexionDB(ruta_bd="database/cocina.db") as conexion:
         cursor = conexion.cursor()
