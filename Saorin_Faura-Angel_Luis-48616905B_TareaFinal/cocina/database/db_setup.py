@@ -3,136 +3,139 @@
 from db_connection import ConexionDB
 import sqlite3
 
-# class DBSetup:
-#     def __init__(self, ruta_bd="database/cocina.db"):
-#         """
-#         Inicializa la configuración de la base de datos.
-#         :param ruta_bd: Ruta al archivo de la base de datos SQLite.
-#         """
-#         self.ruta_bd = ruta_bd
-
 def crear_tablas(conexion):
-        """
-        Crea las tablas necesarias para la base de datos de ModaNova.
-        """
-        with ConexionDB(ruta_bd="database/cocina.db") as conexion:
-            cursor = conexion.cursor()
-            try:
-                # Tabla Roles
-                cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS Rol (
-                        id_rol INTEGER PRIMARY KEY AUTOINCREMENT,
-                        nombre_rol TEXT NOT NULL UNIQUE
-                    );
-                """)
+    """
+    Crea las tablas necesarias para la base de datos de ModaNova.
+    """
+    with ConexionDB(ruta_bd="database/cocina.db") as conexion:
+        cursor = conexion.cursor()
+        try:
+            # Tabla Roles
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Rol (
+                    id_rol INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre_rol TEXT NOT NULL UNIQUE
+                );
+            """)
 
-                # Tabla Usuarios
-                cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS Usuario (
-                        id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
-                        email TEXT NOT NULL UNIQUE,
-                        contrasena TEXT NOT NULL,
-                        id_rol INTEGER NOT NULL,
-                        id_cliente INTEGER,
-                        id_trabajador INTEGER,
-                        FOREIGN KEY (id_rol) REFERENCES Rol(id_rol),
-                        FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
-                        FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id_trabajador)
-                    );
-                """)
+            # Tabla Usuarios
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Usuario (
+                    id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
+                    email TEXT NOT NULL UNIQUE,
+                    contrasena TEXT NOT NULL,
+                    id_rol INTEGER NOT NULL,
+                    id_cliente INTEGER,
+                    id_trabajador INTEGER,
+                    FOREIGN KEY (id_rol) REFERENCES Rol(id_rol),
+                    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
+                    FOREIGN KEY (id_trabajador) REFERENCES Trabajador(id_trabajador)
+                );
+            """)
 
-                # Tabla Cliente
-                cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS Cliente (
-                        id_cliente INTEGER PRIMARY KEY AUTOINCREMENT,
-                        nombre_cliente TEXT NOT NULL,
-                        telefono TEXT,
-                        direccion TEXT,
-                        fecha_registro DATE DEFAULT CURRENT_DATE
-                    );
-                """)
+            # Tabla Cliente con restricción UNIQUE en nombre_cliente y telefono
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Cliente (
+                    id_cliente INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre_cliente TEXT NOT NULL,
+                    apellido1 TEXT NOT NULL,
+                    apellido2 TEXT NOT NULL,
+                    telefono TEXT NOT NULL,
+                    direccion TEXT,
+                    email TEXT NOT NULL,
+                    fecha_registro DATE DEFAULT CURRENT_DATE,
+                    CONSTRAINT UC_Cliente UNIQUE (nombre_cliente, email, telefono)
+                );
+            """)
 
-                # Tabla Trabajador
-                cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS Trabajador (
-                        id_trabajador INTEGER PRIMARY KEY AUTOINCREMENT,
-                        nombre_trabajador TEXT NOT NULL,
-                        telefono TEXT,
-                        email TEXT UNIQUE NOT NULL,
-                        puesto TEXT NOT NULL,
-                        salario REAL
-                    );
-                """)
+            # Tabla Trabajador con restricción UNIQUE en email
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Trabajador (
+                    id_trabajador INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre_trabajador TEXT NOT NULL,
+                    apellido1 TEXT NOT NULL,
+                    apellido2 TEXT NOT NULL,
+                    telefono TEXT,
+                    email TEXT NOT NULL UNIQUE,
+                    puesto TEXT NOT NULL,
+                    salario REAL,
+                    CONSTRAINT UT_Trabajdor UNIQUE (nombre_trabajador, email, telefono)
+                );
+            """)
 
-                # Tabla Proveedor
-                cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS Proveedor (
-                        id_proveedor INTEGER PRIMARY KEY AUTOINCREMENT,
-                        nombre_proveedor TEXT NOT NULL,
-                        contacto TEXT,
-                        telefono TEXT NOT NULL,
-                        correo TEXT UNIQUE NOT NULL
-                    );
-                """)
-                
-                # Tabla Categorias
-                cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS Categoria (
-                        id_categoria INTEGER PRIMARY KEY AUTOINCREMENT,
-                        nombre_categoria TEXT NOT NULL,
-                        descripcion TEXT
-                    );
-                """)
-                
-                # Tabla Producto
-                cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS Productos (
-                        id_producto INTEGER PRIMARY KEY AUTOINCREMENT,
-                        nombre_producto TEXT NOT NULL,
-                        descripcion TEXT,
-                        precio REAL NOT NULL,
-                        stock INTEGER NOT NULL,
-                        id_proveedor INTEGER,
-                        id_categoria INTEGER,
-                        FOREIGN KEY (id_proveedor) REFERENCES Proveedor(id_proveedor),
-                        FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
-                    );
-                """)
+            # Tabla Proveedor con restricción UNIQUE en correo
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Proveedor (
+                    id_proveedor INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre_proveedor TEXT NOT NULL,
+                    nombre_empresa TEXT NOT NULL,
+                    telefono TEXT NOT NULL,
+                    email TEXT NOT NULL UNIQUE,
+                    CONSTRAINT UP_Proveedor UNIQUE (nombre_proveedor, nombre_empresa, email, telefono)
+                );
+            """)
 
-                # Tabla Venta
-                cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS Ventas (
-                        id_venta INTEGER PRIMARY KEY AUTOINCREMENT,
-                        fecha DATE DEFAULT CURRENT_DATE,
-                        id_cliente INTEGER NOT NULL,
-                        total REAL NOT NULL,
-                        FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
-                    );
-                """)
+            # Tabla Categorías
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Categoria (
+                    id_categoria INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre_categoria TEXT NOT NULL UNIQUE,
+                    descripcion TEXT,
+                    CONSTRAINT UCAT_Categoria UNIQUE (id_categoria, nombre_categoria)
+                );
+            """)
 
-                # Tabla intermedia Carrito
-                cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS Carrito (
-                        id_carrito INTEGER PRIMARY KEY AUTOINCREMENT,
-                        id_venta INTEGER NOT NULL,
-                        id_producto INTEGER NOT NULL,
-                        cantidad INTEGER NOT NULL,
-                        precio_unitario REAL NOT NULL,
-                        FOREIGN KEY (id_venta) REFERENCES Venta(id_venta),
-                        FOREIGN KEY (id_producto) REFERENCES Producto(id_producto)
-                    );
-                """)
+            # Tabla Producto con FOREIGN KEY
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Producto (
+                    id_producto INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre_producto TEXT NOT NULL UNIQUE,
+                    descripcion TEXT,
+                    precio REAL NOT NULL,
+                    stock INTEGER NOT NULL,
+                    id_proveedor INTEGER,
+                    id_categoria INTEGER,
+                    FOREIGN KEY (id_proveedor) REFERENCES Proveedor(id_proveedor),
+                    FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria),
+                    CONSTRAINT UPROD_Producto UNIQUE (id_producto, id_proveedor, id_categoria)
+                );
+            """)
 
+            # Tabla Venta
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Venta (
+                    id_venta INTEGER PRIMARY KEY AUTOINCREMENT,
+                    fecha DATE DEFAULT CURRENT_DATE,
+                    id_cliente INTEGER NOT NULL,
+                    total REAL NOT NULL,
+                    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
+                );
+            """)
 
-                # Datos iniciales para Roles
-                cursor.execute("INSERT OR IGNORE INTO Rol (id_rol, nombre) VALUES (1, 'cliente');")
-                cursor.execute("INSERT OR IGNORE INTO Rol (id_rol, nombre) VALUES (2, 'trabajador');")
+            # Tabla intermedia Carrito con FOREIGN KEY
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Carrito (
+                    id_carrito INTEGER PRIMARY KEY AUTOINCREMENT,
+                    id_venta INTEGER NOT NULL,
+                    id_producto INTEGER NOT NULL,
+                    cantidad INTEGER NOT NULL,
+                    precio_unitario REAL NOT NULL,
+                    FOREIGN KEY (id_venta) REFERENCES Venta(id_venta),
+                    FOREIGN KEY (id_producto) REFERENCES Producto(id_producto),
+                    CONSTRAINT UCAR_Carrito UNIQUE (id_carrito, id_venta, id_producto)
+                );
+            """)
 
-                conexion.commit()
-                print("Tablas creadas exitosamente y datos iniciales añadidos.")
-            except sqlite3.Error as e:
-                print(f"Error al crear las tablas: {e}")
-                conexion.rollback()
+            # Datos iniciales para Roles
+            cursor.execute("INSERT OR IGNORE INTO Rol (id_rol, nombre_rol) VALUES (1, 'cliente');")
+            cursor.execute("INSERT OR IGNORE INTO Rol (id_rol, nombre_rol) VALUES (2, 'trabajador');")
+
+            conexion.commit()
+            print("Tablas creadas exitosamente y datos iniciales añadidos.")
+        except sqlite3.Error as e:
+            print(f"Error al crear las tablas: {e}")
+            conexion.rollback()
+
 
 
 def insertar_datos_ejemplo(conexion):
