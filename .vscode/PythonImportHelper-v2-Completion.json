@@ -72,6 +72,256 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "db_connection",
+        "description": "db_connection",
+        "isExtraImport": true,
+        "detail": "db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "inicializar_base_datos",
+        "importPath": "database.db_connection",
+        "description": "database.db_connection",
+        "isExtraImport": true,
+        "detail": "database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "database.db_connection",
+        "description": "database.db_connection",
+        "isExtraImport": true,
+        "detail": "database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "database.db_connection",
+        "description": "database.db_connection",
+        "isExtraImport": true,
+        "detail": "database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "database.db_connection",
+        "description": "database.db_connection",
+        "isExtraImport": true,
+        "detail": "database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "database.db_connection",
+        "description": "database.db_connection",
+        "isExtraImport": true,
+        "detail": "database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "DBSetup",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "inicializar_base_datos",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tablas",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_datos_ejemplo",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "current_app",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -877,24 +1127,6 @@
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "sqlite3",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sqlite3",
-        "description": "sqlite3",
-        "detail": "sqlite3",
-        "documentation": {}
-    },
-    {
         "label": "ConexionDB",
         "importPath": "ClinicaVeterinaria.database.db_connection",
         "description": "ClinicaVeterinaria.database.db_connection",
@@ -1040,86 +1272,6 @@
         "documentation": {}
     },
     {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Blueprint",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "render_template",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "url_for",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "flash",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "session",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "current_app",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
         "label": "SQLAlchemy",
         "importPath": "flask_sqlalchemy",
         "description": "flask_sqlalchemy",
@@ -1192,43 +1344,11 @@
         "documentation": {}
     },
     {
-        "label": "ConexionDB",
-        "importPath": "database.db_connection",
-        "description": "database.db_connection",
-        "isExtraImport": true,
-        "detail": "database.db_connection",
-        "documentation": {}
-    },
-    {
-        "label": "ConexionDB",
-        "importPath": "database.db_connection",
-        "description": "database.db_connection",
-        "isExtraImport": true,
-        "detail": "database.db_connection",
-        "documentation": {}
-    },
-    {
-        "label": "ConexionDB",
-        "importPath": "database.db_connection",
-        "description": "database.db_connection",
-        "isExtraImport": true,
-        "detail": "database.db_connection",
-        "documentation": {}
-    },
-    {
         "label": "secure_filename",
         "importPath": "werkzeug.utils",
         "description": "werkzeug.utils",
         "isExtraImport": true,
         "detail": "werkzeug.utils",
-        "documentation": {}
-    },
-    {
-        "label": "wraps",
-        "importPath": "functools",
-        "description": "functools",
-        "isExtraImport": true,
-        "detail": "functools",
         "documentation": {}
     },
     {
@@ -1293,30 +1413,6 @@
         "description": "routes.routes",
         "isExtraImport": true,
         "detail": "routes.routes",
-        "documentation": {}
-    },
-    {
-        "label": "inicializar_base_datos",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "crear_tablas",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "insertar_datos_ejemplo",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
         "documentation": {}
     },
     {
@@ -1398,6 +1494,195 @@
         "description": "examen30_Ej5.excepciones.error_conversion_float",
         "peekOfCode": "def convertir_float(cadena):\n    \"\"\"Función personalizada para convertir una cadena a float.\"\"\"\n    try:\n        entrada = float(cadena)\n        return entrada\n    except ValueError:\n        raise ErrorConversionFloat(f\"No se pudo convertir '{cadena}' a float.\")",
         "detail": "examen30_Ej5.excepciones.error_conversion_float",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "kind": 6,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_connection",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_connection",
+        "peekOfCode": "class ConexionDB:\n    def __init__(self, ruta_bd):\n        self.ruta_bd = ruta_bd\n        directorio = os.path.dirname(self.ruta_bd)\n        if not os.path.exists(directorio):\n            os.makedirs(directorio)\n    def __enter__(self):\n        \"\"\"\n        Inicia la conexión al entrar en el contexto `with`.\n        \"\"\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tablas",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_setup",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_setup",
+        "peekOfCode": "def crear_tablas(conexion):\n    \"\"\"\n    Crea las tablas necesarias para la base de datos de Cocina.\n    \"\"\"\n    with ConexionDB(ruta_bd=\"database/cocina.db\") as conexion:\n        cursor = conexion.cursor()\n        try:\n            # Tabla Roles\n            cursor.execute(\"\"\"\n                CREATE TABLE IF NOT EXISTS Rol (",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_datos_ejemplo",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_setup",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_setup",
+        "peekOfCode": "def insertar_datos_ejemplo(conexion):\n        \"\"\"\n        Inserta datos de ejemplo en las tablas para pruebas iniciales,\n        verificando que no haya duplicados.\n        \"\"\"\n        with ConexionDB(ruta_bd=\"database/cocina.db\") as conexion:\n            cursor = conexion.cursor()\n            try:\n                datos_propietarios = [\n                    (\"Ana\", \"Pérez\", \"Pérez\", \"12345678A\", \"600123456\", \"Calle Luna, 6\", \"ana@perez.com\"),",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "inicializar_base_datos",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_setup",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_setup",
+        "peekOfCode": "def inicializar_base_datos(ruta_bd=\"database/cocina.db\"):\n        \"\"\"\n        Inicializa la base de datos creando tablas e insertando datos de ejemplo.\n        \"\"\"\n        with ConexionDB(ruta_bd) as conexion:\n            crear_tablas(conexion)\n            insertar_datos_ejemplo(conexion)",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "test_db",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.main",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.main",
+        "peekOfCode": "def test_db():\n    \"\"\"\n    Realiza pruebas de creación de tablas e inserción de datos de ejemplo.\n    \"\"\"\n    db_path = os.path.join(os.getcwd(), \"database\", \"cocina.db\")\n    with ConexionDB(ruta_bd=db_path) as conexion:\n        setup = DBSetup()\n        # Crear tablas\n        setup.crear_tablas(conexion)\n        # Insertar datos de ejemplo",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.main",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def login_required(f):\n    \"\"\"\n    Decorador para asegurarse de que un usuario está autenticado.\n    \"\"\"\n    @wraps(f)\n    def decorated_function(*args, **kwargs):\n        if \"user_role\" not in session:\n            flash(\"Por favor, inicia sesión para acceder a esta página.\", \"warning\")\n            return redirect(url_for(\"login\"))\n        return f(*args, **kwargs)",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "role_required",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def role_required(role):\n    \"\"\"\n    Decorador para asegurarse de que el usuario tiene el rol adecuado.\n    \"\"\"\n    def decorator(f):\n        @wraps(f)\n        def decorated_function(*args, **kwargs):\n            if session.get(\"user_role\") != role:\n                flash(\"No tienes permiso para acceder a esta página.\", \"danger\")\n                return redirect(url_for(\"index\"))",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def index():\n    \"\"\"\n    Página de inicio.\n    \"\"\"\n    return render_template(\"index.html\")\n@app.route(\"/login\", methods=[\"GET\", \"POST\"])\ndef login():\n    \"\"\"\n    Página de inicio de sesión.\n    \"\"\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def login():\n    \"\"\"\n    Página de inicio de sesión.\n    \"\"\"\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        # Simulación de autenticación (reemplazar con la lógica real)\n        if email == \"cliente@ejemplo.com\" and password == \"cliente123\":\n            session[\"user_role\"] = \"cliente\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def logout():\n    \"\"\"\n    Cierra la sesión del usuario.\n    \"\"\"\n    session.clear()\n    flash(\"Has cerrado sesión exitosamente.\", \"info\")\n    return redirect(url_for(\"index\"))\n# Rutas para Clientes\n@app.route(\"/cliente/dashboard\")\n@login_required",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard_cliente",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def dashboard_cliente():\n    \"\"\"\n    Panel principal para clientes.\n    \"\"\"\n    return render_template(\"cliente/dashboard.html\")\n@app.route(\"/cliente/perfil\")\n@login_required\n@role_required(\"cliente\")\ndef perfil_cliente():\n    \"\"\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "perfil_cliente",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def perfil_cliente():\n    \"\"\"\n    Gestión del perfil del cliente.\n    \"\"\"\n    return render_template(\"cliente/perfil.html\")\n@app.route(\"/cliente/pedidos\")\n@login_required\n@role_required(\"cliente\")\ndef pedidos_cliente():\n    \"\"\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "pedidos_cliente",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def pedidos_cliente():\n    \"\"\"\n    Historial de pedidos del cliente.\n    \"\"\"\n    return render_template(\"cliente/pedidos.html\")\n# Rutas para Trabajadores\n@app.route(\"/trabajador/dashboard\")\n@login_required\n@role_required(\"trabajador\")\ndef dashboard_trabajador():",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard_trabajador",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def dashboard_trabajador():\n    \"\"\"\n    Panel principal para trabajadores.\n    \"\"\"\n    return render_template(\"trabajador/dashboard.html\")\n@app.route(\"/trabajador/gestion-clientes\")\n@login_required\n@role_required(\"trabajador\")\ndef gestion_clientes():\n    \"\"\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "gestion_clientes",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def gestion_clientes():\n    \"\"\"\n    Gestión de los clientes por parte de los trabajadores.\n    \"\"\"\n    return render_template(\"trabajador/gestion_clientes.html\")\n@app.route(\"/trabajador/gestion-productos\")\n@login_required\n@role_required(\"trabajador\")\ndef gestion_productos():\n    \"\"\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "gestion_productos",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def gestion_productos():\n    \"\"\"\n    Gestión de productos por parte de los trabajadores.\n    \"\"\"\n    return render_template(\"trabajador/gestion_productos.html\")\n@app.route(\"/trabajador/reportes\")\n@login_required\n@role_required(\"trabajador\")\ndef reportes_trabajador():\n    \"\"\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "reportes_trabajador",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def reportes_trabajador():\n    \"\"\"\n    Generación de reportes por parte de los trabajadores.\n    \"\"\"\n    return render_template(\"trabajador/reportes.html\")\n# Manejo de errores\n@app.errorhandler(404)\ndef page_not_found(e):\n    \"\"\"\n    Página de error 404.",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "page_not_found",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def page_not_found(e):\n    \"\"\"\n    Página de error 404.\n    \"\"\"\n    return render_template(\"error/404.html\"), 404\n@app.errorhandler(403)\ndef forbidden(e):\n    \"\"\"\n    Página de error 403 (prohibido).\n    \"\"\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def forbidden(e):\n    \"\"\"\n    Página de error 403 (prohibido).\n    \"\"\"\n    return render_template(\"error/403.html\"), 403\n@app.errorhandler(500)\ndef internal_server_error(e):\n    \"\"\"\n    Página de error 500 (error interno del servidor).\n    \"\"\"",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "internal_server_error",
+        "kind": 2,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "def internal_server_error(e):\n    \"\"\"\n    Página de error 500 (error interno del servidor).\n    \"\"\"\n    return render_template(\"error/500.html\"), 500",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "description": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
+        "peekOfCode": "app = Flask(__name__)\n# app.secret_key = \"supersecretkey\"  # Cambia esto por una clave más segura en producción\n# ==============================\n# Decoradores para verificar roles\n# ==============================\ndef login_required(f):\n    \"\"\"\n    Decorador para asegurarse de que un usuario está autenticado.\n    \"\"\"\n    @wraps(f)",
+        "detail": "Saorin_Faura-Angel_Luis-48616905B_TareaFinal.cocina.routes",
         "documentation": {}
     },
     {
