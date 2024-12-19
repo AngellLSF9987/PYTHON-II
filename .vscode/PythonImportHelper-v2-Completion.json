@@ -72,6 +72,72 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "Galleta",
+        "importPath": "modelos.galleta",
+        "description": "modelos.galleta",
+        "isExtraImport": true,
+        "detail": "modelos.galleta",
+        "documentation": {}
+    },
+    {
+        "label": "Galleta",
+        "importPath": "modelos.galleta",
+        "description": "modelos.galleta",
+        "isExtraImport": true,
+        "detail": "modelos.galleta",
+        "documentation": {}
+    },
+    {
+        "label": "leer_galletas",
+        "importPath": "metodos.metodos",
+        "description": "metodos.metodos",
+        "isExtraImport": true,
+        "detail": "metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "mas_galletas",
+        "importPath": "metodos.metodos",
+        "description": "metodos.metodos",
+        "isExtraImport": true,
+        "detail": "metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "leer_galletas",
+        "importPath": "metodos.metodos",
+        "description": "metodos.metodos",
+        "isExtraImport": true,
+        "detail": "metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "mas_galletas",
+        "importPath": "metodos.metodos",
+        "description": "metodos.metodos",
+        "isExtraImport": true,
+        "detail": "metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
         "label": "date",
         "importPath": "datetime",
         "description": "datetime",
@@ -690,15 +756,6 @@
         "documentation": {}
     },
     {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
-        "documentation": {}
-    },
-    {
         "label": "shutil",
         "kind": 6,
         "isExtraImport": true,
@@ -817,39 +874,6 @@
         "description": "biblioteca.utilidades.lector_json",
         "isExtraImport": true,
         "detail": "biblioteca.utilidades.lector_json",
-        "documentation": {}
-    },
-    {
-        "label": "Galleta",
-        "importPath": "modelos.galleta",
-        "description": "modelos.galleta",
-        "isExtraImport": true,
-        "detail": "modelos.galleta",
-        "documentation": {}
-    },
-    {
-        "label": "leer_galletas",
-        "importPath": "metodos.metodos",
-        "description": "metodos.metodos",
-        "isExtraImport": true,
-        "detail": "metodos.metodos",
-        "documentation": {}
-    },
-    {
-        "label": "mas_galletas",
-        "importPath": "metodos.metodos",
-        "description": "metodos.metodos",
-        "isExtraImport": true,
-        "detail": "metodos.metodos",
-        "documentation": {}
-    },
-    {
-        "label": "csv",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "csv",
-        "description": "csv",
-        "detail": "csv",
         "documentation": {}
     },
     {
@@ -1024,6 +1048,278 @@
         "documentation": {}
     },
     {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "current_app",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "database.db_connection",
+        "description": "database.db_connection",
+        "isExtraImport": true,
+        "detail": "database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "database.db_connection",
+        "description": "database.db_connection",
+        "isExtraImport": true,
+        "detail": "database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "importPath": "database.db_connection",
+        "description": "database.db_connection",
+        "isExtraImport": true,
+        "detail": "database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "secure_filename",
+        "importPath": "werkzeug.utils",
+        "description": "werkzeug.utils",
+        "isExtraImport": true,
+        "detail": "werkzeug.utils",
+        "documentation": {}
+    },
+    {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "Categoria",
+        "importPath": "models.categoria",
+        "description": "models.categoria",
+        "isExtraImport": true,
+        "detail": "models.categoria",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioProducto",
+        "importPath": "repositories.repositorio_producto",
+        "description": "repositories.repositorio_producto",
+        "isExtraImport": true,
+        "detail": "repositories.repositorio_producto",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioCategoria",
+        "importPath": "repositories.repositorio_categoria",
+        "description": "repositories.repositorio_categoria",
+        "isExtraImport": true,
+        "detail": "repositories.repositorio_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioCliente",
+        "importPath": "repositories.repositorio_cliente",
+        "description": "repositories.repositorio_cliente",
+        "isExtraImport": true,
+        "detail": "repositories.repositorio_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioProveedor",
+        "importPath": "repositories.repositorio_proveedor",
+        "description": "repositories.repositorio_proveedor",
+        "isExtraImport": true,
+        "detail": "repositories.repositorio_proveedor",
+        "documentation": {}
+    },
+    {
+        "label": "routes",
+        "importPath": "routes.routes",
+        "description": "routes.routes",
+        "isExtraImport": true,
+        "detail": "routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "inicializar_base_datos",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tablas",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_datos_ejemplo",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
         "label": "Esmalte",
         "kind": 6,
         "importPath": "examen30_Ej4.modelos.esmalte",
@@ -1102,6 +1398,105 @@
         "description": "examen30_Ej5.excepciones.error_conversion_float",
         "peekOfCode": "def convertir_float(cadena):\n    \"\"\"Función personalizada para convertir una cadena a float.\"\"\"\n    try:\n        entrada = float(cadena)\n        return entrada\n    except ValueError:\n        raise ErrorConversionFloat(f\"No se pudo convertir '{cadena}' a float.\")",
         "detail": "examen30_Ej5.excepciones.error_conversion_float",
+        "documentation": {}
+    },
+    {
+        "label": "escribir",
+        "kind": 2,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplos_json.ejemplo_9.ejemplo_9",
+        "description": "Teoría y Ejemplos Didácticos.ejemplos_json.ejemplo_9.ejemplo_9",
+        "peekOfCode": "def escribir():\n    try:\n        # Leer \n        with open (r\"UD.3\\ejemplos_json\\ejemplo_9\\compras.json\", \"w\", encoding=\"utf-16\", newline=\"\") as compras:\n            json.dump(productos, compras, indent=4) # Indent facilita la lectura. Lo normal se usa con valor 4\n    except FileExistsError:\n        print(\"Error1: Fichero no accesible o línea no escrita.\")\nescribir()\n# # IMPRIMIR JSON FORMATEADO\n# def imp_formateado():",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplos_json.ejemplo_9.ejemplo_9",
+        "documentation": {}
+    },
+    {
+        "label": "productos",
+        "kind": 5,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplos_json.ejemplo_9.ejemplo_9",
+        "description": "Teoría y Ejemplos Didácticos.ejemplos_json.ejemplo_9.ejemplo_9",
+        "peekOfCode": "productos = [\n    {\"Refrescos\": \n        {{\"Nombre\": \"Coca-Cola\", \"Precio\": \"2.40\"},\n        {\"Nombre\": \"Fanta Naranja\", \"Precio\": \"2.00\"},\n        {\"Nombre\": \"Fanta Limón\", \"Precio\":\"2.00\"}}\n    },\n    {\"Conservas\": \n        {{\"Nombre\": \"Berberechos\", \"Precio\": \"7.49\"},\n        {\"nombre\": \"Mejillones\", \"Precio\": \"6.49\"}}\n    },",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplos_json.ejemplo_9.ejemplo_9",
+        "documentation": {}
+    },
+    {
+        "label": "fichero",
+        "kind": 5,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplo_1.ejemplo_1.1",
+        "description": "Teoría y Ejemplos Didácticos.ejemplo_1.ejemplo_1.1",
+        "peekOfCode": "fichero = open(r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3/ejemplo_1/hola.txt\", 'r')\nfichero.seek(0)        # # Indica que empezará a leer desde el comienzo del fichero hasta el final.\nprint(fichero.read())\nfichero.close()",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplo_1.ejemplo_1.1",
+        "documentation": {}
+    },
+    {
+        "label": "fichero",
+        "kind": 5,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplo_1.ejemplo_1.3_versiones_iteradas",
+        "description": "Teoría y Ejemplos Didácticos.ejemplo_1.ejemplo_1.3_versiones_iteradas",
+        "peekOfCode": "fichero = open(r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3/ejemplo_1/mensajes.txt\", 'r', encoding=\"utf-8\")\nfichero.seek(0)        # # Indica que empezará a leer desde el comienzo del fichero hasta el final.\nprint(fichero.read(26))\nfichero.close()\n# Versión 2\nwith open(r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3\\ejemplo_1/mensajes.txt\", \"r\", encoding=\"utf-8\") as adios:\n    adios.seek(29)                       # Indica que empezará a leer desde el comienzo del fichero hasta el final.\n    contenido = adios.read()\n    print(contenido)\nprint()",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplo_1.ejemplo_1.3_versiones_iteradas",
+        "documentation": {}
+    },
+    {
+        "label": "leer_galletas",
+        "kind": 2,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.metodos.metodos",
+        "description": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.metodos.metodos",
+        "peekOfCode": "def leer_galletas(ruta_archivo):\n    \"\"\"\n    Leer datos del fichero. \n    Usa una lista vacía como mecanismo de \n    almacenamiento para su posterior lectura por líneas.\n    \"\"\"\n    mis_galletitas = []\n    with open(ruta_archivo, \"r\", encoding=\"utf-8\") as leer_lista:\n        for linea in leer_lista:\n            linea = linea.strip()                                     # Eliminar espacios en blanco  antes y después",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "mas_galletas",
+        "kind": 2,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.metodos.metodos",
+        "description": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.metodos.metodos",
+        "peekOfCode": "def mas_galletas():\n    \"\"\"\n    Añadir nuevas galletas al archivo.\n    Asegurarse de que no haya duplicados.\n    \"\"\"\n    nuevas_galletas = [\n        \"Chips Ahoy, Vainilla\",\n        \"Príncipe, Fresa\"\n    ]\n    ruta_archivo = r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3\\ejemplo_3\\galleta\\datos\\datos_galletas.txt\"",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.metodos.metodos",
+        "documentation": {}
+    },
+    {
+        "label": "Galleta",
+        "kind": 6,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.modelos.galleta",
+        "description": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.modelos.galleta",
+        "peekOfCode": "class Galleta:\n    def __init__(self, marca, sabor):\n        self.__marca = marca\n        self.__sabor = sabor\n    def get_marca(self):\n        return self.__marca\n    def set_marca(self, value):\n        self.__marca = value\n    def get_sabor(self):\n        return self.__sabor",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.modelos.galleta",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.main",
+        "description": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.main",
+        "peekOfCode": "def main():\n    ruta_archivo = r\"C:\\Users\\tarde\\Desktop\\PYTHON-II\\UD.3\\ejemplo_3\\galleta\\datos\\datos_galletas.txt\"   \n    galletas = leer_galletas(ruta_archivo)\n    print(\"Galletas leídas del archivo:\")       \n    for galleta in galletas:\n        print(galleta)                                  # Imprime cada galleta usando el método __str__\n    mas_galletas()\nif __name__ == \"__main__\":\n    main()",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplo_3.galleta.main",
+        "documentation": {}
+    },
+    {
+        "label": "leer",
+        "kind": 2,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplo_7_csv.ejemplo_7",
+        "description": "Teoría y Ejemplos Didácticos.ejemplo_7_csv.ejemplo_7",
+        "peekOfCode": "def leer():\n    try:   \n        # Leer\n        with open (r\"UD.3\\ejemplo_7_csv\\perros.csv\", \"r\", encoding=\"utf-8\") as a_csv:\n            lector_csv = csv.reader(a_csv)\n            # Almacenar los encabezados en una lista\n            encabezado = next(lector_csv)\n            for fila in lector_csv:\n                print(f\"{encabezado[0]}: {fila[0]} | {encabezado[1]}: {fila[1]} | {encabezado[2]}: {fila[2]} | {encabezado[3]}: {fila[3]} | {encabezado[4]}: {fila[4]} \\\n                    {encabezado[5]}: {fila[5]} | {encabezado[6]}: {fila[6]} | {encabezado[7]}: {fila[7]}\")",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplo_7_csv.ejemplo_7",
+        "documentation": {}
+    },
+    {
+        "label": "escribir",
+        "kind": 2,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplo_7_csv.ejemplo_7",
+        "description": "Teoría y Ejemplos Didácticos.ejemplo_7_csv.ejemplo_7",
+        "peekOfCode": "def escribir():\n    try:\n        # Leer \n        with open (r\"UD.3\\ejemplo_7_csv\\perros.csv\", \"a\", encoding=\"utf-8\", newline=\"\") as a_csv:\n            escribrir_csv = csv.writer(a_csv)\n            nueva_fila = [\"Locky\",10,\"Golden Retriever\",30,\"Grande\",\"Blanco Dorado\",\"No\",\"Sí\"]\n            escribrir_csv.writerow(nueva_fila)\n    except FileExistsError:\n        print(\"Error: Fichero no accesible o línea no escrita.\")\n# Modificar",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplo_7_csv.ejemplo_7",
+        "documentation": {}
+    },
+    {
+        "label": "modificar",
+        "kind": 2,
+        "importPath": "Teoría y Ejemplos Didácticos.ejemplo_7_csv.ejemplo_7",
+        "description": "Teoría y Ejemplos Didácticos.ejemplo_7_csv.ejemplo_7",
+        "peekOfCode": "def modificar():\n    try:\n        with open (r\"UD.3\\ejemplo_7_csv\\perros.csv\", \"r\", encoding=\"utf-8\") as a_csv:\n            lector_csv = csv.reader(a_csv)\n            filas = list(lector_csv)\n            print(filas)\n        nuevo_peso = 23.7\n        filas[12][3] = nuevo_peso\n        # Escribir\n        with open (r\"UD.3\\ejemplo_7_csv\\perros.csv\", \"w\", encoding=\"utf-8\", newline=\"\") as a_csv:",
+        "detail": "Teoría y Ejemplos Didácticos.ejemplo_7_csv.ejemplo_7",
         "documentation": {}
     },
     {
@@ -3991,6 +4386,600 @@
         "description": "UD.5.ejemplo2.main",
         "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef hola():\n return \"Hola Mundo\"\nif __name__ == \"__main__\":\n    app.run()",
         "detail": "UD.5.ejemplo2.main",
+        "documentation": {}
+    },
+    {
+        "label": "ConexionDB",
+        "kind": 6,
+        "importPath": "web_cocina.database.db_connection",
+        "description": "web_cocina.database.db_connection",
+        "peekOfCode": "class ConexionDB:\n    def __init__(self, ruta_bd):\n        self.ruta_bd = ruta_bd\n        directorio = os.path.dirname(self.ruta_bd)\n        if not os.path.exists(directorio):\n            os.makedirs(directorio)\n    def __enter__(self):\n        \"\"\"\n        Inicia la conexión al entrar en el contexto `with`.\n        \"\"\"",
+        "detail": "web_cocina.database.db_connection",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tablas",
+        "kind": 2,
+        "importPath": "web_cocina.database.db_setup",
+        "description": "web_cocina.database.db_setup",
+        "peekOfCode": "def crear_tablas(conexion):\n    \"\"\"\n    Crea las tablas necesarias para la base de datos de Cocina.\n    \"\"\"\n    cursor = conexion.cursor()\n    try:\n        # Tabla Roles\n        cursor.execute(\"\"\"\n            CREATE TABLE IF NOT EXISTS Rol (\n                id_rol INTEGER PRIMARY KEY AUTOINCREMENT,",
+        "detail": "web_cocina.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_datos_ejemplo",
+        "kind": 2,
+        "importPath": "web_cocina.database.db_setup",
+        "description": "web_cocina.database.db_setup",
+        "peekOfCode": "def insertar_datos_ejemplo(conexion):\n    \"\"\"\n    Inserta datos de ejemplo en las tablas para pruebas iniciales,\n    verificando que no haya duplicados.\n    \"\"\"\n    cursor = conexion.cursor()\n    try:\n        datos_cliente = [\n            (\"Paco\", \"Nava\", \"Cliente\", \"12345678A\", \"600123456\", \"Calle Luna, 6\", \"paco@cliente.com\"),\n            (\"Angel Luis\", \"Saorin\", \"Cliente\", \"12345678C\", \"610654321\", \"Calle Sol, 8\", \"angel@cliente.com\")",
+        "detail": "web_cocina.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "inicializar_base_datos",
+        "kind": 2,
+        "importPath": "web_cocina.database.db_setup",
+        "description": "web_cocina.database.db_setup",
+        "peekOfCode": "def inicializar_base_datos(ruta_bd=\"database/cocina.db\"):\n        \"\"\"\n        Inicializa la base de datos creando tablas e insertando datos de ejemplo.\n        \"\"\"\n        with ConexionDB(ruta_bd) as conexion:\n            crear_tablas(conexion)\n            insertar_datos_ejemplo(conexion)",
+        "detail": "web_cocina.database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "Carrito",
+        "kind": 6,
+        "importPath": "web_cocina.models.carrito",
+        "description": "web_cocina.models.carrito",
+        "peekOfCode": "class Carrito(db.Model):\n    __tablename__ = 'Carrito'\n    id_carrito = db.Column(db.Integer, primary_key=True)\n    id_venta = db.Column(db.Integer, db.ForeignKey('Venta.id_venta'), nullable=False)\n    id_cliente = db.Column(db.Integer, db.ForeignKey('Cliente.id_cliente'), nullable=False)\n    id_producto = db.Column(db.Integer, db.ForeignKey('Producto.id_producto'), nullable=False)\n    cantidad = db.Column(db.Integer, nullable=False, default=1)\n    precio_total = db.Column(db.Float(10, 2), nullable=False, default=1.00)\n    venta = db.relationship('Venta', backref=db.backref('Carrito', lazy=True))\n    cliente = db.relationship('Cliente', backref=db.backref('Carrito', lazy=True))",
+        "detail": "web_cocina.models.carrito",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "web_cocina.models.carrito",
+        "description": "web_cocina.models.carrito",
+        "peekOfCode": "db = SQLAlchemy()\nclass Carrito(db.Model):\n    __tablename__ = 'Carrito'\n    id_carrito = db.Column(db.Integer, primary_key=True)\n    id_venta = db.Column(db.Integer, db.ForeignKey('Venta.id_venta'), nullable=False)\n    id_cliente = db.Column(db.Integer, db.ForeignKey('Cliente.id_cliente'), nullable=False)\n    id_producto = db.Column(db.Integer, db.ForeignKey('Producto.id_producto'), nullable=False)\n    cantidad = db.Column(db.Integer, nullable=False, default=1)\n    precio_total = db.Column(db.Float(10, 2), nullable=False, default=1.00)\n    venta = db.relationship('Venta', backref=db.backref('Carrito', lazy=True))",
+        "detail": "web_cocina.models.carrito",
+        "documentation": {}
+    },
+    {
+        "label": "Categoria",
+        "kind": 6,
+        "importPath": "web_cocina.models.categoria",
+        "description": "web_cocina.models.categoria",
+        "peekOfCode": "class Categoria(db.Model):\n    __tablename__ = 'Categoria'\n    id_categoria = db.Column(db.Integer, primary_key=True)\n    nombre_categoria = db.Column(db.String(100), nullable=False)\n    descripcion = db.Column(db.String(255), nullable=True)\n    imagen = db.Column(db.String(255), nullable=True)\n    # Relación con productos\n    productos = db.relationship('Producto', backref='Categoria', lazy=True)\n    # Restricción UNIQUE en (id_categoria, nombre_categoria)\n    __table_args__ = (",
+        "detail": "web_cocina.models.categoria",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "web_cocina.models.categoria",
+        "description": "web_cocina.models.categoria",
+        "peekOfCode": "db = SQLAlchemy()\nclass Categoria(db.Model):\n    __tablename__ = 'Categoria'\n    id_categoria = db.Column(db.Integer, primary_key=True)\n    nombre_categoria = db.Column(db.String(100), nullable=False)\n    descripcion = db.Column(db.String(255), nullable=True)\n    imagen = db.Column(db.String(255), nullable=True)\n    # Relación con productos\n    productos = db.relationship('Producto', backref='Categoria', lazy=True)\n    # Restricción UNIQUE en (id_categoria, nombre_categoria)",
+        "detail": "web_cocina.models.categoria",
+        "documentation": {}
+    },
+    {
+        "label": "Cliente",
+        "kind": 6,
+        "importPath": "web_cocina.models.cliente",
+        "description": "web_cocina.models.cliente",
+        "peekOfCode": "class Cliente(db.Model):\n    __tablename__ = 'Cliente'\n    id = db.Column(db.Integer, primary_key=True)\n    nombre_cliente = db.Column(db.String(100), nullable=False)\n    apellido1 = db.Column(db.String(100), nullable=False)\n    apellido2 = db.Column(db.String(100), nullable=False)\n    dni_cliente = db.Column(db.String(9), nullable=False)\n    telefono = db.Column(db.String(15), nullable=True)\n    direccion = db.Column(db.String(255), nullable=True)\n    email = db.Column(db.String(100), nullable=False, unique=True)",
+        "detail": "web_cocina.models.cliente",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "web_cocina.models.cliente",
+        "description": "web_cocina.models.cliente",
+        "peekOfCode": "db = SQLAlchemy()\nclass Cliente(db.Model):\n    __tablename__ = 'Cliente'\n    id = db.Column(db.Integer, primary_key=True)\n    nombre_cliente = db.Column(db.String(100), nullable=False)\n    apellido1 = db.Column(db.String(100), nullable=False)\n    apellido2 = db.Column(db.String(100), nullable=False)\n    dni_cliente = db.Column(db.String(9), nullable=False)\n    telefono = db.Column(db.String(15), nullable=True)\n    direccion = db.Column(db.String(255), nullable=True)",
+        "detail": "web_cocina.models.cliente",
+        "documentation": {}
+    },
+    {
+        "label": "Producto",
+        "kind": 6,
+        "importPath": "web_cocina.models.producto",
+        "description": "web_cocina.models.producto",
+        "peekOfCode": "class Producto(db.Model):\n    __tablename__ = 'Producto'\n    id_producto = db.Column(db.Integer, primary_key=True)\n    nombre_producto = db.Column(db.String(100), nullable=False)\n    descripcion = db.Column(db.String(255), nullable=True)\n    precio = db.Column(db.Float, nullable=False)\n    imagen = db.Column(db.String(255), nullable=True)\n    stock = db.Column(db.Integer, nullable=False)\n    id_proveedor = db.Column(db.Integer, db.ForeignKey('Proveedor.id_proveedor'), nullable=False)\n    id_categoria = db.Column(db.Integer, db.ForeignKey('Categoria.id_categoria'), nullable=False)",
+        "detail": "web_cocina.models.producto",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "web_cocina.models.producto",
+        "description": "web_cocina.models.producto",
+        "peekOfCode": "db = SQLAlchemy()\nclass Producto(db.Model):\n    __tablename__ = 'Producto'\n    id_producto = db.Column(db.Integer, primary_key=True)\n    nombre_producto = db.Column(db.String(100), nullable=False)\n    descripcion = db.Column(db.String(255), nullable=True)\n    precio = db.Column(db.Float, nullable=False)\n    imagen = db.Column(db.String(255), nullable=True)\n    stock = db.Column(db.Integer, nullable=False)\n    id_proveedor = db.Column(db.Integer, db.ForeignKey('Proveedor.id_proveedor'), nullable=False)",
+        "detail": "web_cocina.models.producto",
+        "documentation": {}
+    },
+    {
+        "label": "Proveedor",
+        "kind": 6,
+        "importPath": "web_cocina.models.proveedor",
+        "description": "web_cocina.models.proveedor",
+        "peekOfCode": "class Proveedor(db.Model):\n    __tablename__ = 'Proveedor'\n    id_proveedor = db.Column(db.Integer, primary_key=True)\n    nombre_proveedor = db.Column(db.String(100), nullable=False)\n    nombre_empresa = db.Column(db.String(100), nullable=False)\n    contacto = db.Column(db.String(100), nullable=True)\n    telefono = db.Column(db.String(15), nullable=True)\n    direccion = db.Column(db.String(255), nullable=True)\n    email = db.Column(db.String(255), nullable=True)\n    # Relación con productos",
+        "detail": "web_cocina.models.proveedor",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "web_cocina.models.proveedor",
+        "description": "web_cocina.models.proveedor",
+        "peekOfCode": "db = SQLAlchemy()\nclass Proveedor(db.Model):\n    __tablename__ = 'Proveedor'\n    id_proveedor = db.Column(db.Integer, primary_key=True)\n    nombre_proveedor = db.Column(db.String(100), nullable=False)\n    nombre_empresa = db.Column(db.String(100), nullable=False)\n    contacto = db.Column(db.String(100), nullable=True)\n    telefono = db.Column(db.String(15), nullable=True)\n    direccion = db.Column(db.String(255), nullable=True)\n    email = db.Column(db.String(255), nullable=True)",
+        "detail": "web_cocina.models.proveedor",
+        "documentation": {}
+    },
+    {
+        "label": "Rol",
+        "kind": 6,
+        "importPath": "web_cocina.models.rol",
+        "description": "web_cocina.models.rol",
+        "peekOfCode": "class Rol(db.Model):\n    __tablename__ = 'Rol'\n    id_rol = db.Column(db.Integer, primary_key=True)  # Campo de ID como clave primaria\n    nombre_rol = db.Column(db.String(100), nullable=False, unique=True)  # Campo de nombre del rol\n    def __init__(self, nombre_rol):\n        self.nombre_rol = nombre_rol\n    def __repr__(self):\n        return f\"<Rol: {self.nombre_rol}>\"",
+        "detail": "web_cocina.models.rol",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "web_cocina.models.rol",
+        "description": "web_cocina.models.rol",
+        "peekOfCode": "db = SQLAlchemy()\nclass Rol(db.Model):\n    __tablename__ = 'Rol'\n    id_rol = db.Column(db.Integer, primary_key=True)  # Campo de ID como clave primaria\n    nombre_rol = db.Column(db.String(100), nullable=False, unique=True)  # Campo de nombre del rol\n    def __init__(self, nombre_rol):\n        self.nombre_rol = nombre_rol\n    def __repr__(self):\n        return f\"<Rol: {self.nombre_rol}>\"",
+        "detail": "web_cocina.models.rol",
+        "documentation": {}
+    },
+    {
+        "label": "Trabajador",
+        "kind": 6,
+        "importPath": "web_cocina.models.trabajador",
+        "description": "web_cocina.models.trabajador",
+        "peekOfCode": "class Trabajador(db.Model):\n    __tablename__ = 'Trabajador'\n    id_trabajador = db.Column(db.Integer, primary_key=True)\n    nombre_trabajador = db.Column(db.String(100), nullable=False)\n    apellido1 = db.Column(db.String(100), nullable=False)\n    apellido2 = db.Column(db.String(100), nullable=False)\n    dni_trabajador = db.Column(db.String(9), nullable=False)\n    telefono = db.Column(db.String(15), nullable=True)\n    direccion = db.Column(db.String(255), nullable=True)\n    email = db.Column(db.String(255), nullable=True)",
+        "detail": "web_cocina.models.trabajador",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "web_cocina.models.trabajador",
+        "description": "web_cocina.models.trabajador",
+        "peekOfCode": "db = SQLAlchemy()\nclass Trabajador(db.Model):\n    __tablename__ = 'Trabajador'\n    id_trabajador = db.Column(db.Integer, primary_key=True)\n    nombre_trabajador = db.Column(db.String(100), nullable=False)\n    apellido1 = db.Column(db.String(100), nullable=False)\n    apellido2 = db.Column(db.String(100), nullable=False)\n    dni_trabajador = db.Column(db.String(9), nullable=False)\n    telefono = db.Column(db.String(15), nullable=True)\n    direccion = db.Column(db.String(255), nullable=True)",
+        "detail": "web_cocina.models.trabajador",
+        "documentation": {}
+    },
+    {
+        "label": "Venta",
+        "kind": 6,
+        "importPath": "web_cocina.models.venta",
+        "description": "web_cocina.models.venta",
+        "peekOfCode": "class Venta(db.Model):\n    __tablename__ = 'Venta'\n    id_venta = db.Column(db.Integer, primary_key=True)  # ID de la venta\n    fecha = db.Column(db.Date, nullable=False, default=db.func.current_date())\n    id_cliente = db.Column(db.Integer, db.ForeignKey('Cliente.id_cliente'), nullable=False)\n    total = db.Column(db.Float, nullable=False)\n    # Relación con Cliente\n    cliente = db.relationship('Cliente', backref='Venta')\n    def __init__(self, id_cliente, total, fecha=None):\n        self.id_cliente = id_cliente",
+        "detail": "web_cocina.models.venta",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "web_cocina.models.venta",
+        "description": "web_cocina.models.venta",
+        "peekOfCode": "db = SQLAlchemy()\nclass Venta(db.Model):\n    __tablename__ = 'Venta'\n    id_venta = db.Column(db.Integer, primary_key=True)  # ID de la venta\n    fecha = db.Column(db.Date, nullable=False, default=db.func.current_date())\n    id_cliente = db.Column(db.Integer, db.ForeignKey('Cliente.id_cliente'), nullable=False)\n    total = db.Column(db.Float, nullable=False)\n    # Relación con Cliente\n    cliente = db.relationship('Cliente', backref='Venta')\n    def __init__(self, id_cliente, total, fecha=None):",
+        "detail": "web_cocina.models.venta",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioCategoria",
+        "kind": 6,
+        "importPath": "web_cocina.repositories.repositorio_categoria",
+        "description": "web_cocina.repositories.repositorio_categoria",
+        "peekOfCode": "class RepositorioCategoria:\n    def __init__(self, db_path='cocina.db'):\n        self.db_path = db_path\n    def obtener_categoria_por_id(self, id_categoria):\n        \"\"\"Obtiene una categoría por su ID.\"\"\"\n        with ConexionDB(self.ruta_bd) as conexion:\n            cursor = conexion.cursor()\n            cursor.execute(\"SELECT * FROM Categoria WHERE id_categoria = ?\", (id_categoria,))\n            return cursor.fetchone()\n    def obtener_todas_las_categorias(self):",
+        "detail": "web_cocina.repositories.repositorio_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioCliente",
+        "kind": 6,
+        "importPath": "web_cocina.repositories.repositorio_cliente",
+        "description": "web_cocina.repositories.repositorio_cliente",
+        "peekOfCode": "class RepositorioCliente:\n    def __init__(self, db_path):\n        self.db_path = db_path\n    def obtener_todos_los_clientes(self):\n        conn = sqlite3.connect(self.db_path)\n        cursor = conn.cursor()\n        cursor.execute(\"SELECT * FROM clientes\")\n        clientes = cursor.fetchall()\n        conn.close()\n        return clientes",
+        "detail": "web_cocina.repositories.repositorio_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioProducto",
+        "kind": 6,
+        "importPath": "web_cocina.repositories.repositorio_producto",
+        "description": "web_cocina.repositories.repositorio_producto",
+        "peekOfCode": "class RepositorioProducto:\n    def __init__(self, db_path='cocina.db'):\n        self.db_path = db_path\n    def obtener_producto_por_id(self, id_producto):\n        \"\"\"Obtiene un producto por su ID.\"\"\"\n        with ConexionDB(self.ruta_bd) as conexion:\n            cursor = conexion.cursor()\n            cursor.execute(\"SELECT * FROM Producto WHERE id_producto = ?\", (id_producto,))\n            return cursor.fetchone()\n    def obtener_todos_los_productos(self):",
+        "detail": "web_cocina.repositories.repositorio_producto",
+        "documentation": {}
+    },
+    {
+        "label": "RepositorioProveedor",
+        "kind": 6,
+        "importPath": "web_cocina.repositories.repositorio_proveedor",
+        "description": "web_cocina.repositories.repositorio_proveedor",
+        "peekOfCode": "class RepositorioProveedor:\n    def __init__(self, db_path):\n        self.db_path = db_path\n    def obtener_todos_los_proveedores(self):\n        conn = sqlite3.connect(self.db_path)\n        cursor = conn.cursor()\n        cursor.execute(\"SELECT * FROM proveedores\")\n        proveedores = cursor.fetchall()\n        conn.close()\n        return proveedores",
+        "detail": "web_cocina.repositories.repositorio_proveedor",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def login_required(f):\n    @wraps(f)\n    def decorated_function(*args, **kwargs):\n        if \"user_role\" not in session:\n            flash(\"Por favor, inicia sesión para acceder a esta página.\", \"warning\")\n            return redirect(url_for(\"routes.login\"))\n        return f(*args, **kwargs)\n    return decorated_function\ndef role_required(role):\n    def decorator(f):",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "role_required",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def role_required(role):\n    def decorator(f):\n        @wraps(f)\n        def decorated_function(*args, **kwargs):\n            if session.get(\"user_role\") != role:\n                flash(\"No tienes permiso para acceder a esta página.\", \"danger\")\n                return redirect(url_for(\"routes.index\"))\n            return f(*args, **kwargs)\n        return decorated_function\n    return decorator",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def index():\n    return render_template(\"index.html\")\n@routes.route(\"/login\", methods=[\"GET\", \"POST\"])\ndef login():\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        # Roles Dinámicos, escalabilidad a la hora de crear nuevos perfiles y roles\n        usuarios = {\n            \"cliente@ejemplo.com\": (\"cliente\", \"cliente123\"),",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def login():\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        # Roles Dinámicos, escalabilidad a la hora de crear nuevos perfiles y roles\n        usuarios = {\n            \"cliente@ejemplo.com\": (\"cliente\", \"cliente123\"),\n            \"trabajador@ejemplo.com\": (\"trabajador\", \"trabajador123\"),\n            ## Añadir más usuarios y roles aquí ##\n        }",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión exitosamente.\", \"info\")\n    return redirect(url_for(\"routes.index\"))\n@routes.route(\"/reset_password\", methods=[\"GET\", \"POST\"])\ndef reset_password():\n    # Aquí iría la lógica de la página para restablecer la contraseña\n    return render_template(\"auth/reset_password.html\")\n# Rutas para Clientes\n@routes.route(\"/cliente/cliente_dashboard\")",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "reset_password",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def reset_password():\n    # Aquí iría la lógica de la página para restablecer la contraseña\n    return render_template(\"auth/reset_password.html\")\n# Rutas para Clientes\n@routes.route(\"/cliente/cliente_dashboard\")\n@login_required\ndef dashboard_cliente():\n    if session.get(\"user_role\") != \"cliente\":\n        flash(\"No tienes permiso para acceder a esta página.\", \"danger\")\n        return redirect(url_for(\"routes.index\"))",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard_cliente",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def dashboard_cliente():\n    if session.get(\"user_role\") != \"cliente\":\n        flash(\"No tienes permiso para acceder a esta página.\", \"danger\")\n        return redirect(url_for(\"routes.index\"))\n    return render_template(\"cliente/cliente_dashboard.html\")\n@routes.route(\"/cliente/perfil\")\n@login_required\n@role_required(\"cliente\")\ndef perfil_cliente():\n    return render_template(\"cliente/cliente_perfil.html\")",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "perfil_cliente",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def perfil_cliente():\n    return render_template(\"cliente/cliente_perfil.html\")\n@routes.route(\"/cliente/pedidos\")\n@login_required\n@role_required(\"cliente\")\ndef pedidos_cliente():\n    return render_template(\"cliente/cliente_pedidos.html\")\n# Rutas para Trabajadores\n@routes.route(\"/trabajador/trabajador_dashboard\")\n@login_required",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "pedidos_cliente",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def pedidos_cliente():\n    return render_template(\"cliente/cliente_pedidos.html\")\n# Rutas para Trabajadores\n@routes.route(\"/trabajador/trabajador_dashboard\")\n@login_required\ndef dashboard_trabajador():\n    if session.get(\"user_role\") != \"trabajador\":\n        flash(\"No tienes permiso para acceder a esta página.\", \"danger\")\n        return redirect(url_for(\"routes.index\"))\n    return render_template(\"trabajador/trabajador_dashboard.html\")",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard_trabajador",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def dashboard_trabajador():\n    if session.get(\"user_role\") != \"trabajador\":\n        flash(\"No tienes permiso para acceder a esta página.\", \"danger\")\n        return redirect(url_for(\"routes.index\"))\n    return render_template(\"trabajador/trabajador_dashboard.html\")\n@routes.route(\"/trabajador/gestion-clientes\")\n@login_required\n@role_required(\"trabajador\")\ndef gestion_clientes():\n    return render_template(\"trabajador/trabajador_gestion_clientes.html\")",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "gestion_clientes",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def gestion_clientes():\n    return render_template(\"trabajador/trabajador_gestion_clientes.html\")\n@routes.route(\"/trabajador/gestion-productos\")\n@login_required\n@role_required(\"trabajador\")\ndef gestion_productos():\n    return render_template(\"trabajador/trabajador_gestion_productos.html\")\n@routes.route(\"/trabajador/reportes\")\n@login_required\n@role_required(\"trabajador\")",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "gestion_productos",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def gestion_productos():\n    return render_template(\"trabajador/trabajador_gestion_productos.html\")\n@routes.route(\"/trabajador/reportes\")\n@login_required\n@role_required(\"trabajador\")\ndef reportes_trabajador():\n    return render_template(\"trabajador/trabajador_reportes.html\")\n@routes.route(\"/trabajador/perfil\")\n@login_required\n@role_required(\"trabajador\")",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "reportes_trabajador",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def reportes_trabajador():\n    return render_template(\"trabajador/trabajador_reportes.html\")\n@routes.route(\"/trabajador/perfil\")\n@login_required\n@role_required(\"trabajador\")\ndef perfil_trabajador():\n    return render_template(\"trabajador/trabajador_perfil.html\")\n### =========  RUTA - FORMULARIO DE CONTACTO ========= ###\n@routes.route('/contacto/contacto', methods=['GET', 'POST'])\ndef contacto():",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "perfil_trabajador",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def perfil_trabajador():\n    return render_template(\"trabajador/trabajador_perfil.html\")\n### =========  RUTA - FORMULARIO DE CONTACTO ========= ###\n@routes.route('/contacto/contacto', methods=['GET', 'POST'])\ndef contacto():\n    if request.method == 'POST':\n        nombre_cliente = request.form['nombre_cliente']\n        dni_cliente = request.form['dni_cliente']\n        email = request.form['email']\n        asunto = request.form['asunto']",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "contacto",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def contacto():\n    if request.method == 'POST':\n        nombre_cliente = request.form['nombre_cliente']\n        dni_cliente = request.form['dni_cliente']\n        email = request.form['email']\n        asunto = request.form['asunto']\n        mensaje = request.form['mensaje']\n        # Procesar los datos (enviar un correo, guardar en base de datos, etc.)\n        flash(\"Gracias por ponerte en contacto. Te responderemos pronto.\", \"success\")\n        return redirect(url_for('routes.contacto.html'))  # Redirigir al mismo formulario o a otra página de agradecimiento",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "lista_productos",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def lista_productos():\n    productos = repositorio_producto.obtener_todos_los_productos()\n    return render_template('trabajador/producto/producto_lista.html', productos=productos)\n# Ruta para mostrar la lista de categorías\n@routes.route(\"/categoria/lista\")\ndef lista_categorias():\n    categorias = repositorio_categoria.obtener_todas_las_categorias()\n    return render_template('trabajador/categoria/categoria_lista.html', categorias=categorias)\n# Ruta para mostrar los detalles de un producto específico\n@routes.route('/producto/<int:producto_id>')",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "lista_categorias",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def lista_categorias():\n    categorias = repositorio_categoria.obtener_todas_las_categorias()\n    return render_template('trabajador/categoria/categoria_lista.html', categorias=categorias)\n# Ruta para mostrar los detalles de un producto específico\n@routes.route('/producto/<int:producto_id>')\ndef producto_detalle(producto_id):\n    producto = repositorio_producto.obtener_producto_por_id(producto_id)\n    if producto:\n        # Obtener la categoría asociada al producto\n        categoria = repositorio_categoria.obtener_categoria_por_id(producto[6])  # Asumiendo que 'producto[6]' es el id_categoria",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "producto_detalle",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def producto_detalle(producto_id):\n    producto = repositorio_producto.obtener_producto_por_id(producto_id)\n    if producto:\n        # Obtener la categoría asociada al producto\n        categoria = repositorio_categoria.obtener_categoria_por_id(producto[6])  # Asumiendo que 'producto[6]' es el id_categoria\n        return render_template('producto/producto_detalle.html', producto=producto, categoria=categoria)\n    else:\n        flash(\"Producto no encontrado.\", \"danger\")\n        return redirect(url_for('routes.lista_productos'))\n### =========  RUTAS ADMIN - CRUD - PRODUCTO ========= ###",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "nuevo_producto",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def nuevo_producto():\n    if request.method == \"POST\":\n        nombre_producto = request.form['nombre_producto']\n        descripcion = request.form['descripcion']\n        precio = request.form['precio']\n        imagen = request.form['imagen']\n        stock = request.form['stock']\n        id_proveedor = request.form['id_proveedor']\n        id_categoria = request.form['id_categoria']\n        repositorio_producto.insertar_producto(nombre_producto, descripcion, precio, imagen, stock, id_proveedor, id_categoria)",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "editar_producto",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def editar_producto(id_producto):\n    producto = repositorio_producto.obtener_producto_por_id(id_producto)\n    if request.method == \"POST\":\n        nombre_producto = request.form['nombre_producto']\n        descripcion = request.form['descripcion']\n        precio = request.form['precio']\n        imagen = request.form['imagen']\n        stock = request.form['stock']\n        id_proveedor = request.form['id_proveedor']\n        id_categoria = request.form['id_categoria']",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_producto",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def eliminar_producto(id_producto):\n    repositorio_producto.eliminar_producto(id_producto)\n    return redirect(url_for('routes.lista_productos'))  # Redirigir a la lista de productos\n### =========  RUTAS ADMIN - CRUD - CATEGORIA ========= ###\n@routes.route('/categorias/nueva', methods=['POST'])\ndef crear_categoria():\n    try:\n        nombre = request.form.get('nombre')\n        descripcion = request.form.get('descripcion')\n        imagen = request.files.get('imagen')",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "crear_categoria",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def crear_categoria():\n    try:\n        nombre = request.form.get('nombre')\n        descripcion = request.form.get('descripcion')\n        imagen = request.files.get('imagen')\n        if not nombre or not descripcion:\n            flash('El nombre y la descripción son obligatorios.', 'error')\n            return redirect(url_for('routes.lista_categorias'))\n        if imagen:\n            # Asegurarse de que el directorio de carga existe",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "editar_categoria",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def editar_categoria(id_categoria):\n    categoria = repositorio_categoria.obtener_categoria_por_id(id_categoria)\n    if request.method == \"POST\":\n        nombre_categoria = request.form['nombre_categoria']\n        repositorio_categoria.actualizar_categoria(id_categoria, nombre_categoria)\n        return redirect(url_for('routes.lista_categorias'))  # Redirigir a la lista de categorías\n    return render_template('trabajador/categoria/categoria_editar.html', categoria=categoria)\n# Ruta para eliminar una categoría\n@routes.route(\"/categoria/eliminar/<int:id_categoria>\", methods=[\"POST\"])\ndef eliminar_categoria(id_categoria):",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_categoria",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def eliminar_categoria(id_categoria):\n    repositorio_categoria.eliminar_categoria(id_categoria)\n    return redirect(url_for('routes.lista_categorias'))  # Redirigir a la lista de categorías\n### =========  RUTAS ADMIN - CRUD - PROVEEDOR ========= ###\n# Rutas para Proveedores\n@routes.route(\"/proveedor/lista\")\ndef lista_proveedores():\n    proveedores = repositorio_proveedor.obtener_todos_los_proveedores()\n    return render_template('trabajador/proveedor/proveedor_lista.html', proveedores=proveedores)\n@routes.route(\"/proveedor/nuevo\", methods=[\"GET\", \"POST\"])",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "lista_proveedores",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def lista_proveedores():\n    proveedores = repositorio_proveedor.obtener_todos_los_proveedores()\n    return render_template('trabajador/proveedor/proveedor_lista.html', proveedores=proveedores)\n@routes.route(\"/proveedor/nuevo\", methods=[\"GET\", \"POST\"])\ndef nuevo_proveedor():\n    if request.method == \"POST\":\n        nombre = request.form['nombre']\n        direccion = request.form['direccion']\n        telefono = request.form['telefono']\n        email = request.form['email']",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "nuevo_proveedor",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def nuevo_proveedor():\n    if request.method == \"POST\":\n        nombre = request.form['nombre']\n        direccion = request.form['direccion']\n        telefono = request.form['telefono']\n        email = request.form['email']\n        repositorio_proveedor.insertar_proveedor(nombre, direccion, telefono, email)\n        return redirect(url_for('routes.lista_proveedores'))\n    return render_template('trabajador/proveedor/proveedor_nuevo.html')\n@routes.route(\"/proveedor/editar/<int:id_proveedor>\", methods=[\"GET\", \"POST\"])",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "editar_proveedor",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def editar_proveedor(id_proveedor):\n    proveedor = repositorio_proveedor.obtener_proveedor_por_id(id_proveedor)\n    if request.method == \"POST\":\n        nombre = request.form['nombre']\n        direccion = request.form['direccion']\n        telefono = request.form['telefono']\n        email = request.form['email']\n        repositorio_proveedor.actualizar_proveedor(id_proveedor, nombre, direccion, telefono, email)\n        return redirect(url_for('routes.lista_proveedores'))\n    return render_template('trabajador/proveedor/proveedor_editar.html', proveedor=proveedor)",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_proveedor",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def eliminar_proveedor(id_proveedor):\n    repositorio_proveedor.eliminar_proveedor(id_proveedor)\n    return redirect(url_for('routes.lista_proveedores'))\n### =========  RUTAS ADMIN - CRUD - CLIENTE ========= ###\n# Rutas para Clientes\n@routes.route(\"/cliente/lista\")\ndef lista_clientes():\n    clientes = repositorio_cliente.obtener_todos_los_clientes()\n    return render_template('trabajador/cliente/cliente_lista.html', clientes=clientes)\n@routes.route(\"/cliente/nuevo\", methods=[\"GET\", \"POST\"])",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "lista_clientes",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def lista_clientes():\n    clientes = repositorio_cliente.obtener_todos_los_clientes()\n    return render_template('trabajador/cliente/cliente_lista.html', clientes=clientes)\n@routes.route(\"/cliente/nuevo\", methods=[\"GET\", \"POST\"])\ndef nuevo_cliente():\n    if request.method == \"POST\":\n        nombre = request.form['nombre']\n        direccion = request.form['direccion']\n        telefono = request.form['telefono']\n        email = request.form['email']",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "nuevo_cliente",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def nuevo_cliente():\n    if request.method == \"POST\":\n        nombre = request.form['nombre']\n        direccion = request.form['direccion']\n        telefono = request.form['telefono']\n        email = request.form['email']\n        repositorio_cliente.insertar_cliente(nombre, direccion, telefono, email)\n        return redirect(url_for('routes.lista_clientes'))\n    return render_template('trabajador/cliente/cliente_nuevo.html')\n@routes.route(\"/cliente/editar/<int:id_cliente>\", methods=[\"GET\", \"POST\"])",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "editar_cliente",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def editar_cliente(id_cliente):\n    cliente = repositorio_cliente.obtener_cliente_por_id(id_cliente)\n    if request.method == \"POST\":\n        nombre = request.form['nombre']\n        direccion = request.form['direccion']\n        telefono = request.form['telefono']\n        email = request.form['email']\n        repositorio_cliente.actualizar_cliente(id_cliente, nombre, direccion, telefono, email)\n        return redirect(url_for('routes.lista_clientes'))\n    return render_template('trabajador/cliente/cliente_editar.html', cliente=cliente)",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_cliente",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def eliminar_cliente(id_cliente):\n    repositorio_cliente.eliminar_cliente(id_cliente)\n    return redirect(url_for('routes.lista_clientes'))\n# @routes.route('/cliente/categoria')\n# def lista_categorias():\n#     categorias = repositorio_categoria.obtener_todas_las_categorias()\n#     return render_template('categoria/categoria_lista.html', categorias=categorias)\n# Manejo de errores\n@routes.app_errorhandler(404)\ndef page_not_found(e):",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "page_not_found",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def page_not_found(e):\n    return render_template(\"error/404.html\"), 404\n@routes.app_errorhandler(403)\ndef forbidden(e):\n    return render_template(\"error/403.html\"), 403\n@routes.app_errorhandler(500)\ndef internal_server_error(e):\n    return render_template(\"error/500.html\"), 500",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def forbidden(e):\n    return render_template(\"error/403.html\"), 403\n@routes.app_errorhandler(500)\ndef internal_server_error(e):\n    return render_template(\"error/500.html\"), 500",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "internal_server_error",
+        "kind": 2,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "def internal_server_error(e):\n    return render_template(\"error/500.html\"), 500",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "routes",
+        "kind": 5,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "routes = Blueprint(\"routes\", __name__)\n# Inicializar los repositorios\nrepositorio_producto = RepositorioProducto(db_path='cocina.db')\nrepositorio_categoria = RepositorioCategoria(db_path='cocina.db')\nrepositorio_cliente = RepositorioCliente(db_path='cocina.db')\nrepositorio_proveedor = RepositorioProveedor(db_path='cocina.db')\n# repositorio_trabajador = RepositorioTrabajador(db_path='cocina.db')\n# Decoradores para verificar roles\ndef login_required(f):\n    @wraps(f)",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "repositorio_producto",
+        "kind": 5,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "repositorio_producto = RepositorioProducto(db_path='cocina.db')\nrepositorio_categoria = RepositorioCategoria(db_path='cocina.db')\nrepositorio_cliente = RepositorioCliente(db_path='cocina.db')\nrepositorio_proveedor = RepositorioProveedor(db_path='cocina.db')\n# repositorio_trabajador = RepositorioTrabajador(db_path='cocina.db')\n# Decoradores para verificar roles\ndef login_required(f):\n    @wraps(f)\n    def decorated_function(*args, **kwargs):\n        if \"user_role\" not in session:",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "repositorio_categoria",
+        "kind": 5,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "repositorio_categoria = RepositorioCategoria(db_path='cocina.db')\nrepositorio_cliente = RepositorioCliente(db_path='cocina.db')\nrepositorio_proveedor = RepositorioProveedor(db_path='cocina.db')\n# repositorio_trabajador = RepositorioTrabajador(db_path='cocina.db')\n# Decoradores para verificar roles\ndef login_required(f):\n    @wraps(f)\n    def decorated_function(*args, **kwargs):\n        if \"user_role\" not in session:\n            flash(\"Por favor, inicia sesión para acceder a esta página.\", \"warning\")",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "repositorio_cliente",
+        "kind": 5,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "repositorio_cliente = RepositorioCliente(db_path='cocina.db')\nrepositorio_proveedor = RepositorioProveedor(db_path='cocina.db')\n# repositorio_trabajador = RepositorioTrabajador(db_path='cocina.db')\n# Decoradores para verificar roles\ndef login_required(f):\n    @wraps(f)\n    def decorated_function(*args, **kwargs):\n        if \"user_role\" not in session:\n            flash(\"Por favor, inicia sesión para acceder a esta página.\", \"warning\")\n            return redirect(url_for(\"routes.login\"))",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "repositorio_proveedor",
+        "kind": 5,
+        "importPath": "web_cocina.routes.routes",
+        "description": "web_cocina.routes.routes",
+        "peekOfCode": "repositorio_proveedor = RepositorioProveedor(db_path='cocina.db')\n# repositorio_trabajador = RepositorioTrabajador(db_path='cocina.db')\n# Decoradores para verificar roles\ndef login_required(f):\n    @wraps(f)\n    def decorated_function(*args, **kwargs):\n        if \"user_role\" not in session:\n            flash(\"Por favor, inicia sesión para acceder a esta página.\", \"warning\")\n            return redirect(url_for(\"routes.login\"))\n        return f(*args, **kwargs)",
+        "detail": "web_cocina.routes.routes",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "kind": 2,
+        "importPath": "web_cocina.app",
+        "description": "web_cocina.app",
+        "peekOfCode": "def create_app():\n    # Crear la instancia de la aplicación Flask\n    app = Flask(__name__)\n    # Configuración de la aplicación\n    app.config[\"SECRET_KEY\"] = \"supersecretkey\"  # CAMBIAR esto por una clave segura en producción\n    app.config[\"SQLALCHEMY_DATABASE_URI\"] = \"sqlite:///database/cocina.db\"  # Ruta de la base de datos SQLite\n    app.config[\"SQLALCHEMY_TRACK_MODIFICATIONS\"] = False  # Desactiva el seguimiento de modificaciones\n    # Inicializar SQLAlchemy con la aplicación\n    db.init_app(app)\n    # Registrar el Blueprint de rutas",
+        "detail": "web_cocina.app",
+        "documentation": {}
+    },
+    {
+        "label": "test_db",
+        "kind": 2,
+        "importPath": "web_cocina.main",
+        "description": "web_cocina.main",
+        "peekOfCode": "def test_db():\n    \"\"\"\n    Realiza pruebas de creación de tablas e inserción de datos de ejemplo.\n    \"\"\"\n    db_path = os.path.join(os.getcwd(), \"database\", \"cocina.db\")\n    with ConexionDB(ruta_bd=db_path) as conexion:\n        # Crear tablas\n        crear_tablas(conexion)\n        # Insertar datos de ejemplo\n        insertar_datos_ejemplo(conexion)",
+        "detail": "web_cocina.main",
         "documentation": {}
     }
 ]

@@ -1,0 +1,36 @@
+[
+    {
+        "label": "CRUDEspecifico",
+        "importPath": "biblioteca.crud.crud_especifico",
+        "description": "biblioteca.crud.crud_especifico",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud.crud_especifico",
+        "documentation": {}
+    },
+    {
+        "label": "CRUDGenero",
+        "importPath": "biblioteca.crud.crud_genero",
+        "description": "biblioteca.crud.crud_genero",
+        "isExtraImport": true,
+        "detail": "biblioteca.crud.crud_genero",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_especifico",
+        "kind": 2,
+        "importPath": "submenu_especifico",
+        "description": "submenu_especifico",
+        "peekOfCode": "def submenu_especifico(biblioteca):\n    \"\"\"\n    Submenú para gestionar tareas de subgéneros literarios específicos.\n    \"\"\"\n    crud_especifico = CRUDEspecifico(biblioteca.repositorio_especifico.ruta_json)\n    while True:\n        print(\"\\n- Tareas de Subgéneros Literarios -\\n\")\n        print(\"1. Mostrar Subgéneros.\")\n        print(\"2. Añadir Subgénero.\")\n        print(\"3. Actualizar Subgénero.\")",
+        "detail": "submenu_especifico",
+        "documentation": {}
+    },
+    {
+        "label": "submenu_genero",
+        "kind": 2,
+        "importPath": "submenu_genero",
+        "description": "submenu_genero",
+        "peekOfCode": "def submenu_genero(biblioteca):\n    \"\"\"\n    Submenú para gestionar tareas de géneros literarios.\n    \"\"\"\n    crud_genero = CRUDGenero(biblioteca.repositorio_genero.ruta_json)\n    while True:\n        print(\"\\n- Tareas de Géneros Literarios -\\n\")\n        print(\"1. Mostrar Géneros.\")\n        print(\"2. Añadir Género.\")\n        print(\"3. Modificar Datos de un Género.\")",
+        "detail": "submenu_genero",
+        "documentation": {}
+    }
+]
